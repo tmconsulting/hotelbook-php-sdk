@@ -12,5 +12,4 @@ namespace App\Hotelbook\Exception;
 
 class RequestException extends \Exception
 {
-
 }

@@ -28,6 +28,10 @@
     "require-dev": {
         "phpunit/phpunit": "^6.4",
         "phpunit/phpunit-mock-objects": "^4.0",
-        "mockery/mockery": "^0.9.5"
+        "mockery/mockery": "^0.9.5",
+        "friendsofphp/php-cs-fixer": "^2.8"
+    },
+    "scripts": {
+        "fix":  "vendor/bin/php-cs-fixer fix . --rules=@PSR2"
     }
 }

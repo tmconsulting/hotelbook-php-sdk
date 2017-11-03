@@ -8,7 +8,6 @@
 
 namespace App\Hotelbook\Object\Hotel;
 
-
 final class BookItem
 {
     /**

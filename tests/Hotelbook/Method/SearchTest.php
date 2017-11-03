@@ -17,7 +17,6 @@ use Neo\Hotelbook\Tests\TestCase;
 
 class SearchTest extends TestCase
 {
-
     public function testHowSearchMethodBuildTheSimpleRequest()
     {
         $search = new Search(new ConnectorStub);
@@ -39,5 +38,4 @@ class SearchTest extends TestCase
 
         $this->assertInstanceOf(SearchResult::class, $results);
     }
-
 }

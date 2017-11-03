@@ -8,7 +8,6 @@
 
 namespace App\Hotelbook;
 
-
 /**
  * Class Main
  *

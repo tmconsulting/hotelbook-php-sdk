@@ -15,7 +15,6 @@ use Neo\Hotelbook\Tests\TestCase;
 
 class DetailTest extends TestCase
 {
-
     public function testHowDetailMethodBuildTheRequest()
     {
         $detail = new Detail(new ConnectorStub);
@@ -32,5 +31,4 @@ class DetailTest extends TestCase
 
         $this->assertInstanceOf(DetailResult::class, $results);
     }
-
 }
