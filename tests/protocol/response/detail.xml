@@ -1,0 +1,155 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response date="2017-10-23T18:24:21+03:00">
+    <HotelDetail id="39858" name="Москва">
+        <Country id="118"><![CDATA[Россия]]></Country>
+        <City id="2"><![CDATA[Санкт-Петербург]]></City>
+        <Cat id="2"><![CDATA[3*]]></Cat>
+        <Locations/>
+        <MetroList/>
+        <Address><![CDATA[Санкт-Петербург, Площадь Александра Невского, д. 2]]></Address>
+        <Phone><![CDATA[+7 (812) 333-24-44]]></Phone>
+        <Fax><![CDATA[+7 (812) 274-20-21]]></Fax>
+        <Email><![CDATA[reservation@hotel-moscow.ru]]></Email>
+        <WWW><![CDATA[http://hotel-moscow.ru]]></WWW>
+        <Latitude><![CDATA[59.924518585205080]]></Latitude>
+        <Longitude><![CDATA[30.386604309082030]]></Longitude>
+        <BuiltIn>1976</BuiltIn>
+        <BuildingType id="0"/>
+        <NumberLifts>0</NumberLifts>
+        <NumberFloors>8</NumberFloors>
+        <Conference>0</Conference>
+        <Voltage/>
+        <ChildAgeFrom/>
+        <ChildAgeTo/>
+        <Classification id=""/>
+        <EarlestCheckInTime>14:00:00</EarlestCheckInTime>
+        <LatestCheckOutTime>12:00:00</LatestCheckOutTime>
+        <RoomServiceFrom>00:00:00</RoomServiceFrom>
+        <RoomServiceTo>00:00:00</RoomServiceTo>
+        <RoomService24h>NO</RoomService24h>
+        <PorterageFrom>00:00:00</PorterageFrom>
+        <PorterageTo>00:00:00</PorterageTo>
+        <Porterage24h>NO</Porterage24h>
+        <IndoorPool>0</IndoorPool>
+        <OutdoorPool>0</OutdoorPool>
+        <ChildrensPool>0</ChildrensPool>
+        <Description><![CDATA[<p>Отель &laquo;Москва&raquo; расположен в центре города на набережной Невы рядом с Невским проспектом.</p>
+
+<p>В здании отеля находится станция метро &laquo;Площадь Александра Невского&raquo;. Прекрасное транспортное сообщение позволяет гостям за 15&ndash;20 минут добраться до главных исторических достопримечательностей Санкт-Петербурга: Дворцовой набережной, Эрмитажа, Адмиралтейства, Казанского собора, Русского музея.</p>
+
+<p>Из окон номеров отеля открывается вид на архитектурный ансамбль XVIII века &mdash; Александро-Невскую лавру и Неву. В период белых ночей из окон отеля можно наблюдать как&nbsp;разводится мост Александра Невского.</p>
+
+<p>Во всех номерах есть индивидуальный кондиционер, сейф, холодильник, телефон, телевизор (35 каналов, в том числе на иностранных языках) и доступ в интернет. В ванных комнатах &mdash; современная сантехника и необходимые туалетные принадлежности.</p>
+
+<p>Номера гостиницы оборудованы системой электронных замков. Работает круглосуточная система видеоконтроля.</p>
+
+<p>Из окон большинства номеров открывается вид на набережную реки Невы и Александро-Невскую Лавру.</p>]]></Description>
+        <Distances><![CDATA[Центр города: Центр города - 1,5 км
+Метро: Площадь Александра Невского - Линия 4 - 0,2 км, Площадь Александра Невского - Линия 3 - 0,2 км
+Аэропорт: Пулково-2 - 18 км, Пулково-1 - 22 км
+Ж/д вокзал: Московский - 1,5 км
+Речной порт: Речной порт - 6,5 км
+Морской порт: Морской порт - 9 км]]></Distances>
+        <AdditionalInfo><![CDATA[]]></AdditionalInfo>
+        <HotelFacility/>
+        <RoomAmenity/>
+        <HotelType/>
+        <Images>
+            <Image>
+                <Info><![CDATA[]]></Info>
+                <Small width="80" height="60">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29299418.jpg]]></Small>
+                <Large width="1000" height="665">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29299418.jpg]]></Large>
+            </Image>
+            <Image>
+                <Info><![CDATA[]]></Info>
+                <Small width="80" height="60">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29299419.jpg]]></Small>
+                <Large width="1000" height="665">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29299419.jpg]]></Large>
+            </Image>
+            <Image>
+                <Info><![CDATA[]]></Info>
+                <Small width="80" height="60">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29299420.jpg]]></Small>
+                <Large width="1000" height="665">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29299420.jpg]]></Large>
+            </Image>
+            <Image>
+                <Info><![CDATA[]]></Info>
+                <Small width="80" height="60">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29299421.jpg]]></Small>
+                <Large width="1000" height="665">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29299421.jpg]]></Large>
+            </Image>
+            <Image>
+                <Info><![CDATA[]]></Info>
+                <Small width="80" height="60">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29299422.jpg]]></Small>
+                <Large width="1000" height="665">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29299422.jpg]]></Large>
+            </Image>
+            <Image>
+                <Info><![CDATA[]]></Info>
+                <Small width="80" height="60">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29299423.jpg]]></Small>
+                <Large width="1000" height="665">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29299423.jpg]]></Large>
+            </Image>
+            <Image>
+                <Info><![CDATA[]]></Info>
+                <Small width="80" height="60">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29299424.jpg]]></Small>
+                <Large width="1000" height="665">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29299424.jpg]]></Large>
+            </Image>
+            <Image>
+                <Info><![CDATA[]]></Info>
+                <Small width="80" height="60">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29299425.jpg]]></Small>
+                <Large width="1000" height="665">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29299425.jpg]]></Large>
+            </Image>
+            <Image>
+                <Info><![CDATA[]]></Info>
+                <Small width="80" height="60">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29299426.jpg]]></Small>
+                <Large width="1000" height="665">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29299426.jpg]]></Large>
+            </Image>
+            <Image>
+                <Info><![CDATA[]]></Info>
+                <Small width="80" height="60">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29299427.jpg]]></Small>
+                <Large width="1000" height="665">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29299427.jpg]]></Large>
+            </Image>
+            <Image>
+                <Info><![CDATA[]]></Info>
+                <Small width="80" height="60">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29299428.jpg]]></Small>
+                <Large width="1000" height="665">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29299428.jpg]]></Large>
+            </Image>
+            <Image main="true">
+                <Info><![CDATA[]]></Info>
+                <Small width="80" height="60">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29299429.jpg]]></Small>
+                <Large width="1000" height="665">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29299429.jpg]]></Large>
+            </Image>
+            <Image>
+                <Info><![CDATA[]]></Info>
+                <Small width="80" height="60">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29299430.jpg]]></Small>
+                <Large width="1000" height="665">
+                    <![CDATA[http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29299430.jpg]]></Large>
+            </Image>
+        </Images>
+        <Maps/>
+        <GTAHotelCode><![CDATA[]]></GTAHotelCode>
+        <GTACityCode><![CDATA[]]></GTACityCode>
+        <Updated><![CDATA[2017-03-17 18:52:34]]></Updated>
+    </HotelDetail>
+</Response>
