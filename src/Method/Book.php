@@ -142,7 +142,6 @@ class Book extends AbstractMethod
 
     /**
      * Метод для выполнения самого запроса
-     * //TODO сделать правильную обработку ошибок
      * @param $xml <- builds results
      * @return mixed
      */

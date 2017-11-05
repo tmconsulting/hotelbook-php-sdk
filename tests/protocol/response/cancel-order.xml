@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CancellationOrderResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" date="2017-11-05T20:23:20+03:00">
+    <Order>
+        <Id>1000220710</Id>
+        <Manager>billy</Manager>
+        <Tag>91845</Tag>
+        <OrderUserId>795</OrderUserId>
+        <OrderUserName>Travel Management Consulting XML</OrderUserName>
+        <State>CANCELED</State>
+        <CreationDate>2017-11-05 20:23:14</CreationDate>
+        <PayForm>cashless</PayForm>
+        <Paxes>
+            <Pax paxId="1" child="false">
+                <Title>Mr</Title>
+                <FirstName>Nikita</FirstName>
+                <LastName>Shatilo</LastName>
+            </Pax>
+            <Pax paxId="2" child="false">
+                <Title>Mrs</Title>
+                <FirstName>Helen</FirstName>
+                <LastName>Mackmaidain</LastName>
+            </Pax>
+        </Paxes>
+        <Items>
+            <HotelItem itemId="1000220711" dynamicInventory="false">
+                <HotelId>39504</HotelId>
+                <CityId>1</CityId>
+                <Name>Бизнес Отель</Name>
+                <CategoryId>2</CategoryId>
+                <State>CANCELED</State>
+                <Confirmation>online</Confirmation>
+                <CheckIn>2018-03-06</CheckIn>
+                <Duration>1</Duration>
+                <TotalPrice>3177.3</TotalPrice>
+                <ExtraPrice currency="">0</ExtraPrice>
+                <Currency>RUB</Currency>
+                <CheckInTime info="true" default="14:00" value="14:00"/>
+                <CheckOutTime info="true" default="12:00" value="12:00"/>
+                <UseNds>false</UseNds>
+                <ProviderId>6</ProviderId>
+                <ProviderReference>0</ProviderReference>
+                <ClientReference/>
+                <PossibleRemarks>
+                    <Remark code="EA"/>
+                    <Remark code="LD"/>
+                </PossibleRemarks>
+                <CommentLanguage>ru</CommentLanguage>
+                <PermittedOperations>
+                    <Modify>false</Modify>
+                    <Cancel>false</Cancel>
+                    <IsBlocked>false</IsBlocked>
+                </PermittedOperations>
+                <EditableOptions>
+                    <Option name="check_in" editable="true"/>
+                    <Option name="duration" editable="true"/>
+                    <Option name="pax_names" editable="true"/>
+                    <Option name="alternatives" editable="false"/>
+                    <Option name="remarks" editable="false"/>
+                    <Option name="comment" editable="false"/>
+                    <Option name="room_sizes" editable="false"/>
+                    <Option name="room_types" editable="false"/>
+                    <Option name="room_views" editable="false"/>
+                    <Option name="new_rooms" editable="false"/>
+                    <Option name="delete_rooms" editable="false"/>
+                    <Option name="voucher_info" editable="true"/>
+                    <Option name="sharing_bedding" editable="false"/>
+                    <Option name="cots" editable="false"/>
+                    <Option name="citizenship" editable="true"/>
+                    <Option name="comment_language" editable="true"/>
+                    <Option name="pay_form" editable="true"/>
+                    <Option name="name_change" editable="true"/>
+                </EditableOptions>
+                <RoomLocks/>
+                <Rooms>
+                    <Room roomId="1000220712" roomSizeId="8" roomSizeName="DBL OR TWIN" roomTypeId="1"
+                          roomTypeName="STD" roomViewId="1" roomViewName="ROH" roomName="Стандарт DBL" mealId="6"
+                          mealName="Без питания" child="0" cots="0" sharingBedding="false">
+                        <Paxes>
+                            <PaxId>1</PaxId>
+                            <PaxId>2</PaxId>
+                        </Paxes>
+                    </Room>
+                </Rooms>
+                <Remarks/>
+                <ChargeConditions>
+                    <Currency>RUB</Currency>
+                    <DenyNameChanges deny="false"/>
+                    <Cancellations>
+                        <Cancellation charge="false" denyChanges="false" to="2018-03-03T12:00:00"/>
+                        <Cancellation charge="true" denyChanges="false" from="2018-03-03T12:00:00" price="3177.3"/>
+                    </Cancellations>
+                    <Amendments>
+                        <Amendment charge="false" denyChanges="false" to="2018-03-03T12:00:00"/>
+                        <Amendment charge="true" denyChanges="false" from="2018-03-03T12:00:00" price="3177.3"/>
+                    </Amendments>
+                </ChargeConditions>
+            </HotelItem>
+        </Items>
+        <ContactInfo>
+            <Name>Nikita Shatilo</Name>
+            <Email>shatilo.reymond@gmail.com</Email>
+            <Phone>380669699384</Phone>
+            <Comment>123 123 123</Comment>
+        </ContactInfo>
+    </Order>
+</CancellationOrderResponse>
