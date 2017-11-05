@@ -3,10 +3,7 @@
 namespace App\Hotelbook\Method;
 
 use SimpleXMLElement;
-use Money\Currencies\ISOCurrencies;
-use Money\Parser\DecimalMoneyParser;
-use Money\Money;
-use Money\Parser\StringToUnitsParser;
+use App\Hotelbook\Object\Hotel\Price;
 
 /**
  * Created by Roquie.
@@ -43,9 +40,6 @@ abstract class AbstractMethod implements MethodInterface
      */
     protected function money($sum, $currency)
     {
-        $currencies = new ISOCurrencies();
-        $parser = new DecimalMoneyParser($currencies);
-
-        return $parser->parse($sum, $currency);
+        return new Price($sum, $currency);
     }
 }

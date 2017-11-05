@@ -18,6 +18,7 @@ use App\Hotelbook\Object\Hotel\BookItem;
 use App\Hotelbook\Object\Hotel\SearchParameter;
 use Carbon\Carbon;
 use App\Hotelbook\Method\CancelOrder;
+use App\Hotelbook\Method\ConfirmOrder;
 
 /**
  * Class Main
@@ -47,6 +48,7 @@ final class Main // implements HotelInterface
         $this->setMethod('detail', new Detail($connector));
         $this->setMethod('book', new Book($connector));
         $this->setMethod('cancelOrder', new CancelOrder($connector));
+        $this->setMethod('confirmOrder', new ConfirmOrder($connector));
     }
 
     /**
@@ -107,7 +109,7 @@ final class Main // implements HotelInterface
     }
 
     /**
-     * Метод для аннулирования заказа (
+     * Метод для аннулирования заказа
      * @param int $orderId
      * @param int $itemId
      * @return mixed
@@ -115,5 +117,12 @@ final class Main // implements HotelInterface
     public function cancelOrder(int $orderId, int $itemId)
     {
         return $this->callMethod('cancelOrder', [$orderId, $itemId]);
+    }
+
+    public function confirmOrder(int $orderId, int $itemId, string $price, string $currency)
+    {
+        return $this->callMethod('confirmOrder', [
+           $orderId, $itemId, $price, $currency
+        ]);
     }
 }
