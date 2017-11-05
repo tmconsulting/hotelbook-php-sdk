@@ -10,7 +10,7 @@ namespace Neo\Hotelbook\Tests\Hotelbook\Method;
 
 use App\Hotelbook\Method\Search;
 use App\Hotelbook\Object\Hotel\SearchPassenger;
-use App\Hotelbook\Object\SearchResult;
+use App\Hotelbook\Object\Results\SearchResult;
 use Carbon\Carbon;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;

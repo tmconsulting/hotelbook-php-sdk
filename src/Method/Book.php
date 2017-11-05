@@ -16,8 +16,9 @@ use App\Hotelbook\Object\Contact;
 use App\Hotelbook\Object\Hotel\BookItem;
 use App\Hotelbook\Object\Hotel\BookPassenger;
 use Money\Parser\StringToUnitsParser;
+use App\Hotelbook\Object\Results\BookResult;
 
-final class Book implements MethodInterface
+class Book extends AbstractMethod
 {
     /**
      * @var \App\Hotelbook\Connector\ConnectorInterface
@@ -32,6 +33,11 @@ final class Book implements MethodInterface
     public function __construct(ConnectorInterface $connector)
     {
         $this->connector = $connector;
+    }
+
+    protected function getRandomTag()
+    {
+        return (string)random_int(10000, 99999);
     }
 
     /**
@@ -52,13 +58,13 @@ final class Book implements MethodInterface
         $contactXml->addChild('Phone', $contact->getPhone());
         $contactXml->addChild('Comment', $contact->getComment());
 
-        $xml->addChild('Tag', (string)random_int(10000, 99999));
+        $xml->addChild('Tag', $this->getRandomTag());
 
         $hotelItems = $xml->addChild('Items');
 
         foreach ($items as $item) {
             $hotel = $hotelItems->addChild('HotelItem');
-            $search = $hotel->addChild('SearchResult');
+            $search = $hotel->addChild('Search');
             $search->addAttribute('searchId', $item->getSearchId());
             $search->addAttribute('resultId', $item->getResultId());
             $hotel->addChild('PayForm', 'cashless'); // оплата безналом по умолчанию
@@ -79,10 +85,6 @@ final class Book implements MethodInterface
                 }
             }
         }
-
-        header('Content-Type: text/xml');
-        echo $xml->asXML();
-        exit;
 
         return $xml->asXML();
     }
@@ -109,9 +111,6 @@ final class Book implements MethodInterface
                 }
             }
         }
-
-        // $adults = $this->tbaAutoComplete($payload, $adults);
-        // $childs = $this->tbaAutoComplete($payload, $childs, true);
 
         return collect($this->putChildrenToBottom($adults, $childs));
     }
@@ -142,51 +141,53 @@ final class Book implements MethodInterface
     }
 
     /**
-     * Дополняет массив TBA-персонами (не указанные личности в заказе.)
-     * Означает заполнение бумажек на месте.
-     *
-     * @param $payload
-     * @param array $pax
-     * @param bool $child
-     * @return array
-     */
-//    protected function tbaAutoComplete($payload, array $pax, $child = false)
-//    {
-//        $name  = $child ? 'TBA_CHILD_' : 'TBA_ADULT_';
-//        $title = $child ? Title::CHILD : Title::MR;
-//        $key   = $child ? 'childs'     : 'adults';
-//
-//        $results = [];
-//        foreach ($payload['request']['rooms'] as $group => $room) {
-//            $count = 0;
-//            if (isset($pax[$group])) {
-//                $count = count($pax[$group]);
-//                $results[$group] = $pax[$group];
-//            }
-//
-//            for($i = $count; $i < $room[$key]; $i++) {
-//                $results[$group][$i] = [
-//                    'title'     => $title,
-//                    'firstName' => $name . $i,
-//                    'lastName'  => $name . $i,
-//                    'group'     => $group
-//                ];
-//            }
-//        }
-//
-//        return $results;
-//    }
-
-    /**
+     * Метод для выполнения самого запроса
+     * //TODO сделать правильную обработку ошибок
      * @param $xml <- builds results
      * @return mixed
      */
     public function handle($xml)
     {
-        $results = $this->connector->request('POST', 'add_order', $xml);
+        $response = $this->connector->request('POST', 'add_order', $xml);
+        // file_put_contents('book-response.xml', $response->asXML());
 
-        file_put_contents('booking.xml', $results->asXML());
+        $errors = $this->getErrors($response);
+        $values = [];
 
-        dd($results);
+        if (emptyArray($errors)) {
+            $values = $this->form($response);
+        }
+
+        return new BookResult($values, $errors);
+    }
+
+    /**
+     * Метод для формирования ответа из ответа XML //TODO сделать такой во всех методах
+     * @param $response
+     * @return array
+     */
+    public function form($response)
+    {
+        $orderId = (int) $response->OrderId;
+        $items = [];
+
+        foreach ($response->Items->ItemId as $item) {
+            $itemId = (int)($item);
+            $item = current($item);
+
+            $money = $this->money($item['TotalPrice'], $item['Currency']);
+            $items[] = [
+                'itemId' => $itemId,
+                'price' => [
+                    'sum' => $money->getAmount(),
+                    'currency' => $money->getCurrency(),
+                ]
+            ];
+        }
+
+        return [
+            'orderId' => $orderId,
+            'items' => $items
+        ];
     }
 }

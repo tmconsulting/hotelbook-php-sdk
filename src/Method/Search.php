@@ -13,15 +13,11 @@ namespace App\Hotelbook\Method;
 
 use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Object\Hotel\SearchPassenger;
-use App\Hotelbook\Object\SearchResult;
+use App\Hotelbook\Object\Results\SearchResult;
 use Carbon\Carbon;
-use Money\Currencies\ISOCurrencies;
-use Money\Money;
-use Money\Parser\DecimalMoneyParser;
-use Money\Parser\StringToUnitsParser;
 use SimpleXMLElement;
 
-final class Search extends AbstractMethod
+class Search extends AbstractMethod
 {
     const DATE_FORMAT = 'Y-m-d';
     /**
@@ -47,24 +43,16 @@ final class Search extends AbstractMethod
     {
         /** @var Carbon $checkInDate */
         /** @var SearchPassenger[] $rooms */
-        [$value, $checkInDate, $checkOutDate, $rooms,] = $params;
+        [$value, $checkInDate, $checkOutDate, $rooms] = $params;
 
         $xml = new SimpleXMLElement('<HotelSearchRequest/>');
         $request = $xml->addChild('Request');
         $request->addAttribute('cityId', (string)$value);
 
-//        if ( ! empty($hotelId = $option->getHotelId())) {
-//            $request->addAttribute('hotelId', strval($hotelId));
-//        }
-
         $request->addAttribute('checkIn', $checkInDate->format(self::DATE_FORMAT));
         $request->addAttribute('duration', (string)$checkInDate->diffInDays($checkOutDate));
         $request->addAttribute('confirmation', 'online');
-
-//        if ( ! empty($providerId = $option->getProviderId())) {
-//            $providers = $request->addChild('Providers');
-//            $providers->addChild('Provider', strval($providerId));
-//        }
+        //   $request->addAttribute('limitResults', '1');
 
         $roomsXml = $xml->addChild('Rooms');
 
@@ -92,11 +80,29 @@ final class Search extends AbstractMethod
     public function handle($results)
     {
         $response = $this->connector->request('POST', 'hotel_search', $results);
-        $search = current($response->HotelSearch);
-        file_put_contents('search-london.xml', $response->asXML());
 
+        $errors = $this->getErrors($response);
+        $values = [];
+
+        if (emptyArray($errors)) {
+            $values = $this->form($response);
+        }
+
+        return new SearchResult($values, $errors);
+    }
+
+
+    /**
+     * Метод для формирования ответа из ответа XML //TODO сделать такой во всех методах
+     * @param $response
+     * @return array
+     */
+    public function form($response)
+    {
         $i = 0;
         $array = [];
+        $search = current($response->HotelSearch);
+
         foreach ($response->Hotels->Hotel as $hotel) {
             if (!isset($hotel->Rooms->Room)) {
                 continue;
@@ -105,7 +111,7 @@ final class Search extends AbstractMethod
             $value = current($hotel);
             $money = $this->money($value['price'], $value['currency']);
 
-            $array[$i] = [
+            $array[] = [
                 'searchId' => (string)$search['searchId'],
                 'resultId' => (string)$value['resultId'],
                 'hotelId' => (int)$value['hotelId'],
@@ -129,11 +135,6 @@ final class Search extends AbstractMethod
                 ],
             ];
 
-            $childAge = null;
-            if (isset($hotel->Rooms->Room->ChildAge)) {
-
-            }
-
             foreach ($hotel->Rooms->Room as $room) {
                 $room = current($room);
                 $array[$i]['rooms'][] = [
@@ -156,19 +157,6 @@ final class Search extends AbstractMethod
             $i++;
         }
 
-        return new SearchResult($array, $this->getErrors($response));
-    }
-
-    /**
-     * @param $sum
-     * @param $currency
-     * @return Money
-     */
-    private function money($sum, $currency)
-    {
-        $currencies = new ISOCurrencies();
-        $parser = new DecimalMoneyParser($currencies);
-
-        return $parser->parse($sum, $currency);
+        return $array;
     }
 }

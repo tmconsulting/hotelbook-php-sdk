@@ -21,4 +21,10 @@ interface MethodInterface
      * @return mixed
      */
     public function handle($results);
+
+    /**
+     * @param $response
+     * @return mixed
+     */
+    public function form($response);
 }

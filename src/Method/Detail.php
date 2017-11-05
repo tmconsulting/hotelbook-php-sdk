@@ -12,10 +12,10 @@ declare(strict_types=1);
 namespace App\Hotelbook\Method;
 
 use App\Hotelbook\Connector\ConnectorInterface;
-use App\Hotelbook\Object\DetailResult;
+use App\Hotelbook\Object\Results\DetailResult;
 use Money\Parser\StringToUnitsParser;
 
-final class Detail extends AbstractMethod
+class Detail extends AbstractMethod
 {
     /**
      * @var \App\Hotelbook\Connector\ConnectorInterface
@@ -55,6 +55,22 @@ final class Detail extends AbstractMethod
             'query' => [$optionKey => $value]
         ]);
 
+        $errors = $this->getErrors($results);
+        $values = [];
+
+        if (emptyArray($errors)) {
+            $values = $this->form($results);
+        }
+
+        return new DetailResult($values, $errors);
+    }
+
+    /**
+     * @param $results
+     * @return array
+     */
+    public function form($results)
+    {
         $attributes = current($results->HotelDetail);
         $detail = $results->HotelDetail;
 
@@ -84,7 +100,6 @@ final class Detail extends AbstractMethod
             'numberLifts' => (int)$detail->NumberLifts,
             'conference' => (string)$detail->Conference,
             'voltage' => (string)$detail->Voltage,
-            // 'voltage'            => (string) $detail->Voltage,
             'childAgeFrom' => (string)$detail->ChildAgeFrom,
             'childAgeTo' => (string)$detail->ChildAgeTo,
             'earlestCheckInTime' => isset($detail->EarlestCheckInTime) ? (string)$detail->EarlestCheckInTime : null,
@@ -107,12 +122,12 @@ final class Detail extends AbstractMethod
             ];
         }
 
-        return new DetailResult(array_merge($array, ...[
+        return array_merge($array, ...[
             $this->eachTypicalElements($detail, 'Locations.Location', 'locations'),
             $this->eachTypicalElements($detail, 'HotelFacility.Facility', 'facilities'),
             $this->eachTypicalElements($detail, 'RoomAmenity.Amenity', 'amenities'),
             $this->eachTypicalElements($detail, 'HotelType.Type', 'types'),
-        ]), $this->getErrors($results));
+        ]);
     }
 
     /**

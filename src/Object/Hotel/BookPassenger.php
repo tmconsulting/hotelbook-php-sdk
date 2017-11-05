@@ -8,7 +8,6 @@
 
 namespace App\Hotelbook\Object\Hotel;
 
-
 final class BookPassenger
 {
     /**
@@ -58,8 +57,7 @@ final class BookPassenger
         bool $adultPlace = false,
         bool $child = false,
         ?int $age = null
-    )
-    {
+    ) {
         $this->title = $title;
         $this->firstName = $firstName;
         $this->lastName = $lastName;
