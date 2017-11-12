@@ -1,22 +1,10 @@
 <?php
-/**
- * Created by Roquie.
- * E-mail: roquie0@gmail.com
- * GitHub: Roquie
- * Date: 22.05.16
- * Project: provider
- */
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Object;
+namespace App\Hotelbook\Object\Results;
 
-/**
- * Class DetailResult
- *
- * @package Hive\Common\Object
- */
-class DetailResult
+abstract class ResultProceeder
 {
     /**
      * @var array of new Error() objects
@@ -29,7 +17,7 @@ class DetailResult
     protected $items = [];
 
     /**
-     * SearchResult constructor.
+     * ResultProceeder constructor.
      *
      * @param array $items
      * @param array $errors

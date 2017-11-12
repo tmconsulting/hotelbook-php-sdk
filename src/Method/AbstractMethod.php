@@ -3,6 +3,7 @@
 namespace App\Hotelbook\Method;
 
 use SimpleXMLElement;
+use App\Hotelbook\Object\Hotel\Price;
 
 /**
  * Created by Roquie.
@@ -30,5 +31,15 @@ abstract class AbstractMethod implements MethodInterface
         }
 
         return $errors;
+    }
+
+    /**
+     * @param $sum
+     * @param $currency
+     * @return Money
+     */
+    protected function money($sum, $currency)
+    {
+        return new Price($sum, $currency);
     }
 }

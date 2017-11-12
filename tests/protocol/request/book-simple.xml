@@ -1,25 +1,25 @@
 <?xml version="1.0"?>
 <AddOrderRequest>
-    <ContactInfo>
-        <Name>&#x412;&#x430;&#x441;&#x44F; &#x425;&#x443;&#x44E;&#x43F;&#x43A;&#x438;&#x43D;</Name>
-        <Email>example@gmail.com</Email>
-        <Phone>12312312312</Phone>
-        <Comment/>
-    </ContactInfo>
-    <Tag>32846</Tag>
-    <Items>
-        <HotelItem>
-            <Search searchId="2959818" resultId="478534"/>
-            <PayForm>cashless</PayForm>
-            <Rooms>
-                <Room>
-                    <RoomPax>
-                        <Title>Mr</Title>
-                        <FirstName>John</FirstName>
-                        <LastName>Smith</LastName>
-                    </RoomPax>
-                </Room>
-            </Rooms>
-        </HotelItem>
-    </Items>
+  <ContactInfo>
+    <Name>John Smith</Name>
+    <Email>john.smith@example.com</Email>
+    <Phone>+1111111111</Phone>
+    <Comment/>
+  </ContactInfo>
+  <Tag>1</Tag>
+  <Items>
+    <HotelItem>
+      <Search searchId="1" resultId="1"/>
+      <PayForm>cashless</PayForm>
+      <Rooms>
+        <Room>
+          <RoomPax>
+            <Title>Mr</Title>
+            <FirstName>John</FirstName>
+            <LastName>Smith</LastName>
+          </RoomPax>
+        </Room>
+      </Rooms>
+    </HotelItem>
+  </Items>
 </AddOrderRequest>

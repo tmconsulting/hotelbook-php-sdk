@@ -10,12 +10,16 @@ namespace App\Hotelbook;
 
 use App\Hotelbook\Connector\Connector;
 use App\Hotelbook\Method\Book;
+use App\Hotelbook\Method\CancelOrder;
+use App\Hotelbook\Method\ConfirmOrder;
 use App\Hotelbook\Method\Detail;
 use App\Hotelbook\Method\DynamicResolver;
 use App\Hotelbook\Method\Search;
 use App\Hotelbook\Object\Contact;
 use App\Hotelbook\Object\Hotel\BookItem;
 use App\Hotelbook\Object\Hotel\SearchParameter;
+use App\Hotelbook\Object\Hotel\Tag;
+use App\Hotelbook\Object\Results\SearchResult;
 use Carbon\Carbon;
 
 /**
@@ -33,9 +37,20 @@ final class Main // implements HotelInterface
     public function __construct($config)
     {
         $connector = $this->makeConnector($config);
+        $this->setMethods($connector);
+    }
+
+    /**
+     * Метод для установки всех существующих методов
+     * @param $connector
+     */
+    private function setMethods($connector)
+    {
         $this->setMethod('search', new Search($connector));
         $this->setMethod('detail', new Detail($connector));
         $this->setMethod('book', new Book($connector));
+        $this->setMethod('cancelOrder', new CancelOrder($connector));
+        $this->setMethod('confirmOrder', new ConfirmOrder($connector));
     }
 
     /**
@@ -88,10 +103,31 @@ final class Main // implements HotelInterface
     /**
      * @param \App\Hotelbook\Object\Contact $contact
      * @param BookItem[] $items
+     * @param Tag $tag
+     * @param $searchResult = null
      * @return mixed
      */
-    public function book(Contact $contact, array $items)
+    public function book(Contact $contact, array $items, Tag $tag, $searchResult = null)
     {
-        return $this->callMethod('book', [$contact, $items]);
+        return $this->callMethod('book', [$contact, $items, $tag, $searchResult]);
+    }
+
+    /**
+     * Метод для аннулирования заказа
+     * @param int $orderId
+     * @param int $itemId
+     * @return mixed
+     */
+    public function cancelOrder(int $orderId, int $itemId)
+    {
+        return $this->callMethod('cancelOrder', [$orderId, $itemId]);
+    }
+
+
+    public function confirmOrder(int $orderId, int $itemId, string $price, string $currency)
+    {
+        return $this->callMethod('confirmOrder', [
+            $orderId, $itemId, $price, $currency
+        ]);
     }
 }

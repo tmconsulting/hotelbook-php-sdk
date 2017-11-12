@@ -8,7 +8,6 @@
 
 namespace App\Hotelbook\Object;
 
-
 final class Contact
 {
     private $name;
@@ -85,7 +84,7 @@ final class Contact
      */
     public function getComment()
     {
-        return $this->comment;
+        return $this->comment == null ? '' : $this->comment;
     }
 
     /**
