@@ -54,8 +54,8 @@ final class BookPassenger
         string $title,
         string $firstName,
         string $lastName,
-        bool $adultPlace = false,
         bool $child = false,
+        bool $adultPlace = false,
         ?int $age = null
     ) {
         $this->title = $title;

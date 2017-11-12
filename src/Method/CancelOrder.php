@@ -41,7 +41,7 @@ class CancelOrder extends AbstractMethod
         $errors = $this->getErrors($result);
         $values = [];
 
-        if (emptyArray($errors)) {
+        if (empty($errors)) {
             $values = $this->form($result);
         }
 

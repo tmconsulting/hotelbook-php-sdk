@@ -1,2 +1,25 @@
 <?xml version="1.0"?>
-<AddOrderRequest><ContactInfo><Name>John Smith</Name><Email>john.smith@example.com</Email><Phone>+1111111111</Phone><Comment/></ContactInfo><Tag>1</Tag><Items><HotelItem><Search searchId="1" resultId="1"/><PayForm>cashless</PayForm><Rooms><Room><RoomPax><Title>Mr</Title><FirstName>John</FirstName><LastName>Smith</LastName></RoomPax></Room></Rooms></HotelItem></Items></AddOrderRequest>
+<AddOrderRequest>
+  <ContactInfo>
+    <Name>John Smith</Name>
+    <Email>john.smith@example.com</Email>
+    <Phone>+1111111111</Phone>
+    <Comment/>
+  </ContactInfo>
+  <Tag>1</Tag>
+  <Items>
+    <HotelItem>
+      <Search searchId="1" resultId="1"/>
+      <PayForm>cashless</PayForm>
+      <Rooms>
+        <Room>
+          <RoomPax>
+            <Title>Mr</Title>
+            <FirstName>John</FirstName>
+            <LastName>Smith</LastName>
+          </RoomPax>
+        </Room>
+      </Rooms>
+    </HotelItem>
+  </Items>
+</AddOrderRequest>

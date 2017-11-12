@@ -10,15 +10,17 @@ namespace App\Hotelbook;
 
 use App\Hotelbook\Connector\Connector;
 use App\Hotelbook\Method\Book;
+use App\Hotelbook\Method\CancelOrder;
+use App\Hotelbook\Method\ConfirmOrder;
 use App\Hotelbook\Method\Detail;
 use App\Hotelbook\Method\DynamicResolver;
 use App\Hotelbook\Method\Search;
 use App\Hotelbook\Object\Contact;
 use App\Hotelbook\Object\Hotel\BookItem;
 use App\Hotelbook\Object\Hotel\SearchParameter;
+use App\Hotelbook\Object\Hotel\Tag;
+use App\Hotelbook\Object\Results\SearchResult;
 use Carbon\Carbon;
-use App\Hotelbook\Method\CancelOrder;
-use App\Hotelbook\Method\ConfirmOrder;
 
 /**
  * Class Main
@@ -101,11 +103,13 @@ final class Main // implements HotelInterface
     /**
      * @param \App\Hotelbook\Object\Contact $contact
      * @param BookItem[] $items
+     * @param Tag $tag
+     * @param $searchResult = null
      * @return mixed
      */
-    public function book(Contact $contact, array $items)
+    public function book(Contact $contact, array $items, Tag $tag, $searchResult = null)
     {
-        return $this->callMethod('book', [$contact, $items]);
+        return $this->callMethod('book', [$contact, $items, $tag, $searchResult]);
     }
 
     /**
@@ -119,10 +123,11 @@ final class Main // implements HotelInterface
         return $this->callMethod('cancelOrder', [$orderId, $itemId]);
     }
 
+
     public function confirmOrder(int $orderId, int $itemId, string $price, string $currency)
     {
         return $this->callMethod('confirmOrder', [
-           $orderId, $itemId, $price, $currency
+            $orderId, $itemId, $price, $currency
         ]);
     }
 }

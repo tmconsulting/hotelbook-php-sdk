@@ -58,7 +58,7 @@ class Detail extends AbstractMethod
         $errors = $this->getErrors($results);
         $values = [];
 
-        if (emptyArray($errors)) {
+        if (empty($errors)) {
             $values = $this->form($results);
         }
 

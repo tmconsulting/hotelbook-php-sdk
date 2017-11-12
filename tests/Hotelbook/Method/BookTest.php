@@ -6,22 +6,16 @@ use App\Hotelbook\Method\Book;
 use App\Hotelbook\Object\Contact;
 use App\Hotelbook\Object\Hotel\BookItem;
 use App\Hotelbook\Object\Hotel\BookPassenger;
+use App\Hotelbook\Object\Hotel\Tag;
+use App\Hotelbook\Object\Results\BookResult;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
-use App\Hotelbook\Object\Results\BookResult;
 
 class BookTest extends TestCase
 {
     public function testHowBookMethodBuildRequest()
     {
-        $bookMock = $this->getMockBuilder(Book::class)
-            ->setConstructorArgs([new ConnectorStub()])
-            ->setMethods(['getRandomTag'])
-            ->getMock();
-
-        $bookMock->expects($this->once())
-            ->method('getRandomTag')
-            ->willReturn('1');
+        $bookMock = new Book(new ConnectorStub());
 
         $contact = new Contact(
             'John Smith',
@@ -33,9 +27,12 @@ class BookTest extends TestCase
         $bookPessanger = new BookPassenger('Mr', 'John', 'Smith');
         $bookItem->addRoom([$bookPessanger]);
 
-        $xml = $bookMock->build([
-            $contact, [$bookItem]
-        ]);
+        //Tag
+        $tag = new Tag(1);
+
+        $xml = $this->formatXml($bookMock->build([
+            $contact, [$bookItem], $tag, null
+        ]));
 
         $this->assertEquals($this->getRequestProtocol('book-simple'), $xml);
     }

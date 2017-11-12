@@ -82,11 +82,7 @@ class Search extends AbstractMethod
         $response = $this->connector->request('POST', 'hotel_search', $results);
 
         $errors = $this->getErrors($response);
-        $values = [];
-
-        if (emptyArray($errors)) {
-            $values = $this->form($response);
-        }
+        $values = $this->form($response);
 
         return new SearchResult($values, $errors);
     }
@@ -102,6 +98,15 @@ class Search extends AbstractMethod
         $i = 0;
         $array = [];
         $search = current($response->HotelSearch);
+
+        $searchRooms = [];
+        foreach ($response->HotelSearchRequest->Rooms->Room as $room) {
+            $room = current($room);
+            $searchRooms[] = [
+                'adults' => $room['adults'],
+                'children' => $room['children'],
+            ];
+        }
 
         foreach ($response->Hotels->Hotel as $hotel) {
             if (!isset($hotel->Rooms->Room)) {
@@ -154,8 +159,11 @@ class Search extends AbstractMethod
                 ];
             }
 
+            $array[$i]['searchRooms'] = $searchRooms;
+
             $i++;
         }
+
 
         return $array;
     }

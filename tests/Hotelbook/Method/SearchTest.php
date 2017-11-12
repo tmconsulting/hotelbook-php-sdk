@@ -24,9 +24,11 @@ class SearchTest extends TestCase
         $checkInDate  = Carbon::parse('03-11-2017');
         $checkOutDate = Carbon::parse('10-11-2017');
 
-        $xml = $search->build([2, $checkInDate, $checkOutDate, [
+        $xml = $this->formatXml($search->build([2, $checkInDate, $checkOutDate, [
             new SearchPassenger(1, [12])
-        ]]);
+        ]]));
+
+        file_put_contents('search.xml', $xml);
 
         $this->assertEquals($this->getRequestProtocol('search-simple'), $xml);
     }

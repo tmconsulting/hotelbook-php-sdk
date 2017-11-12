@@ -15,8 +15,10 @@ use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Object\Contact;
 use App\Hotelbook\Object\Hotel\BookItem;
 use App\Hotelbook\Object\Hotel\BookPassenger;
-use Money\Parser\StringToUnitsParser;
+use App\Hotelbook\Object\Hotel\Dictionary\Title;
+use App\Hotelbook\Object\Hotel\Tag;
 use App\Hotelbook\Object\Results\BookResult;
+use Money\Parser\StringToUnitsParser;
 
 class Book extends AbstractMethod
 {
@@ -35,11 +37,6 @@ class Book extends AbstractMethod
         $this->connector = $connector;
     }
 
-    protected function getRandomTag()
-    {
-        return (string)random_int(10000, 99999);
-    }
-
     /**
      * @param $params
      * @return mixed
@@ -48,7 +45,8 @@ class Book extends AbstractMethod
     {
         /** @var Contact $contact */
         /** @var BookItem[] $items */
-        [$contact, $items] = $params;
+        /** @var Tag $tag */
+        [$contact, $items, $tag, $searchResult] = $params;
 
         $xml = new \SimpleXMLElement('<AddOrderRequest/>');
 
@@ -58,7 +56,7 @@ class Book extends AbstractMethod
         $contactXml->addChild('Phone', $contact->getPhone());
         $contactXml->addChild('Comment', $contact->getComment());
 
-        $xml->addChild('Tag', $this->getRandomTag());
+        $xml->addChild('Tag', $tag->getTag());
 
         $hotelItems = $xml->addChild('Items');
 
@@ -69,7 +67,8 @@ class Book extends AbstractMethod
             $search->addAttribute('resultId', $item->getResultId());
             $hotel->addChild('PayForm', 'cashless'); // оплата безналом по умолчанию
             $roomsXml = $hotel->addChild('Rooms');
-            foreach ($this->paxHandling($item) as $room) {
+
+            foreach ($this->paxHandling($item, $searchResult) as $room) {
                 $roomXml = $roomsXml->addChild('Room');
                 /** @var BookPassenger $person */
                 foreach ($room as $person) {
@@ -80,39 +79,13 @@ class Book extends AbstractMethod
 
                     if ($person->isChild()) {
                         $pax->addAttribute('child', 'true');
-                        $pax->addAttribute('age', $person->getAge());
+                        $pax->addAttribute('age', (string)$person->getAge());
                     }
                 }
             }
         }
 
         return $xml->asXML();
-    }
-
-    /**
-     * Обработка паксов. Дробит взрослых и детей на две части,
-     * добавляет TBA для не указанных человек (на основе поиска)
-     * и затем детей кидает в конец списка.
-     *
-     * @link http://xmldoc.hotelbook.ru/ru/hotels/add-order.html#roompax
-     * @param \App\Hotelbook\Object\Hotel\BookItem $bookItem
-     * @return \App\Hotelbook\Method\Collection
-     */
-    protected function paxHandling(BookItem $bookItem)
-    {
-        $childs = [];
-        $adults = [];
-        foreach ($bookItem->getRooms() as $index => $room) {
-            foreach ($room as $person) {
-                if ($person->isChild()) {
-                    $childs[$index][] = $person;
-                } else {
-                    $adults[$index][] = $person;
-                }
-            }
-        }
-
-        return collect($this->putChildrenToBottom($adults, $childs));
     }
 
     /**
@@ -141,6 +114,69 @@ class Book extends AbstractMethod
     }
 
     /**
+     * Обработка паксов. Дробит взрослых и детей на две части,
+     * добавляет TBA для не указанных человек (на основе поиска)
+     * и затем детей кидает в конец списка.
+     *
+     * @link http://xmldoc.hotelbook.ru/ru/hotels/add-order.html#roompax
+     * @param \App\Hotelbook\Object\Hotel\BookItem $bookItem
+     * @param $searchResult
+     * @return \App\Hotelbook\Method\Collection
+     */
+    protected function paxHandling(BookItem $bookItem, $searchResult)
+    {
+        $childs = [];
+        $adults = [];
+        foreach ($bookItem->getRooms() as $index => $room) {
+            foreach ($room as $person) {
+                if ($person->isChild()) {
+                    $childs[$index][] = $person;
+                } else {
+                    $adults[$index][] = $person;
+                }
+            }
+        }
+
+        if ($searchResult !== null) {
+            $adults = $this->tbaAutoComplete($searchResult, $adults);
+            $childs = $this->tbaAutoComplete($searchResult, $childs, true);
+        }
+
+        return collect($this->putChildrenToBottom($adults, $childs));
+    }
+
+    /**
+     * Дополняет массив TBA-персонами (не указанные личности в заказе.)
+     * Означает заполнение бумажек на месте.
+     *
+     * @param $payload
+     * @param array $pax
+     * @param bool $child
+     * @return array
+     */
+    protected function tbaAutoComplete($payload, array $pax, $child = false)
+    {
+        $title = $child ? Title::CHILD : Title::MR;
+        $name = $child ? 'TBA_CHILD_' : 'TBA_ADULT_';
+
+        foreach ($payload['searchRooms'] as $roomKey => $room) {
+            $count = !$child ? $room['adults'] : $room['children'];
+            $currentCount = count($pax[$roomKey]);
+
+            for ($i = $currentCount; $i < $count; $i++) {
+                $pax[$roomKey][] = new BookPassenger(
+                    $title,
+                    $name . $i,
+                    $name . $i,
+                    $child
+                );
+            }
+        }
+
+        return $pax;
+    }
+
+    /**
      * Метод для выполнения самого запроса
      * @param $xml <- builds results
      * @return mixed
@@ -153,7 +189,7 @@ class Book extends AbstractMethod
         $errors = $this->getErrors($response);
         $values = [];
 
-        if (emptyArray($errors)) {
+        if (empty($errors)) {
             $values = $this->form($response);
         }
 
@@ -167,7 +203,7 @@ class Book extends AbstractMethod
      */
     public function form($response)
     {
-        $orderId = (int) $response->OrderId;
+        $orderId = (int)$response->OrderId;
         $items = [];
 
         foreach ($response->Items->ItemId as $item) {
