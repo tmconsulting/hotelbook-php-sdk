@@ -16,6 +16,7 @@ use App\Hotelbook\Object\Contact;
 use App\Hotelbook\Object\Hotel\BookItem;
 use App\Hotelbook\Object\Hotel\BookPassenger;
 use App\Hotelbook\Object\Hotel\Dictionary\Title;
+use App\Hotelbook\Object\Hotel\Price;
 use App\Hotelbook\Object\Hotel\Tag;
 use App\Hotelbook\Object\Results\BookResult;
 use Money\Parser\StringToUnitsParser;
@@ -161,14 +162,16 @@ class Book extends AbstractMethod
 
         foreach ($payload['searchRooms'] as $roomKey => $room) {
             $count = !$child ? $room['adults'] : $room['children'];
-            $currentCount = count($pax[$roomKey]);
+            $currentCount = !isset($pax[$roomKey]) ? 0 : count($pax[$roomKey]);
 
             for ($i = $currentCount; $i < $count; $i++) {
                 $pax[$roomKey][] = new BookPassenger(
                     $title,
                     $name . $i,
                     $name . $i,
-                    $child
+                    $child,
+                $child ? true : false,
+                    $child ? (int) $room['ages'][$i] : null
                 );
             }
         }

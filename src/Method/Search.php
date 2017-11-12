@@ -101,10 +101,17 @@ class Search extends AbstractMethod
 
         $searchRooms = [];
         foreach ($response->HotelSearchRequest->Rooms->Room as $room) {
-            $room = current($room);
+            $attributes = current($room);
+
+            $ages = [];
+            foreach ($room->ChildAge as $age) {
+                $ages[] = (string) $age;
+            }
+
             $searchRooms[] = [
-                'adults' => $room['adults'],
-                'children' => $room['children'],
+                'adults' => $attributes['adults'],
+                'children' => isset($attributes['children']) ? $attributes['children'] : "0",
+                'ages' => $ages
             ];
         }
 
