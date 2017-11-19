@@ -9,18 +9,19 @@
 namespace App\Hotelbook;
 
 use App\Hotelbook\Connector\Connector;
-use App\Hotelbook\Method\AnnulOrder;
-use App\Hotelbook\Method\Book;
-use App\Hotelbook\Method\CancelOrder;
-use App\Hotelbook\Method\ConfirmOrder;
-use App\Hotelbook\Method\Detail;
+use App\Hotelbook\Method\Dynamic\AnnulOrder;
+use App\Hotelbook\Method\Dynamic\Book;
+use App\Hotelbook\Method\Dynamic\CancelOrder;
+use App\Hotelbook\Method\Dynamic\ConfirmOrder;
+use App\Hotelbook\Method\Dynamic\Detail;
+use App\Hotelbook\Method\Dynamic\Search;
 use App\Hotelbook\Method\DynamicResolver;
-use App\Hotelbook\Method\Search;
 use App\Hotelbook\Object\Contact;
 use App\Hotelbook\Object\Hotel\BookItem;
 use App\Hotelbook\Object\Hotel\SearchParameter;
 use App\Hotelbook\Object\Hotel\Tag;
 use Carbon\Carbon;
+
 
 /**
  * Class Main

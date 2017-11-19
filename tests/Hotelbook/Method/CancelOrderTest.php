@@ -4,7 +4,7 @@ namespace Neo\Hotelbook\Tests\Hotelbook\Method;
 
 use App\Hotelbook\Method\AnnulOrder;
 
-use App\Hotelbook\Method\CancelOrder;
+use App\Hotelbook\Method\Dynamic\CancelOrder;
 use App\Hotelbook\Object\Results\AnnulOrderResult;
 use App\Hotelbook\Object\Results\CancelOrderResult;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;

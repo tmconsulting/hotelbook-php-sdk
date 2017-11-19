@@ -2,14 +2,14 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method;
+namespace App\Hotelbook\Method\Dynamic;
 
 use App\Hotelbook\Connector\ConnectorInterface;
-use App\Hotelbook\Connector\Former\FormerInterface;
 use App\Hotelbook\Connector\Former\OrderFormer;
-use App\Hotelbook\Object\Results\ConfirmOrderResult;
+use App\Hotelbook\Object\Results\CancelOrderResult;
+use App\Hotelbook\Method\AbstractMethod;
 
-class ConfirmOrder extends AbstractMethod
+class CancelOrder extends AbstractMethod
 {
     private $connector;
     private $former;
@@ -25,33 +25,48 @@ class ConfirmOrder extends AbstractMethod
         return $params;
     }
 
-    public function handle($params)
+    protected function proceedChange($params)
     {
-        [$orderId, $itemId, $price, $currency] = $params;
+        [$orderId, $itemId] = $params;
 
-        $result = $this->connector->request(
+        return $this->connector->request(
             'GET',
             'confirm_order',
             null,
             [
                 'query' => [
                     'item_id' => $itemId,
-                    'order_id' => $orderId,
-                    'total_price' => $price,
-                    'currency' => $currency
+                    'order_id' => $orderId
                 ]
             ]
         );
+    }
+
+    public function handle($params)
+    {
+        [$orderId, $itemId] = $params;
+
+        $this->connector->request(
+            'GET',
+            'cancellation_order',
+            null,
+            [
+                'query' => [
+                    'item_id' => $itemId,
+                    'order_id' => $orderId
+                ]
+            ]
+        );
+        $result = $this->proceedChange($params);
 
         $errors = $this->getErrors($result);
         $values = [];
 
         if (empty($errors)) {
-            file_put_contents('confirm-order.xml', $result->asXML());
             $values = $this->form($result);
         }
 
-        return new ConfirmOrderResult($values, $errors);
+        return new CancelOrderResult($values, $errors);
     }
 
     public function form($response)

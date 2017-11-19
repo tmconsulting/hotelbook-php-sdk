@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method;
+namespace App\Hotelbook\Method\Dynamic;
 
 use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Object\Contact;
@@ -19,6 +19,7 @@ use App\Hotelbook\Object\Hotel\Dictionary\Title;
 use App\Hotelbook\Object\Hotel\Tag;
 use App\Hotelbook\Object\Results\BookResult;
 use Money\Parser\StringToUnitsParser;
+use App\Hotelbook\Method\AbstractMethod;
 
 class Book extends AbstractMethod
 {

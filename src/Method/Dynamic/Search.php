@@ -9,13 +9,14 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method;
+namespace App\Hotelbook\Method\Dynamic;
 
 use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Object\Hotel\SearchPassenger;
 use App\Hotelbook\Object\Results\SearchResult;
 use Carbon\Carbon;
 use SimpleXMLElement;
+use App\Hotelbook\Method\AbstractMethod;
 
 class Search extends AbstractMethod
 {
