@@ -16,7 +16,6 @@ use App\Hotelbook\Object\Contact;
 use App\Hotelbook\Object\Hotel\BookItem;
 use App\Hotelbook\Object\Hotel\BookPassenger;
 use App\Hotelbook\Object\Hotel\Dictionary\Title;
-use App\Hotelbook\Object\Hotel\Price;
 use App\Hotelbook\Object\Hotel\Tag;
 use App\Hotelbook\Object\Results\BookResult;
 use Money\Parser\StringToUnitsParser;
@@ -170,8 +169,8 @@ class Book extends AbstractMethod
                     $name . $i,
                     $name . $i,
                     $child,
-                $child ? true : false,
-                    $child ? (int) $room['ages'][$i] : null
+                    $child ? true : false,
+                    $child ? (int)$room['ages'][$i] : null
                 );
             }
         }
@@ -187,7 +186,7 @@ class Book extends AbstractMethod
     public function handle($xml)
     {
         $response = $this->connector->request('POST', 'add_order', $xml);
-        // file_put_contents('book-response.xml', $response->asXML());
+//        file_put_contents('book-response.xml', $response->asXML());
 
         $errors = $this->getErrors($response);
         $values = [];

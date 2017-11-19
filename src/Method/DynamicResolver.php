@@ -29,11 +29,14 @@ trait DynamicResolver
      * @param array $params
      * @return mixed
      */
-    private function callMethod($name, array $params)
+    private function callMethod($name, array $params = [])
     {
+        echo 'RUN METHOD ' . $name . "\n";
         $method = $this->getMethod($name);
-        $requestToSend = $method->build($params);
+        echo 'BUILD METHOD ' . $name . "\n";
+        $requestToSend =     $method->build($params);
 
+        echo 'QUERY METHOD ' . $name . "\n";
         return $method->handle($requestToSend);
     }
 

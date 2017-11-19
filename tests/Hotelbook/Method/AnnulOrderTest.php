@@ -4,25 +4,23 @@ namespace Neo\Hotelbook\Tests\Hotelbook\Method;
 
 use App\Hotelbook\Method\AnnulOrder;
 
-use App\Hotelbook\Method\CancelOrder;
 use App\Hotelbook\Object\Results\AnnulOrderResult;
-use App\Hotelbook\Object\Results\CancelOrderResult;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
 
-class CancelOrderTest extends TestCase
+class AnnulOrderTest extends TestCase
 {
-    public function testHowCancelOrderMethodBuildTheRequest()
+    public function testHowAnnulOrderMethodBuildTheRequest()
     {
-        $cancelOrder = new CancelOrder(new ConnectorStub());
+        $cancelOrder = new AnnulOrder(new ConnectorStub());
         $params = [123, 123];
         $this->assertEquals($params, $cancelOrder->build($params));
     }
 
-    public function testHowCancelOrderMethodHandleRequest()
+    public function testHowAnnulOrderMethodHandleRequest()
     {
-        $mock = $this->getMockBuilder(CancelOrder::class)
-            ->setConstructorArgs([new ConnectorStub('cancel-order')])
+        $mock = $this->getMockBuilder(AnnulOrder::class)
+            ->setConstructorArgs([new ConnectorStub('annul-order')])
             ->setMethods(['getErrors', 'form'])
             ->getMock();
 
@@ -34,6 +32,6 @@ class CancelOrderTest extends TestCase
             ->method('form')
             ->willReturn([]);
 
-        $this->assertInstanceOf(CancelOrderResult::class, $mock->handle([1, 2]));
+        $this->assertInstanceOf(AnnulOrderResult::class, $mock->handle([1, 2]));
     }
 }

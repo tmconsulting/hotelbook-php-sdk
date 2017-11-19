@@ -50,12 +50,26 @@ class City
      */
     protected $lgn;
 
-    /**
-     * Область, в которой находится город.
-     *
-     * @var string
-     */
-    protected $region;
+
+    public function __construct
+    (
+        int $id,
+        int $countryId,
+        int $hotelCount,
+        bool $vehicleRent,
+        string $name,
+        float $lat,
+        float $lgn
+    )
+    {
+        $this->setId($id);
+        $this->setCountryId($countryId);
+        $this->setHotelCount($hotelCount);
+        $this->setVehicleRent($vehicleRent);
+        $this->setName($name);
+        $this->setLat($lat);
+        $this->setLgn($lgn);
+    }
 
     /**
      * @return int
@@ -167,21 +181,5 @@ class City
     public function setLgn(float $lgn)
     {
         $this->lgn = $lgn;
-    }
-
-    /**
-     * @return string
-     */
-    public function getRegion()
-    {
-        return $this->region;
-    }
-
-    /**
-     * @param string $region
-     */
-    public function setRegion(string $region)
-    {
-        $this->region = $region;
     }
 }

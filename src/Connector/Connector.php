@@ -50,6 +50,8 @@ class Connector implements ConnectorInterface
         $query = http_build_query(array_merge($options['query'] ?? [], $this->authentication()));
         $curl = curl_init();
 
+        echo $query . "\n";
+
         if ($method === 'POST') {
             curl_setopt($curl, CURLOPT_POST, true);
             curl_setopt($curl, CURLOPT_POSTFIELDS, 'request=' . $body);
@@ -68,9 +70,13 @@ class Connector implements ConnectorInterface
             'Accept-Encoding: gzip, deflate'
         ]);
 
+        echo "WAITING FOR CURL!";
         $response = curl_exec($curl);
+        echo "EXIT FOR CURL!";
+
         $this->handleError($curl);
 
+        echo "Closing CURL!";
         curl_close($curl);
 
         return new SimpleXMLElement($response);

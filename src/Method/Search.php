@@ -20,6 +20,8 @@ use SimpleXMLElement;
 class Search extends AbstractMethod
 {
     const DATE_FORMAT = 'Y-m-d';
+    const TIMEOUT = 1;
+
     /**
      * @var \App\Hotelbook\Connector\ConnectorInterface
      */
@@ -52,7 +54,7 @@ class Search extends AbstractMethod
         $request->addAttribute('checkIn', $checkInDate->format(self::DATE_FORMAT));
         $request->addAttribute('duration', (string)$checkInDate->diffInDays($checkOutDate));
         $request->addAttribute('confirmation', 'online');
-        //   $request->addAttribute('limitResults', '1');
+        $request->addAttribute('limitResults', '100');
 
         $roomsXml = $xml->addChild('Rooms');
 
@@ -73,16 +75,41 @@ class Search extends AbstractMethod
         return $xml->asXML();
     }
 
+    protected function preHandle($results)
+    {
+        return $this->connector->request('POST', 'hotel_search', $results, ['query' => ['async' => 1, 'timeout' => 5]]);
+    }
+
     /**
      * @param $results <- builds results
      * @return mixed
      */
     public function handle($results)
     {
-        $response = $this->connector->request('POST', 'hotel_search', $results);
+        $preResponse = $this->preHandle($results);
+
+        do {
+            $response = $this->connector->request('GET', 'hotel_search_async', null, [
+                'query' =>
+                    [
+                        'search_id' => (int)$preResponse->HotelSearchId,
+                        'limit_results' => 10
+                    ]
+            ]);
+            usleep(100000);
+        } while (
+            (string)$response->Hotels->attributes()['searchingIsCompleted'] !== 'true'
+            &&
+            empty($this->getErrors($response))
+        );
+
+        $values = [];
 
         $errors = $this->getErrors($response);
-        $values = $this->form($response);
+
+        if (empty($errors)) {
+            $values = $this->form([$preResponse, $response]);
+        }
 
         return new SearchResult($values, $errors);
     }
@@ -93,19 +120,20 @@ class Search extends AbstractMethod
      * @param $response
      * @return array
      */
-    public function form($response)
+    public function form($data)
     {
+        [$preResponse, $response] = $data;
         $i = 0;
         $array = [];
         $search = current($response->HotelSearch);
 
         $searchRooms = [];
-        foreach ($response->HotelSearchRequest->Rooms->Room as $room) {
+        foreach ($preResponse->HotelSearchRequest->Rooms->Room as $room) {
             $attributes = current($room);
 
             $ages = [];
             foreach ($room->ChildAge as $age) {
-                $ages[] = (string) $age;
+                $ages[] = (string)$age;
             }
 
             $searchRooms[] = [

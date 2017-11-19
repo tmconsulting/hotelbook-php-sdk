@@ -60,6 +60,41 @@ class Country
     protected $schengen;
 
     /**
+     * Country constructor.
+     * @param int $id
+     * @param string $name
+     * @param string|null $isoAlpha2
+     * @param string|null $isoAlpha3
+     * @param int|null $isoNumeric
+     * @param string|null $currencyAlpha
+     * @param int|null $currencyNumeric
+     * @param bool $cis
+     * @param bool $schengen
+     */
+    public function __construct(
+        int $id,
+        string $name,
+        string $isoAlpha2 = '',
+        string $isoAlpha3 = '',
+        int $isoNumeric = 0,
+        string $currencyAlpha = '',
+        int $currencyNumeric = 0,
+        bool $cis = false,
+        bool $schengen = false
+    )
+    {
+        $this->setId($id);
+        $this->setName($name);
+        $this->setIsoAlpha2($isoAlpha2);
+        $this->setIsoAlpha3($isoAlpha3);
+        $this->setIsoNumeric($isoNumeric);
+        $this->setCurrencyAlpha($currencyAlpha);
+        $this->setCurrencyNumeric($currencyNumeric);
+        $this->setCIS($cis);
+        $this->setSchengen($schengen);
+    }
+
+    /**
      * @return int
      */
     public function getId()
