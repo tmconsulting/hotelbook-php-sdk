@@ -8,7 +8,7 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook\Method;
 
-use App\Hotelbook\Method\Search;
+use App\Hotelbook\Method\Dynamic\Search;
 use App\Hotelbook\Object\Hotel\SearchPassenger;
 use App\Hotelbook\Object\Results\SearchResult;
 use Carbon\Carbon;

@@ -9,11 +9,12 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method;
+namespace App\Hotelbook\Method\Dynamic;
 
 use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Object\Results\DetailResult;
 use Money\Parser\StringToUnitsParser;
+use App\Hotelbook\Method\AbstractMethod;
 
 class Detail extends AbstractMethod
 {

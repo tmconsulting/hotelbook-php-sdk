@@ -2,13 +2,15 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method;
+namespace App\Hotelbook\Method\Dynamic;
 
 use App\Hotelbook\Connector\ConnectorInterface;
+use App\Hotelbook\Connector\Former\FormerInterface;
 use App\Hotelbook\Connector\Former\OrderFormer;
-use App\Hotelbook\Object\Results\CancelOrderResult;
+use App\Hotelbook\Object\Results\ConfirmOrderResult;
+use App\Hotelbook\Method\AbstractMethod;
 
-class CancelOrder extends AbstractMethod
+class ConfirmOrder extends AbstractMethod
 {
     private $connector;
     private $former;
@@ -26,29 +28,31 @@ class CancelOrder extends AbstractMethod
 
     public function handle($params)
     {
-        [$orderId, $itemId] = $params;
+        [$orderId, $itemId, $price, $currency] = $params;
 
         $result = $this->connector->request(
             'GET',
-            'cancellation_order',
+            'confirm_order',
             null,
             [
                 'query' => [
                     'item_id' => $itemId,
-                    'order_id' => $orderId
+                    'order_id' => $orderId,
+                    'total_price' => $price,
+                    'currency' => $currency
                 ]
             ]
         );
-
 
         $errors = $this->getErrors($result);
         $values = [];
 
         if (empty($errors)) {
+            file_put_contents('confirm-order.xml', $result->asXML());
             $values = $this->form($result);
         }
 
-        return new CancelOrderResult($values, $errors);
+        return new ConfirmOrderResult($values, $errors);
     }
 
     public function form($response)

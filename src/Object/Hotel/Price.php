@@ -7,10 +7,15 @@ class Price
     private $amount;
     private $currency;
 
+    private function precise($amount)
+    {
+        return (string) round((float)$amount, 1);
+    }
+
     public function __construct($amount, $currency)
     {
         $this->amount = $amount;
-        $this->currency = $currency;
+        $this->currency = $this->precise($currency);
     }
 
     public function getAmount()

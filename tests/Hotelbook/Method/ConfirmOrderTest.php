@@ -2,7 +2,7 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook\Method;
 
-use App\Hotelbook\Method\ConfirmOrder;
+use App\Hotelbook\Method\Dynamic\ConfirmOrder;
 use App\Hotelbook\Object\Results\CancelOrderResult;
 use App\Hotelbook\Object\Results\ConfirmOrderResult;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;

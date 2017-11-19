@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response date="2017-11-19T16:48:44+03:00">
+    <Cities>
+        <City id="5177" country="120" resort="120" has_airport="0" special="0" latitude="-13.8332996368"
+              longitude="-171.7330017090" hotel_count="15" has_vehicle_rent="0" name_en="Apia" name_ru="Эпия">
+            <![CDATA[Эпия]]></City>
+        <City id="5658" country="120" resort="120" has_airport="0" special="0" latitude="-13.8332996368"
+              longitude="-171.9830017090" hotel_count="1" has_vehicle_rent="0" name_en="Mulifanua" name_ru="Мулифануа">
+            <![CDATA[Мулифануа]]></City>
+        <City id="5659" country="120" resort="120" has_airport="0" special="0" latitude="-14.0080003738"
+              longitude="-171.7790069580" hotel_count="5" has_vehicle_rent="0" name_en="Siumu" name_ru="Сиуму">
+            <![CDATA[Сиуму]]></City>
+        <City id="7074" country="120" resort="120" has_airport="0" special="0" latitude="-13.9941072464"
+              longitude="-171.8774108887" hotel_count="2" has_vehicle_rent="0" name_en="Samoa-Saanapu"
+              name_ru="Самоа-Саанапу"><![CDATA[Самоа-Саанапу]]></City>
+        <City id="7239" country="120" resort="120" has_airport="0" special="0" latitude="-13.6597824097"
+              longitude="-172.4319458008" hotel_count="4" has_vehicle_rent="0" name_en="Samoa-Savai'i Island"
+              name_ru="Остров Самоа-Саваи"><![CDATA[Остров Самоа-Саваи]]></City>
+        <City id="44596" country="120" resort="120" has_airport="0" special="0" latitude="-13.8775606155"
+              longitude="-171.5904846191" hotel_count="1" has_vehicle_rent="0" name_en="Faleapuna" name_ru="Фалеапуна">
+            <![CDATA[Фалеапуна]]></City>
+        <City id="61734" country="120" resort="120" has_airport="0" special="0" latitude="-13.5193891525"
+              longitude="-172.6372222900" hotel_count="1" has_vehicle_rent="0" name_en="Asau" name_ru="Асау">
+            <![CDATA[Асау]]></City>
+        <City id="61736" country="120" resort="120" has_airport="0" special="0" latitude="-13.8660097122"
+              longitude="-172.0731964111" hotel_count="1" has_vehicle_rent="0" name_en="Cape Fatuosofia"
+              name_ru="Мыс Фатуософия"><![CDATA[Мыс Фатуософия]]></City>
+        <City id="61737" country="120" resort="120" has_airport="0" special="0" latitude="-14.0452775955"
+              longitude="-171.4408264160" hotel_count="2" has_vehicle_rent="0" name_en="Lalomanu" name_ru="Лаломану">
+            <![CDATA[Лаломану]]></City>
+        <City id="61738" country="120" resort="120" has_airport="0" special="0" latitude="0.0000000000"
+              longitude="0.0000000000" hotel_count="1" has_vehicle_rent="0" name_en="Lolomalava" name_ru="Лоломалава ">
+            <![CDATA[Лоломалава ]]></City>
+        <City id="61739" country="120" resort="120" has_airport="0" special="0" latitude="0.0000000000"
+              longitude="0.0000000000" hotel_count="1" has_vehicle_rent="0" name_en="Manase" name_ru="Манас">
+            <![CDATA[Манас]]></City>
+        <City id="61740" country="120" resort="120" has_airport="0" special="0" latitude="0.0000000000"
+              longitude="0.0000000000" hotel_count="1" has_vehicle_rent="0" name_en="Sa'anapu-Tai"
+              name_ru="Саанапу-Тай"><![CDATA[Саанапу-Тай]]></City>
+        <City id="61741" country="120" resort="120" has_airport="0" special="0" latitude="-13.7380781174"
+              longitude="-172.2216491699" hotel_count="2" has_vehicle_rent="0" name_en="Salelologa"
+              name_ru="Салелолога"><![CDATA[Салелолога]]></City>
+    </Cities>
+</Response>
