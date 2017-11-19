@@ -6,8 +6,8 @@ namespace App\Hotelbook\Method\Dynamic;
 
 use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Connector\Former\OrderFormer;
-use App\Hotelbook\Object\Results\CancelOrderResult;
 use App\Hotelbook\Method\AbstractMethod;
+use App\Hotelbook\Object\Results\CancelOrderResult;
 
 class CancelOrder extends AbstractMethod
 {
@@ -58,14 +58,7 @@ class CancelOrder extends AbstractMethod
             ]
         );
         $result = $this->proceedChange($params);
-
-        $errors = $this->getErrors($result);
-        $values = [];
-
-        if (empty($errors)) {
-            $values = $this->form($result);
-        }
-
+        [$values, $errors] = $this->performResult($result);
         return new CancelOrderResult($values, $errors);
     }
 

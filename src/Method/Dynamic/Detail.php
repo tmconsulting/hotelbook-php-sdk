@@ -12,9 +12,9 @@ declare(strict_types=1);
 namespace App\Hotelbook\Method\Dynamic;
 
 use App\Hotelbook\Connector\ConnectorInterface;
+use App\Hotelbook\Method\AbstractMethod;
 use App\Hotelbook\Object\Results\DetailResult;
 use Money\Parser\StringToUnitsParser;
-use App\Hotelbook\Method\AbstractMethod;
 
 class Detail extends AbstractMethod
 {
@@ -56,13 +56,7 @@ class Detail extends AbstractMethod
             'query' => [$optionKey => $value]
         ]);
 
-        $errors = $this->getErrors($results);
-        $values = [];
-
-        if (empty($errors)) {
-            $values = $this->form($results);
-        }
-
+        [$values, $errors] = $this->performResult($results);
         return new DetailResult($values, $errors);
     }
 

@@ -35,14 +35,8 @@ class City extends AbstractMethod
     public function handle($params)
     {
         $result = $this->connector->request('GET', 'cities', null, $params);
-
-        $errors = $this->getErrors($result);
-
-        if (!empty($errors)) {
-            return new CityResponse([], $errors);
-        }
-
-        return new CityResponse($this->form($result), $errors);
+        [$values, $errors] = $this->performResult($result);
+        return new CityResponse($values, $errors);
     }
 
     public function form($response)

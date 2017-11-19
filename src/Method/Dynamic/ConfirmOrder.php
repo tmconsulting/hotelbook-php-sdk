@@ -7,8 +7,8 @@ namespace App\Hotelbook\Method\Dynamic;
 use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Connector\Former\FormerInterface;
 use App\Hotelbook\Connector\Former\OrderFormer;
-use App\Hotelbook\Object\Results\ConfirmOrderResult;
 use App\Hotelbook\Method\AbstractMethod;
+use App\Hotelbook\Object\Results\ConfirmOrderResult;
 
 class ConfirmOrder extends AbstractMethod
 {
@@ -44,14 +44,7 @@ class ConfirmOrder extends AbstractMethod
             ]
         );
 
-        $errors = $this->getErrors($result);
-        $values = [];
-
-        if (empty($errors)) {
-            file_put_contents('confirm-order.xml', $result->asXML());
-            $values = $this->form($result);
-        }
-
+        [$values, $errors] = $this->performResult($result);
         return new ConfirmOrderResult($values, $errors);
     }
 

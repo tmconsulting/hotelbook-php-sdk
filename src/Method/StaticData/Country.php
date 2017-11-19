@@ -25,13 +25,8 @@ class Country extends AbstractMethod
     public function handle($params)
     {
         $result = $this->connector->request('GET', 'countries');
-        $errors = $this->getErrors($result);
-
-        if (!empty($errors)) {
-            return new CountryResponse([], $errors);
-        }
-
-        return new CountryResponse($this->form($result), $errors);
+        [$values, $errors] = $this->performResult($result);
+        return new CountryResponse($values, $errors);
     }
 
     public function form($response)

@@ -12,11 +12,11 @@ declare(strict_types=1);
 namespace App\Hotelbook\Method\Dynamic;
 
 use App\Hotelbook\Connector\ConnectorInterface;
+use App\Hotelbook\Method\AbstractMethod;
 use App\Hotelbook\Object\Hotel\SearchPassenger;
 use App\Hotelbook\Object\Results\SearchResult;
 use Carbon\Carbon;
 use SimpleXMLElement;
-use App\Hotelbook\Method\AbstractMethod;
 
 class Search extends AbstractMethod
 {
@@ -83,15 +83,7 @@ class Search extends AbstractMethod
     public function handle($results)
     {
         $response = $this->connector->request('POST', 'hotel_search', $results);
-
-        $values = [];
-
-        $errors = $this->getErrors($response);
-
-        if (empty($errors)) {
-            $values = $this->form([$preResponse, $response]);
-        }
-
+        [$values, $errors] = $this->performResult($response);
         return new SearchResult($values, $errors);
     }
 

@@ -12,6 +12,7 @@ declare(strict_types=1);
 namespace App\Hotelbook\Method\Dynamic;
 
 use App\Hotelbook\Connector\ConnectorInterface;
+use App\Hotelbook\Method\AbstractMethod;
 use App\Hotelbook\Object\Contact;
 use App\Hotelbook\Object\Hotel\BookItem;
 use App\Hotelbook\Object\Hotel\BookPassenger;
@@ -19,7 +20,6 @@ use App\Hotelbook\Object\Hotel\Dictionary\Title;
 use App\Hotelbook\Object\Hotel\Tag;
 use App\Hotelbook\Object\Results\BookResult;
 use Money\Parser\StringToUnitsParser;
-use App\Hotelbook\Method\AbstractMethod;
 
 class Book extends AbstractMethod
 {
@@ -187,15 +187,7 @@ class Book extends AbstractMethod
     public function handle($xml)
     {
         $response = $this->connector->request('POST', 'add_order', $xml);
-//        file_put_contents('book-response.xml', $response->asXML());
-
-        $errors = $this->getErrors($response);
-        $values = [];
-
-        if (empty($errors)) {
-            $values = $this->form($response);
-        }
-
+        [$values, $errors] = $this->performResult($response);
         return new BookResult($values, $errors);
     }
 

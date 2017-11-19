@@ -28,7 +28,6 @@ class AnnulOrder extends AbstractMethod
     public function handle($params)
     {
         [$orderId, $itemId] = $params;
-
         $result = $this->connector->request(
             'GET',
             'cancellation_order',
@@ -40,14 +39,7 @@ class AnnulOrder extends AbstractMethod
                 ]
             ]
         );
-
-        $errors = $this->getErrors($result);
-        $values = [];
-
-        if (empty($errors)) {
-            $values = $this->form($result);
-        }
-
+        [$values, $errors] = $this->performResult($result);
         return new AnnulOrderResult($values, $errors);
     }
 

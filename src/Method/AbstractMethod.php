@@ -33,6 +33,18 @@ abstract class AbstractMethod implements MethodInterface
         return $errors;
     }
 
+    protected function performResult($result)
+    {
+        $errors = $this->getErrors($result);
+        $values = [];
+
+        if (empty($errors)) {
+            $values = $this->form($result);
+        }
+
+        return [$values, $errors];
+    }
+
     /**
      * @param $sum
      * @param $currency
