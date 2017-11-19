@@ -8,7 +8,8 @@ use App\Hotelbook\Method\DynamicResolver;
 use App\Hotelbook\Method\StaticData\Country;
 use App\Hotelbook\Object\Hotel\Dictionary\Country as CountryModel;
 
-class StaticData {
+class StaticData
+{
     use DynamicResolver;
 
     /**
@@ -42,5 +43,4 @@ class StaticData {
     {
         return $this->callMethod('country');
     }
-
 }

@@ -22,7 +22,6 @@ use App\Hotelbook\Object\Hotel\SearchParameter;
 use App\Hotelbook\Object\Hotel\Tag;
 use Carbon\Carbon;
 
-
 /**
  * Class Main
  *

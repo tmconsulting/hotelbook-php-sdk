@@ -24,5 +24,4 @@ class CountryResponse extends ResultProceeder
 
         $this->items = $newItems;
     }
-
 }

@@ -8,7 +8,6 @@ use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Method\AbstractMethod;
 use App\Hotelbook\Object\Results\StaticData\CountryResponse;
 
-
 class Country extends AbstractMethod
 {
     private $connector;
@@ -39,8 +38,7 @@ class Country extends AbstractMethod
     {
         $items = [];
 
-        foreach ($response->Countries->Country as $country)
-        {
+        foreach ($response->Countries->Country as $country) {
             $items[] = [
                 'id' => (string)$country->attributes()['id'],
                 'name' => (string) $country

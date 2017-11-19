@@ -51,8 +51,7 @@ class City
     protected $lgn;
 
 
-    public function __construct
-    (
+    public function __construct(
         int $id,
         int $countryId,
         int $hotelCount,
@@ -60,8 +59,7 @@ class City
         string $name,
         float $lat,
         float $lgn
-    )
-    {
+    ) {
         $this->setId($id);
         $this->setCountryId($countryId);
         $this->setHotelCount($hotelCount);
