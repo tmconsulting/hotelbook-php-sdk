@@ -15,7 +15,6 @@ namespace App\Hotelbook\Object\Results\Method;
 
 use App\Hotelbook\Object\Results\ResultProceeder;
 
-
 /**
  * Class SearchResult
  *
