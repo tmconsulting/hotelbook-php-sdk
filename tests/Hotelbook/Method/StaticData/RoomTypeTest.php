@@ -10,15 +10,15 @@ use Neo\Hotelbook\Tests\TestCase;
 
 class RoomTypeTest extends TestCase
 {
-    public function testHowCountryMethodBuildsRequest()
+    public function testHowRoomTypeMethodBuildsRequest()
     {
         $mock = new RoomTypeMethod(new ConnectorStub());
         $params = [123, 123];
         $this->assertEquals($mock->build($params), $params);
     }
 
-    public function testHowCountryMethodHandlesRequest()
-    {   
+    public function testHowRoomTypeMethodHandlesRequest()
+    {
         $mock = $this->getMockBuilder(RoomTypeMethod::class)
             ->setConstructorArgs([new ConnectorStub('room-type')])
             ->setMethods(['getErrors'])

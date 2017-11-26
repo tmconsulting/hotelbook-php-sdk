@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response date="2017-11-26T15:31:46+03:00">
+    <RoomSizes>
+        <RoomSize id="2" name="DBL" pax="2" children="1" cots="2" search="1">
+            <![CDATA[двухместный номер (одна кровать)]]></RoomSize>
+        <RoomSize id="3" name="TWIN" pax="2" children="1" cots="2" search="1">
+            <![CDATA[двухместный номер (две кровати)]]></RoomSize>
+        <RoomSize id="7" name="DBL for Single use" pax="1" children="0" cots="0" search="1">
+            <![CDATA[DBL for sole use]]></RoomSize>
+        <RoomSize id="4" name="TWIN for Single use" pax="1" children="0" cots="0" search="1">
+            <![CDATA[двухместный номер для одноместного размещения]]></RoomSize>
+        <RoomSize id="1" name="SGL" pax="1" children="0" cots="0" search="1"><![CDATA[одноместный номер]]></RoomSize>
+        <RoomSize id="5" name="TRPL" pax="3" children="0" cots="0" search="1"><![CDATA[трехместный номер]]></RoomSize>
+        <RoomSize id="6" name="QUAD" pax="4" children="1" cots="0" search="1">
+            <![CDATA[четырехместный номер]]></RoomSize>
+        <RoomSize id="8" name="DBL OR TWIN" pax="2" children="1" cots="0" search="0">
+            <![CDATA[двухместный номер]]></RoomSize>
+    </RoomSizes>
+</Response>

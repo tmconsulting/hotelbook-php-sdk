@@ -6,6 +6,7 @@ use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Method\DynamicResolver;
 use App\Hotelbook\Method\StaticData\City;
 use App\Hotelbook\Method\StaticData\Country;
+use App\Hotelbook\Method\StaticData\RoomSize;
 use App\Hotelbook\Method\StaticData\RoomType;
 use App\Hotelbook\Object\Hotel\Dictionary\Country as CountryModel;
 
@@ -36,6 +37,7 @@ class StaticData
         //Hotel
 
         //Rooms
+        $this->setMethod('roomSize', new RoomSize($connector));
         $this->setMethod('roomType', new RoomType($connector));
     }
 
@@ -57,6 +59,15 @@ class StaticData
     public function city(CountryModel $country = null)
     {
         return $this->callMethod('city', [$country]);
+    }
+
+    /**
+     * Fetch all available room sizes.
+     * @return mixed
+     */
+    public function roomSize()
+    {
+        return $this->callMethod('roomSize');
     }
 
     /**

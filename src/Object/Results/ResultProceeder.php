@@ -17,6 +17,11 @@ abstract class ResultProceeder
     protected $items = [];
 
     /**
+     * @var TransformerInterface
+     */
+    protected $transformer;
+
+    /**
      * ResultProceeder constructor.
      *
      * @param array $items
@@ -24,7 +29,9 @@ abstract class ResultProceeder
      */
     public function __construct(array $items, array $errors = [])
     {
-        $this->items = $items;
+        $this->setTransformer();
+
+        $this->items = $this->transformer->transform($items);
         $this->errors = $errors;
     }
 
@@ -92,7 +99,16 @@ abstract class ResultProceeder
     public function setItems(array $items)
     {
         $this->items = $items;
-
         return $this;
     }
+
+    /**
+     * Set transformer method to implement in all of the
+     * @return void
+     */
+    protected function setTransformer()
+    {
+        $this->transformer = new DefaultTransformer();
+    }
+
 }

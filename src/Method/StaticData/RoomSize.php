@@ -6,9 +6,9 @@ namespace App\Hotelbook\Method\StaticData;
 
 use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Method\AbstractMethod;
-use App\Hotelbook\Object\Results\StaticData\RoomTypeResponse;
+use App\Hotelbook\Object\Results\StaticData\RoomSizeResponse;
 
-class RoomType extends AbstractMethod
+class RoomSize extends AbstractMethod
 {
     private $connector;
 
@@ -36,9 +36,9 @@ class RoomType extends AbstractMethod
      */
     public function handle($params)
     {
-        $result = $this->connector->request('GET', 'room_type', null, $params);
+        $result = $this->connector->request('GET', 'room_size', null, $params);
         [$values, $errors] = $this->performResult($result);
-        return new RoomTypeResponse($values, $errors);
+        return new RoomSizeResponse($values, $errors);
     }
 
     /**
@@ -49,10 +49,15 @@ class RoomType extends AbstractMethod
     {
         $items = [];
 
-        foreach ($response->RoomTypes->RoomType as $roomType) {
+        foreach ($response->RoomSizes->RoomSize as $roomSize) {
             $items[] = [
-                'id' => (int)$roomType->attributes()['id'],
-                'name' => (string)$roomType
+                'id' => (int)$roomSize->attributes()['id'],
+                'shortName' => (string)$roomSize->attributes()['name'],
+                'pax' => (int)$roomSize->attributes()['pax'],
+                'children' => (bool)$roomSize->attributes()['children'],
+                'cots' => (int)$roomSize->attributes()['cots'],
+                'searchable' => (bool)$roomSize->attributes()['search'],
+                'fullName' => (string)$roomSize
             ];
         }
 

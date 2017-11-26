@@ -2,35 +2,16 @@
 
 namespace App\Hotelbook\Object\Results\StaticData;
 
-use App\Hotelbook\Object\Hotel\Dictionary\Country;
 use App\Hotelbook\Object\Results\ResultProceeder;
+use App\Hotelbook\Object\Results\StaticData\Transformer\Country as CountryTransformer;
 
 class CountryResponse extends ResultProceeder
 {
     /**
-     * CountryResponse constructor.
-     * @param array $items
-     * @param array $errors
+     * Set transformer default.
      */
-    public function __construct(array $items, array $errors = [])
+    protected function setTransformer()
     {
-        parent::__construct($items, $errors);
-
-        $this->setItems($items);
-    }
-
-    /**
-     * @param array $items
-     * @return void
-     */
-    public function setItems(array $items)
-    {
-        $newItems = [];
-
-        foreach ($this->items as &$item) {
-            $newItems[] = new Country($item['id'], $item['name']);
-        }
-
-        $this->items = $newItems;
+        $this->transformer = new CountryTransformer();
     }
 }
