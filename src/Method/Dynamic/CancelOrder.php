@@ -7,7 +7,7 @@ namespace App\Hotelbook\Method\Dynamic;
 use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Connector\Former\OrderFormer;
 use App\Hotelbook\Method\AbstractMethod;
-use App\Hotelbook\Object\Results\CancelOrderResult;
+use App\Hotelbook\Object\Results\Method\CancelOrderResult;
 
 class CancelOrder extends AbstractMethod
 {

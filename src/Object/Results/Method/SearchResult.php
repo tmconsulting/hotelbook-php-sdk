@@ -9,7 +9,11 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Object\Results;
+namespace App\Hotelbook\Object\Results\Method;
+
+//TODO Array -> Objects
+
+use App\Hotelbook\Object\Results\ResultProceeder;
 
 /**
  * Class SearchResult

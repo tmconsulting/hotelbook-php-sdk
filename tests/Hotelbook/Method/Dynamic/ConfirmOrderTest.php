@@ -3,8 +3,7 @@
 namespace Neo\Hotelbook\Tests\Hotelbook\Method;
 
 use App\Hotelbook\Method\Dynamic\ConfirmOrder;
-use App\Hotelbook\Object\Results\CancelOrderResult;
-use App\Hotelbook\Object\Results\ConfirmOrderResult;
+use App\Hotelbook\Object\Results\Method\ConfirmOrderResult;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
 

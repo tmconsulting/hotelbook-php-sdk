@@ -14,14 +14,13 @@ namespace App\Hotelbook\Method\Dynamic;
 use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Method\AbstractMethod;
 use App\Hotelbook\Object\Hotel\SearchPassenger;
-use App\Hotelbook\Object\Results\SearchResult;
+use App\Hotelbook\Object\Results\Method\SearchResult;
 use Carbon\Carbon;
 use SimpleXMLElement;
 
 class Search extends AbstractMethod
 {
     const DATE_FORMAT = 'Y-m-d';
-    const TIMEOUT = 1;
 
     /**
      * @var \App\Hotelbook\Connector\ConnectorInterface
