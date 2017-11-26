@@ -4,19 +4,11 @@ declare(strict_types=1);
 
 namespace App\Hotelbook\Method\StaticData;
 
-use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Method\AbstractMethod;
 use App\Hotelbook\Object\Results\StaticData\CityResponse;
 
 class City extends AbstractMethod
 {
-    private $connector;
-
-    public function __construct(ConnectorInterface $connector)
-    {
-        $this->connector = $connector;
-    }
-
     public function build($params)
     {
         [$country] = $params;

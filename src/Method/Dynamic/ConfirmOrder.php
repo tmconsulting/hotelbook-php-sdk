@@ -12,12 +12,11 @@ use App\Hotelbook\Object\Results\Method\ConfirmOrderResult;
 
 class ConfirmOrder extends AbstractMethod
 {
-    private $connector;
     private $former;
 
     public function __construct(ConnectorInterface $connector)
     {
-        $this->connector = $connector;
+        parent::__construct($connector);
         $this->former = new OrderFormer();
     }
 

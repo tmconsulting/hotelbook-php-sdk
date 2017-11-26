@@ -4,23 +4,11 @@ declare(strict_types=1);
 
 namespace App\Hotelbook\Method\StaticData;
 
-use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Method\AbstractMethod;
 use App\Hotelbook\Object\Results\StaticData\RoomTypeResponse;
 
 class RoomType extends AbstractMethod
 {
-    private $connector;
-
-    /**
-     * RoomType constructor.
-     * @param ConnectorInterface $connector
-     */
-    public function __construct(ConnectorInterface $connector)
-    {
-        $this->connector = $connector;
-    }
-
     /**
      * @param $params
      * @return mixed

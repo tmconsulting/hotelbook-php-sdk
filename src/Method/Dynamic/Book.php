@@ -24,21 +24,6 @@ use Money\Parser\StringToUnitsParser;
 class Book extends AbstractMethod
 {
     /**
-     * @var \App\Hotelbook\Connector\ConnectorInterface
-     */
-    private $connector;
-
-    /**
-     * SearchResult constructor.
-     *
-     * @param \App\Hotelbook\Connector\ConnectorInterface $connector
-     */
-    public function __construct(ConnectorInterface $connector)
-    {
-        $this->connector = $connector;
-    }
-
-    /**
      * @param $params
      * @return mixed
      */

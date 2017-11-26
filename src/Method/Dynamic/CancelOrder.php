@@ -11,12 +11,12 @@ use App\Hotelbook\Object\Results\Method\CancelOrderResult;
 
 class CancelOrder extends AbstractMethod
 {
-    private $connector;
     private $former;
 
     public function __construct(ConnectorInterface $connector)
     {
-        $this->connector = $connector;
+        parent::__construct($connector);
+
         $this->former = new OrderFormer();
     }
 

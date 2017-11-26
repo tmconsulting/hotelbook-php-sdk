@@ -11,28 +11,12 @@ declare(strict_types=1);
 
 namespace App\Hotelbook\Method\Dynamic;
 
-use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Method\AbstractMethod;
 use App\Hotelbook\Object\Results\Method\DetailResult;
 use Money\Parser\StringToUnitsParser;
 
 class Detail extends AbstractMethod
 {
-    /**
-     * @var \App\Hotelbook\Connector\ConnectorInterface
-     */
-    private $connector;
-
-    /**
-     * SearchResult constructor.
-     *
-     * @param \App\Hotelbook\Connector\ConnectorInterface $connector
-     */
-    public function __construct(ConnectorInterface $connector)
-    {
-        $this->connector = $connector;
-    }
-
     /**
      * http://xmldoc.hotelbook.pro/html/ru/hotels/hotel-detail.html
      * @param $params

@@ -4,19 +4,19 @@ declare(strict_types=1);
 
 namespace App\Hotelbook\Method\Dynamic;
 
-use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Connector\Former\OrderFormer;
-use App\Hotelbook\Object\Results\Method\AnnulOrderResult;
 use App\Hotelbook\Method\AbstractMethod;
+use App\Hotelbook\Object\Results\Method\AnnulOrderResult;
+use App\Hotelbook\Connector\ConnectorInterface;
 
 class AnnulOrder extends AbstractMethod
 {
-    private $connector;
     private $former;
 
     public function __construct(ConnectorInterface $connector)
     {
-        $this->connector = $connector;
+        parent::__construct($connector);
+
         $this->former = new OrderFormer();
     }
 

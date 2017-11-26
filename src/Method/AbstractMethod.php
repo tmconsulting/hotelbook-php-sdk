@@ -4,6 +4,7 @@ namespace App\Hotelbook\Method;
 
 use SimpleXMLElement;
 use App\Hotelbook\Object\Hotel\Price;
+use App\Hotelbook\Connector\ConnectorInterface;
 
 /**
  * Created by Roquie.
@@ -13,6 +14,17 @@ use App\Hotelbook\Object\Hotel\Price;
  */
 abstract class AbstractMethod implements MethodInterface
 {
+    protected $connector;
+
+    /**
+     * AbstractMethod constructor.
+     * @param ConnectorInterface $connector
+     */
+    public function __construct(ConnectorInterface $connector)
+    {
+        $this->connector = $connector;
+    }
+
     /**
      * @param SimpleXMLElement $element
      * @return array

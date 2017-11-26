@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response date="2017-11-26T19:18:50+03:00">
+    <HotelTypes>
+        <Type id="146"><![CDATA[Бизнес - отели]]></Type>
+        <Type id="147"><![CDATA[Гольф - отели]]></Type>
+        <Type id="145"><![CDATA[СПА - отели]]></Type>
+    </HotelTypes>
+</Response>

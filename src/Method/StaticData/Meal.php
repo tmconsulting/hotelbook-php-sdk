@@ -4,11 +4,10 @@ declare(strict_types=1);
 
 namespace App\Hotelbook\Method\StaticData;
 
-use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Method\AbstractMethod;
-use App\Hotelbook\Object\Results\StaticData\CountryResponse;
+use App\Hotelbook\Object\Results\StaticData\MealResponse;
 
-class Country extends AbstractMethod
+class Meal extends AbstractMethod
 {
     public function build($params)
     {
@@ -17,19 +16,19 @@ class Country extends AbstractMethod
 
     public function handle($params)
     {
-        $result = $this->connector->request('GET', 'countries');
+        $result = $this->connector->request('GET', 'meal');
         [$values, $errors] = $this->performResult($result);
-        return new CountryResponse($values, $errors);
+        return new MealResponse($values, $errors);
     }
 
     public function form($response)
     {
         $items = [];
 
-        foreach ($response->Countries->Country as $country) {
+        foreach ($response->Meals->Meal as $meal) {
             $items[] = [
-                'id' => (string)$country->attributes()['id'],
-                'name' => (string) $country
+                'id' => (int) $meal->attributes()['id'],
+                'title' => (string) $meal
             ];
         }
 

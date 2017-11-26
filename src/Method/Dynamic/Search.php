@@ -23,21 +23,6 @@ class Search extends AbstractMethod
     const DATE_FORMAT = 'Y-m-d';
 
     /**
-     * @var \App\Hotelbook\Connector\ConnectorInterface
-     */
-    private $connector;
-
-    /**
-     * SearchResult constructor.
-     *
-     * @param \App\Hotelbook\Connector\ConnectorInterface $connector
-     */
-    public function __construct(ConnectorInterface $connector)
-    {
-        $this->connector = $connector;
-    }
-
-    /**
      * @param $params
      * @return mixed
      */

@@ -6,6 +6,10 @@ use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Method\DynamicResolver;
 use App\Hotelbook\Method\StaticData\City;
 use App\Hotelbook\Method\StaticData\Country;
+use App\Hotelbook\Method\StaticData\HotelType;
+use App\Hotelbook\Method\StaticData\Location;
+use App\Hotelbook\Method\StaticData\Meal;
+use App\Hotelbook\Method\StaticData\RoomAmenity;
 use App\Hotelbook\Method\StaticData\RoomSize;
 use App\Hotelbook\Method\StaticData\RoomType;
 use App\Hotelbook\Object\Hotel\Dictionary\Country as CountryModel;
@@ -33,18 +37,22 @@ class StaticData
         //Locations
         $this->setMethod('country', new Country($connector));
         $this->setMethod('city', new City($connector));
+        $this->setMethod('location', new Location($connector));
 
         //Hotel
+        $this->setMethod('hotelType', new HotelType($connector));
+        $this->setMethod('meal', new Meal($connector));
 
         //Rooms
         $this->setMethod('roomSize', new RoomSize($connector));
         $this->setMethod('roomType', new RoomType($connector));
+        $this->setMethod('roomAmenity', new RoomAmenity($connector));
     }
 
 
     /**
      * Fetch all available countries.
-     * @return void
+     * @return mixed
      */
     public function country()
     {
@@ -59,6 +67,33 @@ class StaticData
     public function city(CountryModel $country = null)
     {
         return $this->callMethod('city', [$country]);
+    }
+
+    /**
+     * Fetch all available locations.
+     * @return mixed
+     */
+    public function location()
+    {
+        return $this->callMethod('location');
+    }
+
+    /**
+     * Fetch all available hotel types.
+     * @return mixed
+     */
+    public function hotelType()
+    {
+        return $this->callMethod('hotelType');
+    }
+
+    /**
+     * Fetch all available meal types.
+     * @return mixed
+     */
+    public function meal()
+    {
+        return $this->callMethod('meal');
     }
 
     /**
@@ -77,5 +112,14 @@ class StaticData
     public function roomType()
     {
         return $this->callMethod('roomType');
+    }
+
+    /**
+     * Fetch all available room amenities.
+     * @return mixed
+     */
+    public function roomAmenity()
+    {
+        return $this->callMethod('roomAmenity');
     }
 }
