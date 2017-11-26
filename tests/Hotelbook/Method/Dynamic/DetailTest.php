@@ -9,7 +9,7 @@
 namespace Neo\Hotelbook\Tests\Hotelbook\Method;
 
 use App\Hotelbook\Method\Dynamic\Detail;
-use App\Hotelbook\Object\Results\DetailResult;
+use App\Hotelbook\Object\Results\Method\DetailResult;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
 

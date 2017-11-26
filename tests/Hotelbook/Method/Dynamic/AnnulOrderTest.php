@@ -3,8 +3,7 @@
 namespace Neo\Hotelbook\Tests\Hotelbook\Method;
 
 use App\Hotelbook\Method\Dynamic\AnnulOrder;
-
-use App\Hotelbook\Object\Results\AnnulOrderResult;
+use App\Hotelbook\Object\Results\Method\AnnulOrderResult;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
 

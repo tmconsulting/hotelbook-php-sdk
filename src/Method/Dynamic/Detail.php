@@ -13,7 +13,7 @@ namespace App\Hotelbook\Method\Dynamic;
 
 use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Method\AbstractMethod;
-use App\Hotelbook\Object\Results\DetailResult;
+use App\Hotelbook\Object\Results\Method\DetailResult;
 use Money\Parser\StringToUnitsParser;
 
 class Detail extends AbstractMethod

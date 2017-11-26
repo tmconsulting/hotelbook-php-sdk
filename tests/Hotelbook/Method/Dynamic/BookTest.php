@@ -7,7 +7,7 @@ use App\Hotelbook\Object\Contact;
 use App\Hotelbook\Object\Hotel\BookItem;
 use App\Hotelbook\Object\Hotel\BookPassenger;
 use App\Hotelbook\Object\Hotel\Tag;
-use App\Hotelbook\Object\Results\BookResult;
+use App\Hotelbook\Object\Results\Method\BookResult;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
 

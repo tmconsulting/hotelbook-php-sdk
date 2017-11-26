@@ -8,7 +8,7 @@ use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Connector\Former\FormerInterface;
 use App\Hotelbook\Connector\Former\OrderFormer;
 use App\Hotelbook\Method\AbstractMethod;
-use App\Hotelbook\Object\Results\ConfirmOrderResult;
+use App\Hotelbook\Object\Results\Method\ConfirmOrderResult;
 
 class ConfirmOrder extends AbstractMethod
 {

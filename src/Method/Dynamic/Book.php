@@ -18,7 +18,7 @@ use App\Hotelbook\Object\Hotel\BookItem;
 use App\Hotelbook\Object\Hotel\BookPassenger;
 use App\Hotelbook\Object\Hotel\Dictionary\Title;
 use App\Hotelbook\Object\Hotel\Tag;
-use App\Hotelbook\Object\Results\BookResult;
+use App\Hotelbook\Object\Results\Method\BookResult;
 use Money\Parser\StringToUnitsParser;
 
 class Book extends AbstractMethod
