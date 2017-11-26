@@ -2,13 +2,13 @@
 
 namespace App\Hotelbook\Object\Results\StaticData;
 
-use App\Hotelbook\Object\Hotel\Dictionary\Country;
 use App\Hotelbook\Object\Results\ResultProceeder;
+use App\Hotelbook\Object\Hotel\Room\Type as RoomType;
 
-class CountryResponse extends ResultProceeder
+class RoomTypeResponse extends ResultProceeder
 {
     /**
-     * CountryResponse constructor.
+     * RoomTypeResponse constructor.
      * @param array $items
      * @param array $errors
      */
@@ -27,8 +27,9 @@ class CountryResponse extends ResultProceeder
     {
         $newItems = [];
 
-        foreach ($this->items as &$item) {
-            $newItems[] = new Country($item['id'], $item['name']);
+        foreach ($items as $item)
+        {
+            $newItems[] = new RoomType((int)$item['id'], (string)$item['name']);
         }
 
         $this->items = $newItems;

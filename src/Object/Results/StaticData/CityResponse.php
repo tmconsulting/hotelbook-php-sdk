@@ -7,12 +7,21 @@ use App\Hotelbook\Object\Results\ResultProceeder;
 
 class CityResponse extends ResultProceeder
 {
+    /**
+     * CityResponse constructor.
+     * @param array $items
+     * @param array $errors
+     */
     public function __construct(array $items, array $errors = [])
     {
         parent::__construct($items, $errors);
         $this->setItems($items);
     }
 
+    /**
+     * @param array $items
+     * @return void
+     */
     public function setItems(array $items)
     {
         $newItems = [];
