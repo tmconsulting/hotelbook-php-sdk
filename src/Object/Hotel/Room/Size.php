@@ -35,8 +35,7 @@ class Size
         bool $children,
         int $cots,
         bool $searchable
-    )
-    {
+    ) {
         $this->setId($id);
         $this->setShortName($shortName);
         $this->setShortName($fullName);

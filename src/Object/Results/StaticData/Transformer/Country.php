@@ -9,7 +9,7 @@ class Country implements TransformerInterface
 {
     public function transform(array $items)
     {
-        return array_map(function($item){
+        return array_map(function ($item) {
             return new CountryObject($item['id'], $item['name']);
         }, $items);
     }

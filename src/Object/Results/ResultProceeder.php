@@ -110,5 +110,4 @@ abstract class ResultProceeder
     {
         $this->transformer = new DefaultTransformer();
     }
-
 }

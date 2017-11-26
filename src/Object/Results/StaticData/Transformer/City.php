@@ -9,7 +9,7 @@ class City implements TransformerInterface
 {
     public function transform(array $items)
     {
-        return array_map(function($item){
+        return array_map(function ($item) {
             return new CityObject(
                 $item['id'],
                 $item['countryId'],
