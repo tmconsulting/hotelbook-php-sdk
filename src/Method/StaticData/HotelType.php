@@ -7,7 +7,7 @@ namespace App\Hotelbook\Method\StaticData;
 use App\Hotelbook\Method\AbstractMethod;
 use App\Hotelbook\Object\Results\StaticData\HotelTypeResponse;
 
-class HotelType  extends AbstractMethod
+class HotelType extends AbstractMethod
 {
     public function build($params)
     {
