@@ -19,25 +19,25 @@ namespace App\Hotelbook\Object;
 trait Pax
 {
     /**
-     * Кол-во взрослых
+     * Count of adults
      *
-     * Обязательный параметр.
+     * Required field
      *
      * @var int
      */
     protected $adults;
 
     /**
-     * Количество младенцев.
+     * Count of infants
      *
      * @var int
      */
     protected $infants;
 
     /**
-     * Количество детей и их возраст.
+     * Number of childs and their age
      *
-     * Пример. [7, 11] - двое детей с возрастом 7 и 11 лет.
+     * Example. [7, 11] - two children with age 7 and 11 years olf.
      *
      * @var array
      */

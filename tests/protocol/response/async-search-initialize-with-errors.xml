@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HotelSearchResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" date="2017-12-03T20:53:01+03:00">
+    <Errors>
+        <Error type="common" code="E1" description="Test Error"/>
+    </Errors>
+    <HotelSearchRequest>
+        <Request cityId="1" checkIn="2018-01-19" duration="1" confirmation="online" limitResults="100"/>
+        <Rooms>
+            <Room roomNumber="1" adults="1"/>
+        </Rooms>
+    </HotelSearchRequest>
+    <HotelSearchId>2980820</HotelSearchId>
+</HotelSearchResponse>

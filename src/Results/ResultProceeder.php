@@ -1,22 +1,10 @@
 <?php
-/**
- * Created by Roquie.
- * E-mail: roquie0@gmail.com
- * GitHub: Roquie
- * Date: 22.05.16
- * Project: provider
- */
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Object;
+namespace App\Hotelbook\Results;
 
-/**
- * Class DetailResult
- *
- * @package Hive\Common\Object
- */
-class DetailResult
+abstract class ResultProceeder
 {
     /**
      * @var array of new Error() objects
@@ -29,14 +17,21 @@ class DetailResult
     protected $items = [];
 
     /**
-     * SearchResult constructor.
+     * @var TransformerInterface
+     */
+    protected $transformer;
+
+    /**
+     * ResultProceeder constructor.
      *
      * @param array $items
      * @param array $errors
      */
     public function __construct(array $items, array $errors = [])
     {
-        $this->items = $items;
+        $this->setTransformer();
+
+        $this->items = $this->transformer->transform($items);
         $this->errors = $errors;
     }
 
@@ -104,7 +99,15 @@ class DetailResult
     public function setItems(array $items)
     {
         $this->items = $items;
-
         return $this;
+    }
+
+    /**
+     * Set transformer method to implement in all of the
+     * @return void
+     */
+    protected function setTransformer()
+    {
+        $this->transformer = new DefaultTransformer();
     }
 }

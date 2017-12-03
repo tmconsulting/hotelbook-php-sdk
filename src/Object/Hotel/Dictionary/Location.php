@@ -11,23 +11,36 @@ declare(strict_types=1);
 
 namespace App\Hotelbook\Object\Hotel\Dictionary;
 
-use App\Hotelbook\Object\Hotel\Distance;
-
 /**
  * Class Location
  *
- * Список объектов, которые находятся рядом с отелем.
+ * The list of objects near the hotel.
  *
  * @package Hive\Common\Object\Hotel
  */
 class Location
 {
-    use Distance;
+    public function __construct(
+        int $id,
+        string $title,
+        int $cityId,
+        bool $isGlobal
+    ) {
+        $this->setId($id);
+        $this->setTitle($title);
+        $this->setCityId($cityId);
+        $this->setGlobal($isGlobal);
+    }
 
     /**
      * @var int
      */
     protected $id;
+
+    /**
+     * @var string
+     */
+    protected $title;
 
     /**
      * @var int
@@ -56,6 +69,23 @@ class Location
         $this->id = $id;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getTitle()
+    {
+        return $this->title;
+    }
+
+    /**
+     * @param string $title
+     * @return void
+     */
+    public function setTitle(string $title)
+    {
+        $this->title = $title;
     }
 
     /**

@@ -1,0 +1,261 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response date="2017-11-26T17:03:27+03:00">
+    <Locations>
+        <Location id="1" city="0" is_global="1"><![CDATA[Central]]></Location>
+        <Location id="2" city="0" is_global="1"><![CDATA[Airport2]]></Location>
+        <Location id="3" city="0" is_global="1"><![CDATA[Station]]></Location>
+        <Location id="4" city="0" is_global="1"><![CDATA[Port]]></Location>
+        <Location id="5" city="0" is_global="1"><![CDATA[Waterfront/Beach]]></Location>
+        <Location id="6" city="0" is_global="1"><![CDATA[Countryside]]></Location>
+        <Location id="7" city="0" is_global="1"><![CDATA[Mountainside]]></Location>
+        <Location id="8" city="0" is_global="1"><![CDATA[Suburbs]]></Location>
+        <Location id="9" city="0" is_global="1"><![CDATA[Near Centre]]></Location>
+        <Location id="256" city="126" is_global="0"><![CDATA[Sheikh Zayed Road/World Trade Centre]]></Location>
+        <Location id="257" city="126" is_global="0"><![CDATA[Bur Dubai]]></Location>
+        <Location id="258" city="126" is_global="0"><![CDATA[Deira]]></Location>
+        <Location id="259" city="126" is_global="0"><![CDATA[Riqqa Street]]></Location>
+        <Location id="260" city="126" is_global="0"><![CDATA[River Creek]]></Location>
+        <Location id="261" city="209" is_global="0"><![CDATA[Ringstrasse]]></Location>
+        <Location id="262" city="209" is_global="0"><![CDATA[Museum Quarter]]></Location>
+        <Location id="263" city="209" is_global="0"><![CDATA[Westbahnhof Station]]></Location>
+        <Location id="264" city="209" is_global="0"><![CDATA[Stephans Platz]]></Location>
+        <Location id="265" city="340" is_global="0"><![CDATA[Circular Quay/The Rocks]]></Location>
+        <Location id="266" city="340" is_global="0"><![CDATA[Darling Harbour]]></Location>
+        <Location id="267" city="340" is_global="0"><![CDATA[Surry Hills]]></Location>
+        <Location id="268" city="340" is_global="0"><![CDATA[Potts Point/Rushcutters Bay]]></Location>
+        <Location id="269" city="340" is_global="0"><![CDATA[Kings Cross/Woolloomooloo]]></Location>
+        <Location id="270" city="380" is_global="0"><![CDATA[Grand Place]]></Location>
+        <Location id="271" city="380" is_global="0"><![CDATA[Avenue Louise]]></Location>
+        <Location id="272" city="380" is_global="0"><![CDATA[Midi Station (Eurostar)]]></Location>
+        <Location id="273" city="380" is_global="0"><![CDATA[European Quarter]]></Location>
+        <Location id="274" city="472" is_global="0"><![CDATA[Copacabana]]></Location>
+        <Location id="275" city="472" is_global="0"><![CDATA[Ipanema]]></Location>
+        <Location id="276" city="472" is_global="0"><![CDATA[Barra Da Tijuca]]></Location>
+        <Location id="277" city="473" is_global="0"><![CDATA[Morumbi/Brooklyn Novo]]></Location>
+        <Location id="278" city="473" is_global="0"><![CDATA[Paulista/Cerqueira Cesar]]></Location>
+        <Location id="279" city="473" is_global="0"><![CDATA[Centro/Republica]]></Location>
+        <Location id="280" city="473" is_global="0"><![CDATA[Ibirapuera]]></Location>
+        <Location id="281" city="473" is_global="0"><![CDATA[Higienopolis]]></Location>
+        <Location id="282" city="534" is_global="0"><![CDATA[Downtown West/Finance District/Chinatown]]></Location>
+        <Location id="283" city="534" is_global="0"><![CDATA[Downtown East/Old Town]]></Location>
+        <Location id="284" city="534" is_global="0"><![CDATA[Midtown West/The East End]]></Location>
+        <Location id="285" city="616" is_global="0"><![CDATA[Oerlikon]]></Location>
+        <Location id="286" city="666" is_global="0"><![CDATA[Liwan]]></Location>
+        <Location id="287" city="666" is_global="0"><![CDATA[Yuexiu]]></Location>
+        <Location id="288" city="666" is_global="0"><![CDATA[Baiyun]]></Location>
+        <Location id="289" city="666" is_global="0"><![CDATA[Tianhe]]></Location>
+        <Location id="290" city="666" is_global="0"><![CDATA[Haizhou]]></Location>
+        <Location id="291" city="666" is_global="0"><![CDATA[Dongshan]]></Location>
+        <Location id="292" city="666" is_global="0"><![CDATA[Huangpu]]></Location>
+        <Location id="293" city="685" is_global="0"><![CDATA[Houjie Town]]></Location>
+        <Location id="294" city="685" is_global="0"><![CDATA[Humen Town]]></Location>
+        <Location id="295" city="685" is_global="0"><![CDATA[Changan Town]]></Location>
+        <Location id="296" city="685" is_global="0"><![CDATA[Donguan Town]]></Location>
+        <Location id="297" city="685" is_global="0"><![CDATA[Liaobu Town]]></Location>
+        <Location id="298" city="685" is_global="0"><![CDATA[Shilong Town]]></Location>
+        <Location id="299" city="685" is_global="0"><![CDATA[Changping Town]]></Location>
+        <Location id="300" city="685" is_global="0"><![CDATA[Zhangmutou Town]]></Location>
+        <Location id="301" city="685" is_global="0"><![CDATA[Huangjiang Town]]></Location>
+        <Location id="302" city="685" is_global="0"><![CDATA[Tangxia Town]]></Location>
+        <Location id="303" city="685" is_global="0"><![CDATA[Fenggang Town]]></Location>
+        <Location id="304" city="789" is_global="0"><![CDATA[Riverside]]></Location>
+        <Location id="305" city="793" is_global="0"><![CDATA[Yantian]]></Location>
+        <Location id="306" city="793" is_global="0"><![CDATA[Luohu]]></Location>
+        <Location id="307" city="793" is_global="0"><![CDATA[Futian]]></Location>
+        <Location id="308" city="793" is_global="0"><![CDATA[Nanshan]]></Location>
+        <Location id="309" city="793" is_global="0"><![CDATA[Bao'an]]></Location>
+        <Location id="310" city="935" is_global="0"><![CDATA[Wenceslas Square/Charles Square]]></Location>
+        <Location id="311" city="935" is_global="0"><![CDATA[Old Town Square/Jewish Quarter]]></Location>
+        <Location id="312" city="935" is_global="0"><![CDATA[Nove Mesto/Vinohrady/Florenc]]></Location>
+        <Location id="313" city="935" is_global="0"><![CDATA[Vysehard/Congress Centre]]></Location>
+        <Location id="314" city="935" is_global="0"><![CDATA[Castle District/Mala Strana]]></Location>
+        <Location id="315" city="935" is_global="0"><![CDATA[Andel/Smichov]]></Location>
+        <Location id="316" city="1183" is_global="0"><![CDATA[Playa Dorada]]></Location>
+        <Location id="317" city="1183" is_global="0"><![CDATA[Cofresi Beach]]></Location>
+        <Location id="318" city="1184" is_global="0"><![CDATA[Bavaro Beach]]></Location>
+        <Location id="319" city="1271" is_global="0"><![CDATA[Eixample]]></Location>
+        <Location id="320" city="1271" is_global="0"><![CDATA[Ramblas/Catalunya/Barrio Gotico]]></Location>
+        <Location id="321" city="1271" is_global="0"><![CDATA[Camp Nou/Sants station/Plaza Espanya]]></Location>
+        <Location id="322" city="1271" is_global="0"><![CDATA[Villa Olimpica/Diagonal Mar]]></Location>
+        <Location id="323" city="1441" is_global="0"><![CDATA[Gran Via/Puerta del Sol/Plaza de Espana]]></Location>
+        <Location id="324" city="1441" is_global="0"><![CDATA[Barrio Salamanca/Retiro]]></Location>
+        <Location id="325" city="1441" is_global="0"><![CDATA[Atocha Station/Paseo del Prado]]></Location>
+        <Location id="326" city="1441" is_global="0"><![CDATA[Plaza de Colon/Goya]]></Location>
+        <Location id="327" city="1441" is_global="0"><![CDATA[Paseo de la Castellana]]></Location>
+        <Location id="328" city="1441" is_global="0"><![CDATA[Chamartin Station]]></Location>
+        <Location id="329" city="1441" is_global="0"><![CDATA[Parque Juan Carlos I/Airport]]></Location>
+        <Location id="330" city="1448" is_global="0"><![CDATA[Campo Internacional]]></Location>
+        <Location id="331" city="1448" is_global="0"><![CDATA[Sonnenland]]></Location>
+        <Location id="332" city="1523" is_global="0"><![CDATA[Puerto Banus]]></Location>
+        <Location id="333" city="1523" is_global="0"><![CDATA[San Pedro de Alcantara]]></Location>
+        <Location id="334" city="1939" is_global="0"><![CDATA[Acropolis Congress Centre]]></Location>
+        <Location id="335" city="1939" is_global="0"><![CDATA[Beach]]></Location>
+        <Location id="336" city="1956" is_global="0"><![CDATA[01e Arrondissement]]></Location>
+        <Location id="337" city="1956" is_global="0"><![CDATA[02e Arrondissement]]></Location>
+        <Location id="338" city="1956" is_global="0"><![CDATA[03e Arrondissement]]></Location>
+        <Location id="339" city="1956" is_global="0"><![CDATA[04e Arrondissement]]></Location>
+        <Location id="340" city="1956" is_global="0"><![CDATA[05e Arrondissement]]></Location>
+        <Location id="341" city="1956" is_global="0"><![CDATA[06e Arrondissement]]></Location>
+        <Location id="342" city="1956" is_global="0"><![CDATA[07e Arrondissement]]></Location>
+        <Location id="343" city="1956" is_global="0"><![CDATA[08e Arrondissement]]></Location>
+        <Location id="344" city="1956" is_global="0"><![CDATA[09e Arrondissement]]></Location>
+        <Location id="345" city="1956" is_global="0"><![CDATA[10e Arrondissement]]></Location>
+        <Location id="346" city="1956" is_global="0"><![CDATA[11e Arrondissement]]></Location>
+        <Location id="347" city="1956" is_global="0"><![CDATA[12e Arrondissement]]></Location>
+        <Location id="348" city="1956" is_global="0"><![CDATA[13e Arrondissement]]></Location>
+        <Location id="349" city="1956" is_global="0"><![CDATA[14e Arrondissement]]></Location>
+        <Location id="350" city="1956" is_global="0"><![CDATA[15e Arrondissement]]></Location>
+        <Location id="351" city="1956" is_global="0"><![CDATA[16e Arrondissement]]></Location>
+        <Location id="352" city="1956" is_global="0"><![CDATA[17e Arrondissement]]></Location>
+        <Location id="353" city="1956" is_global="0"><![CDATA[18e Arrondissement]]></Location>
+        <Location id="354" city="1956" is_global="0"><![CDATA[19e Arrondissement]]></Location>
+        <Location id="355" city="1956" is_global="0"><![CDATA[20e Arrondissement]]></Location>
+        <Location id="356" city="1956" is_global="0"><![CDATA[Louvre/Les Halles/Palais Royal]]></Location>
+        <Location id="357" city="1956" is_global="0"><![CDATA[Opera]]></Location>
+        <Location id="358" city="1956" is_global="0"><![CDATA[Notre Dame/Quartier Latin]]></Location>
+        <Location id="359" city="1956" is_global="0"><![CDATA[Bastille/Republique]]></Location>
+        <Location id="360" city="1956" is_global="0"><![CDATA[St Germain de Pres]]></Location>
+        <Location id="361" city="1956" is_global="0"><![CDATA[Eiffel Tower]]></Location>
+        <Location id="362" city="1956" is_global="0"><![CDATA[Champs Elysees]]></Location>
+        <Location id="363" city="1956" is_global="0"><![CDATA[Pigalle/Montmartre/Sacre Coeur]]></Location>
+        <Location id="364" city="1956" is_global="0"><![CDATA[Gare du Nord/Gare de l'Est/St Lazare]]></Location>
+        <Location id="365" city="1956" is_global="0"><![CDATA[Bois de Vincennes/Place d'Italie/Ivry]]></Location>
+        <Location id="366" city="1956" is_global="0"><![CDATA[Montparnasse]]></Location>
+        <Location id="367" city="1956" is_global="0"><![CDATA[Bois de Boulogne/Trocadero/Neuilly]]></Location>
+        <Location id="368" city="1956" is_global="0"><![CDATA[La Defense]]></Location>
+        <Location id="369" city="1956" is_global="0"><![CDATA[Pere-Lachaise Cemetery/Pantin]]></Location>
+        <Location id="370" city="1956" is_global="0"><![CDATA[Bagnolet/Montreuil/Place de la Nation]]></Location>
+        <Location id="371" city="1956" is_global="0"><![CDATA[Clichy/Saint-Ouen/Saint Denis]]></Location>
+        <Location id="372" city="1956" is_global="0"><![CDATA[Gare de Lyon]]></Location>
+        <Location id="373" city="2213" is_global="0"><![CDATA[Old Town]]></Location>
+        <Location id="374" city="2213" is_global="0"><![CDATA[Georgian New Town]]></Location>
+        <Location id="375" city="2213" is_global="0"><![CDATA[Princes Street]]></Location>
+        <Location id="376" city="2213" is_global="0"><![CDATA[Royal Mile]]></Location>
+        <Location id="377" city="2322" is_global="0"><![CDATA[Docklands]]></Location>
+        <Location id="378" city="2322" is_global="0"><![CDATA[Islington/Kings Cross]]></Location>
+        <Location id="379" city="2322" is_global="0"><![CDATA[Bloomsbury]]></Location>
+        <Location id="380" city="2322" is_global="0"><![CDATA[St Johns Wood/Hampstead]]></Location>
+        <Location id="381" city="2322" is_global="0"><![CDATA[Oxford Street]]></Location>
+        <Location id="382" city="2322" is_global="0"><![CDATA[Park Lane/Mayfair]]></Location>
+        <Location id="383" city="2322" is_global="0"><![CDATA[Covent Garden/Piccadilly/Leicester Sq.]]></Location>
+        <Location id="384" city="2322" is_global="0"><![CDATA[Paddington]]></Location>
+        <Location id="385" city="2322" is_global="0"><![CDATA[Bayswater]]></Location>
+        <Location id="386" city="2322" is_global="0"><![CDATA[Kensington]]></Location>
+        <Location id="387" city="2322" is_global="0"><![CDATA[Knightsbridge]]></Location>
+        <Location id="388" city="2322" is_global="0"><![CDATA[Earls Court]]></Location>
+        <Location id="389" city="2322" is_global="0"><![CDATA[Westminster/Victoria]]></Location>
+        <Location id="390" city="2322" is_global="0"><![CDATA[Hammersmith/Fulham]]></Location>
+        <Location id="391" city="2322" is_global="0"><![CDATA[Holborn]]></Location>
+        <Location id="392" city="2528" is_global="0"><![CDATA[Causeway Bay]]></Location>
+        <Location id="393" city="2528" is_global="0"><![CDATA[North Point]]></Location>
+        <Location id="394" city="2528" is_global="0"><![CDATA[Wanchai]]></Location>
+        <Location id="395" city="2528" is_global="0"><![CDATA[Central/Admiralty]]></Location>
+        <Location id="396" city="2528" is_global="0"><![CDATA[Sheung Wan/Sai Wan]]></Location>
+        <Location id="397" city="2530" is_global="0"><![CDATA[Tsim Sha Tsui]]></Location>
+        <Location id="398" city="2530" is_global="0"><![CDATA[Jordan/Yau Ma Tei/Mong Kok/Prince Edward]]></Location>
+        <Location id="399" city="2577" is_global="0"><![CDATA[Buda]]></Location>
+        <Location id="400" city="2577" is_global="0"><![CDATA[Pest]]></Location>
+        <Location id="401" city="2577" is_global="0"><![CDATA[Margaret Island]]></Location>
+        <Location id="402" city="2687" is_global="0"><![CDATA[Temple Bar]]></Location>
+        <Location id="403" city="2687" is_global="0"><![CDATA[Ballsbridge]]></Location>
+        <Location id="404" city="2687" is_global="0"><![CDATA[St Stephens Green]]></Location>
+        <Location id="405" city="2687" is_global="0"><![CDATA[O'Connell Street]]></Location>
+        <Location id="406" city="2687" is_global="0"><![CDATA[Grafton Street]]></Location>
+        <Location id="407" city="2687" is_global="0"><![CDATA[Croke Park]]></Location>
+        <Location id="408" city="3091" is_global="0"><![CDATA[Historic Centre/Duomo]]></Location>
+        <Location id="409" city="3091" is_global="0"><![CDATA[Fairground/San Siro]]></Location>
+        <Location id="410" city="3091" is_global="0"><![CDATA[Navigli]]></Location>
+        <Location id="411" city="3091" is_global="0"><![CDATA[Niguarda]]></Location>
+        <Location id="412" city="3091" is_global="0"><![CDATA[Stazione Centrale]]></Location>
+        <Location id="413" city="3227" is_global="0"><![CDATA[Historical Centre]]></Location>
+        <Location id="414" city="3227" is_global="0"><![CDATA[Via Veneto/Borghese Gardens]]></Location>
+        <Location id="415" city="3227" is_global="0"><![CDATA[Termini Station/Via Nazionale/Colosseum]]></Location>
+        <Location id="416" city="3227" is_global="0"><![CDATA[Vatican/Trastevere]]></Location>
+        <Location id="417" city="3227" is_global="0"><![CDATA[Flaminio/Parioli/Salario]]></Location>
+        <Location id="418" city="3227" is_global="0"><![CDATA[Aurelia]]></Location>
+        <Location id="419" city="3227" is_global="0"><![CDATA[Eur/Spinaceto/Laurentina]]></Location>
+        <Location id="420" city="3227" is_global="0"><![CDATA[Pineta Sacchetti/Cornelia]]></Location>
+        <Location id="421" city="3227" is_global="0"><![CDATA[San Giovanni/Piramide]]></Location>
+        <Location id="422" city="3227" is_global="0"><![CDATA[Spanish Steps]]></Location>
+        <Location id="423" city="3227" is_global="0"><![CDATA[Ring Road]]></Location>
+        <Location id="424" city="3227" is_global="0"><![CDATA[Nomentano]]></Location>
+        <Location id="425" city="3227" is_global="0"><![CDATA[Appia / Ciampino Airport]]></Location>
+        <Location id="426" city="3320" is_global="0"><![CDATA[St Marks Square]]></Location>
+        <Location id="427" city="3320" is_global="0"><![CDATA[Island]]></Location>
+        <Location id="428" city="3320" is_global="0"><![CDATA[Grand Canal]]></Location>
+        <Location id="429" city="3321" is_global="0"><![CDATA[Lido]]></Location>
+        <Location id="430" city="3322" is_global="0"><![CDATA[Mainland]]></Location>
+        <Location id="431" city="3323" is_global="0"><![CDATA[Grand Canal]]></Location>
+        <Location id="432" city="3392" is_global="0"><![CDATA[Kanazawa and surroundign area]]></Location>
+        <Location id="433" city="3615" is_global="0"><![CDATA[Macau]]></Location>
+        <Location id="434" city="3615" is_global="0"><![CDATA[Taipa]]></Location>
+        <Location id="435" city="3615" is_global="0"><![CDATA[Coloane]]></Location>
+        <Location id="436" city="3616" is_global="0"><![CDATA[Taipa]]></Location>
+        <Location id="437" city="3739" is_global="0"><![CDATA[Central station West/Jordaan]]></Location>
+        <Location id="438" city="3739" is_global="0"><![CDATA[Central station East/Red light district]]></Location>
+        <Location id="439" city="3739" is_global="0"><![CDATA[Rembrandtsplein/Dam Square/Flower Market]]></Location>
+        <Location id="440" city="3739" is_global="0"><![CDATA[Museumplein/Leidesplein]]></Location>
+        <Location id="441" city="4004" is_global="0"><![CDATA[Sacred Valley]]></Location>
+        <Location id="442" city="4029" is_global="0"><![CDATA[Makati]]></Location>
+        <Location id="443" city="4029" is_global="0"><![CDATA[Mandaluyong]]></Location>
+        <Location id="444" city="4029" is_global="0"><![CDATA[Manila]]></Location>
+        <Location id="445" city="4029" is_global="0"><![CDATA[Pasay]]></Location>
+        <Location id="446" city="4029" is_global="0"><![CDATA[Pasig]]></Location>
+        <Location id="447" city="4029" is_global="0"><![CDATA[Quezon]]></Location>
+        <Location id="448" city="4029" is_global="0"><![CDATA[Ortigas]]></Location>
+        <Location id="449" city="4064" is_global="0"><![CDATA[Condado]]></Location>
+        <Location id="450" city="4064" is_global="0"><![CDATA[Isla Verde]]></Location>
+        <Location id="451" city="4325" is_global="0"><![CDATA[Gamla Stan]]></Location>
+        <Location id="452" city="4325" is_global="0"><![CDATA[Sodermalm]]></Location>
+        <Location id="453" city="4325" is_global="0"><![CDATA[Kungsholmen]]></Location>
+        <Location id="454" city="4325" is_global="0"><![CDATA[Ostermalm]]></Location>
+        <Location id="455" city="4325" is_global="0"><![CDATA[Vasastaden]]></Location>
+        <Location id="456" city="4378" is_global="0"><![CDATA[Siam Centre/Pratunam/World Trade Centre]]></Location>
+        <Location id="457" city="4378" is_global="0"><![CDATA[Silom (Patpong)]]></Location>
+        <Location id="458" city="4378" is_global="0"><![CDATA[Sukhumvit]]></Location>
+        <Location id="459" city="4378" is_global="0"><![CDATA[Riverside]]></Location>
+        <Location id="460" city="4378" is_global="0"><![CDATA[Chinatown]]></Location>
+        <Location id="461" city="4378" is_global="0"><![CDATA[Ratchadapisek]]></Location>
+        <Location id="462" city="4496" is_global="0"><![CDATA[Sultanahmet/Topkapi Palace/Grand Bazaar]]></Location>
+        <Location id="463" city="4496" is_global="0"><![CDATA[Old City]]></Location>
+        <Location id="464" city="4496" is_global="0"><![CDATA[New City/Taksim]]></Location>
+        <Location id="465" city="4496" is_global="0"><![CDATA[Asian Side]]></Location>
+        <Location id="466" city="4630" is_global="0"><![CDATA[Gold Coast]]></Location>
+        <Location id="467" city="4630" is_global="0"><![CDATA[River North/Near North]]></Location>
+        <Location id="468" city="4630" is_global="0"><![CDATA[Loop Area/Magnificent Mile]]></Location>
+        <Location id="469" city="4630" is_global="0"><![CDATA[South Loop]]></Location>
+        <Location id="470" city="4630" is_global="0"><![CDATA[Greektown/Little Italy]]></Location>
+        <Location id="471" city="4630" is_global="0"><![CDATA[O'Hare Airport/Rosemont]]></Location>
+        <Location id="472" city="4834" is_global="0"><![CDATA[The Beaches]]></Location>
+        <Location id="473" city="4834" is_global="0"><![CDATA[Hollywood]]></Location>
+        <Location id="474" city="4834" is_global="0"><![CDATA[Downtown]]></Location>
+        <Location id="475" city="4834" is_global="0"><![CDATA[Beverly Hills]]></Location>
+        <Location id="476" city="4866" is_global="0"><![CDATA[Coral Gables]]></Location>
+        <Location id="477" city="4866" is_global="0"><![CDATA[Coconut Grove]]></Location>
+        <Location id="478" city="4866" is_global="0"><![CDATA[Key Biscayne]]></Location>
+        <Location id="479" city="4866" is_global="0"><![CDATA[Downtown]]></Location>
+        <Location id="480" city="4866" is_global="0"><![CDATA[Bayside]]></Location>
+        <Location id="481" city="4866" is_global="0"><![CDATA[South Beach]]></Location>
+        <Location id="482" city="4866" is_global="0"><![CDATA[Miami Beach]]></Location>
+        <Location id="483" city="4866" is_global="0"><![CDATA[Bal Harbour]]></Location>
+        <Location id="484" city="4866" is_global="0"><![CDATA[Ocean Drive/Art Deco District]]></Location>
+        <Location id="485" city="4915" is_global="0"><![CDATA[Upper West Side]]></Location>
+        <Location id="486" city="4915" is_global="0"><![CDATA[Upper East Side]]></Location>
+        <Location id="487" city="4915" is_global="0"><![CDATA[Central Park]]></Location>
+        <Location id="488" city="4915" is_global="0"><![CDATA[Midtown]]></Location>
+        <Location id="489" city="4915" is_global="0"><![CDATA[Times Square]]></Location>
+        <Location id="490" city="4915" is_global="0"><![CDATA[Garment District]]></Location>
+        <Location id="491" city="4915" is_global="0"><![CDATA[Murray Hill]]></Location>
+        <Location id="492" city="4915" is_global="0"><![CDATA[Chelsea/Flatiron District/Grammercy]]></Location>
+        <Location id="493" city="4915" is_global="0"><![CDATA[Greenwich Village/East Village]]></Location>
+        <Location id="494" city="4915" is_global="0"><![CDATA[Chinatown/Financial District]]></Location>
+        <Location id="495" city="4934" is_global="0"><![CDATA[International Drive/Seaworld]]></Location>
+        <Location id="496" city="4934" is_global="0"><![CDATA[Universal Studios]]></Location>
+        <Location id="497" city="4934" is_global="0"><![CDATA[Lake Buena Vista]]></Location>
+        <Location id="498" city="4934" is_global="0"><![CDATA[Walt Disney World]]></Location>
+        <Location id="499" city="4934" is_global="0"><![CDATA[Kissimmee]]></Location>
+        <Location id="500" city="5015" is_global="0"><![CDATA[Downtown]]></Location>
+        <Location id="501" city="5015" is_global="0"><![CDATA[Fishermans Wharf]]></Location>
+        <Location id="502" city="2222" is_global="0"><![CDATA[Test location]]></Location>
+    </Locations>
+</Response>

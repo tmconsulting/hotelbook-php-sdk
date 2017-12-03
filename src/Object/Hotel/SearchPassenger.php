@@ -13,7 +13,6 @@ namespace App\Hotelbook\Object\Hotel;
 
 use App\Hotelbook\Object\Pax;
 
-
 /**
  * Class Pax
  *

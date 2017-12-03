@@ -8,16 +8,15 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook\Method;
 
-use App\Hotelbook\Method\Search;
+use App\Hotelbook\Method\Dynamic\Search;
 use App\Hotelbook\Object\Hotel\SearchPassenger;
-use App\Hotelbook\Object\SearchResult;
+use App\Hotelbook\Results\Method\SearchResult;
 use Carbon\Carbon;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
 
 class SearchTest extends TestCase
 {
-
     public function testHowSearchMethodBuildTheSimpleRequest()
     {
         $search = new Search(new ConnectorStub);
@@ -25,9 +24,11 @@ class SearchTest extends TestCase
         $checkInDate  = Carbon::parse('03-11-2017');
         $checkOutDate = Carbon::parse('10-11-2017');
 
-        $xml = $search->build([2, $checkInDate, $checkOutDate, [
+        $xml = $this->formatXml($search->build([2, $checkInDate, $checkOutDate, [
             new SearchPassenger(1, [12])
-        ]]);
+        ]]));
+
+        file_put_contents('search.xml', $xml);
 
         $this->assertEquals($this->getRequestProtocol('search-simple'), $xml);
     }
@@ -39,5 +40,4 @@ class SearchTest extends TestCase
 
         $this->assertInstanceOf(SearchResult::class, $results);
     }
-
 }

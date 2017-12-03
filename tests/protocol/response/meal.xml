@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response date="2017-11-26T18:35:46+03:00">
+    <Meals>
+        <Meal id="0"><![CDATA[Не определено]]></Meal>
+        <Meal id="28"><![CDATA[1 завтрак и 1 полупансион]]></Meal>
+        <Meal id="32"><![CDATA[1 полупансион и 1 полный пансион]]></Meal>
+        <Meal id="20"><![CDATA[А ля-карт]]></Meal>
+        <Meal id="16"><![CDATA[Американский завтрак]]></Meal>
+        <Meal id="19"><![CDATA[Английский завтрак]]></Meal>
+        <Meal id="6"><![CDATA[Без питания]]></Meal>
+        <Meal id="33"><![CDATA[Бранч]]></Meal>
+        <Meal id="14"><![CDATA[Все включено]]></Meal>
+        <Meal id="35"><![CDATA[Всё включено (1 сорт)]]></Meal>
+        <Meal id="2"><![CDATA[Завтрак]]></Meal>
+        <Meal id="4"><![CDATA[Завтрак + обед]]></Meal>
+        <Meal id="5"><![CDATA[Завтрак + обед + ужин]]></Meal>
+        <Meal id="7"><![CDATA[Завтрак + обед + ужин + напитки]]></Meal>
+        <Meal id="3"><![CDATA[Завтрак + ужин]]></Meal>
+        <Meal id="8"><![CDATA[Завтрак + ужин]]></Meal>
+        <Meal id="26"><![CDATA[Завтрак буфет]]></Meal>
+        <Meal id="29"><![CDATA[Завтрак Буффет]]></Meal>
+        <Meal id="21"><![CDATA[Завтрак в номер]]></Meal>
+        <Meal id="23"><![CDATA[Завтрак для двоих]]></Meal>
+        <Meal id="17"><![CDATA[Завтрак Шведский стол]]></Meal>
+        <Meal id="30"><![CDATA[Ирландский завтрак]]></Meal>
+        <Meal id="18"><![CDATA[Континентальный завтрак]]></Meal>
+        <Meal id="27"><![CDATA[Континентальный завтрак]]></Meal>
+        <Meal id="24"><![CDATA[Континентальный завтрак для двоих]]></Meal>
+        <Meal id="25"><![CDATA[Кухня в номере]]></Meal>
+        <Meal id="1"><![CDATA[Неизвестно]]></Meal>
+        <Meal id="12"><![CDATA[Обед]]></Meal>
+        <Meal id="10"><![CDATA[Полный пансион]]></Meal>
+        <Meal id="36"><![CDATA[Полный пансион с напитками]]></Meal>
+        <Meal id="9"><![CDATA[Полупансион]]></Meal>
+        <Meal id="15"><![CDATA[Полупансион с напитками]]></Meal>
+        <Meal id="34"><![CDATA[Самообслуживание]]></Meal>
+        <Meal id="13"><![CDATA[Ужин]]></Meal>
+        <Meal id="31"><![CDATA[Шотландский завтрак]]></Meal>
+    </Meals>
+</Response>

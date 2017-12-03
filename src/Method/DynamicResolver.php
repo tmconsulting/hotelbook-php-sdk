@@ -26,23 +26,22 @@ trait DynamicResolver
 
     /**
      * @param $name
-     * @param array $params
-     * @return mixed
-     */
-    private function callMethod($name, array $params)
-    {
-        $method = $this->getMethod($name);
-        $requestToSend = $method->build($params);
-
-        return $method->handle($requestToSend);
-    }
-
-    /**
-     * @param $name
      * @return \App\Hotelbook\Method\MethodInterface
      */
     public function getMethod($name)
     {
         return $this->methods[$name];
+    }
+
+    /**
+     * @param $name
+     * @param array $params
+     * @return mixed
+     */
+    private function callMethod($name, array $params = [])
+    {
+        $method = $this->getMethod($name);
+        $requestToSend = $method->build($params);
+        return $method->handle($requestToSend);
     }
 }
