@@ -8,14 +8,13 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook\Method;
 
-use App\Hotelbook\Method\Detail;
-use App\Hotelbook\Object\DetailResult;
+use App\Hotelbook\Method\Dynamic\Detail;
+use App\Hotelbook\Results\Method\DetailResult;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
 
 class DetailTest extends TestCase
 {
-
     public function testHowDetailMethodBuildTheRequest()
     {
         $detail = new Detail(new ConnectorStub);
@@ -32,5 +31,4 @@ class DetailTest extends TestCase
 
         $this->assertInstanceOf(DetailResult::class, $results);
     }
-
 }

@@ -10,7 +10,6 @@ namespace App\Hotelbook\Connector;
 
 use SimpleXMLElement;
 
-
 /**
  * Interface ConnectorInterface
  *

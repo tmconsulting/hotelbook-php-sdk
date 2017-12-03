@@ -9,9 +9,6 @@
             </Room>
         </Rooms>
     </HotelSearchRequest>
-    <Errors>
-        <Error type="common" code="E1" description="Test Error"/>
-    </Errors>
     <HotelSearch searchId="2959871" countryId="118" countryName="Russia" resortId="118" resortName="Россия" cityId="2"
                  cityName="Санкт-Петербург"/>
     <Hotels totalHotels="103" totalResults="408" searchingIsCompleted="true">

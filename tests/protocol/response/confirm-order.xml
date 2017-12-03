@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ConfirmOrderResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" date="2017-11-12T20:44:51+03:00">
+    <Order>
+        <Id>1000221607</Id>
+        <Manager>billy</Manager>
+        <Tag>52903</Tag>
+        <OrderUserId>795</OrderUserId>
+        <OrderUserName>Travel Management Consulting XML</OrderUserName>
+        <State>COMMITED</State>
+        <CreationDate>2017-11-12 20:42:28</CreationDate>
+        <PayForm>cashless</PayForm>
+        <Paxes>
+            <Pax paxId="1" child="false">
+                <Title>Mr</Title>
+                <FirstName>Nikita</FirstName>
+                <LastName>Shatilo</LastName>
+            </Pax>
+            <Pax paxId="2" child="true" childAge="2">
+                <Title>Mr</Title>
+                <FirstName>TBA_CHILD_0</FirstName>
+                <LastName>TBA_CHILD_0</LastName>
+            </Pax>
+        </Paxes>
+        <Items>
+            <HotelItem itemId="1000221608" dynamicInventory="false">
+                <HotelId>55206</HotelId>
+                <CityId>543</CityId>
+                <Name>HOLIDAY INN EXPRESS HOTEL &amp;#x26; SUITES NORTH BAY</Name>
+                <CategoryId>2</CategoryId>
+                <State>COMMITED</State>
+                <EarlestCheckInTime>15:00:00</EarlestCheckInTime>
+                <LatestCheckOutTime>00:00:00</LatestCheckOutTime>
+                <Confirmation>online</Confirmation>
+                <CheckIn>2018-07-08</CheckIn>
+                <Duration>1</Duration>
+                <TotalPrice>100.82</TotalPrice>
+                <ExtraPrice currency="">0</ExtraPrice>
+                <Currency>EUR</Currency>
+                <UseNds>false</UseNds>
+                <ProviderId>13</ProviderId>
+                <ProviderReference>XI-HR-64046226</ProviderReference>
+                <ClientReference/>
+                <PossibleRemarks/>
+                <CommentLanguage>en</CommentLanguage>
+                <PermittedOperations>
+                    <Modify>false</Modify>
+                    <Cancel>true</Cancel>
+                    <IsBlocked>false</IsBlocked>
+                </PermittedOperations>
+                <EditableOptions>
+                    <Option name="check_in" editable="true"/>
+                    <Option name="duration" editable="true"/>
+                    <Option name="pax_names" editable="true"/>
+                    <Option name="alternatives" editable="false"/>
+                    <Option name="remarks" editable="false"/>
+                    <Option name="comment" editable="false"/>
+                    <Option name="room_sizes" editable="false"/>
+                    <Option name="room_types" editable="false"/>
+                    <Option name="room_views" editable="false"/>
+                    <Option name="new_rooms" editable="false"/>
+                    <Option name="delete_rooms" editable="false"/>
+                    <Option name="voucher_info" editable="true"/>
+                    <Option name="sharing_bedding" editable="false"/>
+                    <Option name="cots" editable="false"/>
+                    <Option name="citizenship" editable="false"/>
+                    <Option name="pay_form" editable="true"/>
+                    <Option name="name_change" editable="false"/>
+                </EditableOptions>
+                <RoomLocks/>
+                <Rooms>
+                    <Room roomId="1000221609" roomSizeId="1" roomSizeName="SGL" roomTypeId="1" roomTypeName="STD"
+                          roomViewId="1" roomViewName="ROH"
+                          roomName="2 Queen Beds Wc Accessible Nonsmoking (NONREFUNDABLE)" mealId="6"
+                          mealName="Без питания" mealBreakfastId="1" mealBreakfastName="" child="1" cots="0"
+                          sharingBedding="false">
+                        <Paxes>
+                            <PaxId>1</PaxId>
+                            <PaxId>2</PaxId>
+                        </Paxes>
+                    </Room>
+                </Rooms>
+                <Remarks/>
+                <ChargeConditions>
+                    <Currency>EUR</Currency>
+                    <DenyNameChanges deny="false"/>
+                    <Cancellations>
+                        <Cancellation charge="true" denyChanges="false" from="2017-11-12T20:42:28" price="100.82"/>
+                    </Cancellations>
+                    <Amendments>
+                        <Amendment charge="true" denyChanges="true" from="2017-11-12T20:42:28" price="100.82"/>
+                    </Amendments>
+                </ChargeConditions>
+                <PriceDetails>
+                    <Currency>EUR</Currency>
+                    <RoomPrices>
+                        <Room roomNumber="1" roomSizeId="1" roomTypeId="1" roomViewId="1" child="1">
+                            <Price date="2018-07-08" available="true" price="100.82"/>
+                        </Room>
+                    </RoomPrices>
+                </PriceDetails>
+            </HotelItem>
+        </Items>
+        <ContactInfo>
+            <Name>Nikita Shatilo</Name>
+            <Email>shatilo.reymond@gmail.com</Email>
+            <Phone>380669699384</Phone>
+            <Comment>123 123 123</Comment>
+        </ContactInfo>
+    </Order>
+</ConfirmOrderResponse>

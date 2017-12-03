@@ -14,15 +14,6 @@ namespace App\Hotelbook\Exception;
 class ResponseException extends \Exception
 {
     /**
-     * @var int|string
-     */
-    protected $code;
-    /**
-     * @var string
-     */
-    protected $message;
-
-    /**
      * Error constructor.
      *
      * @param null $code
@@ -31,9 +22,6 @@ class ResponseException extends \Exception
      */
     public function __construct($code = null, $message = null, \Exception $previous = null)
     {
-        $this->code = $code;
-        $this->message = $message;
-
         parent::__construct($message, $code, $previous);
     }
 }

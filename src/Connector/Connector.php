@@ -11,8 +11,10 @@ declare(strict_types=1);
 
 namespace App\Hotelbook\Connector;
 
-use App\Hotelbook\Exception\RequestException;
+use App\Hotelbook\Exception\ResponseException;
 use Carbon\Carbon;
+use GuzzleHttp\Client;
+use GuzzleHttp\Psr7\Response;
 use SimpleXMLElement;
 
 /**
@@ -22,6 +24,9 @@ use SimpleXMLElement;
  */
 class Connector implements ConnectorInterface
 {
+    /**
+     * What is the CACHE_FILENAME to save the file.
+     */
     const CACHE_FILENAME = 'TMC_Provider_Hotelbook_cache_unixtime_diff.cache';
 
     /**
@@ -30,12 +35,46 @@ class Connector implements ConnectorInterface
     private $config;
 
     /**
+     * @var Client
+     */
+    private $client;
+
+    /**
      * Connector constructor.
      *
+     * @param $config
      */
     public function __construct($config)
     {
+        $this->setConfig($config);
+    }
+
+    /**
+     * @return array
+     */
+    protected function getConfig(): array
+    {
+        return $this->config;
+    }
+
+    /**
+     * @param array $config
+     */
+    protected function setConfig(array $config)
+    {
         $this->config = $config;
+    }
+
+
+    /**
+     * @return Client
+     * @codeCoverageIgnore
+     */
+    protected function buildClient()
+    {
+        return new Client([
+            'base_uri' => $this->getConfig()['url'],
+        ]);
     }
 
     /**
@@ -44,36 +83,29 @@ class Connector implements ConnectorInterface
      * @param $body
      * @param array $options
      * @return SimpleXMLElement
+     * @throws \App\Hotelbook\Exception\ResponseException
      */
     public function request(string $method, string $uri = '', $body = null, array $options = [])
     {
+        $this->client = $this->buildClient();
+
         $query = http_build_query(array_merge($options['query'] ?? [], $this->authentication()));
-        $curl = curl_init();
 
-        if ($method === 'POST') {
-            curl_setopt($curl, CURLOPT_POST, true);
-            curl_setopt($curl, CURLOPT_POSTFIELDS, 'request=' . $body);
-        }
-
-        curl_setopt($curl, CURLOPT_HEADER, false);
-        curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);
-        curl_setopt($curl, CURLOPT_TIMEOUT, 300);
-        curl_setopt($curl, CURLOPT_CONNECTTIMEOUT, 10);
-        curl_setopt($curl, CURLOPT_URL, $this->config['url'] . $uri . '?' . $query);
-        curl_setopt($curl, CURLOPT_PORT, 80);
-        curl_setopt($curl, CURLOPT_USERAGENT, 'tmc crazy connector');
-        curl_setopt($curl, CURLOPT_ENCODING, 'gzip');
-        curl_setopt($curl, CURLOPT_HTTPHEADER, [
-            'Accept: application/xml',
-            'Accept-Encoding: gzip, deflate'
+        $response = $this->client->{strtolower($method)}($uri, [
+            'query' => $query,
+            'headers' => [
+                'Accept' => 'application/xml',
+                'Accept-Encoding', 'gzip, deflate'
+            ],
+            'form_params' => [
+                'request' => $body
+            ],
+            'timeout' => 300
         ]);
 
-        $response = curl_exec($curl);
-        $this->handleError($curl);
+        $this->handleError($response);
 
-        curl_close($curl);
-
-        return new SimpleXMLElement($response);
+        return new SimpleXMLElement((string)$response->getBody());
     }
 
     /**
@@ -83,37 +115,77 @@ class Connector implements ConnectorInterface
     {
         $diff = $this->remember();
         $time = $this->resolveCorrectTime($diff);
-        $checksum = md5(md5($this->config['auth']['password']) . $time);
+        $checksum = md5(md5($this->getConfig()['auth']['password']) . $time);
 
         return [
-            'login' => $this->config['auth']['login'],
+            'login' => $this->getConfig()['auth']['login'],
             'time' => $time,
             'checksum' => $checksum
         ];
     }
 
     /**
-     * Запоминаем (на 5 часов) разницу
-     * во времени между сервером хотелбука и нашим.
+     * Remember the difference between Hotelbook time and hours
+     * Usually 5 hours
      *
      * @param int $ttl
      * @return int
      */
     private function remember(int $ttl = 60 * 60 * 5)
     {
-        $file = sys_get_temp_dir() . self::CACHE_FILENAME;
-        if (file_exists($file) && (filemtime($file) > (time() - $ttl))) {
-            return unserialize(file_get_contents($file));
+        $file = rtrim($this->getConfig()['differencePath'], '/') . '/' . self::CACHE_FILENAME;
+
+        if ($this->isFileRelevant($file, $ttl)) {
+            return $this->getDataFromCache($file);
         }
 
-        $context = stream_context_create(['http' => ['timeout' => 10]]);
-        $external = file_get_contents($this->config['url'] . 'unix_time', false, $context);
+        $external = $this->getExternalTime();
+        $data = $this->resolveDifference((int)$external);
 
-        $data = $this->resolveDifference(intval($external));
-        file_put_contents($file, serialize($data), LOCK_EX);
+        $this->writeCacheFile($file, $data);
 
         return $data;
     }
+
+    /**
+     * @param $file
+     * @param $ttl
+     * @return bool
+     * @codeCoverageIgnore
+     */
+    protected function isFileRelevant($file, $ttl)
+    {
+        return file_exists($file) && (filemtime($file) > (time() - $ttl));
+    }
+
+    /**
+     * @param $file
+     * @return mixed
+     * @codeCoverageIgnore
+     */
+    protected function getDataFromCache($file)
+    {
+        return unserialize(file_get_contents($file));
+    }
+
+    /**
+     * @return bool|string
+     */
+    protected function getExternalTime()
+    {
+        return (string) $this->client->get('unix_time')->getBody();
+    }
+
+    /**
+     * @param $file
+     * @param $data
+     * @codeCoverageIgnore
+     */
+    protected function writeCacheFile($file, $data)
+    {
+        file_put_contents($file, serialize($data), LOCK_EX);
+    }
+
 
     /**
      * @param $external
@@ -140,22 +212,18 @@ class Connector implements ConnectorInterface
     }
 
     /**
-     * @param $curl
-     * @throws RequestException
-     *
+     * @param Response $response
+     * @throws ResponseException
      * @return void
      */
-    protected function handleError($curl)
+    protected function handleError($response)
     {
-        $code = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+        $code = $response->getStatusCode();
 
-        if (curl_errno($curl) === 0 && ($code === 200 || $code === 201)) {
+        if ($code === 200 || $code === 201) {
             return;
         }
 
-        $msg = curl_error($curl);
-        $num = curl_errno($curl);
-        // $this->logger->warning('Ошибка обработки данных', compact('msg', 'num', 'provider'));
-        throw new RequestException($msg, $num);
+        throw new ResponseException($code, $response->getReasonPhrase());
     }
 }

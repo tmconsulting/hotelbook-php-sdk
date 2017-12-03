@@ -18,6 +18,34 @@ namespace App\Hotelbook\Object\Hotel\Room;
 class Size
 {
     /**
+     * Size constructor.
+     * @param int $id
+     * @param string $shortName
+     * @param string $fullName
+     * @param int $pax
+     * @param bool $children
+     * @param int $cots
+     * @param bool $searchable
+     */
+    public function __construct(
+        int $id,
+        string $shortName,
+        string $fullName,
+        int $pax,
+        bool $children,
+        int $cots,
+        bool $searchable
+    ) {
+        $this->setId($id);
+        $this->setShortName($shortName);
+        $this->setShortName($fullName);
+        $this->setPax($pax);
+        $this->setChildren($children);
+        $this->setCots($cots);
+        $this->setSearchable($searchable);
+    }
+
+    /**
      * @var int
      */
     protected $id;
@@ -28,6 +56,13 @@ class Size
      * @var string
      */
     protected $shortName;
+
+    /**
+     * Полное название номера
+     *
+     * @var string
+     */
+    protected $fullName;
 
     /**
      * Количество взрослых в номере
@@ -87,6 +122,22 @@ class Size
     public function setShortName(string $shortName)
     {
         $this->shortName = $shortName;
+    }
+
+    /**
+     * @return string
+     */
+    public function getFullName()
+    {
+        return $this->fullName;
+    }
+
+    /**
+     * @param string $fullName
+     */
+    public function setFullName(string $fullName)
+    {
+        $this->fullName = $fullName;
     }
 
     /**

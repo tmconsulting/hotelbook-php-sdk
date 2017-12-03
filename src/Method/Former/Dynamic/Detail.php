@@ -1,60 +1,23 @@
 <?php
-/**
- * Created by Roquie.
- * E-mail: roquie0@gmail.com
- * GitHub: Roquie
- * Date: 22.05.16
- * Project: provider_hotelbook
- */
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method;
+namespace App\Hotelbook\Method\Former\Dynamic;
 
-use App\Hotelbook\Connector\ConnectorInterface;
-use App\Hotelbook\Object\DetailResult;
-use Money\Parser\StringToUnitsParser;
+use App\Hotelbook\Method\Former\BaseFormer;
 
-final class Detail extends AbstractMethod
+/**
+ * Class Detail former
+ * @package App\Hotelbook\Method\Former\Dynamic
+ */
+class Detail extends BaseFormer
 {
     /**
-     * @var \App\Hotelbook\Connector\ConnectorInterface
+     * @param $results
+     * @return array
      */
-    private $connector;
-
-    /**
-     * SearchResult constructor.
-     *
-     * @param \App\Hotelbook\Connector\ConnectorInterface $connector
-     */
-    public function __construct(ConnectorInterface $connector)
+    public function form($results)
     {
-        $this->connector = $connector;
-    }
-
-    /**
-     * http://xmldoc.hotelbook.pro/html/ru/hotels/hotel-detail.html
-     * @param $params
-     * @return mixed
-     */
-    public function build($params)
-    {
-        return $params;
-    }
-
-    /**
-     * @param $results <- builds results
-     * @return mixed
-     */
-    public function handle($results)
-    {
-        [$value, $byName] = $results;
-
-        $optionKey = $byName ? 'hotel_name' : 'hotel_id';
-        $results = $this->connector->request('GET', 'hotel_detail', null, [
-            'query' => [$optionKey => $value]
-        ]);
-
         $attributes = current($results->HotelDetail);
         $detail = $results->HotelDetail;
 
@@ -84,7 +47,6 @@ final class Detail extends AbstractMethod
             'numberLifts' => (int)$detail->NumberLifts,
             'conference' => (string)$detail->Conference,
             'voltage' => (string)$detail->Voltage,
-            // 'voltage'            => (string) $detail->Voltage,
             'childAgeFrom' => (string)$detail->ChildAgeFrom,
             'childAgeTo' => (string)$detail->ChildAgeTo,
             'earlestCheckInTime' => isset($detail->EarlestCheckInTime) ? (string)$detail->EarlestCheckInTime : null,
@@ -107,12 +69,12 @@ final class Detail extends AbstractMethod
             ];
         }
 
-        return new DetailResult(array_merge($array, ...[
+        return array_merge($array, ...[
             $this->eachTypicalElements($detail, 'Locations.Location', 'locations'),
             $this->eachTypicalElements($detail, 'HotelFacility.Facility', 'facilities'),
             $this->eachTypicalElements($detail, 'RoomAmenity.Amenity', 'amenities'),
             $this->eachTypicalElements($detail, 'HotelType.Type', 'types'),
-        ]), $this->getErrors($results));
+        ]);
     }
 
     /**
