@@ -83,12 +83,12 @@ class Main implements HotelInterface
     }
 
     /**
-     * Метод для реализации ассинхронного поиска отелей.
-     * $value - идентификатор, название отеля или id отеля, зависит от опций в $parameter.
-     * $checkInDate - дата заезда
-     * $checkOutDate - дата выезда
-     * $passengers - пассажиры.
-     * $parameter - объект опций для поиска.
+     * Method for async search.
+     * $cityId - the id of city
+     * $checkInDate - the check in date
+     * $checkOutDate - the check out date
+     * $passengers - passengers
+     * $parameter - object of params
      *
      * @param $value
      * @param \Carbon\Carbon $checkInDate
