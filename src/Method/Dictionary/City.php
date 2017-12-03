@@ -41,7 +41,7 @@ class City extends AbstractMethod
      */
     public function build($params)
     {
-       return $this->builder->build($params);
+        return $this->builder->build($params);
     }
 
     /**

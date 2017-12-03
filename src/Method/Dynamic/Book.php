@@ -18,7 +18,6 @@ use App\Hotelbook\Method\Former\Dynamic\Book as BookFormer;
 use App\Hotelbook\Results\Method\BookResult;
 use Money\Parser\StringToUnitsParser;
 
-
 /**
  * A method to book a hotel (After search)
  * Class Book

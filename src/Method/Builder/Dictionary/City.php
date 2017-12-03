@@ -4,7 +4,8 @@ namespace App\Hotelbook\Method\Builder\Dictionary;
 
 use App\Hotelbook\Method\Builder\BuilderInterface;
 
-class City implements BuilderInterface{
+class City implements BuilderInterface
+{
 
     /**
      * @param $params
