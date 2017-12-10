@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Neo\Hotelbook\Tests\Hotelbook\Connector;
 
-use App\Hotelbook\Method\Former\Dynamic\Order;
+use App\Hotelbook\Method\Former\Order;
 use Neo\Hotelbook\Tests\TestCase;
 
 class OrderFormerTest extends TestCase

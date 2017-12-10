@@ -4,7 +4,7 @@ namespace App\Hotelbook\Method;
 
 use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Object\Hotel\Price;
-use App\Hotelbook\Results\ResultProceeder;
+use App\Hotelbook\ResultProceeder;
 use ReflectionClass;
 use ReflectionException;
 use SimpleXMLElement;
@@ -13,7 +13,7 @@ use SimpleXMLElement;
  * Class AbstractMethod
  * @package App\Hotelbook\Method
  */
-abstract class AbstractMethod implements MethodInterface
+abstract class AbstractMethod
 {
     /**
      * @var ConnectorInterface
@@ -21,12 +21,36 @@ abstract class AbstractMethod implements MethodInterface
     protected $connector;
 
     /**
+     * @var BaseBuilder
+     */
+    protected $builder;
+
+    /**
+     * @var CountryFormer
+     */
+    protected $former;
+
+    /**
      * AbstractMethod constructor.
+     * @throws ReflectionException
      * @param ConnectorInterface $connector
      */
     public function __construct(ConnectorInterface $connector)
     {
         $this->connector = $connector;
+
+        $this->builder = (new ReflectionClass($this->getBuilderClass()))->newInstanceArgs();
+        $this->former = (new ReflectionClass($this->getFormerClass()))->newInstanceArgs();
+    }
+
+    public function build($params)
+    {
+        return $this->builder->build($params);
+    }
+
+    public function form($response)
+    {
+        return $this->former->form($response);
     }
 
     /**
@@ -71,16 +95,16 @@ abstract class AbstractMethod implements MethodInterface
      * A method that creates an instance of result for every method.
      * @param $result
      * @param null $items
-     * @return array|object
+     * @param string $resultClass
+     * @return ResultProceeder|array|null
      */
-    protected function getResultObject($result, $items = null)
+    protected function getResultObject($result, $items = null, $resultClass = ResultProceeder::class)
     {
         try {
             if (!$items) {
                 $items = $this->performResult($result);
             }
-
-            return (new ReflectionClass($this->getResultClass()))->newInstanceArgs($items);
+            return (new ReflectionClass($resultClass))->newInstanceArgs($items);
         } catch (ReflectionException $e) {
             return $items;
         }
@@ -97,16 +121,7 @@ abstract class AbstractMethod implements MethodInterface
         return new Price($sum, $currency);
     }
 
-    /**
-     * A method to form the result out of XML.
-     * @param $response
-     * @return mixed
-     */
-    abstract protected function form($response);
+    abstract protected function getBuilderClass();
 
-    /**
-     * A method to implement that returns the ::class string for the result objecct.
-     * @return ResultProceeder
-     */
-    abstract protected function getResultClass();
+    abstract protected function getFormerClass();
 }

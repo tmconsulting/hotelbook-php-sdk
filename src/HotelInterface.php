@@ -77,4 +77,53 @@ interface HotelInterface
      * @return mixed
      */
     public function annulOrder(int $orderId, int $itemId);
+
+    /**
+     * Fetch all available countries.
+     * @return mixed
+     */
+    public function country();
+
+    /**
+     * Fetch all available cities.
+     * @param int|null $cityId
+     * @return mixed
+     */
+    public function city($cityId = null);
+
+    /**
+     * Fetch all available locations.
+     * @return mixed
+     */
+    public function location();
+
+    /**
+     * Fetch all available hotel types.
+     * @return mixed
+     */
+    public function hotelType();
+
+    /**
+     * Fetch all available meal types.
+     * @return mixed
+     */
+    public function meal();
+
+    /**
+     * Fetch all available room sizes.
+     * @return mixed
+     */
+    public function roomSize();
+
+    /**
+     * Fetch all available room types.
+     * @return mixed
+     */
+    public function roomType();
+
+    /**
+     * Fetch all available room amenities.
+     * @return mixed
+     */
+    public function roomAmenity();
 }

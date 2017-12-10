@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Hotelbook\Object\Method\Search;
 
 use App\Hotelbook\Connector\ConnectorInterface;
-use App\Hotelbook\Method\Former\Dynamic\Search as SearchFormer;
-use App\Hotelbook\Results\Method\SearchResult;
+use App\Hotelbook\Method\Former\Search as SearchFormer;
+use App\Hotelbook\ResultProceeder;
 use SimpleXMLElement;
 
 /**
@@ -183,6 +183,6 @@ class AsyncSearch
             $values = $this->form($response);
         }
 
-        return new SearchResult($values, $errors);
+        return new ResultProceeder($values, $errors);
     }
 }

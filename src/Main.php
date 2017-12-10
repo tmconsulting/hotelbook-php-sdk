@@ -10,22 +10,30 @@ namespace App\Hotelbook;
 
 use App\Hotelbook\Connector\Connector;
 use App\Hotelbook\Connector\ConnectorInterface;
-use App\Hotelbook\Method\Dynamic\AnnulOrder;
-use App\Hotelbook\Method\Dynamic\AsyncSearch;
-use App\Hotelbook\Method\Dynamic\Book;
-use App\Hotelbook\Method\Dynamic\CancelOrder;
-use App\Hotelbook\Method\Dynamic\ConfirmOrder;
-use App\Hotelbook\Method\Dynamic\Detail;
-use App\Hotelbook\Method\Dynamic\Search;
+use App\Hotelbook\Method\City;
+use App\Hotelbook\Method\Country;
 use App\Hotelbook\Method\DynamicResolver;
+use App\Hotelbook\Method\Search;
+use App\Hotelbook\Method\HotelType;
+use App\Hotelbook\Method\Location;
+use App\Hotelbook\Method\Meal;
+use App\Hotelbook\Method\RoomAmenity;
+use App\Hotelbook\Method\RoomSize;
+use App\Hotelbook\Method\RoomType;
 use App\Hotelbook\Object\Contact;
 use App\Hotelbook\Object\Hotel\BookItem;
 use App\Hotelbook\Object\Hotel\SearchParameter;
 use App\Hotelbook\Object\Hotel\Tag;
-use Carbon\Carbon;
 use App\Hotelbook\Object\Method\Search\AsyncSearchParams;
+use Carbon\Carbon;
 use Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use App\Hotelbook\Method\Detail;
+use App\Hotelbook\Method\Book;
+use App\Hotelbook\Method\AnnulOrder;
+use App\Hotelbook\Method\CancelOrder;
+use App\Hotelbook\Method\ConfirmOrder;
+use App\Hotelbook\Method\AsyncSearch;
 
 /**
  * Class Main
@@ -37,7 +45,12 @@ class Main implements HotelInterface
     /**
      * Use the dynamic resolver trait.
      */
-    use DynamicResolver;
+    use Resolver;
+
+    /**
+     * @var ConnectorInterface
+     */
+    protected $connector;
 
     /**
      * A private variable where the dictionary resolver class is stored
@@ -50,10 +63,10 @@ class Main implements HotelInterface
      */
     public function __construct($config)
     {
-        $connector = $this->makeConnector($config);
+        $this->connector = $this->makeConnector($config);
 
-        $this->setMethods($connector);
-        $this->setDictionary(new Dictionary($connector));
+        $this->setMethods();
+        $this->setDictionaryMethods();
     }
 
     /**
@@ -103,7 +116,8 @@ class Main implements HotelInterface
         Carbon $checkOutDate,
         array $rooms,
         AsyncSearchParams $searchParams
-    ) {
+    )
+    {
         return $this->callMethod('asyncSearch', [
             [$value, $checkInDate, $checkOutDate, $rooms],
             $searchParams
@@ -173,13 +187,78 @@ class Main implements HotelInterface
         return $this->callMethod('annulOrder', [$orderId, $itemId]);
     }
 
+
     /**
-     * @param DictionaryInterface $dictionary
-     * return void
+     * Fetch all available countries.
+     * @return mixed
      */
-    private function setDictionary(DictionaryInterface $dictionary)
+    public function country()
     {
-        $this->dictionary = $dictionary;
+        return $this->callMethod('country');
+    }
+
+    /**
+     * Fetch all available cities.
+     * @param int|null $countryId
+     * @return mixed
+     */
+    public function city($countryId = null)
+    {
+        return $this->callMethod('city', [$countryId]);
+    }
+
+    /**
+     * Fetch all available locations.
+     * @return mixed
+     */
+    public function location()
+    {
+        return $this->callMethod('location');
+    }
+
+    /**
+     * Fetch all available hotel types.
+     * @return mixed
+     */
+    public function hotelType()
+    {
+        return $this->callMethod('hotelType');
+    }
+
+    /**
+     * Fetch all available meal types.
+     * @return mixed
+     */
+    public function meal()
+    {
+        return $this->callMethod('meal');
+    }
+
+    /**
+     * Fetch all available room sizes.
+     * @return mixed
+     */
+    public function roomSize()
+    {
+        return $this->callMethod('roomSize');
+    }
+
+    /**
+     * Fetch all available room types.
+     * @return mixed
+     */
+    public function roomType()
+    {
+        return $this->callMethod('roomType');
+    }
+
+    /**
+     * Fetch all available room amenities.
+     * @return mixed
+     */
+    public function roomAmenity()
+    {
+        return $this->callMethod('roomAmenity');
     }
 
     /**
@@ -228,16 +307,36 @@ class Main implements HotelInterface
 
     /**
      * Method to set all the methods into dynamic resolver.
-     * @param $connector
+     * @return void
      */
-    private function setMethods($connector)
+    private function setMethods()
     {
-        $this->setMethod('search', new Search($connector));
-        $this->setMethod('asyncSearch', new AsyncSearch($connector));
-        $this->setMethod('detail', new Detail($connector));
-        $this->setMethod('book', new Book($connector));
-        $this->setMethod('annulOrder', new AnnulOrder($connector));
-        $this->setMethod('cancelOrder', new CancelOrder($connector));
-        $this->setMethod('confirmOrder', new ConfirmOrder($connector));
+        $this->setMethod('search', Search::class);
+        $this->setMethod('asyncSearch',  AsyncSearch::class);
+        $this->setMethod('detail', Detail::class);
+        $this->setMethod('book', Book::class);
+        $this->setMethod('annulOrder', AnnulOrder::class);
+        $this->setMethod('cancelOrder', CancelOrder::class);
+        $this->setMethod('confirmOrder', ConfirmOrder::class);
+    }
+
+    /**
+     * @return void
+     */
+    private function setDictionaryMethods()
+    {
+        //Locations
+        $this->setMethod('country', Country::class);
+        $this->setMethod('city', City::class);
+        $this->setMethod('location', Location::class);
+
+        //Hotel
+        $this->setMethod('hotelType', HotelType::class);
+        $this->setMethod('meal', Meal::class);
+
+        //Rooms
+        $this->setMethod('roomSize', RoomSize::class);
+        $this->setMethod('roomType', RoomType::class);
+        $this->setMethod('roomAmenity', RoomAmenity::class);
     }
 }

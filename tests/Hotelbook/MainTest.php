@@ -2,12 +2,12 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook;
 
+use App\Hotelbook\ResultProceeder;
 use PHPUnit\Framework\TestCase;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use App\Hotelbook\Main;
 use Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
 use App\Hotelbook\Object\Hotel\SearchPassenger;
-use App\Hotelbook\Results\Method\SearchResult;
 use Carbon\Carbon;
 use App\Hotelbook\Object\Method\Search\AsyncSearch;
 use App\Hotelbook\Object\Method\Search\AsyncSearchParams;
@@ -88,7 +88,7 @@ class MainTest extends TestCase
             [new SearchPassenger(1)]
         );
 
-        $this->assertInstanceOf(SearchResult::class, $result);
+        $this->assertInstanceOf(ResultProceeder::class, $result);
     }
 
     public function testSearchMethodWithError()
@@ -105,7 +105,7 @@ class MainTest extends TestCase
             [new SearchPassenger(1)]
         );
 
-        $this->assertInstanceOf(SearchResult::class, $result);
+        $this->assertInstanceOf(ResultProceeder::class, $result);
     }
 
     public function testAsyncSearchMethod()
