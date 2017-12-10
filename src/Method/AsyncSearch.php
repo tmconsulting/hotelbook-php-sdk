@@ -55,11 +55,17 @@ class AsyncSearch extends AbstractMethod
         return null;
     }
 
+    /**
+     * @return string
+     */
     protected function getBuilderClass()
     {
         return SearchBuilder::class;
     }
 
+    /**
+     * @return string
+     */
     protected function getFormerClass()
     {
         return AsyncSearchFormer::class;

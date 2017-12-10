@@ -23,27 +23,6 @@ trait Resolver
         $this->methods[$name] = $method;
     }
 
-    public function getMethod($name)
-    {
-        if (!empty($this->instances[$name])) {
-            return $this->instances[$name];
-        }
-
-        return $this->instantiateMethod($name);
-    }
-
-    protected function saveInstance($name, $instance)
-    {
-        $this->instances[$name] = $instance;
-        return $instance;
-    }
-
-    protected function instantiateMethod($name)
-    {
-        $instance = (new ReflectionClass($this->methods[$name]))->newInstanceArgs([$this->connector]);
-        return $this->saveInstance($name, $instance);
-    }
-
     /**
      * @param $name
      * @param array $params
@@ -54,5 +33,26 @@ trait Resolver
         $method = $this->getMethod($name);
         $requestToSend = $method->build($params);
         return $method->handle($requestToSend);
+    }
+
+    public function getMethod($name)
+    {
+        if (!empty($this->instances[$name])) {
+            return $this->instances[$name];
+        }
+
+        return $this->instantiateMethod($name);
+    }
+
+    protected function instantiateMethod($name)
+    {
+        $instance = (new ReflectionClass($this->methods[$name]))->newInstanceArgs([$this->connector]);
+        return $this->saveInstance($name, $instance);
+    }
+
+    protected function saveInstance($name, $instance)
+    {
+        $this->instances[$name] = $instance;
+        return $instance;
     }
 }

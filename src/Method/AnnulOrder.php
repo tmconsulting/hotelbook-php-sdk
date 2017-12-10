@@ -38,11 +38,17 @@ class AnnulOrder extends AbstractMethod
     }
 
 
+    /**
+     * @return string
+     */
     protected function getBuilderClass()
     {
         return BaseBuilder::class;
     }
 
+    /**
+     * @return string
+     */
     protected function getFormerClass()
     {
         return OrderFormer::class;

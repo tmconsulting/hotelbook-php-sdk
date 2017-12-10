@@ -16,12 +16,6 @@ use Carbon\Carbon;
 interface HotelInterface
 {
     /**
-     * A method to fetch the dictionary object.
-     * @return DictionaryInterface
-     */
-    public function getDictionary();
-
-    /**
      * A method for hotel search.
      * @param int $cityId
      * @param Carbon $checkInDate

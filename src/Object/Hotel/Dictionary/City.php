@@ -63,7 +63,8 @@ class City
         string $name,
         float $lat,
         float $lgn
-    ) {
+    )
+    {
         $this->setId($id);
         $this->setCountryId($countryId);
         $this->setHotelCount($hotelCount);

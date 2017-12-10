@@ -18,6 +18,47 @@ namespace App\Hotelbook\Object\Hotel\Room;
 class Size
 {
     /**
+     * @var int
+     */
+    protected $id;
+    /**
+     * Сокращенное название размера (SGL, DBL, DBL-SOLO и т.д.)
+     *
+     * @var string
+     */
+    protected $shortName;
+    /**
+     * Полное название номера
+     *
+     * @var string
+     */
+    protected $fullName;
+    /**
+     * Количество взрослых в номере
+     *
+     * @var int
+     */
+    protected $pax;
+    /**
+     * Наличие дополнительного места для ребенка
+     *
+     * @var bool
+     */
+    protected $children;
+    /**
+     * Количество люлек в номере
+     *
+     * @var int
+     */
+    protected $cots;
+    /**
+     * Возможно ли данный размер номера задать в параметрах поиска отеля
+     *
+     * @var bool
+     */
+    protected $searchable;
+
+    /**
      * Size constructor.
      * @param int $id
      * @param string $shortName
@@ -35,7 +76,8 @@ class Size
         bool $children,
         int $cots,
         bool $searchable
-    ) {
+    )
+    {
         $this->setId($id);
         $this->setShortName($shortName);
         $this->setShortName($fullName);
@@ -44,53 +86,6 @@ class Size
         $this->setCots($cots);
         $this->setSearchable($searchable);
     }
-
-    /**
-     * @var int
-     */
-    protected $id;
-
-    /**
-     * Сокращенное название размера (SGL, DBL, DBL-SOLO и т.д.)
-     *
-     * @var string
-     */
-    protected $shortName;
-
-    /**
-     * Полное название номера
-     *
-     * @var string
-     */
-    protected $fullName;
-
-    /**
-     * Количество взрослых в номере
-     *
-     * @var int
-     */
-    protected $pax;
-
-    /**
-     * Наличие дополнительного места для ребенка
-     *
-     * @var bool
-     */
-    protected $children;
-
-    /**
-     * Количество люлек в номере
-     *
-     * @var int
-     */
-    protected $cots;
-
-    /**
-     * Возможно ли данный размер номера задать в параметрах поиска отеля
-     *
-     * @var bool
-     */
-    protected $searchable;
 
     /**
      * @return int

@@ -24,11 +24,17 @@ class City extends AbstractMethod
         return $this->getResultObject($result);
     }
 
+    /**
+     * @return string
+     */
     protected function getBuilderClass()
     {
         return CityBuilder::class;
     }
 
+    /**
+     * @return string
+     */
     protected function getFormerClass()
     {
         return CityFormer::class;

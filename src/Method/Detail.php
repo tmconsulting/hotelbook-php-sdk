@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\Hotelbook\Method;
 
-use App\Hotelbook\Method\AbstractMethod;
 use App\Hotelbook\Method\Builder\BaseBuilder;
 use App\Hotelbook\Method\Former\Detail as DetailFormer;
 use Money\Parser\StringToUnitsParser;
@@ -32,11 +31,17 @@ class Detail extends AbstractMethod
         return $this->getResultObject($results);
     }
 
+    /**
+     * @return string
+     */
     protected function getBuilderClass()
     {
         return BaseBuilder::class;
     }
 
+    /**
+     * @return string
+     */
     protected function getFormerClass()
     {
         return DetailFormer::class;

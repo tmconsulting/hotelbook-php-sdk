@@ -88,7 +88,7 @@ final class Contact
      */
     public function getComment()
     {
-        return $this->comment === null ? '' : (string) $this->comment;
+        return $this->comment === null ? '' : (string)$this->comment;
     }
 
     /**

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response date="2017-12-10T19:02:16+03:00">
+    <HotelCategories>
+        <Category id="5"><![CDATA[1*]]></Category>
+        <Category id="4"><![CDATA[2*]]></Category>
+        <Category id="2"><![CDATA[3*]]></Category>
+        <Category id="3"><![CDATA[4*]]></Category>
+        <Category id="1"><![CDATA[5*]]></Category>
+    </HotelCategories>
+</Response>

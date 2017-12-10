@@ -4,8 +4,26 @@ declare(strict_types=1);
 
 namespace App\Hotelbook\Method\Former;
 
+/**
+ * Class Search
+ * @package App\Hotelbook\Method\Former
+ */
 class Search extends BaseFormer
 {
+    /**
+     * @param $response
+     * @return array
+     */
+    public function form($response)
+    {
+        $searchRooms = $this->proceedRequest($response);
+        return $this->proceedHotels($response, $searchRooms);
+    }
+
+    /**
+     * @param $response
+     * @return array
+     */
     protected function proceedRequest($response)
     {
         $searchRooms = [];
@@ -28,6 +46,11 @@ class Search extends BaseFormer
         return $searchRooms;
     }
 
+    /**
+     * @param $response
+     * @param $searchRooms
+     * @return array
+     */
     protected function proceedHotels($response, $searchRooms)
     {
         $i = 0;
@@ -88,11 +111,5 @@ class Search extends BaseFormer
         }
 
         return $array;
-    }
-
-    public function form($response)
-    {
-        $searchRooms = $this->proceedRequest($response);
-        return $this->proceedHotels($response, $searchRooms);
     }
 }

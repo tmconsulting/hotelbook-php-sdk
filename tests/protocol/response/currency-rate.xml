@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response date="2017-12-10T19:52:39+03:00">
+    <CurrencyRatesInfo totalCurrencies="44">
+        <Currency from="AED" to="RUB" rate="16.1419" margin="1.02"/>
+        <Currency from="AMD" to="RUB" rate="0.1222" margin="1.02"/>
+        <Currency from="AUD" to="RUB" rate="44.5082" margin="1.02"/>
+        <Currency from="AZN" to="RUB" rate="34.8712" margin="1.02"/>
+        <Currency from="BGN" to="RUB" rate="35.5808" margin="1.02"/>
+        <Currency from="BRL" to="RUB" rate="18.0147" margin="1.02"/>
+        <Currency from="BYN" to="RUB" rate="29.095" margin="1"/>
+        <Currency from="BYR" to="RUB" rate="0.0032" margin="1.02"/>
+        <Currency from="CAD" to="RUB" rate="46.0901" margin="1.02"/>
+        <Currency from="CHF" to="RUB" rate="59.4953" margin="1.02"/>
+        <Currency from="CNY" to="RUB" rate="8.9578" margin="1.02"/>
+        <Currency from="CZK" to="RUB" rate="2.7224" margin="1.02"/>
+        <Currency from="DKK" to="RUB" rate="9.3521" margin="1.02"/>
+        <Currency from="EEK" to="RUB" rate="4.6429" margin="1.02"/>
+        <Currency from="EUR" to="RUB" rate="69.6434" margin="1.02"/>
+        <Currency from="GBP" to="RUB" rate="80.0532" margin="1.02"/>
+        <Currency from="HKD" to="RUB" rate="7.5925" margin="1.02"/>
+        <Currency from="HUF" to="RUB" rate="0.2209" margin="1.02"/>
+        <Currency from="INR" to="RUB" rate="0.9194" margin="1.02"/>
+        <Currency from="ISK" to="RUB" rate="0.5387" margin="1.02"/>
+        <Currency from="JPY" to="RUB" rate="0.522" margin="1.02"/>
+        <Currency from="KGS" to="RUB" rate="0.8505" margin="1.02"/>
+        <Currency from="KRW" to="RUB" rate="0.0542" margin="1.02"/>
+        <Currency from="KZT" to="RUB" rate="0.1773" margin="1.02"/>
+        <Currency from="LTL" to="RUB" rate="18.7836" margin="1.02"/>
+        <Currency from="LVL" to="RUB" rate="92.2746" margin="1.02"/>
+        <Currency from="MDL" to="RUB" rate="3.4267" margin="1.02"/>
+        <Currency from="MYR" to="RUB" rate="13.6104" margin="1.02"/>
+        <Currency from="NOK" to="RUB" rate="7.1188" margin="1.02"/>
+        <Currency from="PLN" to="RUB" rate="16.5405" margin="1.02"/>
+        <Currency from="RON" to="RUB" rate="15.0265" margin="1.02"/>
+        <Currency from="RUB" to="RUB" rate="1" margin="1"/>
+        <Currency from="RUR" to="RUB" rate="1" margin="1.02"/>
+        <Currency from="SEK" to="RUB" rate="6.9733" margin="1.02"/>
+        <Currency from="SGD" to="RUB" rate="43.8048" margin="1.02"/>
+        <Currency from="THB" to="RUB" rate="1.7285" margin="1.02"/>
+        <Currency from="TJS" to="RUB" rate="6.7145" margin="1.02"/>
+        <Currency from="TMT" to="RUB" rate="16.9617" margin="1.02"/>
+        <Currency from="TRY" to="RUB" rate="15.3498" margin="1.02"/>
+        <Currency from="UAH" to="RUB" rate="2.1866" margin="1.02"/>
+        <Currency from="USD" to="RUB" rate="59.2811" margin="1.02"/>
+        <Currency from="UZS" to="RUB" rate="0.0073" margin="1.02"/>
+        <Currency from="XDR" to="RUB" rate="83.7138" margin="1.02"/>
+        <Currency from="ZAR" to="RUB" rate="4.3267" margin="1.02"/>
+    </CurrencyRatesInfo>
+</Response>

@@ -43,14 +43,61 @@ abstract class AbstractMethod
         $this->former = (new ReflectionClass($this->getFormerClass()))->newInstanceArgs();
     }
 
+    /**
+     * A method for the parent class to provide the class for the builders.
+     * @return mixed
+     */
+    abstract protected function getBuilderClass();
+
+    /**
+     * A methof for the parent class to provide the class for the former
+     * @return mixed
+     */
+    abstract protected function getFormerClass();
+
+    /**
+     * @param $params
+     * @return mixed
+     */
     public function build($params)
     {
         return $this->builder->build($params);
     }
 
-    public function form($response)
+    /**
+     * A method that creates an instance of result for every method.
+     * @param $result
+     * @param null $items
+     * @param string $resultClass
+     * @return ResultProceeder|array|null
+     */
+    protected function getResultObject($result, $items = null, $resultClass = ResultProceeder::class)
     {
-        return $this->former->form($response);
+        try {
+            if (!$items) {
+                $items = $this->performResult($result);
+            }
+            return (new ReflectionClass($resultClass))->newInstanceArgs($items);
+        } catch (ReflectionException $e) {
+            return $items;
+        }
+    }
+
+    /**
+     * A method to get result from the response.
+     * @param $result
+     * @param array $values
+     * @return array
+     */
+    protected function performResult($result, $values = [])
+    {
+        $errors = $this->getErrors($result);
+
+        if (empty($errors)) {
+            $values = $this->form($result);
+        }
+
+        return [$values, $errors];
     }
 
     /**
@@ -75,39 +122,12 @@ abstract class AbstractMethod
     }
 
     /**
-     * A method to get result from the response.
-     * @param $result
-     * @param array $values
-     * @return array
+     * @param $response
+     * @return mixed
      */
-    protected function performResult($result, $values = [])
+    public function form($response)
     {
-        $errors = $this->getErrors($result);
-
-        if (empty($errors)) {
-            $values = $this->form($result);
-        }
-
-        return [$values, $errors];
-    }
-
-    /**
-     * A method that creates an instance of result for every method.
-     * @param $result
-     * @param null $items
-     * @param string $resultClass
-     * @return ResultProceeder|array|null
-     */
-    protected function getResultObject($result, $items = null, $resultClass = ResultProceeder::class)
-    {
-        try {
-            if (!$items) {
-                $items = $this->performResult($result);
-            }
-            return (new ReflectionClass($resultClass))->newInstanceArgs($items);
-        } catch (ReflectionException $e) {
-            return $items;
-        }
+        return $this->former->form($response);
     }
 
     /**
@@ -120,8 +140,4 @@ abstract class AbstractMethod
     {
         return new Price($sum, $currency);
     }
-
-    abstract protected function getBuilderClass();
-
-    abstract protected function getFormerClass();
 }

@@ -56,11 +56,17 @@ class CancelOrder extends AbstractMethod
         return $this->makeRequest('confirm_order', $orderId, $itemId);
     }
 
+    /**
+     * @return string
+     */
     protected function getBuilderClass()
     {
         return BaseBuilder::class;
     }
 
+    /**
+     * @return string
+     */
     protected function getFormerClass()
     {
         return OrderFormer::class;
