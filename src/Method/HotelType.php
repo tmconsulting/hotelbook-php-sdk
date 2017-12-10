@@ -24,11 +24,17 @@ class HotelType extends AbstractMethod
         return $this->getResultObject($results);
     }
 
+    /**
+     * @return string
+     */
     protected function getBuilderClass()
     {
         return BaseBuilder::class;
     }
 
+    /**
+     * @return string
+     */
     protected function getFormerClass()
     {
         return HotelTypeFormer::class;

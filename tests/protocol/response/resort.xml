@@ -1,0 +1,404 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response date="2017-12-10T19:43:53+03:00">
+    <Resorts>
+        <Resort id="43" country="43"><![CDATA[Доминиканская республика]]></Resort>
+        <Resort id="44" country="44"><![CDATA[Египет]]></Resort>
+        <Resort id="45" country="45"><![CDATA[Заир]]></Resort>
+        <Resort id="46" country="46"><![CDATA[Замбия]]></Resort>
+        <Resort id="47" country="47"><![CDATA[Зимбабве]]></Resort>
+        <Resort id="48" country="48"><![CDATA[Израиль]]></Resort>
+        <Resort id="49" country="49"><![CDATA[Индия]]></Resort>
+        <Resort id="50" country="50"><![CDATA[Индонезия]]></Resort>
+        <Resort id="51" country="51"><![CDATA[Иордания]]></Resort>
+        <Resort id="52" country="52"><![CDATA[Ирак]]></Resort>
+        <Resort id="53" country="53"><![CDATA[Иран]]></Resort>
+        <Resort id="54" country="54"><![CDATA[Ирландия (Республика)]]></Resort>
+        <Resort id="55" country="55"><![CDATA[Исландия]]></Resort>
+        <Resort id="56" country="56"><![CDATA[Испания]]></Resort>
+        <Resort id="57" country="57"><![CDATA[Италия]]></Resort>
+        <Resort id="58" country="58"><![CDATA[Йеменская Республика]]></Resort>
+        <Resort id="59" country="59"><![CDATA[Казахстан]]></Resort>
+        <Resort id="60" country="60"><![CDATA[Каймановы Острова]]></Resort>
+        <Resort id="61" country="61"><![CDATA[Камбоджа]]></Resort>
+        <Resort id="62" country="62"><![CDATA[Камерун]]></Resort>
+        <Resort id="63" country="63"><![CDATA[Канада]]></Resort>
+        <Resort id="64" country="64"><![CDATA[Катар]]></Resort>
+        <Resort id="65" country="65"><![CDATA[Кения]]></Resort>
+        <Resort id="66" country="66"><![CDATA[Кипр]]></Resort>
+        <Resort id="67" country="67"><![CDATA[Киргизстан]]></Resort>
+        <Resort id="68" country="68"><![CDATA[Китай]]></Resort>
+        <Resort id="69" country="69"><![CDATA[Колумбия]]></Resort>
+        <Resort id="70" country="70"><![CDATA[Конго]]></Resort>
+        <Resort id="71" country="71"><![CDATA[Коста Рика]]></Resort>
+        <Resort id="72" country="72"><![CDATA[Куба]]></Resort>
+        <Resort id="73" country="73"><![CDATA[Кувейт]]></Resort>
+        <Resort id="74" country="74"><![CDATA[Лаос]]></Resort>
+        <Resort id="75" country="75"><![CDATA[Латвия]]></Resort>
+        <Resort id="76" country="76"><![CDATA[Ливан]]></Resort>
+        <Resort id="77" country="77"><![CDATA[Ливия]]></Resort>
+        <Resort id="78" country="78"><![CDATA[Литва]]></Resort>
+        <Resort id="79" country="79"><![CDATA[Лихтенштейн]]></Resort>
+        <Resort id="80" country="80"><![CDATA[Люксембург]]></Resort>
+        <Resort id="81" country="81"><![CDATA[Маврикий]]></Resort>
+        <Resort id="82" country="82"><![CDATA[Макау]]></Resort>
+        <Resort id="83" country="83"><![CDATA[Македония]]></Resort>
+        <Resort id="84" country="84"><![CDATA[Малайзия]]></Resort>
+        <Resort id="85" country="85"><![CDATA[Мали]]></Resort>
+        <Resort id="86" country="86"><![CDATA[Мальдивы]]></Resort>
+        <Resort id="87" country="87"><![CDATA[Мальта]]></Resort>
+        <Resort id="88" country="88"><![CDATA[Мексика]]></Resort>
+        <Resort id="89" country="89"><![CDATA[Микронезия]]></Resort>
+        <Resort id="90" country="90"><![CDATA[Мозамбик]]></Resort>
+        <Resort id="91" country="91"><![CDATA[Молдова]]></Resort>
+        <Resort id="92" country="92"><![CDATA[Монголия]]></Resort>
+        <Resort id="93" country="93"><![CDATA[Марокко]]></Resort>
+        <Resort id="94" country="94"><![CDATA[Мьянма]]></Resort>
+        <Resort id="95" country="95"><![CDATA[Намибия]]></Resort>
+        <Resort id="96" country="96"><![CDATA[Непал]]></Resort>
+        <Resort id="97" country="97"><![CDATA[Нигерия]]></Resort>
+        <Resort id="98" country="98"><![CDATA[Нидерландские Антилы]]></Resort>
+        <Resort id="99" country="99"><![CDATA[Нидерланды]]></Resort>
+        <Resort id="100" country="100"><![CDATA[Никарагуа]]></Resort>
+        <Resort id="101" country="101"><![CDATA[Новая Зеландия]]></Resort>
+        <Resort id="102" country="102"><![CDATA[Новая Каледония]]></Resort>
+        <Resort id="103" country="103"><![CDATA[Норвегия]]></Resort>
+        <Resort id="104" country="104"><![CDATA[ОАЭ]]></Resort>
+        <Resort id="105" country="105"><![CDATA[Оман]]></Resort>
+        <Resort id="106" country="106"><![CDATA[Остров Норфолк]]></Resort>
+        <Resort id="107" country="107"><![CDATA[Острова Девы(США)]]></Resort>
+        <Resort id="108" country="108"><![CDATA[Острова Кука]]></Resort>
+        <Resort id="109" country="109"><![CDATA[Острова Туркс и Кайкос]]></Resort>
+        <Resort id="110" country="110"><![CDATA[Пакистан]]></Resort>
+        <Resort id="111" country="111"><![CDATA[Палау]]></Resort>
+        <Resort id="112" country="112"><![CDATA[Панама]]></Resort>
+        <Resort id="113" country="113"><![CDATA[Парагвай]]></Resort>
+        <Resort id="114" country="114"><![CDATA[Перу]]></Resort>
+        <Resort id="115" country="115"><![CDATA[Польша]]></Resort>
+        <Resort id="116" country="116"><![CDATA[Португалия]]></Resort>
+        <Resort id="117" country="117"><![CDATA[Пуэрто Рико]]></Resort>
+        <Resort id="118" country="118"><![CDATA[Россия]]></Resort>
+        <Resort id="119" country="119"><![CDATA[Румыния]]></Resort>
+        <Resort id="120" country="120"><![CDATA[Самоа]]></Resort>
+        <Resort id="121" country="121"><![CDATA[Сан Мартин (Франция)]]></Resort>
+        <Resort id="122" country="122"><![CDATA[Санта Лючия]]></Resort>
+        <Resort id="123" country="123"><![CDATA[Саудовская Аравия]]></Resort>
+        <Resort id="124" country="124"><![CDATA[Свазиленд]]></Resort>
+        <Resort id="125" country="125"><![CDATA[Северная Корея]]></Resort>
+        <Resort id="126" country="126"><![CDATA[Северные Марианские острова]]></Resort>
+        <Resort id="127" country="127"><![CDATA[Северный Кипр]]></Resort>
+        <Resort id="128" country="128"><![CDATA[Сейшельские острова]]></Resort>
+        <Resort id="129" country="129"><![CDATA[Сенегал]]></Resort>
+        <Resort id="130" country="130"><![CDATA[Сент Бартелеми]]></Resort>
+        <Resort id="131" country="131"><![CDATA[Сент Висент и Гренадины]]></Resort>
+        <Resort id="132" country="132"><![CDATA[Сент Киттс и Невис]]></Resort>
+        <Resort id="133" country="133"><![CDATA[Сербия]]></Resort>
+        <Resort id="134" country="134"><![CDATA[Сингапур]]></Resort>
+        <Resort id="135" country="135"><![CDATA[Сирия]]></Resort>
+        <Resort id="136" country="136"><![CDATA[Словакия]]></Resort>
+        <Resort id="137" country="137"><![CDATA[Словения]]></Resort>
+        <Resort id="138" country="138"><![CDATA[США]]></Resort>
+        <Resort id="139" country="139"><![CDATA[Таджикистан]]></Resort>
+        <Resort id="140" country="140"><![CDATA[Тайвань]]></Resort>
+        <Resort id="141" country="141"><![CDATA[Тайланд]]></Resort>
+        <Resort id="142" country="142"><![CDATA[Танзания]]></Resort>
+        <Resort id="143" country="143"><![CDATA[Того]]></Resort>
+        <Resort id="144" country="144"><![CDATA[Тонга]]></Resort>
+        <Resort id="145" country="145"><![CDATA[Тринидад и Тобаго]]></Resort>
+        <Resort id="146" country="146"><![CDATA[Тунис]]></Resort>
+        <Resort id="147" country="147"><![CDATA[Туркменистан]]></Resort>
+        <Resort id="148" country="148"><![CDATA[Турция]]></Resort>
+        <Resort id="149" country="149"><![CDATA[Уганда]]></Resort>
+        <Resort id="150" country="150"><![CDATA[Узбекистан]]></Resort>
+        <Resort id="151" country="151"><![CDATA[Украина]]></Resort>
+        <Resort id="152" country="152"><![CDATA[Уругвай]]></Resort>
+        <Resort id="153" country="153"><![CDATA[Фиджи]]></Resort>
+        <Resort id="154" country="154"><![CDATA[Филиппины]]></Resort>
+        <Resort id="155" country="155"><![CDATA[Финляндия]]></Resort>
+        <Resort id="156" country="156"><![CDATA[Франция]]></Resort>
+        <Resort id="157" country="157"><![CDATA[Французская Полинезия]]></Resort>
+        <Resort id="158" country="158"><![CDATA[Хорватия]]></Resort>
+        <Resort id="159" country="159"><![CDATA[Чешская республика]]></Resort>
+        <Resort id="160" country="160"><![CDATA[Чили]]></Resort>
+        <Resort id="161" country="161"><![CDATA[Швейцария]]></Resort>
+        <Resort id="162" country="162"><![CDATA[Швеция]]></Resort>
+        <Resort id="163" country="163"><![CDATA[Шри Ланка]]></Resort>
+        <Resort id="164" country="164"><![CDATA[Эквадор]]></Resort>
+        <Resort id="165" country="165"><![CDATA[Эстония]]></Resort>
+        <Resort id="166" country="166"><![CDATA[Эфиопия]]></Resort>
+        <Resort id="167" country="167"><![CDATA[Южная Африка]]></Resort>
+        <Resort id="168" country="168"><![CDATA[Южная Корея]]></Resort>
+        <Resort id="169" country="169"><![CDATA[Ямайка]]></Resort>
+        <Resort id="170" country="170"><![CDATA[Япония]]></Resort>
+        <Resort id="171" country="156"><![CDATA[Эльзас]]></Resort>
+        <Resort id="172" country="156"><![CDATA[Анси и окрестности]]></Resort>
+        <Resort id="173" country="156"><![CDATA[Бержерак]]></Resort>
+        <Resort id="174" country="156"><![CDATA[Аквитания]]></Resort>
+        <Resort id="175" country="156"><![CDATA[Бордо]]></Resort>
+        <Resort id="176" country="156"><![CDATA[Овернь]]></Resort>
+        <Resort id="180" country="156"><![CDATA[Бургундия]]></Resort>
+        <Resort id="181" country="156"><![CDATA[Бретань]]></Resort>
+        <Resort id="182" country="156"><![CDATA[Шамони]]></Resort>
+        <Resort id="183" country="156"><![CDATA[Шампань-Арденны]]></Resort>
+        <Resort id="184" country="156"><![CDATA[о. Корсика]]></Resort>
+        <Resort id="185" country="156"><![CDATA[Лазурный Берег]]></Resort>
+        <Resort id="186" country="156"><![CDATA[Ла Рошель]]></Resort>
+        <Resort id="187" country="156"><![CDATA[Долина Луары]]></Resort>
+        <Resort id="188" country="156"><![CDATA[Лион]]></Resort>
+        <Resort id="189" country="156"><![CDATA[Север Па-де-Кале]]></Resort>
+        <Resort id="190" country="156"><![CDATA[Нормандия]]></Resort>
+        <Resort id="191" country="156"><![CDATA[Диснейленд]]></Resort>
+        <Resort id="192" country="156"><![CDATA[Пикардия]]></Resort>
+        <Resort id="193" country="156"><![CDATA[Пуатье (Пуату-Шарант)]]></Resort>
+        <Resort id="194" country="156"><![CDATA[Прованс-Альпы-Лазурный Берег]]></Resort>
+        <Resort id="195" country="156"><![CDATA[Родез]]></Resort>
+        <Resort id="196" country="32"><![CDATA[Черный  Лес]]></Resort>
+        <Resort id="197" country="32"><![CDATA[Романтическая Дорога]]></Resort>
+        <Resort id="198" country="37"><![CDATA[Кикладские о-ва]]></Resort>
+        <Resort id="199" country="37"><![CDATA[Халкида]]></Resort>
+        <Resort id="200" country="37"><![CDATA[Пелопоннес]]></Resort>
+        <Resort id="201" country="37"><![CDATA[о-ва Спорады]]></Resort>
+        <Resort id="202" country="128"><![CDATA[Индийский Океан]]></Resort>
+        <Resort id="204" country="57"><![CDATA[Адриатическое побережье]]></Resort>
+        <Resort id="205" country="57"><![CDATA[Амалфи]]></Resort>
+        <Resort id="207" country="57"><![CDATA[Кьянчиано Терме]]></Resort>
+        <Resort id="208" country="57"><![CDATA[Эмилия Романья]]></Resort>
+        <Resort id="209" country="57"><![CDATA[Гарда]]></Resort>
+        <Resort id="210" country="57"><![CDATA[Ломбардия]]></Resort>
+        <Resort id="211" country="57"><![CDATA[Пьемонт]]></Resort>
+        <Resort id="212" country="57"><![CDATA[о-в Сардиния]]></Resort>
+        <Resort id="213" country="57"><![CDATA[Сицилия]]></Resort>
+        <Resort id="214" country="57"><![CDATA[Тоскана]]></Resort>
+        <Resort id="215" country="57"><![CDATA[Венето]]></Resort>
+        <Resort id="216" country="57"><![CDATA[Лацио]]></Resort>
+        <Resort id="217" country="84"><![CDATA[Кота Кинабулу]]></Resort>
+        <Resort id="218" country="84"><![CDATA[Лангкави]]></Resort>
+        <Resort id="219" country="84"><![CDATA[Пенанг]]></Resort>
+        <Resort id="220" country="88"><![CDATA[Ривьера Майя]]></Resort>
+        <Resort id="221" country="114"><![CDATA[Святая Долина]]></Resort>
+        <Resort id="222" country="114"><![CDATA[Южные Анды]]></Resort>
+        <Resort id="223" country="114"><![CDATA[озеро Титикака]]></Resort>
+        <Resort id="224" country="114"><![CDATA[Лима]]></Resort>
+        <Resort id="225" country="154"><![CDATA[Висаяс]]></Resort>
+        <Resort id="226" country="154"><![CDATA[Южные о-ва Минданао]]></Resort>
+        <Resort id="227" country="154"><![CDATA[Западный Висаяс]]></Resort>
+        <Resort id="228" country="116"><![CDATA[Алгарве]]></Resort>
+        <Resort id="229" country="116"><![CDATA[Азорские о-ва]]></Resort>
+        <Resort id="230" country="116"><![CDATA[Лиссабон]]></Resort>
+        <Resort id="231" country="116"><![CDATA[Мадейра и Порто-Санто]]></Resort>
+        <Resort id="232" country="116"><![CDATA[Порту и Северная Португалия]]></Resort>
+        <Resort id="233" country="116"><![CDATA[Бейрас]]></Resort>
+        <Resort id="234" country="167"><![CDATA[Садовая дорога]]></Resort>
+        <Resort id="235" country="56"><![CDATA[Альмерия]]></Resort>
+        <Resort id="236" country="56"><![CDATA[Коста Бланка]]></Resort>
+        <Resort id="237" country="56"><![CDATA[Коста Брава]]></Resort>
+        <Resort id="238" country="56"><![CDATA[Коста-де-ла-Луз]]></Resort>
+        <Resort id="239" country="56"><![CDATA[Коста-дель-Соль]]></Resort>
+        <Resort id="240" country="56"><![CDATA[Фуертовентура, Канарские острова]]></Resort>
+        <Resort id="241" country="56"><![CDATA[Гран Канария, Канарские острова]]></Resort>
+        <Resort id="242" country="56"><![CDATA[Ибица, Балеарские острова]]></Resort>
+        <Resort id="243" country="56"><![CDATA[Ланзароте, Канарские острова]]></Resort>
+        <Resort id="244" country="56"><![CDATA[Майорка, Балеарские острова]]></Resort>
+        <Resort id="245" country="56"><![CDATA[Тенерифе, Канарские острова]]></Resort>
+        <Resort id="246" country="141"><![CDATA[Центральный Тайланд]]></Resort>
+        <Resort id="247" country="141"><![CDATA[Чанг Май]]></Resort>
+        <Resort id="248" country="141"><![CDATA[Хуа Хин]]></Resort>
+        <Resort id="249" country="141"><![CDATA[Кох Самуй]]></Resort>
+        <Resort id="250" country="141"><![CDATA[Краби]]></Resort>
+        <Resort id="251" country="141"><![CDATA[Северный Тайланд]]></Resort>
+        <Resort id="252" country="141"><![CDATA[Пхукет]]></Resort>
+        <Resort id="253" country="141"><![CDATA[Южный Тайланд]]></Resort>
+        <Resort id="254" country="141"><![CDATA[Патайя]]></Resort>
+        <Resort id="255" country="148"><![CDATA[Эгейское побережье]]></Resort>
+        <Resort id="256" country="148"><![CDATA[Средиземноморье]]></Resort>
+        <Resort id="258" country="24"><![CDATA[Кейп-Код]]></Resort>
+        <Resort id="260" country="24"><![CDATA[Нью Форест]]></Resort>
+        <Resort id="261" country="24"><![CDATA[Девон]]></Resort>
+        <Resort id="262" country="6"><![CDATA[Буэнос- Айрес]]></Resort>
+        <Resort id="263" country="6"><![CDATA[Патагония]]></Resort>
+        <Resort id="264" country="6"><![CDATA[Золотое побережье]]></Resort>
+        <Resort id="265" country="6"><![CDATA[Каринтия]]></Resort>
+        <Resort id="266" country="1"><![CDATA[Золотое побережье]]></Resort>
+        <Resort id="267" country="2"><![CDATA[Каринтия]]></Resort>
+        <Resort id="42" country="42"><![CDATA[Дания]]></Resort>
+        <Resort id="268" country="2"><![CDATA[Тироль]]></Resort>
+        <Resort id="269" country="2"><![CDATA[Вена]]></Resort>
+        <Resort id="270" country="2"><![CDATA[Зальцкаммергун(озерный район)]]></Resort>
+        <Resort id="271" country="20"><![CDATA[Северо-Восток]]></Resort>
+        <Resort id="272" country="20"><![CDATA[Рио-де-Жанейро]]></Resort>
+        <Resort id="273" country="20"><![CDATA[Сан-Пауло]]></Resort>
+        <Resort id="274" country="20"><![CDATA[Южная  часть]]></Resort>
+        <Resort id="275" country="20"><![CDATA[Юго-Восток]]></Resort>
+        <Resort id="276" country="20"><![CDATA[Западная часть]]></Resort>
+        <Resort id="277" country="168"><![CDATA[Гангвон-До]]></Resort>
+        <Resort id="278" country="168"><![CDATA[Гуанджи-До]]></Resort>
+        <Resort id="279" country="168"><![CDATA[Гуонгсангнам-До]]></Resort>
+        <Resort id="280" country="168"><![CDATA[Чангчеонгнам-До]]></Resort>
+        <Resort id="281" country="168"><![CDATA[Гуонгсангбук-До]]></Resort>
+        <Resort id="282" country="157"><![CDATA[Тихий Океан]]></Resort>
+        <Resort id="283" country="153"><![CDATA[Центральная часть Южного Тихого Океана]]></Resort>
+        <Resort id="284" country="102"><![CDATA[Юго-Западная часть Тихого Океана]]></Resort>
+        <Resort id="285" country="23"><![CDATA[Юго-Западная часть Тихого Океана]]></Resort>
+        <Resort id="286" country="156"><![CDATA[Лотарингия]]></Resort>
+        <Resort id="287" country="156"><![CDATA[Пиренеи]]></Resort>
+        <Resort id="288" country="156"><![CDATA[Лангедок-Русийон]]></Resort>
+        <Resort id="289" country="171"><![CDATA[Монако]]></Resort>
+        <Resort id="290" country="177"><![CDATA[Реюньон]]></Resort>
+        <Resort id="291" country="172"><![CDATA[Андорра]]></Resort>
+        <Resort id="292" country="138"><![CDATA[Алабама (AL)]]></Resort>
+        <Resort id="293" country="138"><![CDATA[Аляска (AK)]]></Resort>
+        <Resort id="294" country="138"><![CDATA[Аризона (AZ)]]></Resort>
+        <Resort id="295" country="138"><![CDATA[Арканзас (AR)]]></Resort>
+        <Resort id="296" country="138"><![CDATA[Калифорния (CA)]]></Resort>
+        <Resort id="297" country="138"><![CDATA[Колорадо (CO)]]></Resort>
+        <Resort id="298" country="138"><![CDATA[Коннектикут (CT)]]></Resort>
+        <Resort id="299" country="138"><![CDATA[Делавэр (DE)]]></Resort>
+        <Resort id="300" country="138"><![CDATA[Флорида (FL)]]></Resort>
+        <Resort id="301" country="138"><![CDATA[Джорджия (GA)]]></Resort>
+        <Resort id="302" country="138"><![CDATA[Гавайи (HI)]]></Resort>
+        <Resort id="303" country="138"><![CDATA[Айдахо (ID)]]></Resort>
+        <Resort id="304" country="138"><![CDATA[Иллинойс (IL)]]></Resort>
+        <Resort id="305" country="138"><![CDATA[Индиана (IN)]]></Resort>
+        <Resort id="306" country="138"><![CDATA[Айова (IA)]]></Resort>
+        <Resort id="307" country="138"><![CDATA[Канзас (KS)]]></Resort>
+        <Resort id="308" country="138"><![CDATA[Кентукки (KY)]]></Resort>
+        <Resort id="309" country="138"><![CDATA[Луизиана (LA)]]></Resort>
+        <Resort id="310" country="138"><![CDATA[Мэн (ME)]]></Resort>
+        <Resort id="311" country="138"><![CDATA[Мэриленд (MD)]]></Resort>
+        <Resort id="312" country="138"><![CDATA[Массачусетс (MA)]]></Resort>
+        <Resort id="313" country="138"><![CDATA[Мичиган (MI)]]></Resort>
+        <Resort id="314" country="138"><![CDATA[Миннесота (MN)]]></Resort>
+        <Resort id="315" country="138"><![CDATA[Миссисипи (MS)]]></Resort>
+        <Resort id="316" country="138"><![CDATA[Миссури (MO)]]></Resort>
+        <Resort id="317" country="138"><![CDATA[Монтана (MT)]]></Resort>
+        <Resort id="318" country="138"><![CDATA[Небраска (NE)]]></Resort>
+        <Resort id="319" country="138"><![CDATA[Невада (NV)]]></Resort>
+        <Resort id="320" country="138"><![CDATA[Нью-Гэмпшир (NH)]]></Resort>
+        <Resort id="321" country="138"><![CDATA[Нью-Джерси (NJ)]]></Resort>
+        <Resort id="322" country="138"><![CDATA[Нью-Мексико (NM)]]></Resort>
+        <Resort id="323" country="138"><![CDATA[Нью-Йорк (NY)]]></Resort>
+        <Resort id="324" country="138"><![CDATA[Северная Каролина (NC)]]></Resort>
+        <Resort id="325" country="138"><![CDATA[Северная Дакота (ND)]]></Resort>
+        <Resort id="326" country="138"><![CDATA[Огайо (OH)]]></Resort>
+        <Resort id="327" country="138"><![CDATA[Оклахома (OK)]]></Resort>
+        <Resort id="328" country="138"><![CDATA[Орегон (OR)]]></Resort>
+        <Resort id="329" country="138"><![CDATA[Пенсильвания (PA)]]></Resort>
+        <Resort id="330" country="138"><![CDATA[Род-Айленд (RI)]]></Resort>
+        <Resort id="331" country="138"><![CDATA[Южная Каролина (SC)]]></Resort>
+        <Resort id="332" country="138"><![CDATA[Южная Дакота (SD)]]></Resort>
+        <Resort id="333" country="138"><![CDATA[Теннесси (TN)]]></Resort>
+        <Resort id="334" country="138"><![CDATA[Техас (TX)]]></Resort>
+        <Resort id="335" country="138"><![CDATA[Юта (UT)]]></Resort>
+        <Resort id="336" country="138"><![CDATA[Вермонт (VT)]]></Resort>
+        <Resort id="337" country="138"><![CDATA[Виргиния (VA)]]></Resort>
+        <Resort id="338" country="138"><![CDATA[Вашингтон (WA)]]></Resort>
+        <Resort id="339" country="138"><![CDATA[Западная Виргиния (WV)]]></Resort>
+        <Resort id="340" country="138"><![CDATA[Висконсин (WI)]]></Resort>
+        <Resort id="341" country="138"><![CDATA[Вайоминг (WY)]]></Resort>
+        <Resort id="342" country="56"><![CDATA[Пальма, Канарские острова]]></Resort>
+        <Resort id="343" country="178"><![CDATA[Сан Марино]]></Resort>
+        <Resort id="344" country="176"><![CDATA[Черногория]]></Resort>
+        <Resort id="345" country="156"><![CDATA[Иль-де-Франс]]></Resort>
+        <Resort id="346" country="156"><![CDATA[Франш-Конте]]></Resort>
+        <Resort id="347" country="156"><![CDATA[Лимузен]]></Resort>
+        <Resort id="348" country="156"><![CDATA[Рона-Альпы]]></Resort>
+        <Resort id="349" country="179"><![CDATA[Афганистан]]></Resort>
+        <Resort id="350" country="156"><![CDATA[Центральный регион]]></Resort>
+        <Resort id="351" country="182"><![CDATA[Белиз]]></Resort>
+        <Resort id="352" country="194"><![CDATA[Алжир]]></Resort>
+        <Resort id="353" country="204"><![CDATA[Кабо-Верде]]></Resort>
+        <Resort id="354" country="191"><![CDATA[Ангола]]></Resort>
+        <Resort id="355" country="184"><![CDATA[Эритрея]]></Resort>
+        <Resort id="356" country="226"><![CDATA[Бонайре]]></Resort>
+        <Resort id="357" country="185"><![CDATA[Ангилья]]></Resort>
+        <Resort id="358" country="201"><![CDATA[Бенин]]></Resort>
+        <Resort id="359" country="180"><![CDATA[Сальвадор]]></Resort>
+        <Resort id="360" country="193"><![CDATA[Мартиника]]></Resort>
+        <Resort id="361" country="209"><![CDATA[Гана]]></Resort>
+        <Resort id="362" country="202"><![CDATA[Буркина-Фасо]]></Resort>
+        <Resort id="363" country="192"><![CDATA[Папуа - Новая Гвинея]]></Resort>
+        <Resort id="364" country="218"><![CDATA[Судан]]></Resort>
+        <Resort id="365" country="206"><![CDATA[Чад	]]></Resort>
+        <Resort id="366" country="223"><![CDATA[Суринам]]></Resort>
+        <Resort id="367" country="220"><![CDATA[Американские Виргинские Острова]]></Resort>
+        <Resort id="368" country="227"><![CDATA[Берег Слоновой Кости]]></Resort>
+        <Resort id="369" country="230"><![CDATA[Королевство Бутан]]></Resort>
+        <Resort id="370" country="208"><![CDATA[Джибути]]></Resort>
+        <Resort id="371" country="228"><![CDATA[Французская Гвиана]]></Resort>
+        <Resort id="1" country="1"><![CDATA[Австралия]]></Resort>
+        <Resort id="2" country="2"><![CDATA[Австрия]]></Resort>
+        <Resort id="3" country="3"><![CDATA[Азербайджан]]></Resort>
+        <Resort id="4" country="4"><![CDATA[Албания]]></Resort>
+        <Resort id="5" country="5"><![CDATA[Антигуа]]></Resort>
+        <Resort id="6" country="6"><![CDATA[Аргентина]]></Resort>
+        <Resort id="7" country="7"><![CDATA[Армения]]></Resort>
+        <Resort id="8" country="8"><![CDATA[Аруба]]></Resort>
+        <Resort id="9" country="9"><![CDATA[Багамы]]></Resort>
+        <Resort id="10" country="10"><![CDATA[Бангладеш]]></Resort>
+        <Resort id="11" country="11"><![CDATA[Барбадос]]></Resort>
+        <Resort id="12" country="12"><![CDATA[Бахрейн]]></Resort>
+        <Resort id="13" country="13"><![CDATA[Беларусь]]></Resort>
+        <Resort id="14" country="14"><![CDATA[Бельгия]]></Resort>
+        <Resort id="15" country="15"><![CDATA[Бермуда]]></Resort>
+        <Resort id="16" country="16"><![CDATA[Болгария]]></Resort>
+        <Resort id="17" country="17"><![CDATA[Боливия]]></Resort>
+        <Resort id="18" country="18"><![CDATA[Босния Герцеговина]]></Resort>
+        <Resort id="19" country="19"><![CDATA[Ботсвана]]></Resort>
+        <Resort id="20" country="20"><![CDATA[Бразилия]]></Resort>
+        <Resort id="21" country="21"><![CDATA[Британские Виргинские Острова]]></Resort>
+        <Resort id="22" country="22"><![CDATA[Бруней Даруссалам]]></Resort>
+        <Resort id="23" country="23"><![CDATA[Вануату]]></Resort>
+        <Resort id="24" country="24"><![CDATA[Великобритания]]></Resort>
+        <Resort id="25" country="25"><![CDATA[Венгрия]]></Resort>
+        <Resort id="26" country="26"><![CDATA[Венесуэла]]></Resort>
+        <Resort id="27" country="27"><![CDATA[Вьетнам]]></Resort>
+        <Resort id="28" country="28"><![CDATA[Габон]]></Resort>
+        <Resort id="29" country="29"><![CDATA[Гаити]]></Resort>
+        <Resort id="30" country="30"><![CDATA[Гамбия]]></Resort>
+        <Resort id="31" country="31"><![CDATA[Гваделупа]]></Resort>
+        <Resort id="32" country="32"><![CDATA[Германия]]></Resort>
+        <Resort id="33" country="33"><![CDATA[Гибралтар]]></Resort>
+        <Resort id="34" country="34"><![CDATA[Гондурас]]></Resort>
+        <Resort id="35" country="35"><![CDATA[Гонконг]]></Resort>
+        <Resort id="36" country="36"><![CDATA[Гренада]]></Resort>
+        <Resort id="37" country="37"><![CDATA[Греция]]></Resort>
+        <Resort id="38" country="38"><![CDATA[Гринландия]]></Resort>
+        <Resort id="39" country="39"><![CDATA[Грузия]]></Resort>
+        <Resort id="40" country="40"><![CDATA[Гуам]]></Resort>
+        <Resort id="41" country="41"><![CDATA[Гуатемала]]></Resort>
+        <Resort id="372" country="221"><![CDATA[Доминика]]></Resort>
+        <Resort id="373" country="233"><![CDATA[Гвинея]]></Resort>
+        <Resort id="374" country="211"><![CDATA[Лесото]]></Resort>
+        <Resort id="375" country="213"><![CDATA[Мадагаскар]]></Resort>
+        <Resort id="376" country="190"><![CDATA[Малави]]></Resort>
+        <Resort id="377" country="215"><![CDATA[Нигер]]></Resort>
+        <Resort id="378" country="196"><![CDATA[Соломоновы острова]]></Resort>
+        <Resort id="379" country="236"><![CDATA[Кюрасао]]></Resort>
+        <Resort id="380" country="187"><![CDATA[Тёркс и Кайкос]]></Resort>
+        <Resort id="382" country="203"><![CDATA[Бурунди]]></Resort>
+        <Resort id="383" country="207"><![CDATA[Коморские острова]]></Resort>
+        <Resort id="384" country="188"><![CDATA[Экваториальная Гвинея]]></Resort>
+        <Resort id="385" country="222"><![CDATA[Гайана]]></Resort>
+        <Resort id="386" country="199"><![CDATA[Ниуэ]]></Resort>
+        <Resort id="387" country="216"><![CDATA[Руанда]]></Resort>
+        <Resort id="388" country="189"><![CDATA[Косово]]></Resort>
+        <Resort id="389" country="214"><![CDATA[Мавритания]]></Resort>
+        <Resort id="391" country="232"><![CDATA[ANTIGUA AND BARBADOS]]></Resort>
+        <Resort id="392" country="210"><![CDATA[GUINEA-BISSAU]]></Resort>
+        <Resort id="393" country="98"><![CDATA[NETHERLANDS ANTILLES]]></Resort>
+        <Resort id="394" country="104"><![CDATA[DUBAI AIRPORT]]></Resort>
+        <Resort id="395" country="81"><![CDATA[Маврикий]]></Resort>
+        <Resort id="396" country="212"><![CDATA[Либерия]]></Resort>
+        <Resort id="397" country="229"><![CDATA[Американские Самоа]]></Resort>
+        <Resort id="398" country="197"><![CDATA[Тувалу]]></Resort>
+        <Resort id="399" country="238"><![CDATA[Sen Marten]]></Resort>
+        <Resort id="400" country="217"><![CDATA[Sierra Leone]]></Resort>
+        <Resort id="401" country="241"><![CDATA[Абхазия]]></Resort>
+        <Resort id="402" country="242"><![CDATA[Svalbard]]></Resort>
+        <Resort id="403" country="246"><![CDATA[West Island]]></Resort>
+        <Resort id="404" country="249"><![CDATA[Остров Ролаш]]></Resort>
+        <Resort id="405" country="249"><![CDATA[Санто Антонио]]></Resort>
+        <Resort id="406" country="250"><![CDATA[Сен-Пьер]]></Resort>
+        <Resort id="407" country="245"><![CDATA[Абхазия]]></Resort>
+        <Resort id="408" country="243"><![CDATA[Мариехамн]]></Resort>
+    </Resorts>
+</Response>

@@ -2,6 +2,10 @@
 
 namespace App\Hotelbook\Method\Builder;
 
+/**
+ * Class City
+ * @package App\Hotelbook\Method\Builder
+ */
 class City implements BuilderInterface
 {
     /**

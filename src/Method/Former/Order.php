@@ -4,8 +4,31 @@ declare(strict_types=1);
 
 namespace App\Hotelbook\Method\Former;
 
+/**
+ * Class Order
+ * @package App\Hotelbook\Method\Former
+ */
 class Order extends BaseFormer
 {
+    public function form($response)
+    {
+        $order = $this->getOrder($response);
+        return [
+            'info' => $this->formOrderInfo($order),
+            'paxes' => $this->formOrderPaxes($order),
+            'contactInfo' => $this->formContactInfo($order),
+            'items' => $this->formHotelItems($order)
+        ];
+    }
+
+    /**
+     * @codeCoverageIgnore
+     */
+    protected function getOrder($response)
+    {
+        return $response->Order;
+    }
+
     /**
      * @codeCoverageIgnore
      */
@@ -128,24 +151,5 @@ class Order extends BaseFormer
         }
 
         return $array;
-    }
-
-    /**
-     * @codeCoverageIgnore
-     */
-    protected function getOrder($response)
-    {
-        return $response->Order;
-    }
-
-    public function form($response)
-    {
-        $order = $this->getOrder($response);
-        return [
-            'info' => $this->formOrderInfo($order),
-            'paxes' => $this->formOrderPaxes($order),
-            'contactInfo' => $this->formContactInfo($order),
-            'items' => $this->formHotelItems($order)
-        ];
     }
 }

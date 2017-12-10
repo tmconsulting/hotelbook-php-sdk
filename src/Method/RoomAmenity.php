@@ -23,11 +23,17 @@ class RoomAmenity extends AbstractMethod
         return $this->getResultObject($result);
     }
 
+    /**
+     * @return string
+     */
     protected function getBuilderClass()
     {
         return BaseBuilder::class;
     }
 
+    /**
+     * @return string
+     */
     protected function getFormerClass()
     {
         return RoomAmenityFormer::class;

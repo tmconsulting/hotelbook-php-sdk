@@ -22,20 +22,20 @@ class Tag
     }
 
     /**
+     * Tag setter
+     * @param $tagId
+     */
+    public function setTag($tagId)
+    {
+        $this->tagId = (string)$tagId;
+    }
+
+    /**
      * Tag getter
      * @return mixed
      */
     public function getTag()
     {
         return $this->tagId;
-    }
-
-    /**
-     * Tag setter
-     * @param $tagId
-     */
-    public function setTag($tagId)
-    {
-        $this->tagId = (string) $tagId;
     }
 }

@@ -34,11 +34,17 @@ class Book extends AbstractMethod
         return $this->getResultObject($response);
     }
 
+    /**
+     * @return string
+     */
     protected function getBuilderClass()
     {
         return BookBuilder::class;
     }
 
+    /**
+     * @return string
+     */
     protected function getFormerClass()
     {
         return BookFormer::class;

@@ -3,8 +3,6 @@
 namespace Neo\Hotelbook\Tests\Hotelbook\Method\Dictionary;
 
 use App\Hotelbook\Method\City;
-use App\Hotelbook\Object\Hotel\Dictionary\City as CityModel;
-use App\Hotelbook\Object\Hotel\Dictionary\Country;
 use App\Hotelbook\ResultProceeder;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;

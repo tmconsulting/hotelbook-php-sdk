@@ -4,6 +4,10 @@ declare(strict_types=1);
 
 namespace App\Hotelbook\Method\Former;
 
+/**
+ * Class Meal
+ * @package App\Hotelbook\Method\Former
+ */
 class Meal extends BaseFormer
 {
     /**

@@ -4,9 +4,8 @@ declare(strict_types=1);
 
 namespace App\Hotelbook\Method\Builder;
 
-use App\Hotelbook\Method\Builder\BuilderInterface;
-use App\Hotelbook\Object\Hotel\BookItem;
 use App\Hotelbook\Object\Contact;
+use App\Hotelbook\Object\Hotel\BookItem;
 use App\Hotelbook\Object\Hotel\BookPassenger;
 use App\Hotelbook\Object\Hotel\Dictionary\Title;
 use App\Hotelbook\Object\Hotel\Tag;
@@ -70,28 +69,6 @@ class Book implements BuilderInterface
 
     /**
      * Pax handling.
-     * Puts children to the bottom
-     * @link http://xmldoc.hotelbook.ru/ru/hotels/add-order.html#roompax
-     * @param array $adults
-     * @param array $childs
-     * @return array
-     */
-    protected function putChildrenToBottom(array $adults, array $childs)
-    {
-        $results = [];
-        foreach ($adults as $roomIndex => $human) {
-            if (isset($childs[$roomIndex])) {
-                $results[$roomIndex] = array_merge($human, $childs[$roomIndex]);
-            } else {
-                $results[$roomIndex] = $human;
-            }
-        }
-
-        return $results;
-    }
-
-    /**
-     * Pax handling.
      * Sorts children and adults in two groups.
      * @link http://xmldoc.hotelbook.ru/ru/hotels/add-order.html#roompax
      * @param \App\Hotelbook\Object\Hotel\BookItem $bookItem
@@ -149,5 +126,27 @@ class Book implements BuilderInterface
         }
 
         return $pax;
+    }
+
+    /**
+     * Pax handling.
+     * Puts children to the bottom
+     * @link http://xmldoc.hotelbook.ru/ru/hotels/add-order.html#roompax
+     * @param array $adults
+     * @param array $childs
+     * @return array
+     */
+    protected function putChildrenToBottom(array $adults, array $childs)
+    {
+        $results = [];
+        foreach ($adults as $roomIndex => $human) {
+            if (isset($childs[$roomIndex])) {
+                $results[$roomIndex] = array_merge($human, $childs[$roomIndex]);
+            } else {
+                $results[$roomIndex] = $human;
+            }
+        }
+
+        return $results;
     }
 }

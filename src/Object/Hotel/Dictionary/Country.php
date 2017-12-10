@@ -85,7 +85,8 @@ class Country
         int $currencyNumeric = 0,
         bool $cis = false,
         bool $schengen = false
-    ) {
+    )
+    {
         $this->setId($id);
         $this->setName($name);
         $this->setIsoAlpha2($isoAlpha2);
