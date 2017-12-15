@@ -21,7 +21,6 @@ class MealBreakfast extends AbstractMethod
     public function handle($params)
     {
         $result = $this->connector->request('GET', 'meal_breakfast');
-        file_put_contents('meal-breakfast.xml', $result->asXML());
         return $this->getResultObject($result);
     }
 

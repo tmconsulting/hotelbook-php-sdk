@@ -21,7 +21,6 @@ class RoomView extends AbstractMethod
     public function handle($params)
     {
         $results = $this->connector->request('GET', 'room_view');
-        file_put_contents('room-view.xml', $results->asXML());
         return $this->getResultObject($results);
     }
 

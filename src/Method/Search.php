@@ -6,6 +6,7 @@ namespace App\Hotelbook\Method;
 
 use App\Hotelbook\Method\Builder\Search as SearchBuilder;
 use App\Hotelbook\Method\Former\Search as SearchFormer;
+use App\Hotelbook\ResultProceeder;
 
 /**
  * Class Search
@@ -22,7 +23,7 @@ class Search extends AbstractMethod
     public function handle($results)
     {
         $response = $this->connector->request('POST', 'hotel_search', $results);
-        return $this->getResultObject($response);
+        return $this->getResultObject($response, null, ResultProceeder::class, false);
     }
 
     /**

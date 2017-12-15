@@ -4,6 +4,8 @@ declare(strict_types=1);
 
 namespace App\Hotelbook;
 
+use App\Hotelbook\Exception\ResponseException;
+
 class ResultProceeder
 {
     /**
@@ -21,11 +23,16 @@ class ResultProceeder
      *
      * @param array $items
      * @param array $errors
+     * @param bool $throwsException
      */
-    public function __construct(array $items, array $errors = [])
+    public function __construct(array $items, array $errors = [], $throwsException = true)
     {
-        $this->items = $items;
-        $this->errors = $errors;
+        $this->setItems($items);
+        $this->setErrors($errors);
+
+        if ($throwsException) {
+            $this->throwExceptionIfNeeded();
+        }
     }
 
     /**
@@ -93,5 +100,12 @@ class ResultProceeder
     {
         $this->items = $items;
         return $this;
+    }
+
+    protected function throwExceptionIfNeeded()
+    {
+        if($this->hasErrors()) {
+            throw new ResponseException(1, 'Something went wrong with request. Run $result->getErrors() to get this data. ');
+        }
     }
 }

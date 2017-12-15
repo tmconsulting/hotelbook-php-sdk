@@ -30,7 +30,6 @@ class Book extends AbstractMethod
     public function handle($xml)
     {
         $response = $this->connector->request('POST', 'add_order', $xml);
-        file_put_contents('book.xml', $response->asXML());
         return $this->getResultObject($response);
     }
 

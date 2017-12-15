@@ -23,10 +23,8 @@ class MainTest extends TestCase
         $this->configFixture = [
             'url' => 'http://hotelbook.local',
             'differencePath' => sys_get_temp_dir(),
-            'auth' => [
-                'login' => 'LOGIN',
-                'password' => 'PASSWORD'
-            ]
+            'login' => 'LOGIN',
+            'password' => 'PASSWORD'
         ];
     }
 

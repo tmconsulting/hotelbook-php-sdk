@@ -71,13 +71,13 @@ abstract class AbstractMethod
      * @param string $resultClass
      * @return ResultProceeder|array|null
      */
-    protected function getResultObject($result, $items = null, $resultClass = ResultProceeder::class)
+    protected function getResultObject($result, $items = null, $resultClass = ResultProceeder::class, $needsErrors = true)
     {
         try {
             if (!$items) {
-                $items = $this->performResult($result);
+                $items = $this->performResult($result, $needsErrors);
             }
-            return (new ReflectionClass($resultClass))->newInstanceArgs($items);
+            return (new ReflectionClass($resultClass))->newInstanceArgs(array_merge($items, [$needsErrors]));
         } catch (ReflectionException $e) {
             return $items;
         }
@@ -89,11 +89,11 @@ abstract class AbstractMethod
      * @param array $values
      * @return array
      */
-    protected function performResult($result, $values = [])
+    protected function performResult($result, $values = [], $respectErrors = true)
     {
         $errors = $this->getErrors($result);
 
-        if (empty($errors)) {
+        if (empty($errors) || $respectErrors) {
             $values = $this->form($result);
         }
 

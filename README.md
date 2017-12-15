@@ -21,10 +21,8 @@ The config with credentials looks like this.
 ```php
     $config = [
         'url' => 'https://hotelbook.pro/xml',
-        'auth' => [
-            'login' => 'YOUR LOGIN',
-            'password' => 'YOUR PASSSWORD'
-        ]
+        'login' => 'YOUR LOGIN',
+        'password' => 'YOUR PASSSWORD'
     ];
 ```
 
@@ -63,7 +61,18 @@ Now the result will be an instance of ResultProceeder with all of the results
 
 #### Handling errors and Proceeding results.
 
-Every method returns an object, that has to methods: 
+If method has an error, it throws an exception that you can handle and than run getErrors the result. 
+
+```php
+    try {
+        $result = $main->book(...someArguments);    
+    } catch (Exception $e)
+    {
+        //Do something with the exception
+    }
+```
+
+Every method returns an object (if it doesn't throw an exception), that has to methods: 
 
 + getItems() 
 + getErrors()

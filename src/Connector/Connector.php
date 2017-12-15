@@ -114,10 +114,10 @@ class Connector implements ConnectorInterface
     {
         $diff = $this->remember();
         $time = $this->resolveCorrectTime($diff);
-        $checksum = md5(md5($this->getConfig()['auth']['password']) . $time);
+        $checksum = md5(md5($this->getConfig()['password']) . $time);
 
         return [
-            'login' => $this->getConfig()['auth']['login'],
+            'login' => $this->getConfig()['login'],
             'time' => $time,
             'checksum' => $checksum
         ];

@@ -21,7 +21,6 @@ class CurrencyRate extends AbstractMethod
     public function handle($params)
     {
         $result = $this->connector->request('GET', 'currency_rates_info', null, $params);
-        file_put_contents('currency-rate.xml', $result->asXML());
         return $this->getResultObject($result);
     }
 

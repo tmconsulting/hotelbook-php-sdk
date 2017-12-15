@@ -28,8 +28,6 @@ class SearchTest extends TestCase
             new SearchPassenger(1, [12])
         ]]));
 
-        file_put_contents('search.xml', $xml);
-
         $this->assertEquals($this->getRequestProtocol('search-simple'), $xml);
     }
 

@@ -39,6 +39,7 @@ use App\Hotelbook\Object\Hotel\SearchParameter;
 use App\Hotelbook\Object\Hotel\Tag;
 use App\Hotelbook\Object\Method\Search\AsyncSearchParams;
 use Carbon\Carbon;
+use Symfony\Component\OptionsResolver\Exception\AccessException;
 use Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -324,6 +325,7 @@ class Main implements HotelInterface
      * Validate and create the connector instance.
      * @param $config
      * @throws UndefinedOptionsException
+     * @throws AccessException
      * @return Connector
      */
     protected function makeConnector($config)
@@ -333,23 +335,15 @@ class Main implements HotelInterface
         $resolver->setDefaults([
             'url' => 'http://test1.hotelbook.pro/xml/',
             'differencePath' => sys_get_temp_dir(),
-            'auth' => []
-        ])->setRequired(['url', 'auth'])
-            ->setAllowedTypes('url', 'string')
-            ->setAllowedTypes('differencePath', 'string')
-            ->setAllowedTypes('auth', 'array');
-
-        $authResolver = new OptionsResolver();
-
-        $authResolver->setDefaults([
             'login' => 'login',
             'password' => 'password'
-        ])->setRequired(['login', 'password'])
+        ])->setRequired(['url', 'login', 'password'])
+            ->setAllowedTypes('url', 'string')
+            ->setAllowedTypes('differencePath', 'string')
             ->setAllowedTypes('login', 'string')
             ->setAllowedTypes('password', 'string');
 
         $config = $resolver->resolve($config);
-        $config['auth'] = $authResolver->resolve($config['auth']);
 
         return $this->createConnector($config);
     }
@@ -380,6 +374,7 @@ class Main implements HotelInterface
     }
 
     /**
+     * Private method to set the dictionary methods
      * @return void
      */
     private function setDictionaryMethods()
