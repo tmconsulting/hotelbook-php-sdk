@@ -75,17 +75,20 @@ class Search extends BaseFormer
                 'address' => (string)$value['hotelAddress'],
                 'stars' => (int)$value['hotelCatName'],
                 'image' => (string)$value['hotelPhotoUrl'],
+                'confirmation' => (string)$value['confirmation'],
                 'coords' => [
-                    'lat' => isset($value['hotelLatitude']) ? (float)$value['hotelLatitude'] : null,
-                    'lng' => isset($value['hotelLongitude']) ? (float)$value['hotelLongitude'] : null,
+                    'lat' => (float) array_get($value, 'hotelLatitude'),
+                    'lng' => (float) array_get($value, 'hotelLongitude'),
                 ],
                 'price' => [
                     'sum' => $money->getAmount(),
                     'currency' => $money->getCurrency(),
                     'vat' => to_bool(array_get($value, 'useNds')),
+                    'vatPrice' => (float) array_get($value, 'nds'),
                     'noOpenSale' => !to_bool(array_get($value, 'noOpenSale')),
-                    'quotaAmount' => $this->money((string)array_get($value, 'quotaAmount'), $value['currency'])->getAmount(),
+                    'quotaAmount' => (string)array_get($value, 'quotaAmount'),
                     'rackRate' => $this->money((string)array_get($value, 'priceRackRate'), $value['currency'])->getAmount(),
+                    'status' => (string) $value['priceStatus'],
                 ],
             ];
 
