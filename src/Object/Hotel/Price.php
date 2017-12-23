@@ -24,8 +24,8 @@ class Price
      */
     public function __construct($amount, $currency)
     {
-        $this->amount = $amount;
-        $this->currency = $this->precise($currency);
+        $this->amount = $this->precise($amount);
+        $this->currency = $currency;
     }
 
     /**
