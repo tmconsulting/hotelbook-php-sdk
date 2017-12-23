@@ -77,43 +77,38 @@ class Main implements HotelInterface
      * @param Carbon $checkInDate
      * @param Carbon $checkOutDate
      * @param array $rooms
-     * @param SearchParameter|null $parameter
+     * @param SearchParameter $searchParameter
      * @return mixed
      */
-    public function search(int $cityId, Carbon $checkInDate, Carbon $checkOutDate, array $rooms, SearchParameter $parameter = null)
+    public function search(int $cityId, Carbon $checkInDate, Carbon $checkOutDate, array $rooms, SearchParameter $searchParameter = null)
     {
         return $this->callMethod('search', [
             $cityId, $checkInDate, $checkOutDate,
-            $rooms, $parameter
+            $rooms, $searchParameter
         ]);
     }
 
     /**
-     * Method for async search.
-     * $cityId - the id of city
-     * $checkInDate - the check in date
-     * $checkOutDate - the check out date
-     * $passengers - passengers
-     * $parameter - object of params
-     *
      * @param $value
-     * @param \Carbon\Carbon $checkInDate
-     * @param \Carbon\Carbon $checkOutDate
-     * @param \App\Hotelbook\Object\Hotel\SearchPassenger[] $rooms
-     * @param AsyncSearchParams $searchParams
-     * @return \App\Hotelbook\Object\SearchResult
+     * @param Carbon $checkInDate
+     * @param Carbon $checkOutDate
+     * @param array $rooms
+     * @param SearchParameter $searchParameter
+     * @param AsyncSearchParams $asyncSearchParams
+     * @return mixed
      */
     public function asyncSearch(
         $value,
         Carbon $checkInDate,
         Carbon $checkOutDate,
         array $rooms,
-        AsyncSearchParams $searchParams
+        SearchParameter $searchParameter,
+        AsyncSearchParams $asyncSearchParams
     )
     {
         return $this->callMethod('asyncSearch', [
-            [$value, $checkInDate, $checkOutDate, $rooms],
-            $searchParams
+            [$value, $checkInDate, $checkOutDate, $rooms, $searchParameter],
+            $asyncSearchParams
         ]);
     }
 

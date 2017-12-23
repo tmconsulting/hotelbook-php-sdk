@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Hotelbook\Method\Builder;
 
+use App\Hotelbook\Object\Hotel\SearchParameter;
 use App\Hotelbook\Object\Hotel\SearchPassenger;
 use Carbon\Carbon;
 use SimpleXMLElement;
@@ -27,11 +28,16 @@ class Search implements BuilderInterface
     {
         /** @var Carbon $checkInDate */
         /** @var SearchPassenger[] $rooms */
-        [$value, $checkInDate, $checkOutDate, $rooms] = $params;
+        /** @var SearchParameter $searchParameter */
+        [$value, $checkInDate, $checkOutDate, $rooms, $searchParameter] = $params;
 
         $xml = new SimpleXMLElement('<HotelSearchRequest/>');
         $request = $xml->addChild('Request');
         $request->addAttribute('cityId', (string)$value);
+
+        if ($searchParameter->getHotelName() !== null) {
+            $request->addAttribute('hotelName', $searchParameter->getHotelName());
+        }
 
         $request->addAttribute('checkIn', $checkInDate->format(self::DATE_FORMAT));
         $request->addAttribute('duration', (string)$checkInDate->diffInDays($checkOutDate));

@@ -9,6 +9,7 @@
 namespace Neo\Hotelbook\Tests\Hotelbook\Method;
 
 use App\Hotelbook\Method\Search;
+use App\Hotelbook\Object\Hotel\SearchParameter;
 use App\Hotelbook\Object\Hotel\SearchPassenger;
 use App\Hotelbook\ResultProceeder;
 use Carbon\Carbon;
@@ -26,7 +27,7 @@ class SearchTest extends TestCase
 
         $xml = $this->formatXml($search->build([2, $checkInDate, $checkOutDate, [
             new SearchPassenger(1, [12])
-        ]]));
+        ], new SearchParameter()]));
 
         $this->assertEquals($this->getRequestProtocol('search-simple'), $xml);
     }

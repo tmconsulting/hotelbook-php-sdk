@@ -21,10 +21,10 @@ interface HotelInterface
      * @param Carbon $checkInDate
      * @param Carbon $checkOutDate
      * @param array $rooms
-     * @param SearchParameter|null $parameter
+     * @param SearchParameter $searchParameter
      * @return mixed
      */
-    public function search(int $cityId, Carbon $checkInDate, Carbon $checkOutDate, array $rooms, SearchParameter $parameter = null);
+    public function search(int $cityId, Carbon $checkInDate, Carbon $checkOutDate, array $rooms, SearchParameter $searchParameter);
 
     /**
      * A method to fetch details of a hotel form search.

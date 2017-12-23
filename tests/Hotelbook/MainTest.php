@@ -2,6 +2,7 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook;
 
+use App\Hotelbook\Object\Hotel\SearchParameter;
 use App\Hotelbook\ResultProceeder;
 use PHPUnit\Framework\TestCase;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
@@ -83,7 +84,8 @@ class MainTest extends TestCase
             1,
             $from,
             $till,
-            [new SearchPassenger(1)]
+            [new SearchPassenger(1)],
+            new SearchParameter()
         );
 
         $this->assertInstanceOf(ResultProceeder::class, $result);
@@ -100,7 +102,8 @@ class MainTest extends TestCase
             1,
             $from,
             $till,
-            [new SearchPassenger(1)]
+            [new SearchPassenger(1)],
+            new SearchParameter()
         );
 
         $this->assertInstanceOf(ResultProceeder::class, $result);
@@ -118,7 +121,8 @@ class MainTest extends TestCase
             $from,
             $till,
             [new SearchPassenger(1)],
-             new AsyncSearchParams()
+            new SearchParameter(),
+            new AsyncSearchParams()
         );
 
         $this->assertInstanceOf(AsyncSearch::class, $result);
@@ -136,6 +140,7 @@ class MainTest extends TestCase
             $from,
             $till,
             [new SearchPassenger(1)],
+             new SearchParameter(),
              new AsyncSearchParams()
         );
 
