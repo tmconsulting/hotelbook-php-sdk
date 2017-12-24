@@ -35,6 +35,12 @@ class AsyncSearch
      */
     protected $former;
 
+
+    /**
+     * @var
+     */
+    protected $extraData;
+
     /**
      * AsyncSearch constructor.
      * @param ConnectorInterface $connector
@@ -42,10 +48,12 @@ class AsyncSearch
      */
     public function __construct(
         ConnectorInterface $connector,
-        AsyncSearchParams $params
+        AsyncSearchParams $params,
+        $extraData
     )
     {
         $this->connector = $connector;
+        $this->extraData = $extraData;
         $this->setParams($params);
         $this->setDefaultResponse();
 
@@ -157,6 +165,10 @@ class AsyncSearch
         );
 
         sleep($this->params->getPause());
+
+        $responseDom = dom_import_simplexml($response);
+        $extraDataDom = dom_import_simplexml($this->extraData);
+        $responseDom->appendChild($responseDom->ownerDocument->importNode($extraDataDom, true));
 
         $this->setResponse($response);
 

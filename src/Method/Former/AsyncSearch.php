@@ -8,6 +8,6 @@ class AsyncSearch extends BaseFormer
     {
         [$response, $searchParams, $connector] = $data;
         $searchParams->setSearchId((int)$response->HotelSearchId);
-        return [$connector, $searchParams];
+        return [$connector, $searchParams, $response->HotelSearchRequest];
     }
 }
