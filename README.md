@@ -10,7 +10,7 @@ This SDK is used to connect to the hotelbook and use it methods for a 3-d party 
 
 ### Installation
 ```
-    composer require hotelbook/sdk
+composer require tmconsulting/hotelbook-php-sdk
 ```
 
 ### Get started
@@ -19,11 +19,11 @@ First of all, you will need to have credentials for the hotelbook. <br>
 The config with credentials looks like this.
 
 ```php
-    $config = [
-        'url' => 'https://hotelbook.pro/xml',
-        'login' => 'YOUR LOGIN',
-        'password' => 'YOUR PASSSWORD'
-    ];
+$config = [
+    'url' => 'https://hotelbook.pro/xml',
+    'login' => 'YOUR LOGIN',
+    'password' => 'YOUR PASSSWORD'
+];
 ```
 
 (if yoy pass anything not valid, it throws an exception while creating the main instance)
@@ -31,14 +31,14 @@ The config with credentials looks like this.
 After that, include the library and create an basic instance of it. 
 
 ```php
-    //Require vendor
-    require __DIR__ . "/../vendor/autoload.php";
+//Require vendor
+require __DIR__ . "/../vendor/autoload.php";
 
-    //Use main hotelbook class
-    use App\Hotelbook\Main;
-    
-    //Create an instance of main class 
-    $hotelbook = new Main($config);
+//Use main hotelbook class
+use App\Hotelbook\Main;
+
+//Create an instance of main class 
+$hotelbook = new Main($config);
 ```
 
 Now you can use all the methods of the hotelbook sdk.
@@ -64,12 +64,12 @@ Now the result will be an instance of ResultProceeder with all of the results
 If method has an error, it throws an exception that you can handle and than run getErrors the result. 
 
 ```php
-    try {
-        $result = $main->book(...someArguments);    
-    } catch (Exception $e)
-    {
-        //Do something with the exception
-    }
+try {
+    $result = $main->book(...someArguments);    
+} catch (Exception $e)
+{
+    //Do something with the exception
+}
 ```
 
 Every method returns an object (if it doesn't throw an exception), that has to methods: 
@@ -83,14 +83,14 @@ Every method returns an object (if it doesn't throw an exception), that has to m
 So that you can do something like: 
 
 ```php
-    //$result is a result of search request
-      
-   if (!empty($result->getErrors()) {
-     //Handle error
-   } 
-   
-   $items = $result->getItems();
-   //Do something with items.
+//$result is a result of search request
+
+if (!empty($result->getErrors()) {
+ //Handle error
+} 
+
+$items = $result->getItems();
+//Do something with items.
 ```  
 
 ### API Reference
@@ -143,11 +143,11 @@ So you can use it as a search parameter, etc...
 ###### Basic example
 
 ```php
-    //You already have an instance of SDK, and it's stored in $main
-    $countries = $main->country();
-    //Now, in countries, you have a simple result.
-    $countiesArray = $countries->getItems();
-    //Now in $countiesArray you have an array of Countries.
+//You already have an instance of SDK, and it's stored in $main
+$countries = $main->country();
+//Now, in countries, you have a simple result.
+$countiesArray = $countries->getItems();
+//Now in $countiesArray you have an array of Countries.
 ```
 
 ##### Fetch Cities
@@ -162,19 +162,19 @@ Also, you can search cities by a country (So you fetch all the cities in a count
 Fetch all cities exist in the Database.
 
 ```php
-    $cities = $main->city();
-    $citiesArray = $cities->getItems();
+$cities = $main->city();
+$citiesArray = $cities->getItems();
 ```
 
 Fetch all cities by country.
 
 ```php
-    //Get first country item from the DB.
-    $country = current($main->country()->getItems());
-    //Find all cities there.
-    $cities = $main->city($country);
-    //Get all available items.
-    $citiesArray = $cities->getItems();
+//Get first country item from the DB.
+$country = current($main->country()->getItems());
+//Find all cities there.
+$cities = $main->city($country);
+//Get all available items.
+$citiesArray = $cities->getItems();
 ```
 
 ### Contact us.
