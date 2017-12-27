@@ -1,5 +1,5 @@
 {
-    "name": "hotelbook/sdk",
+    "name": "tmconsulting/hotelbook-php-sdk",
     "description": "Коннектор к хотелбуку",
     "type": "library",
     "authors": [
