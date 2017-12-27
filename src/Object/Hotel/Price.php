@@ -18,23 +18,23 @@ class Price
     private $currency;
 
     /**
-     * @param $amount
-     * @return string
-     */
-    private function precise($amount)
-    {
-        return (string) round((float)$amount, 1);
-    }
-
-    /**
      * Price constructor.
      * @param $amount
      * @param $currency
      */
     public function __construct($amount, $currency)
     {
-        $this->amount = $amount;
-        $this->currency = $this->precise($currency);
+        $this->amount = $this->precise($amount);
+        $this->currency = $currency;
+    }
+
+    /**
+     * @param $amount
+     * @return string
+     */
+    private function precise($amount)
+    {
+        return (string)round((float)$amount, 1);
     }
 
     /**

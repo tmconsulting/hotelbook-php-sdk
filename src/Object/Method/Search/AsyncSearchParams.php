@@ -17,7 +17,8 @@ class AsyncSearchParams
         int $pause = 1,
         int $limit = 100,
         int $offset = 0
-    ) {
+    )
+    {
         $this->setTimeout($timeout);
         $this->setPause($pause);
         $this->setLimit($timeout);

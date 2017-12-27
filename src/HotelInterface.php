@@ -16,21 +16,15 @@ use Carbon\Carbon;
 interface HotelInterface
 {
     /**
-     * A method to fetch the dictionary object.
-     * @return DictionaryInterface
-     */
-    public function getDictionary();
-
-    /**
      * A method for hotel search.
      * @param int $cityId
      * @param Carbon $checkInDate
      * @param Carbon $checkOutDate
      * @param array $rooms
-     * @param SearchParameter|null $parameter
+     * @param SearchParameter $searchParameter
      * @return mixed
      */
-    public function search(int $cityId, Carbon $checkInDate, Carbon $checkOutDate, array $rooms, SearchParameter $parameter = null);
+    public function search(int $cityId, Carbon $checkInDate, Carbon $checkOutDate, array $rooms, SearchParameter $searchParameter);
 
     /**
      * A method to fetch details of a hotel form search.
@@ -77,4 +71,53 @@ interface HotelInterface
      * @return mixed
      */
     public function annulOrder(int $orderId, int $itemId);
+
+    /**
+     * Fetch all available countries.
+     * @return mixed
+     */
+    public function country();
+
+    /**
+     * Fetch all available cities.
+     * @param int|null $cityId
+     * @return mixed
+     */
+    public function city($cityId = null);
+
+    /**
+     * Fetch all available locations.
+     * @return mixed
+     */
+    public function location();
+
+    /**
+     * Fetch all available hotel types.
+     * @return mixed
+     */
+    public function hotelType();
+
+    /**
+     * Fetch all available meal types.
+     * @return mixed
+     */
+    public function meal();
+
+    /**
+     * Fetch all available room sizes.
+     * @return mixed
+     */
+    public function roomSize();
+
+    /**
+     * Fetch all available room types.
+     * @return mixed
+     */
+    public function roomType();
+
+    /**
+     * Fetch all available room amenities.
+     * @return mixed
+     */
+    public function roomAmenity();
 }

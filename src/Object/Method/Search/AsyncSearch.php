@@ -5,8 +5,8 @@ declare(strict_types=1);
 namespace App\Hotelbook\Object\Method\Search;
 
 use App\Hotelbook\Connector\ConnectorInterface;
-use App\Hotelbook\Method\Former\Dynamic\Search as SearchFormer;
-use App\Hotelbook\Results\Method\SearchResult;
+use App\Hotelbook\Method\Former\Search as SearchFormer;
+use App\Hotelbook\ResultProceeder;
 use SimpleXMLElement;
 
 /**
@@ -35,6 +35,12 @@ class AsyncSearch
      */
     protected $former;
 
+
+    /**
+     * @var
+     */
+    protected $extraData;
+
     /**
      * AsyncSearch constructor.
      * @param ConnectorInterface $connector
@@ -42,9 +48,12 @@ class AsyncSearch
      */
     public function __construct(
         ConnectorInterface $connector,
-        AsyncSearchParams $params
-    ) {
+        AsyncSearchParams $params,
+        $extraData
+    )
+    {
         $this->connector = $connector;
+        $this->extraData = $extraData;
         $this->setParams($params);
         $this->setDefaultResponse();
 
@@ -60,6 +69,13 @@ class AsyncSearch
         $this->params = $params;
     }
 
+    protected function setDefaultResponse()
+    {
+        $this->setResponse(
+            $this->getDefaultResponse()
+        );
+    }
+
     /**
      * Response Setter
      * @param $response
@@ -69,19 +85,45 @@ class AsyncSearch
         $this->response = $response;
     }
 
-    protected function setDefaultResponse()
-    {
-        $this->setResponse(
-            $this->getDefaultResponse()
-        );
-    }
-
     /**
      * @return null
      */
     protected function getDefaultResponse()
     {
         return null;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isCompleted()
+    {
+        return
+            (!($this->isEmpty()
+                ||
+                (
+                    isset($this->response->Hotels)
+                    &&
+                    (string)$this->response->Hotels->attributes()['searchingIsCompleted'] !== 'true'
+                )))
+            ||
+            $this->hasErrors();
+    }
+
+    /**
+     * @return bool
+     */
+    protected function isEmpty()
+    {
+        return $this->response === null;
+    }
+
+    /**
+     * @return bool
+     */
+    protected function hasErrors()
+    {
+        return !$this->isEmpty() && !empty($this->getErrors($this->response));
     }
 
     /**
@@ -105,57 +147,6 @@ class AsyncSearch
     }
 
     /**
-     * Former
-     * @param SimpleXMLElement $response
-     * @return array|mixed
-     */
-    protected function form(SimpleXMLElement $response)
-    {
-        return $this->former->form($response);
-    }
-
-    /**
-     * @return bool
-     */
-    protected function hasErrors()
-    {
-        return !$this->isEmpty() && !empty($this->getErrors($this->response));
-    }
-
-    /**
-     * @return bool
-     */
-    protected function isEmpty()
-    {
-        return $this->response === null;
-    }
-
-    /**
-     * @return bool
-     */
-    protected function hasValues()
-    {
-        return (int) $this->response->Hotels->attributes()['totalResults'] !== 0;
-    }
-
-    /**
-     * @return bool
-     */
-    public function isCompleted()
-    {
-        return
-            (!($this->isEmpty()
-            ||
-            (
-                isset($this->response->Hotels)
-                &&
-                (string)$this->response->Hotels->attributes()['searchingIsCompleted'] !== 'true'
-            )))
-            ||
-            $this->hasErrors();
-    }
-
-    /**
      * @return SearchResult
      */
     public function search()
@@ -175,6 +166,10 @@ class AsyncSearch
 
         sleep($this->params->getPause());
 
+        $responseDom = dom_import_simplexml($response);
+        $extraDataDom = dom_import_simplexml($this->extraData);
+        $responseDom->appendChild($responseDom->ownerDocument->importNode($extraDataDom, true));
+
         $this->setResponse($response);
 
         $values = [];
@@ -183,6 +178,24 @@ class AsyncSearch
             $values = $this->form($response);
         }
 
-        return new SearchResult($values, $errors);
+        return new ResultProceeder($values, $errors);
+    }
+
+    /**
+     * @return bool
+     */
+    protected function hasValues()
+    {
+        return (int)$this->response->Hotels->attributes()['totalResults'] !== 0;
+    }
+
+    /**
+     * Former
+     * @param SimpleXMLElement $response
+     * @return array|mixed
+     */
+    protected function form(SimpleXMLElement $response)
+    {
+        return $this->former->form($response);
     }
 }

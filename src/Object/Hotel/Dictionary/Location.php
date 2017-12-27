@@ -20,37 +20,35 @@ namespace App\Hotelbook\Object\Hotel\Dictionary;
  */
 class Location
 {
+    /**
+     * @var int
+     */
+    protected $id;
+    /**
+     * @var string
+     */
+    protected $title;
+    /**
+     * @var int
+     */
+    protected $cityId;
+    /**
+     * @var bool
+     */
+    protected $global;
+
     public function __construct(
         int $id,
         string $title,
         int $cityId,
         bool $isGlobal
-    ) {
+    )
+    {
         $this->setId($id);
         $this->setTitle($title);
         $this->setCityId($cityId);
         $this->setGlobal($isGlobal);
     }
-
-    /**
-     * @var int
-     */
-    protected $id;
-
-    /**
-     * @var string
-     */
-    protected $title;
-
-    /**
-     * @var int
-     */
-    protected $cityId;
-
-    /**
-     * @var bool
-     */
-    protected $global;
 
     /**
      * @return int

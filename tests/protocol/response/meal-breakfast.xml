@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response date="2017-12-10T19:35:04+03:00">
+    <Breakfasts>
+        <Breakfast id="0"><![CDATA[Не определено]]></Breakfast>
+        <Breakfast id="6"><![CDATA[Азиатский]]></Breakfast>
+        <Breakfast id="2"><![CDATA[Американский завтрак]]></Breakfast>
+        <Breakfast id="3"><![CDATA[Английский]]></Breakfast>
+        <Breakfast id="12"><![CDATA[В комнате]]></Breakfast>
+        <Breakfast id="16"><![CDATA[В коробке]]></Breakfast>
+        <Breakfast id="8"><![CDATA[Израильский]]></Breakfast>
+        <Breakfast id="13"><![CDATA[Ирландский]]></Breakfast>
+        <Breakfast id="10"><![CDATA[Китайский]]></Breakfast>
+        <Breakfast id="4"><![CDATA[Континентальный]]></Breakfast>
+        <Breakfast id="11"><![CDATA[Мороканский]]></Breakfast>
+        <Breakfast id="19"><![CDATA[Полный]]></Breakfast>
+        <Breakfast id="17"><![CDATA[Ранний]]></Breakfast>
+        <Breakfast id="14"><![CDATA[Скандинавский]]></Breakfast>
+        <Breakfast id="18"><![CDATA[Уэльский]]></Breakfast>
+        <Breakfast id="7"><![CDATA[Шведский стол (горячие закуски)]]></Breakfast>
+        <Breakfast id="5"><![CDATA[Шведский стол (холодные закуски)]]></Breakfast>
+        <Breakfast id="15"><![CDATA[Шотландский]]></Breakfast>
+        <Breakfast id="9"><![CDATA[Японский]]></Breakfast>
+    </Breakfasts>
+</Response>

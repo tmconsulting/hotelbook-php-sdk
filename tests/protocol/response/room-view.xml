@@ -1,0 +1,501 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response date="2017-12-10T19:19:55+03:00">
+    <RoomViews>
+        <RoomView id="380" name="90 Degrees"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="34" name="ACROPOLIS"><![CDATA[вид на Акрополис]]></RoomView>
+        <RoomView id="393" name="AIRPORT"><![CDATA[вид на аэропорт]]></RoomView>
+        <RoomView id="224" name="Alpine View"><![CDATA[вид на Альпы]]></RoomView>
+        <RoomView id="126" name="Alps"><![CDATA[вид на Альпы]]></RoomView>
+        <RoomView id="534" name="Alster View"><![CDATA[вид на Альстер]]></RoomView>
+        <RoomView id="278" name="Andaz"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="223" name="AQUA"><![CDATA[вид на воду]]></RoomView>
+        <RoomView id="398" name="ARCH"><![CDATA[вид на арку]]></RoomView>
+        <RoomView id="186" name="Area"><![CDATA[вид на территорию]]></RoomView>
+        <RoomView id="162" name="ARNO"><![CDATA[вид на реку Арно]]></RoomView>
+        <RoomView id="33" name="Athenian"><![CDATA[вид на Афины]]></RoomView>
+        <RoomView id="144" name="Atrium"><![CDATA[вид на Артиум]]></RoomView>
+        <RoomView id="440" name="AVENUE VIEW"><![CDATA[вид на проспект (авеню)]]></RoomView>
+        <RoomView id="169" name="Back Site"><![CDATA[вид на задний двор]]></RoomView>
+        <RoomView id="360" name="back view"><![CDATA[вид на задний двор]]></RoomView>
+        <RoomView id="115" name="BALCONY"><![CDATA[Вид на балкон]]></RoomView>
+        <RoomView id="342" name="Balcony &amp; Pool"><![CDATA[номер с балконом и видом на бассейн]]></RoomView>
+        <RoomView id="401" name="BALLPARK"><![CDATA[вид на стадион]]></RoomView>
+        <RoomView id="370" name="BASEBALL"><![CDATA[вид на бейсбольную площадку]]></RoomView>
+        <RoomView id="391" name="BASEBALL FIELD"><![CDATA[вид на бейсбольное поле]]></RoomView>
+        <RoomView id="9" name="BAY"><![CDATA[вид на бухту]]></RoomView>
+        <RoomView id="306" name="BAY/CITY SKYLINE"><![CDATA[вид на залив или городские небоскребы]]></RoomView>
+        <RoomView id="216" name="Bay/City View"><![CDATA[вид на залив или город]]></RoomView>
+        <RoomView id="314" name="BAYFRONT"><![CDATA[фронтальный вид на залив]]></RoomView>
+        <RoomView id="354" name="Bayside"><![CDATA[вид на залив]]></RoomView>
+        <RoomView id="259" name="bayu-ocean"><![CDATA[Вид на океан]]></RoomView>
+        <RoomView id="25" name="BEACH"><![CDATA[вид на пляж]]></RoomView>
+        <RoomView id="196" name="Beach - Water View"><![CDATA[вид на пляж]]></RoomView>
+        <RoomView id="172" name="BEACH ACCESS"><![CDATA[номер с выходом на пляж]]></RoomView>
+        <RoomView id="63" name="BEACH FRONT"><![CDATA[фронтальный вид на пляж]]></RoomView>
+        <RoomView id="222" name="BEACHSIDE"><![CDATA[вид на пляж]]></RoomView>
+        <RoomView id="496" name="Bella"><![CDATA[	без определенного вида]]></RoomView>
+        <RoomView id="531" name="Beverly Hills View"><![CDATA[вид на Беверли Хиллз]]></RoomView>
+        <RoomView id="68" name="BOSPHORUS"><![CDATA[вид на Босфор]]></RoomView>
+        <RoomView id="447" name="Botanical"><![CDATA[вид на сад]]></RoomView>
+        <RoomView id="221" name="Boulevard View"><![CDATA[вид на бульвар]]></RoomView>
+        <RoomView id="164" name="BRIDGE"><![CDATA[вид на мост]]></RoomView>
+        <RoomView id="111" name="BROADWATER"><![CDATA[вид на Бродуотер]]></RoomView>
+        <RoomView id="269" name="buena vista"><![CDATA[хороший вид]]></RoomView>
+        <RoomView id="237" name="Bund"><![CDATA[вид на город]]></RoomView>
+        <RoomView id="462" name="Bund/Pundong"><![CDATA[вид на Шанхай]]></RoomView>
+        <RoomView id="346" name="burj view"><![CDATA[вид на Бурдж]]></RoomView>
+        <RoomView id="403" name="BUSCH STADIUM"><![CDATA[вид на Буш-стэдиум]]></RoomView>
+        <RoomView id="367" name="Cambridge"><![CDATA[вид на Кембридж]]></RoomView>
+        <RoomView id="91" name="Canal"><![CDATA[вид на канал]]></RoomView>
+        <RoomView id="533" name="Canary Wharf - View"><![CDATA[вид на квартал Канэри-Уорф]]></RoomView>
+        <RoomView id="327" name="Canopy"><![CDATA[вид на тенты]]></RoomView>
+        <RoomView id="509" name="Casino Tower Mountain View"><![CDATA[вид на казино Tower Mountain]]></RoomView>
+        <RoomView id="143" name="Castle"><![CDATA[вид на замок]]></RoomView>
+        <RoomView id="281" name="Cathedral Square"><![CDATA[вид на Соборную площадь ]]></RoomView>
+        <RoomView id="526" name="Cathedral View"><![CDATA[вид на собор]]></RoomView>
+        <RoomView id="492" name="Central Park"><![CDATA[вид на Центральный парк]]></RoomView>
+        <RoomView id="6" name="CHANNEL"><![CDATA[вид на канал]]></RoomView>
+        <RoomView id="206" name="Chistoprudniy boulevard view"><![CDATA[вид на Чистопрудный бульвар]]></RoomView>
+        <RoomView id="2" name="CITY"><![CDATA[вид на город]]></RoomView>
+        <RoomView id="410" name="City Courtyard"><![CDATA[вид на двор]]></RoomView>
+        <RoomView id="510" name="City Harbour View"><![CDATA[вид на городскую гавань]]></RoomView>
+        <RoomView id="294" name="CITY OR GARDENVIEW"><![CDATA[вид на город или сад]]></RoomView>
+        <RoomView id="387" name="CITY OR MOUNTAIN/ RIVER"><![CDATA[вид на город, горы или реку]]></RoomView>
+        <RoomView id="540" name="City or Pool"><![CDATA[вид на город или бассейн]]></RoomView>
+        <RoomView id="295" name="CITY OR RIVER"><![CDATA[вид на город или реку]]></RoomView>
+        <RoomView id="304" name="CITY/ BUSCH STADIUM"><![CDATA[вид на город или Буш-стэдиум]]></RoomView>
+        <RoomView id="282" name="CITY/ SEA"><![CDATA[вид на город или море]]></RoomView>
+        <RoomView id="319" name="CITY/ WATER"><![CDATA[вид на город или воду]]></RoomView>
+        <RoomView id="234" name="CITY/BAY"><![CDATA[вид на город или залив]]></RoomView>
+        <RoomView id="230" name="City/Courtyard"><![CDATA[вид на город или двор]]></RoomView>
+        <RoomView id="62" name="CITY/MOUNTAIN"><![CDATA[вид на город или горы]]></RoomView>
+        <RoomView id="423" name="CITY/MTN/RIVER"><![CDATA[вид на город, горы или реку]]></RoomView>
+        <RoomView id="66" name="CITY/PARK"><![CDATA[вид на город или парк]]></RoomView>
+        <RoomView id="233" name="CITY/SUNSET"><![CDATA[вид на город]]></RoomView>
+        <RoomView id="132" name="Cityside"><![CDATA[вид на город]]></RoomView>
+        <RoomView id="189" name="Coastal"><![CDATA[вид на побережье]]></RoomView>
+        <RoomView id="258" name="Coastline"><![CDATA[вид на побережье]]></RoomView>
+        <RoomView id="535" name="Congress View"><![CDATA[вид на здание Конгресса]]></RoomView>
+        <RoomView id="490" name="Construction View"><![CDATA[вид на стройку]]></RoomView>
+        <RoomView id="358" name="coogee view"><![CDATA[вид на район Куги]]></RoomView>
+        <RoomView id="197" name="Coral - Water View"><![CDATA[вид на воду]]></RoomView>
+        <RoomView id="451" name="Corner's"><![CDATA[вид на угол]]></RoomView>
+        <RoomView id="331" name="CORRIDOR"><![CDATA[вид на корридор]]></RoomView>
+        <RoomView id="94" name="Country"><![CDATA[вид на сельскую местность]]></RoomView>
+        <RoomView id="244" name="Countryside View"><![CDATA[вид на сельскую местность]]></RoomView>
+        <RoomView id="93" name="County"><![CDATA[вид на округ]]></RoomView>
+        <RoomView id="363" name="court view"><![CDATA[вид на двор]]></RoomView>
+        <RoomView id="100" name="COURTSIDE"><![CDATA[вид на внутренний двор]]></RoomView>
+        <RoomView id="212" name="Courtview"><![CDATA[вид на двор]]></RoomView>
+        <RoomView id="180" name="Courty"><![CDATA[вид на внутренний двор ]]></RoomView>
+        <RoomView id="40" name="COURTYARD"><![CDATA[вид на двор]]></RoomView>
+        <RoomView id="324" name="Courtyard Gulf"><![CDATA[вид на двор или залив]]></RoomView>
+        <RoomView id="357" name="Courtyard Pool"><![CDATA[вид на внутренний двор с бассейном]]></RoomView>
+        <RoomView id="310" name="COURTYARD/GARDEN"><![CDATA[вид на двор или сад]]></RoomView>
+        <RoomView id="210" name="Crater View"><![CDATA[вид на кратер]]></RoomView>
+        <RoomView id="30" name="CREEK"><![CDATA[вид на залив]]></RoomView>
+        <RoomView id="134" name="Creek Side"><![CDATA[вид на бухту]]></RoomView>
+        <RoomView id="369" name="Cview"><![CDATA[	без определенного вида]]></RoomView>
+        <RoomView id="28" name="DANUBE"><![CDATA[вид на Дунай]]></RoomView>
+        <RoomView id="520" name="Danube &amp; Castle View"><![CDATA[вид на Дунай и Замок]]></RoomView>
+        <RoomView id="459" name="DC"><![CDATA[	без определенного вида]]></RoomView>
+        <RoomView id="470" name="Delux Bay"><![CDATA[вид на бухту]]></RoomView>
+        <RoomView id="151" name="DELUXE"><![CDATA[улучшенный вид]]></RoomView>
+        <RoomView id="537" name="Deluxe Sea View"><![CDATA[вид на море]]></RoomView>
+        <RoomView id="481" name="Desert"><![CDATA[вид на пустыню]]></RoomView>
+        <RoomView id="176" name="DIAMOND HEAD"><![CDATA[вид на Дайамонд-Хед]]></RoomView>
+        <RoomView id="228" name="DISNEY"><![CDATA[вид на Диснейлэнд]]></RoomView>
+        <RoomView id="255" name="district view"><![CDATA[вид на район]]></RoomView>
+        <RoomView id="116" name="DOCK"><![CDATA[вид на док(причал)]]></RoomView>
+        <RoomView id="356" name="Dolphin"><![CDATA[	без определенного вида]]></RoomView>
+        <RoomView id="64" name="DOLPHIN LAGOON"><![CDATA[вид на Лагуну Дельфинов ]]></RoomView>
+        <RoomView id="283" name="DOWNTOWN"><![CDATA[вид на центр города]]></RoomView>
+        <RoomView id="284" name="DOWNTOWN OR HARBOR"><![CDATA[вид на центр города или гавань]]></RoomView>
+        <RoomView id="147" name="East"><![CDATA[окна на восток]]></RoomView>
+        <RoomView id="167" name="East Sea"><![CDATA[вид на Восточное море]]></RoomView>
+        <RoomView id="124" name="Eiger"><![CDATA[вид на пик Эйгер]]></RoomView>
+        <RoomView id="149" name="ESSEX"><![CDATA[вид на Эссекс]]></RoomView>
+        <RoomView id="140" name="Estuary"><![CDATA[вид на эстуарий (дельту реки)]]></RoomView>
+        <RoomView id="239" name="Etna View"><![CDATA[вид на  вулкан Этна]]></RoomView>
+        <RoomView id="75" name="ETOILE RESIDENCE IMPERIALE"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="76" name="ETOILE RESIDENCE IMPERIALE"><![CDATA[вид на площадь]]></RoomView>
+        <RoomView id="460" name="Executive"><![CDATA[улучшенный вид]]></RoomView>
+        <RoomView id="389" name="EXTERIOR"><![CDATA[улучшенный вид]]></RoomView>
+        <RoomView id="174" name="fabulous ocean"><![CDATA[вид на океан]]></RoomView>
+        <RoomView id="279" name="Fairmont"><![CDATA[вид на Фэрмонт]]></RoomView>
+        <RoomView id="59" name="FAIRWAY"><![CDATA[вид на судоходный канал]]></RoomView>
+        <RoomView id="385" name="FALL"><![CDATA[вид на водопад]]></RoomView>
+        <RoomView id="49" name="FALLS"><![CDATA[вид на водопад]]></RoomView>
+        <RoomView id="88" name="FIELD"><![CDATA[вид на поле]]></RoomView>
+        <RoomView id="133" name="Fjord"><![CDATA[вид на фьорд]]></RoomView>
+        <RoomView id="448" name="Florida"><![CDATA[вид на Флориду]]></RoomView>
+        <RoomView id="60" name="FOREST"><![CDATA[вид на лес]]></RoomView>
+        <RoomView id="371" name="forest/mountain view"><![CDATA[вид на лес и горы]]></RoomView>
+        <RoomView id="181" name="Fount. Garden"><![CDATA[вид на сад]]></RoomView>
+        <RoomView id="121" name="FOUNTAIN"><![CDATA[вид на фонтан]]></RoomView>
+        <RoomView id="227" name="Fountain/Garden View"><![CDATA[вид на фонтан или сад]]></RoomView>
+        <RoomView id="77" name="FOUR POINTS CULVER CITY"><![CDATA[вид на аэропорт]]></RoomView>
+        <RoomView id="452" name="Front Bosphorus View"><![CDATA[фронтальный вид на Босфор]]></RoomView>
+        <RoomView id="240" name="Front Nile View"><![CDATA[фронтальный вид на Нил]]></RoomView>
+        <RoomView id="23" name="FRONT SEA"><![CDATA[фронтальный вид на море]]></RoomView>
+        <RoomView id="499" name="Front Sea&amp;Cathedral V"><![CDATA[вид на море]]></RoomView>
+        <RoomView id="256" name="front view"><![CDATA[фронтальный вид]]></RoomView>
+        <RoomView id="190" name="Full Gulf"><![CDATA[полный вид на залив]]></RoomView>
+        <RoomView id="166" name="FULL HARBOUR"><![CDATA[полный вид на гавань]]></RoomView>
+        <RoomView id="307" name="FULL OCEAN"><![CDATA[полный вид на океан]]></RoomView>
+        <RoomView id="231" name="Full Sea View"><![CDATA[полный вид на море]]></RoomView>
+        <RoomView id="4" name="GARDEN"><![CDATA[вид на сад]]></RoomView>
+        <RoomView id="123" name="Garden / Park"><![CDATA[вид на сад или парк]]></RoomView>
+        <RoomView id="145" name="Garden / part sea"><![CDATA[вид на сад или частичный вид на море]]></RoomView>
+        <RoomView id="98" name="GARDEN / POOL"><![CDATA[вид на сад или бассейн]]></RoomView>
+        <RoomView id="458" name="Garden Front View"><![CDATA[фронтальный вид на сад]]></RoomView>
+        <RoomView id="433" name="Garden Side"><![CDATA[боковой вид на сад]]></RoomView>
+        <RoomView id="340" name="Garden Wing - Garden"><![CDATA[номер в садовом крыле с видом на сад]]></RoomView>
+        <RoomView id="209" name="Garden/City"><![CDATA[вид на сад или город]]></RoomView>
+        <RoomView id="203" name="Garden/Marina View"><![CDATA[вид на сад или пристань для яхт]]></RoomView>
+        <RoomView id="191" name="Garden/Mountain View"><![CDATA[вид на сад или горы]]></RoomView>
+        <RoomView id="235" name="Garden/Sea"><![CDATA[вид на сад или море]]></RoomView>
+        <RoomView id="405" name="gendarmenmarkt"><![CDATA[	без определенного вида]]></RoomView>
+        <RoomView id="425" name="GLF/ HRZ OCN"><![CDATA[	без определенного вида]]></RoomView>
+        <RoomView id="416" name="GLF/FRONT"><![CDATA[	без определенного вида]]></RoomView>
+        <RoomView id="108" name="GOLDEN HORN"><![CDATA[вид на залив Золотой Рог]]></RoomView>
+        <RoomView id="44" name="GOLF"><![CDATA[вид на поле для гольфа]]></RoomView>
+        <RoomView id="329" name="GOLF COURSE"><![CDATA[вид на поле для гольфа]]></RoomView>
+        <RoomView id="394" name="GOLF COURSE/ HORIZON OCEAN"><![CDATA[вид на гольф-лужайку]]></RoomView>
+        <RoomView id="395" name="GOLF OR POOL"><![CDATA[вид на поле для гольфа или бассейн]]></RoomView>
+        <RoomView id="388" name="GOLF/ MOUNTAIN"><![CDATA[вид на поле для гольфа или горы]]></RoomView>
+        <RoomView id="442" name="Golf/Lake"><![CDATA[вид на поле для гольфа или озеро]]></RoomView>
+        <RoomView id="200" name="Golf/Ocean View"><![CDATA[вид океан или поле для гольфа]]></RoomView>
+        <RoomView id="488" name="Golf/Sea View"><![CDATA[вид на поле для гольфа или на море]]></RoomView>
+        <RoomView id="426" name="Gran Canal"><![CDATA[вид на Гранд-канал]]></RoomView>
+        <RoomView id="99" name="GRAND"><![CDATA[замечательный]]></RoomView>
+        <RoomView id="92" name="Grand Canal"><![CDATA[вид на Град-канал]]></RoomView>
+        <RoomView id="512" name="Grand Park View"><![CDATA[вид на Гранд Парк]]></RoomView>
+        <RoomView id="486" name="Grande"><![CDATA[хороший]]></RoomView>
+        <RoomView id="432" name="GRANDE+WATER"><![CDATA[лучший вид на воду]]></RoomView>
+        <RoomView id="443" name="Great"><![CDATA[прекрасный вид]]></RoomView>
+        <RoomView id="85" name="GROVE"><![CDATA[вид на рощу]]></RoomView>
+        <RoomView id="61" name="GULF"><![CDATA[вид на залив]]></RoomView>
+        <RoomView id="305" name="GULF FRONT"><![CDATA[фронтальный вид на залив]]></RoomView>
+        <RoomView id="226" name="GULF/POOL"><![CDATA[вид на залив или бассейн]]></RoomView>
+        <RoomView id="54" name="HARAM"><![CDATA[	без определенного вида]]></RoomView>
+        <RoomView id="364" name="HARBOR MOUNTAIN VIEW"><![CDATA[вид на Харбор Маунтин]]></RoomView>
+        <RoomView id="373" name="Harbor tower"><![CDATA[вид на гавань]]></RoomView>
+        <RoomView id="330" name="HARBOR/SUNSET"><![CDATA[вид на гавань или Сансет]]></RoomView>
+        <RoomView id="434" name="HARBOR/SUNSET OCNFRNT"><![CDATA[	без определенного вида]]></RoomView>
+        <RoomView id="7" name="HARBOUR"><![CDATA[вид на гавань]]></RoomView>
+        <RoomView id="309" name="HARBOUR AND BAY FUNDY"><![CDATA[вид на гавань и залив Фанди]]></RoomView>
+        <RoomView id="160" name="HARBOUR BRIDGE"><![CDATA[вид на мост Харбор-Бридж]]></RoomView>
+        <RoomView id="225" name="Harbour/Golf"><![CDATA[вид на гавань или поле для гольфа]]></RoomView>
+        <RoomView id="355" name="Harbourside"><![CDATA[вид на гавань]]></RoomView>
+        <RoomView id="178" name="HIGH OCEAN"><![CDATA[вид на океан]]></RoomView>
+        <RoomView id="296" name="Highland Slope Side"><![CDATA[боковой вид на склоны Хайлэнд]]></RoomView>
+        <RoomView id="412" name="Highlands"><![CDATA[вид на высокогорье]]></RoomView>
+        <RoomView id="18" name="HILL"><![CDATA[вид на холм]]></RoomView>
+        <RoomView id="120" name="Hillside"><![CDATA[вид на холмы]]></RoomView>
+        <RoomView id="465" name="HILTON"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="386" name="HISTORIC"><![CDATA[исторический вид]]></RoomView>
+        <RoomView id="273" name="Historic City"><![CDATA[вид на историческую часть города]]></RoomView>
+        <RoomView id="461" name="Historic Town"><![CDATA[вид на исторический город]]></RoomView>
+        <RoomView id="484" name="Hollywood Hills"><![CDATA[вид на Голливудские холмы]]></RoomView>
+        <RoomView id="41" name="HORISON"><![CDATA[вид на горизонт]]></RoomView>
+        <RoomView id="454" name="Horizon City"><![CDATA[вид на город]]></RoomView>
+        <RoomView id="493" name="Hudson River"><![CDATA[вид на реку Гудзон]]></RoomView>
+        <RoomView id="218" name="Hyde Park View"><![CDATA[вид на Гайд Парк]]></RoomView>
+        <RoomView id="102" name="HYDRO POOL"><![CDATA[вид на гидробассейн]]></RoomView>
+        <RoomView id="37" name="INLAND"><![CDATA[вид на внутреннюю территорию]]></RoomView>
+        <RoomView id="161" name="Interior"><![CDATA[интерьер]]></RoomView>
+        <RoomView id="420" name="INTERIOR CORRIDOR"><![CDATA[вид на внутренний корридор]]></RoomView>
+        <RoomView id="156" name="Intracoastal"><![CDATA[вид на сушу]]></RoomView>
+        <RoomView id="14" name="ISLAND"><![CDATA[вид на остров]]></RoomView>
+        <RoomView id="524" name="island bungalow deluxe sea view"><![CDATA[вид на море]]></RoomView>
+        <RoomView id="95" name="JGL VIEW"><![CDATA[	без определенного вида]]></RoomView>
+        <RoomView id="125" name="Jungfrau"><![CDATA[вид на пик Юнгфрау]]></RoomView>
+        <RoomView id="262" name="jungle"><![CDATA[вид на джунгли]]></RoomView>
+        <RoomView id="55" name="KAABA"><![CDATA[вид на Кааба]]></RoomView>
+        <RoomView id="182" name="King"><![CDATA[королевский]]></RoomView>
+        <RoomView id="107" name="King-Castle View"><![CDATA[королевский]]></RoomView>
+        <RoomView id="532" name="Klcc View"><![CDATA[вид на здание KLCC]]></RoomView>
+        <RoomView id="267" name="knightsbridge"><![CDATA[	без определенного вида]]></RoomView>
+        <RoomView id="46" name="KOWLOON"><![CDATA[вид на Цзюлун (Коулон)]]></RoomView>
+        <RoomView id="205" name="Kremlin view"><![CDATA[вид на Кремль]]></RoomView>
+        <RoomView id="26" name="LAGOON"><![CDATA[вид на лагуну]]></RoomView>
+        <RoomView id="122" name="Lagoon Access"><![CDATA[номер с доступом к лагуне]]></RoomView>
+        <RoomView id="104" name="LAGOON FRONT"><![CDATA[фронтальный вид на лагуну]]></RoomView>
+        <RoomView id="508" name="Lagoon Mountain"><![CDATA[вид на лагуну или горы]]></RoomView>
+        <RoomView id="13" name="LAKE"><![CDATA[вид на озеро]]></RoomView>
+        <RoomView id="345" name="Lake Facing"><![CDATA[вид на озеро]]></RoomView>
+        <RoomView id="366" name="lake/pool view"><![CDATA[вид на озеро или бассейн]]></RoomView>
+        <RoomView id="114" name="LAKEFRONT"><![CDATA[фронтальный вид на озеро]]></RoomView>
+        <RoomView id="113" name="LAKESIDE"><![CDATA[боковой вид на озеро]]></RoomView>
+        <RoomView id="53" name="LAND"><![CDATA[вид на сушу]]></RoomView>
+        <RoomView id="69" name="Land view Special"><![CDATA[	без определенного вида]]></RoomView>
+        <RoomView id="396" name="LANDMARK"><![CDATA[вид на достопримечательность]]></RoomView>
+        <RoomView id="320" name="LANDMARK/ ARCH"><![CDATA[вид на арку]]></RoomView>
+        <RoomView id="130" name="Lateral Sea"><![CDATA[боковой вид на море]]></RoomView>
+        <RoomView id="446" name="LAURENTIAN"><![CDATA[	без определенного вида]]></RoomView>
+        <RoomView id="479" name="LIGHTHOUSE/ OCEAN"><![CDATA[вид на маяк или океан]]></RoomView>
+        <RoomView id="372" name="limited"><![CDATA[ограниченный вид]]></RoomView>
+        <RoomView id="491" name="Limited Sea View"><![CDATA[ограниченный вид на море]]></RoomView>
+        <RoomView id="274" name="Lounge View"><![CDATA[вид на лаундж]]></RoomView>
+        <RoomView id="381" name="Manly"><![CDATA[вид на Мэнли]]></RoomView>
+        <RoomView id="52" name="MARINA"><![CDATA[вид на пристань для яхт]]></RoomView>
+        <RoomView id="204" name="Marina/Garden View"><![CDATA[вид на пристань для яхт или сад]]></RoomView>
+        <RoomView id="229" name="Marina/Sea View"><![CDATA[вид на пристань для яхт или море]]></RoomView>
+        <RoomView id="35" name="MARINE"><![CDATA[вид на пристань для яхт]]></RoomView>
+        <RoomView id="249" name="MARIVENT"><![CDATA[	без определенного вида]]></RoomView>
+        <RoomView id="78" name="MASCOTTE LES SITTELLES"><![CDATA[вид на лес]]></RoomView>
+        <RoomView id="127" name="Matterhorn"><![CDATA[вид на пик Маттерхорн]]></RoomView>
+        <RoomView id="83" name="Mayfair Guest Room"><![CDATA[гостевая комната]]></RoomView>
+        <RoomView id="541" name="Meadow"><![CDATA[вид на луг]]></RoomView>
+        <RoomView id="378" name="medina view"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="502" name="Mesa"><![CDATA[вид на столовую гору]]></RoomView>
+        <RoomView id="444" name="Meteora"><![CDATA[вид на монастыри Метеоры]]></RoomView>
+        <RoomView id="439" name="Mixed"><![CDATA[смешанный вид]]></RoomView>
+        <RoomView id="192" name="Moderate"><![CDATA[	без определенного вида]]></RoomView>
+        <RoomView id="136" name="Montblanc"><![CDATA[вид на пик Монблан]]></RoomView>
+        <RoomView id="5" name="MOUNTAIN"><![CDATA[вид на горы]]></RoomView>
+        <RoomView id="322" name="MOUNTAIN PIKES PEAK"><![CDATA[вид на гору Пайкс Пик]]></RoomView>
+        <RoomView id="251" name="mountain side"><![CDATA[боковой вид на горы]]></RoomView>
+        <RoomView id="157" name="MOUNTAIN/GARDEN"><![CDATA[вид на горы или сад]]></RoomView>
+        <RoomView id="418" name="Mykonian Garden"><![CDATA[вид на миконосский сад]]></RoomView>
+        <RoomView id="419" name="Mykonian Sea"><![CDATA[вид на море]]></RoomView>
+        <RoomView id="383" name="N.Y.C."><![CDATA[вид на Нью-Йорк Сити]]></RoomView>
+        <RoomView id="321" name="Naples"><![CDATA[вид на Неаполь]]></RoomView>
+        <RoomView id="515" name="Natural view"><![CDATA[вид на природу]]></RoomView>
+        <RoomView id="119" name="Nature"><![CDATA[вид на природу]]></RoomView>
+        <RoomView id="220" name="Neva view"><![CDATA[вид на Неву]]></RoomView>
+        <RoomView id="171" name="NILE"><![CDATA[вид на Нил]]></RoomView>
+        <RoomView id="71" name="No Sea View"><![CDATA[без вида на море]]></RoomView>
+        <RoomView id="67" name="NO VIEW"><![CDATA[без вида из окна]]></RoomView>
+        <RoomView id="384" name="NON"><![CDATA[без вида]]></RoomView>
+        <RoomView id="497" name="Non Bay view"><![CDATA[без вида на залив]]></RoomView>
+        <RoomView id="503" name="Non Beach View"><![CDATA[без вида на пляж]]></RoomView>
+        <RoomView id="352" name="Non Sea Facing"><![CDATA[без вида на море]]></RoomView>
+        <RoomView id="150" name="NON-OCEAN VIEW"><![CDATA[без вида на океан]]></RoomView>
+        <RoomView id="187" name="Northside"><![CDATA[северная сторона]]></RoomView>
+        <RoomView id="263" name="OB"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="238" name="OBELISCO"><![CDATA[вид на Обелиск]]></RoomView>
+        <RoomView id="8" name="OCEAN"><![CDATA[вид на океан]]></RoomView>
+        <RoomView id="56" name="OCEAN FRONT"><![CDATA[фронтальный вид на океан]]></RoomView>
+        <RoomView id="303" name="OCEAN OR LAGOON"><![CDATA[вид на океан или лагуну]]></RoomView>
+        <RoomView id="43" name="OCEAN/POOL"><![CDATA[вид на океан или бассейн]]></RoomView>
+        <RoomView id="417" name="OCEANFRONT DIAMONDHEAD">
+            <![CDATA[фронтальный вид на океан или вулкан Дайамонд-Хед]]></RoomView>
+        <RoomView id="271" name="Oceanfront Marina"><![CDATA[фронтальный вид на океан]]></RoomView>
+        <RoomView id="270" name="Oceanfront Prime"><![CDATA[фронтальный вид на океан]]></RoomView>
+        <RoomView id="374" name="Oceanfront Top"><![CDATA[вид на океан]]></RoomView>
+        <RoomView id="272" name="Oceanfront Vista"><![CDATA[фронтальный вид на океан]]></RoomView>
+        <RoomView id="478" name="Ocian"><![CDATA[вид на океан]]></RoomView>
+        <RoomView id="302" name="OCN/ LAGOON"><![CDATA[вид на океан или лагуну]]></RoomView>
+        <RoomView id="96" name="OCN/ISLAND"><![CDATA[вид на океан или остров]]></RoomView>
+        <RoomView id="463" name="Old City"><![CDATA[вид на старый город]]></RoomView>
+        <RoomView id="248" name="old town view"><![CDATA[вид на старый город]]></RoomView>
+        <RoomView id="112" name="OPERA"><![CDATA[вид на оперный театр]]></RoomView>
+        <RoomView id="42" name="OPERA HOUSE"><![CDATA[вид на оперный театр (Opera House)]]></RoomView>
+        <RoomView id="103" name="OVERWATER"><![CDATA[номер над водой]]></RoomView>
+        <RoomView id="17" name="PALACE"><![CDATA[вид на дворец]]></RoomView>
+        <RoomView id="232" name="Palm"><![CDATA[вид на пальмы]]></RoomView>
+        <RoomView id="501" name="Panorama"><![CDATA[панорамный вид]]></RoomView>
+        <RoomView id="27" name="PANORAMIC"><![CDATA[панорамный вид из окна]]></RoomView>
+        <RoomView id="315" name="PANORAMIC CORNER"><![CDATA[панорамный угловой вид]]></RoomView>
+        <RoomView id="404" name="PANORAMIC OCEAN"><![CDATA[панорамный вид на океан]]></RoomView>
+        <RoomView id="333" name="Panoramic Sea"><![CDATA[панорамный вид на море]]></RoomView>
+        <RoomView id="264" name="pantai-lagoon"><![CDATA[вид на лагуну Пантаи]]></RoomView>
+        <RoomView id="11" name="PARK"><![CDATA[вид на парк]]></RoomView>
+        <RoomView id="529" name="Park And Harbour"><![CDATA[вид  на сад и гавань]]></RoomView>
+        <RoomView id="400" name="PARK AVE"><![CDATA[вид на Парк Авеню]]></RoomView>
+        <RoomView id="469" name="Park Grand"><![CDATA[вид на парк]]></RoomView>
+        <RoomView id="495" name="Parking"><![CDATA[вид на парковку]]></RoomView>
+        <RoomView id="441" name="PARLIAMENT"><![CDATA[вид на Парламент]]></RoomView>
+        <RoomView id="290" name="PART"><![CDATA[частичный вид из окна]]></RoomView>
+        <RoomView id="485" name="Part City"><![CDATA[частичный вид на город]]></RoomView>
+        <RoomView id="421" name="PART OCEAN"><![CDATA[частичный вид на океан]]></RoomView>
+        <RoomView id="379" name="PART RIVER"><![CDATA[частичный вид на реку]]></RoomView>
+        <RoomView id="184" name="Partial"><![CDATA[частичный вид]]></RoomView>
+        <RoomView id="195" name="Partial Bay View"><![CDATA[частичный вид на залив]]></RoomView>
+        <RoomView id="453" name="Partial Bosphorus View"><![CDATA[частичный вид на Босфор]]></RoomView>
+        <RoomView id="148" name="Partial City"><![CDATA[частичный вид на город]]></RoomView>
+        <RoomView id="158" name="PARTIAL GARDEN"><![CDATA[частичный вид на сад]]></RoomView>
+        <RoomView id="429" name="PARTIAL GOLF COURSE"><![CDATA[частичный вид на поле для гольфа]]></RoomView>
+        <RoomView id="188" name="Partial Gulf"><![CDATA[частичный вид на залив]]></RoomView>
+        <RoomView id="313" name="PARTIAL HARAM"><![CDATA[вид на Харам]]></RoomView>
+        <RoomView id="47" name="PARTIAL HARBOUR"><![CDATA[частичный вид на гавань]]></RoomView>
+        <RoomView id="236" name="Partial Lake"><![CDATA[частичный вид на озеро]]></RoomView>
+        <RoomView id="202" name="Partial Mountain"><![CDATA[частичный вид на горы]]></RoomView>
+        <RoomView id="58" name="PARTIAL OCEAN"><![CDATA[частичный вид на океан]]></RoomView>
+        <RoomView id="402" name="Partial Ocean &amp; Beach"><![CDATA[частичный вид на океан и пляж]]></RoomView>
+        <RoomView id="293" name="PARTIAL RIVER"><![CDATA[частичный вид на реку]]></RoomView>
+        <RoomView id="72" name="Partial Sea view"><![CDATA[частичный вид на море]]></RoomView>
+        <RoomView id="214" name="Partial Water View"><![CDATA[частичный вид на воду]]></RoomView>
+        <RoomView id="430" name="PARTIAL WATERWAY"><![CDATA[вид на воду]]></RoomView>
+        <RoomView id="153" name="PATIO GARDEN"><![CDATA[вид на патио/сад]]></RoomView>
+        <RoomView id="154" name="PATIO POOL"><![CDATA[вид на патио/бассейн]]></RoomView>
+        <RoomView id="464" name="Patio View"><![CDATA[вид на патио]]></RoomView>
+        <RoomView id="268" name="Peak"><![CDATA[вид на вершину]]></RoomView>
+        <RoomView id="536" name="Pera View"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="287" name="PERGOLA"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="468" name="Piazza"><![CDATA[вид на площадь]]></RoomView>
+        <RoomView id="12" name="PIER"><![CDATA[вид на пирс]]></RoomView>
+        <RoomView id="276" name="Plantation"><![CDATA[вид на плантацию]]></RoomView>
+        <RoomView id="45" name="PLAZA"><![CDATA[вид на площадь]]></RoomView>
+        <RoomView id="257" name="Plunge View"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="15" name="POOL"><![CDATA[вид на бассейн]]></RoomView>
+        <RoomView id="101" name="POOL ACCESS"><![CDATA[номер с доступом в бассейн]]></RoomView>
+        <RoomView id="105" name="POOL BEACH"><![CDATA[вид на пляж или бассейн]]></RoomView>
+        <RoomView id="349" name="Pool Facing"><![CDATA[вид на бассейн]]></RoomView>
+        <RoomView id="106" name="POOL FRONT"><![CDATA[фронтальный вид на бассейн]]></RoomView>
+        <RoomView id="392" name="POOL OR CTYRD"><![CDATA[вид на город]]></RoomView>
+        <RoomView id="39" name="POOL-RIVER"><![CDATA[вид на бассейн или реку]]></RoomView>
+        <RoomView id="328" name="POOL/ GULF"><![CDATA[вид на залив или бассейн]]></RoomView>
+        <RoomView id="456" name="Pool/Garden"><![CDATA[вид на бассейн или сад]]></RoomView>
+        <RoomView id="219" name="Pool/Golf View"><![CDATA[вид на бассейн или поле для гольфа]]></RoomView>
+        <RoomView id="504" name="Pool/Inland View"><![CDATA[вид на бассейн или внутреннюю территорию]]></RoomView>
+        <RoomView id="201" name="Pool/Mountain View"><![CDATA[вид на бассейн или горы]]></RoomView>
+        <RoomView id="323" name="POOL/OCN"><![CDATA[вид на бассейн или океан]]></RoomView>
+        <RoomView id="528" name="Pool/Side Sea View"><![CDATA[вид на бассейн или боковой вид на море]]></RoomView>
+        <RoomView id="193" name="Pool/Terrace"><![CDATA[вид на бассейн или террасу]]></RoomView>
+        <RoomView id="79" name="POOLSIDE"><![CDATA[вид на бассейн]]></RoomView>
+        <RoomView id="86" name="PORT"><![CDATA[вид на порт]]></RoomView>
+        <RoomView id="318" name="PORT/CORONADO BRIDGE"><![CDATA[вид на порт или мост Коронадо]]></RoomView>
+        <RoomView id="411" name="Premier"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="316" name="Premium"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="522" name="Premium Sea View"><![CDATA[вид на море]]></RoomView>
+        <RoomView id="241" name="Pyramid View"><![CDATA[вид на Пирамиды]]></RoomView>
+        <RoomView id="247" name="PYRAMIDS"><![CDATA[вид на пирамиды]]></RoomView>
+        <RoomView id="359" name="pyrmont"><![CDATA[вид на Пирмонт]]></RoomView>
+        <RoomView id="90" name="QUAY"><![CDATA[вид на набережную]]></RoomView>
+        <RoomView id="472" name="Rail"><![CDATA[вид на железную дорогу]]></RoomView>
+        <RoomView id="415" name="RAINBOW OCEAN FRONT"><![CDATA[вид на океан]]></RoomView>
+        <RoomView id="131" name="Ramblas"><![CDATA[вид на улицу Рамбла]]></RoomView>
+        <RoomView id="424" name="REDROCK"><![CDATA[вид на Редрок]]></RoomView>
+        <RoomView id="36" name="REEF"><![CDATA[вид на рифы]]></RoomView>
+        <RoomView id="289" name="REGULAR"><![CDATA[обычный вид из окна]]></RoomView>
+        <RoomView id="168" name="Resid/Pool"><![CDATA[вид на бассейн]]></RoomView>
+        <RoomView id="141" name="Resort"><![CDATA[вид на курорт]]></RoomView>
+        <RoomView id="489" name="Resort &amp; Sea View"><![CDATA[вид на курорт и море]]></RoomView>
+        <RoomView id="177" name="RESORT GARDEN"><![CDATA[вид на сад курорта]]></RoomView>
+        <RoomView id="142" name="Restricted"><![CDATA[ограниченный вид из окна]]></RoomView>
+        <RoomView id="253" name="RHINE VIEW"><![CDATA[вид на Рейн]]></RoomView>
+        <RoomView id="118" name="RICE FIELD"><![CDATA[вид на рисовое поле]]></RoomView>
+        <RoomView id="65" name="RIDGE"><![CDATA[вид на горный хребет]]></RoomView>
+        <RoomView id="266" name="rimba-jungle"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="10" name="RIVER"><![CDATA[вид на реку]]></RoomView>
+        <RoomView id="81" name="River &amp; Pool View"><![CDATA[вид на реку и бассейн]]></RoomView>
+        <RoomView id="435" name="river front"><![CDATA[вид на набережную]]></RoomView>
+        <RoomView id="194" name="River/Hillside View"><![CDATA[вид на реку или холмы]]></RoomView>
+        <RoomView id="87" name="ROCK"><![CDATA[вид на скалу]]></RoomView>
+        <RoomView id="1" name="ROH"><![CDATA[вид не определен]]></RoomView>
+        <RoomView id="165" name="Rome"><![CDATA[вид на Рим]]></RoomView>
+        <RoomView id="198" name="Royal - Harbour View"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="199" name="Royal - Water View"><![CDATA[вид на воду]]></RoomView>
+        <RoomView id="84" name="Royal Park guest room"><![CDATA[вид на парк]]></RoomView>
+        <RoomView id="507" name="Sacre Coeur View"><![CDATA[вид на базилику Сакре-Кёр]]></RoomView>
+        <RoomView id="473" name="Santa Maria Novella View"><![CDATA[вид на церковь Санта-Мария-Новелла]]></RoomView>
+        <RoomView id="80" name="SANTHIYA VIEW"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="339" name="Savanna"><![CDATA[вид на Саванну]]></RoomView>
+        <RoomView id="19" name="SCENERY"><![CDATA[вид на ландшафт]]></RoomView>
+        <RoomView id="275" name="Scenic"><![CDATA[живописный вид]]></RoomView>
+        <RoomView id="3" name="SEA"><![CDATA[вид на море]]></RoomView>
+        <RoomView id="500" name="Sea &amp; Cathedral View"><![CDATA[вид на море и собор]]></RoomView>
+        <RoomView id="138" name="Sea Facing"><![CDATA[вид на море]]></RoomView>
+        <RoomView id="335" name="Sea Front"><![CDATA[фронтальный вид на море]]></RoomView>
+        <RoomView id="480" name="Sea Side"><![CDATA[вид на море]]></RoomView>
+        <RoomView id="137" name="Sea-Park"><![CDATA[вид на море]]></RoomView>
+        <RoomView id="173" name="SEA/GRD"><![CDATA[вид на море или сад]]></RoomView>
+        <RoomView id="250" name="sea/mountain view"><![CDATA[вид на море или горы]]></RoomView>
+        <RoomView id="21" name="SEA/POOL"><![CDATA[вид на море/бассейн]]></RoomView>
+        <RoomView id="97" name="SEAFRONT"><![CDATA[фронтальный вид на море]]></RoomView>
+        <RoomView id="20" name="SIDE"><![CDATA[вид на Кипр]]></RoomView>
+        <RoomView id="438" name="Side Gulf"><![CDATA[боковой вид на залив]]></RoomView>
+        <RoomView id="525" name="Side Lake View"><![CDATA[боковой вид на озеро]]></RoomView>
+        <RoomView id="242" name="Side Nile View"><![CDATA[Боковой вид на Нил]]></RoomView>
+        <RoomView id="215" name="Side Ocean"><![CDATA[боковой вид на океан]]></RoomView>
+        <RoomView id="22" name="SIDE SEA"><![CDATA[боковой вид на море]]></RoomView>
+        <RoomView id="382" name="SKYLINE"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="298" name="Slope"><![CDATA[вид на склоны]]></RoomView>
+        <RoomView id="297" name="Slope Side"><![CDATA[боковой вид на склоны]]></RoomView>
+        <RoomView id="539" name="Slopeside"><![CDATA[вид на склон]]></RoomView>
+        <RoomView id="109" name="SOPHIA VIEW"><![CDATA[вид на Софию]]></RoomView>
+        <RoomView id="135" name="Souk"><![CDATA[вид на базар (souk)]]></RoomView>
+        <RoomView id="129" name="South"><![CDATA[окна на юг]]></RoomView>
+        <RoomView id="498" name="South Side"><![CDATA[вид на южную сторону]]></RoomView>
+        <RoomView id="128" name="Southside"><![CDATA[вид на южную сторону]]></RoomView>
+        <RoomView id="211" name="Spa/Pool View"><![CDATA[вид на Спа или бассейн]]></RoomView>
+        <RoomView id="437" name="Special"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="436" name="Special View"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="175" name="spectacular ocean"><![CDATA[вид на океан ]]></RoomView>
+        <RoomView id="341" name="Splendid"><![CDATA[великолепный вид]]></RoomView>
+        <RoomView id="170" name="SPORTS AREA"><![CDATA[вид на спортивную площадку]]></RoomView>
+        <RoomView id="280" name="Square"><![CDATA[вид на площадь]]></RoomView>
+        <RoomView id="163" name="St Mark's View"><![CDATA[вид на собор Св. Марка]]></RoomView>
+        <RoomView id="397" name="STADIUM"><![CDATA[вид на стадион]]></RoomView>
+        <RoomView id="312" name="Standard"><![CDATA[стандартный вид]]></RoomView>
+        <RoomView id="513" name="Statue of Liberty View"><![CDATA[вид на статую Свободы]]></RoomView>
+        <RoomView id="117" name="STREET"><![CDATA[вид на улицу]]></RoomView>
+        <RoomView id="353" name="Streetside"><![CDATA[боковой вид на улицу]]></RoomView>
+        <RoomView id="179" name="STRIP"><![CDATA[вид на Стрип]]></RoomView>
+        <RoomView id="16" name="STUDIO"><![CDATA[с видом на студию]]></RoomView>
+        <RoomView id="344" name="SUITE"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="317" name="Sunset Bay"><![CDATA[вид на бухту Сансет]]></RoomView>
+        <RoomView id="291" name="Sunset Strip"><![CDATA[вид на Сансет Стрип бульвар]]></RoomView>
+        <RoomView id="183" name="Sunset view"><![CDATA[вид на закат]]></RoomView>
+        <RoomView id="471" name="Superior/Geothermal"><![CDATA[	без определенного вида]]></RoomView>
+        <RoomView id="139" name="Taj"><![CDATA[вид на Тадж]]></RoomView>
+        <RoomView id="243" name="Temple"><![CDATA[вид на храм]]></RoomView>
+        <RoomView id="348" name="Temple Facing"><![CDATA[вид на храм]]></RoomView>
+        <RoomView id="57" name="TERRACE"><![CDATA[вид на террасу]]></RoomView>
+        <RoomView id="338" name="Theme Park"><![CDATA[вид на тематический парк]]></RoomView>
+        <RoomView id="343" name="TIMES SQ"><![CDATA[вид на Таймс Сквер]]></RoomView>
+        <RoomView id="467" name="Tokyo Tower"><![CDATA[вид на телевышку Токио]]></RoomView>
+        <RoomView id="31" name="TOWER"><![CDATA[С ВИДОМ НА КРЕПОСТЬ]]></RoomView>
+        <RoomView id="325" name="Tower Gulf"><![CDATA[с видом на залив]]></RoomView>
+        <RoomView id="32" name="TOWN"><![CDATA[видо на город]]></RoomView>
+        <RoomView id="518" name="Traditional Resort View"><![CDATA[вид на традиционный курорт]]></RoomView>
+        <RoomView id="408" name="TRIBECCA"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="265" name="triple"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="213" name="Tropical"><![CDATA[тропический вид]]></RoomView>
+        <RoomView id="399" name="TUCSON"><![CDATA[вид на Тусон]]></RoomView>
+        <RoomView id="414" name="Tuscan Ocean"><![CDATA[вид на океан]]></RoomView>
+        <RoomView id="538" name="Twin Towers View"><![CDATA[вид на башни-близнецы]]></RoomView>
+        <RoomView id="390" name="UNIVERSAL"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="337" name="Urban"><![CDATA[городской вид]]></RoomView>
+        <RoomView id="48" name="VALLEY"><![CDATA[вид на долину]]></RoomView>
+        <RoomView id="365" name="vay view"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="377" name="Venice View"><![CDATA[вид на Венецию]]></RoomView>
+        <RoomView id="409" name="Vibrant Waikiki"><![CDATA[вид на яркий Вайкики]]></RoomView>
+        <RoomView id="207" name="view of Lavra"><![CDATA[вид на Лавру]]></RoomView>
+        <RoomView id="82" name="VILLAGE"><![CDATA[вид на деревню/поселок]]></RoomView>
+        <RoomView id="361" name="vista/lagoon view"><![CDATA[вид на город]]></RoomView>
+        <RoomView id="466" name="Vity"><![CDATA[вид на город]]></RoomView>
+        <RoomView id="38" name="VOLCANO"><![CDATA[вид на вулкан]]></RoomView>
+        <RoomView id="519" name="Volcano Sea View"><![CDATA[вид на вулкан]]></RoomView>
+        <RoomView id="245" name="Volcano/Ocean View"><![CDATA[вид на вулкан или океан]]></RoomView>
+        <RoomView id="208" name="Volga view"><![CDATA[вид на Волгу]]></RoomView>
+        <RoomView id="376" name="W/Amstel View"><![CDATA[вид на Амстел]]></RoomView>
+        <RoomView id="407" name="W/Eiffel Tower View"><![CDATA[вид на Эйфелеву башню]]></RoomView>
+        <RoomView id="375" name="W/Medina View"><![CDATA[вид на Медину]]></RoomView>
+        <RoomView id="260" name="waikiki"><![CDATA[вид на Вайкики]]></RoomView>
+        <RoomView id="277" name="Waikiki City"><![CDATA[вид на Вайкики сити]]></RoomView>
+        <RoomView id="530" name="Walk View"><![CDATA[без определенного вида]]></RoomView>
+        <RoomView id="29" name="WATER"><![CDATA[вид на воду]]></RoomView>
+        <RoomView id="334" name="Water Front"><![CDATA[фронтальный вид на берег ]]></RoomView>
+        <RoomView id="505" name="Water Garden View"><![CDATA[вид на Водный сад]]></RoomView>
+        <RoomView id="217" name="Water or Pool"><![CDATA[вид на воду или бассейн]]></RoomView>
+        <RoomView id="155" name="WATERFRONT"><![CDATA[вид на берег]]></RoomView>
+        <RoomView id="185" name="Waterway"><![CDATA[вид на воду]]></RoomView>
+        <RoomView id="431" name="WATERWAY+INTRACOASTAL"><![CDATA[вид на воду]]></RoomView>
+        <RoomView id="159" name="Watsons Bay"><![CDATA[вид на Уотсон Бэй]]></RoomView>
+        <RoomView id="152" name="WESTLAKE"><![CDATA[вид на озеро]]></RoomView>
+        <RoomView id="477" name="with view bath"><![CDATA[вид на ванну]]></RoomView>
+        <RoomView id="506" name="Without City view"><![CDATA[без вида на город]]></RoomView>
+        <RoomView id="246" name="Without Fjord View"><![CDATA[без вида на фьорд]]></RoomView>
+        <RoomView id="514" name="Without Lake View"><![CDATA[без вида на озеро]]></RoomView>
+        <RoomView id="110" name="without Sea View"><![CDATA[без вида на море]]></RoomView>
+        <RoomView id="252" name="without Volga view"><![CDATA[без вида на Волгу]]></RoomView>
+        <RoomView id="89" name="WOOD"><![CDATA[вид на лес]]></RoomView>
+        <RoomView id="494" name="Woods"><![CDATA[вид на лес]]></RoomView>
+        <RoomView id="476" name="Yotei"><![CDATA[вид на вулкан Йотей]]></RoomView>
+        <RoomView id="406" name="С-view"><![CDATA[С-view]]></RoomView>
+    </RoomViews>
+</Response>

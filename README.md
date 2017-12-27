@@ -21,12 +21,12 @@ The config with credentials looks like this.
 ```php
     $config = [
         'url' => 'https://hotelbook.pro/xml',
-        'auth' => [
-            'login' => 'YOUR LOGIN',
-            'password' => 'YOUR PASSSWORD'
-        ]
+        'login' => 'YOUR LOGIN',
+        'password' => 'YOUR PASSSWORD'
     ];
 ```
+
+(if yoy pass anything not valid, it throws an exception while creating the main instance)
 
 After that, include the library and create an basic instance of it. 
 
@@ -57,11 +57,22 @@ $result = $hotelbook->search(1, $from, $till, [new SearchPassenger(1, [2])]);
 
 ```
 
-Now the result will be an instance of SearchResult
+Now the result will be an instance of ResultProceeder with all of the results
 
 #### Handling errors and Proceeding results.
 
-Every method returns an objects, that has to methods: 
+If method has an error, it throws an exception that you can handle and than run getErrors the result. 
+
+```php
+    try {
+        $result = $main->book(...someArguments);    
+    } catch (Exception $e)
+    {
+        //Do something with the exception
+    }
+```
+
+Every method returns an object (if it doesn't throw an exception), that has to methods: 
 
 + getItems() 
 + getErrors()
@@ -84,6 +95,13 @@ So that you can do something like:
 
 ### API Reference
 
+#### Meta Explanation
+
+All static data API $methods are available through `$main->{$YOUR_METHOD_NAME}`. <br>
+It gives an object with results (items, errors). (Described above.)
+
+#### Available method
+
 To use any of methods, you have to create an instance of HotelBook SDK. 
 Described [here](#get-started) 
 
@@ -102,25 +120,18 @@ And methods to fetch dictionaries.
 * [Country](#fetch-countries) - (Fetch all available countries)
 * [City](#fetch-cities) - (Fetch all available Cities)
 * Location - (Fetch all available Locations)
+* Resort - (Fetch all available Resorts)
 * HotelType - (Fetch all available Hotel Types)
+* HotelCategory - (Fetch all available Hotel Categories)
+* HotelFacility - (Fetch all available Hotel Facilities)
+* HotelList- (Fetch all available Hotel Lists)
 * Meal - (Fetch all available Meal Types)
-* Room Size - (Fetch all available Room Sizes)
-* Room Type - (Fetch all available Room Types)
-* Room Amenity - (Fetch all available Room Amenities)
-
-#### Dictionary API Reference
-
-All static Data API $methods are available through `$main->getDictionary()->{$YOUR_METHOD_NAME}`. <br>
-It gives an object with results (items, errors). (Described above.)
-
-All the items have it public methods to access the data in them. 
-
-E.g 
-```php
-    $item->getId()
-    $item->getName()
-    //.....etc
-```
+* MealBreakfast - (Fetch all available Meal Breakfast Types)
+* RoomSize - (Fetch all available Room Sizes)
+* RoomType - (Fetch all available Room Types)
+* RoomAmenity - (Fetch all available Room Amenities)
+* RoomView - (Fetch all available Room Views)
+* CurrencyRate - (Fetch currancy rates)
 
 ##### Fetch Countries
 
@@ -133,7 +144,7 @@ So you can use it as a search parameter, etc...
 
 ```php
     //You already have an instance of SDK, and it's stored in $main
-    $countries = $main->getDictionary()->country();
+    $countries = $main->country();
     //Now, in countries, you have a simple result.
     $countiesArray = $countries->getItems();
     //Now in $countiesArray you have an array of Countries.
@@ -151,7 +162,7 @@ Also, you can search cities by a country (So you fetch all the cities in a count
 Fetch all cities exist in the Database.
 
 ```php
-    $cities = $main->getDictionary()->city();
+    $cities = $main->city();
     $citiesArray = $cities->getItems();
 ```
 
@@ -159,9 +170,9 @@ Fetch all cities by country.
 
 ```php
     //Get first country item from the DB.
-    $country = current($main->getDictionary()->country()->getItems());
+    $country = current($main->country()->getItems());
     //Find all cities there.
-    $cities = $main->getDictionary()->city($country);
+    $cities = $main->city($country);
     //Get all available items.
     $citiesArray = $cities->getItems();
 ```

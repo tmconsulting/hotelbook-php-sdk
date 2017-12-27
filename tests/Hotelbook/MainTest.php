@@ -2,12 +2,13 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook;
 
+use App\Hotelbook\Object\Hotel\SearchParameter;
+use App\Hotelbook\ResultProceeder;
 use PHPUnit\Framework\TestCase;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use App\Hotelbook\Main;
 use Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
 use App\Hotelbook\Object\Hotel\SearchPassenger;
-use App\Hotelbook\Results\Method\SearchResult;
 use Carbon\Carbon;
 use App\Hotelbook\Object\Method\Search\AsyncSearch;
 use App\Hotelbook\Object\Method\Search\AsyncSearchParams;
@@ -23,10 +24,8 @@ class MainTest extends TestCase
         $this->configFixture = [
             'url' => 'http://hotelbook.local',
             'differencePath' => sys_get_temp_dir(),
-            'auth' => [
-                'login' => 'LOGIN',
-                'password' => 'PASSWORD'
-            ]
+            'login' => 'LOGIN',
+            'password' => 'PASSWORD'
         ];
     }
 
@@ -85,10 +84,11 @@ class MainTest extends TestCase
             1,
             $from,
             $till,
-            [new SearchPassenger(1)]
+            [new SearchPassenger(1)],
+            new SearchParameter()
         );
 
-        $this->assertInstanceOf(SearchResult::class, $result);
+        $this->assertInstanceOf(ResultProceeder::class, $result);
     }
 
     public function testSearchMethodWithError()
@@ -102,10 +102,11 @@ class MainTest extends TestCase
             1,
             $from,
             $till,
-            [new SearchPassenger(1)]
+            [new SearchPassenger(1)],
+            new SearchParameter()
         );
 
-        $this->assertInstanceOf(SearchResult::class, $result);
+        $this->assertInstanceOf(ResultProceeder::class, $result);
     }
 
     public function testAsyncSearchMethod()
@@ -120,7 +121,8 @@ class MainTest extends TestCase
             $from,
             $till,
             [new SearchPassenger(1)],
-             new AsyncSearchParams()
+            new SearchParameter(),
+            new AsyncSearchParams()
         );
 
         $this->assertInstanceOf(AsyncSearch::class, $result);
@@ -138,6 +140,7 @@ class MainTest extends TestCase
             $from,
             $till,
             [new SearchPassenger(1)],
+             new SearchParameter(),
              new AsyncSearchParams()
         );
 

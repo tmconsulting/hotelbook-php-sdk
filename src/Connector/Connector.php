@@ -50,34 +50,6 @@ class Connector implements ConnectorInterface
     }
 
     /**
-     * @return array
-     */
-    protected function getConfig(): array
-    {
-        return $this->config;
-    }
-
-    /**
-     * @param array $config
-     */
-    protected function setConfig(array $config)
-    {
-        $this->config = $config;
-    }
-
-
-    /**
-     * @return Client
-     * @codeCoverageIgnore
-     */
-    protected function buildClient()
-    {
-        return new Client([
-            'base_uri' => $this->getConfig()['url'],
-        ]);
-    }
-
-    /**
      * @param string $method
      * @param string $uri
      * @param $body
@@ -109,16 +81,43 @@ class Connector implements ConnectorInterface
     }
 
     /**
+     * @return Client
+     * @codeCoverageIgnore
+     */
+    protected function buildClient()
+    {
+        return new Client([
+            'base_uri' => $this->getConfig()['url'],
+        ]);
+    }
+
+    /**
+     * @return array
+     */
+    protected function getConfig(): array
+    {
+        return $this->config;
+    }
+
+    /**
+     * @param array $config
+     */
+    protected function setConfig(array $config)
+    {
+        $this->config = $config;
+    }
+
+    /**
      * @return array
      */
     private function authentication()
     {
         $diff = $this->remember();
         $time = $this->resolveCorrectTime($diff);
-        $checksum = md5(md5($this->getConfig()['auth']['password']) . $time);
+        $checksum = md5(md5($this->getConfig()['password']) . $time);
 
         return [
-            'login' => $this->getConfig()['auth']['login'],
+            'login' => $this->getConfig()['login'],
             'time' => $time,
             'checksum' => $checksum
         ];
@@ -173,19 +172,8 @@ class Connector implements ConnectorInterface
      */
     protected function getExternalTime()
     {
-        return (string) $this->client->get('unix_time')->getBody();
+        return (string)$this->client->get('unix_time')->getBody();
     }
-
-    /**
-     * @param $file
-     * @param $data
-     * @codeCoverageIgnore
-     */
-    protected function writeCacheFile($file, $data)
-    {
-        file_put_contents($file, serialize($data), LOCK_EX);
-    }
-
 
     /**
      * @param $external
@@ -200,6 +188,16 @@ class Connector implements ConnectorInterface
         }
 
         return -$diff;
+    }
+
+    /**
+     * @param $file
+     * @param $data
+     * @codeCoverageIgnore
+     */
+    protected function writeCacheFile($file, $data)
+    {
+        file_put_contents($file, serialize($data), LOCK_EX);
     }
 
     /**

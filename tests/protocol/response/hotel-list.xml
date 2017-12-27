@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Response date="2017-12-10T18:11:23+03:00">
+    <HotelList totalHotels="10">
+        <Hotel name="Aristokrat" name_ru="Аристократ" name_en="" id="118309" city="1" cat="2" hotelLatitude=""
+               hotelLongitude="" updated="1489782967" date_create="1495119105" assoc="2" utsluxury="0"/>
+        <Hotel name="Azimut Hotel Kostroma" name_ru="Азимут Отель Кострома" name_en="" id="39503" city="1" cat="2"
+               hotelLatitude="57.727783203125000" hotelLongitude="40.899482727050780" updated="1460468433"
+               date_create="1495119098" assoc="5" utsluxury="0"/>
+        <Hotel name="Business Hotel" name_ru="Бизнес Отель" name_en="" id="39504" city="1" cat="2"
+               hotelLatitude="57.768825531005860" hotelLongitude="40.913825988769530" updated="1489765774"
+               date_create="1495119098" assoc="4" utsluxury="0"/>
+        <Hotel name="Golden Ring" name_ru="Золотое Кольцо Кострома" name_en="" id="40220" city="1" cat="2"
+               hotelLatitude="57.749534606933594" hotelLongitude="40.954025268554690" updated="1489766047"
+               date_create="1495119098" assoc="4" utsluxury="0"/>
+        <Hotel name="Graf" name_ru="Граф" name_en="" id="39505" city="1" cat="2" hotelLatitude="57.789108276367190"
+               hotelLongitude="40.960903167724610" updated="1489765774" date_create="1495119097" assoc="1"
+               utsluxury="0"/>
+        <Hotel name="Premier" name_ru="Премьер" name_en="" id="118310" city="1" cat="2" hotelLatitude=""
+               hotelLongitude="" updated="1489782968" date_create="1495119107" assoc="4" utsluxury="0"/>
+        <Hotel name="Samokovskaya" name_ru="Самоковская" name_en="" id="131773" city="1" cat="2" hotelLatitude=""
+               hotelLongitude="" updated="0" date_create="1495119107" assoc="3" utsluxury="0"/>
+        <Hotel name="Shelestoff" name_ru="Шелестофф" name_en="" id="39506" city="1" cat="2"
+               hotelLatitude="57.789299011230470" hotelLongitude="40.915000915527344" updated="1489765775"
+               date_create="1495119098" assoc="4" utsluxury="0"/>
+        <Hotel name="Snegurochka" name_ru="Снегурочка" name_en="" id="40219" city="1" cat="2"
+               hotelLatitude="57.754661560058594" hotelLongitude="40.952075958251950" updated="1489766046"
+               date_create="1495119098" assoc="5" utsluxury="0"/>
+        <Hotel name="Volga Kostroma" name_ru="Volga Kostroma" name_en="" id="1" city="1" cat="3"
+               hotelLatitude="57.757595062255860" hotelLongitude="40.948822021484375" updated="1491808917"
+               date_create="1495119097" assoc="5" utsluxury="1"/>
+    </HotelList>
+</Response>

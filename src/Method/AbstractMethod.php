@@ -4,7 +4,7 @@ namespace App\Hotelbook\Method;
 
 use App\Hotelbook\Connector\ConnectorInterface;
 use App\Hotelbook\Object\Hotel\Price;
-use App\Hotelbook\Results\ResultProceeder;
+use App\Hotelbook\ResultProceeder;
 use ReflectionClass;
 use ReflectionException;
 use SimpleXMLElement;
@@ -13,7 +13,7 @@ use SimpleXMLElement;
  * Class AbstractMethod
  * @package App\Hotelbook\Method
  */
-abstract class AbstractMethod implements MethodInterface
+abstract class AbstractMethod
 {
     /**
      * @var ConnectorInterface
@@ -21,12 +21,83 @@ abstract class AbstractMethod implements MethodInterface
     protected $connector;
 
     /**
+     * @var BaseBuilder
+     */
+    protected $builder;
+
+    /**
+     * @var CountryFormer
+     */
+    protected $former;
+
+    /**
      * AbstractMethod constructor.
+     * @throws ReflectionException
      * @param ConnectorInterface $connector
      */
     public function __construct(ConnectorInterface $connector)
     {
         $this->connector = $connector;
+
+        $this->builder = (new ReflectionClass($this->getBuilderClass()))->newInstanceArgs();
+        $this->former = (new ReflectionClass($this->getFormerClass()))->newInstanceArgs();
+    }
+
+    /**
+     * A method for the parent class to provide the class for the builders.
+     * @return mixed
+     */
+    abstract protected function getBuilderClass();
+
+    /**
+     * A methof for the parent class to provide the class for the former
+     * @return mixed
+     */
+    abstract protected function getFormerClass();
+
+    /**
+     * @param $params
+     * @return mixed
+     */
+    public function build($params)
+    {
+        return $this->builder->build($params);
+    }
+
+    /**
+     * A method that creates an instance of result for every method.
+     * @param $result
+     * @param null $items
+     * @param string $resultClass
+     * @return ResultProceeder|array|null
+     */
+    protected function getResultObject($result, $items = null, $resultClass = ResultProceeder::class, $needsErrors = true)
+    {
+        try {
+            if (!$items) {
+                $items = $this->performResult($result, $needsErrors);
+            }
+            return (new ReflectionClass($resultClass))->newInstanceArgs(array_merge($items, [$needsErrors]));
+        } catch (ReflectionException $e) {
+            return $items;
+        }
+    }
+
+    /**
+     * A method to get result from the response.
+     * @param $result
+     * @param array $values
+     * @return array
+     */
+    protected function performResult($result, $values = [], $respectErrors = true)
+    {
+        $errors = $this->getErrors($result);
+
+        if (empty($errors) || $respectErrors) {
+            $values = $this->form($result);
+        }
+
+        return [$values, $errors];
     }
 
     /**
@@ -51,39 +122,12 @@ abstract class AbstractMethod implements MethodInterface
     }
 
     /**
-     * A method to get result from the response.
-     * @param $result
-     * @param array $values
-     * @return array
+     * @param $response
+     * @return mixed
      */
-    protected function performResult($result, $values = [])
+    public function form($response)
     {
-        $errors = $this->getErrors($result);
-
-        if (empty($errors)) {
-            $values = $this->form($result);
-        }
-
-        return [$values, $errors];
-    }
-
-    /**
-     * A method that creates an instance of result for every method.
-     * @param $result
-     * @param null $items
-     * @return array|object
-     */
-    protected function getResultObject($result, $items = null)
-    {
-        try {
-            if (!$items) {
-                $items = $this->performResult($result);
-            }
-
-            return (new ReflectionClass($this->getResultClass()))->newInstanceArgs($items);
-        } catch (ReflectionException $e) {
-            return $items;
-        }
+        return $this->former->form($response);
     }
 
     /**
@@ -96,17 +140,4 @@ abstract class AbstractMethod implements MethodInterface
     {
         return new Price($sum, $currency);
     }
-
-    /**
-     * A method to form the result out of XML.
-     * @param $response
-     * @return mixed
-     */
-    abstract protected function form($response);
-
-    /**
-     * A method to implement that returns the ::class string for the result objecct.
-     * @return ResultProceeder
-     */
-    abstract protected function getResultClass();
 }
