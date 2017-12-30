@@ -43,6 +43,7 @@ class Detail extends BaseFormer
             'builtIn' => (string)$detail->BuiltIn,
             'buildingType' => (string)$detail->BuildingType,
             'numberLifts' => (int)$detail->NumberLifts,
+            'numberFloors' => (int)$detail->NumberFloors,
             'conference' => (string)$detail->Conference,
             'voltage' => (string)$detail->Voltage,
             'childAgeFrom' => (string)$detail->ChildAgeFrom,
