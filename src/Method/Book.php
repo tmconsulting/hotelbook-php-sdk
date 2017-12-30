@@ -9,10 +9,10 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method;
+namespace Hotelbook\Method;
 
-use App\Hotelbook\Method\Builder\Book as BookBuilder;
-use App\Hotelbook\Method\Former\Book as BookFormer;
+use Hotelbook\Method\Builder\Book as BookBuilder;
+use Hotelbook\Method\Former\Book as BookFormer;
 use Money\Parser\StringToUnitsParser;
 
 /**

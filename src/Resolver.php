@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook;
+namespace Hotelbook;
 
 use ReflectionClass;
 

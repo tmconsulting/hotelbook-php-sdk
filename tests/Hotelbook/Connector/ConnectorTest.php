@@ -2,12 +2,12 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook\Connector;
 
-use App\Hotelbook\Connector\Connector;
-use App\Hotelbook\Exception\ResponseException;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Handler\MockHandler;
 use GuzzleHttp\Psr7\Response;
+use Hotelbook\Connector\Connector;
+use Hotelbook\Exception\ResponseException;
 use PHPUnit\Framework\TestCase;
 use SimpleXMLElement;
 

@@ -8,7 +8,7 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Object\Hotel\Room;
+namespace Hotelbook\Object\Hotel\Room;
 
 /**
  * Class Size

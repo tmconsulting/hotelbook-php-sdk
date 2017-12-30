@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Hotelbook\Method;
+namespace Hotelbook\Method;
 
-use App\Hotelbook\Connector\ConnectorInterface;
-use App\Hotelbook\Object\Hotel\Price;
-use App\Hotelbook\ResultProceeder;
+use Hotelbook\Connector\ConnectorInterface;
+use Hotelbook\Object\Hotel\Price;
+use Hotelbook\ResultProceeder;
 use ReflectionClass;
 use ReflectionException;
 use SimpleXMLElement;

@@ -2,10 +2,10 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook\Method;
 
-use App\Hotelbook\Method\AnnulOrder;
+use Hotelbook\Method\AnnulOrder;
+use Hotelbook\ResultProceeder;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
-use App\Hotelbook\ResultProceeder;
 
 class AnnulOrderTest extends TestCase
 {

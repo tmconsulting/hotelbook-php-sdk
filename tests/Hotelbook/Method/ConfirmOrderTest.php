@@ -2,8 +2,8 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook\Method;
 
-use App\Hotelbook\Method\ConfirmOrder;
-use App\Hotelbook\ResultProceeder;
+use Hotelbook\Method\ConfirmOrder;
+use Hotelbook\ResultProceeder;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
 

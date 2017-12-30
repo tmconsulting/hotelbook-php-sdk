@@ -6,7 +6,7 @@
  * Date: 10/17/17
  */
 
-namespace App\Hotelbook\Connector;
+namespace Hotelbook\Connector;
 
 use SimpleXMLElement;
 

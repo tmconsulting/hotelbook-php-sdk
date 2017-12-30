@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Object\Method\Search;
+namespace Hotelbook\Object\Method\Search;
 
 class AsyncSearchParams
 {

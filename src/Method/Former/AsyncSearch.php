@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Hotelbook\Method\Former;
+namespace Hotelbook\Method\Former;
 
 class AsyncSearch extends BaseFormer
 {

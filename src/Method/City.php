@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method;
+namespace Hotelbook\Method;
 
-use App\Hotelbook\Method\Builder\City as CityBuilder;
-use App\Hotelbook\Method\Former\City as CityFormer;
+use Hotelbook\Method\Builder\City as CityBuilder;
+use Hotelbook\Method\Former\City as CityFormer;
 
 /**
  * Dictionary - Get Cities method

@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method\Former;
+namespace Hotelbook\Method\Former;
 
-use App\Hotelbook\Object\Hotel\Price;
+use Hotelbook\Object\Hotel\Price;
 
 abstract class BaseFormer
 {

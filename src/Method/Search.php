@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method;
+namespace Hotelbook\Method;
 
-use App\Hotelbook\Method\Builder\Search as SearchBuilder;
-use App\Hotelbook\Method\Former\Search as SearchFormer;
-use App\Hotelbook\ResultProceeder;
+use Hotelbook\Method\Builder\Search as SearchBuilder;
+use Hotelbook\Method\Former\Search as SearchFormer;
+use Hotelbook\ResultProceeder;
 
 /**
  * Class Search

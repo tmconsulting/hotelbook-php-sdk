@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method;
+namespace Hotelbook\Method;
 
-use App\Hotelbook\Method\Builder\BaseBuilder;
-use App\Hotelbook\Method\Former\HotelType as HotelTypeFormer;
+use Hotelbook\Method\Builder\BaseBuilder;
+use Hotelbook\Method\Former\HotelType as HotelTypeFormer;
 
 /**
  * A method to fetch all available hotel types.

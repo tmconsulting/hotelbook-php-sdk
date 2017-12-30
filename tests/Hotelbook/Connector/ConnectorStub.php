@@ -8,7 +8,7 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook\Connector;
 
-use App\Hotelbook\Connector\ConnectorInterface;
+use Hotelbook\Connector\ConnectorInterface;
 use SimpleXMLElement;
 
 class ConnectorStub implements ConnectorInterface

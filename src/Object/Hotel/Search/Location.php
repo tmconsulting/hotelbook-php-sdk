@@ -9,9 +9,9 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Object\Hotel\Search;
+namespace Hotelbook\Object\Hotel\Search;
 
-use App\Hotelbook\Object\Hotel\Distance;
+use Hotelbook\Object\Hotel\Distance;
 
 /**
  * Class Location

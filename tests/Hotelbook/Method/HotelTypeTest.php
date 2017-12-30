@@ -2,9 +2,8 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook\Method\Dictionary;
 
-use App\Hotelbook\Method\HotelType as HotelTypeMethod;
-use App\Hotelbook\Object\Hotel\Type as HotelTypeObject;
-use App\Hotelbook\ResultProceeder;
+use Hotelbook\Method\HotelType as HotelTypeMethod;
+use Hotelbook\ResultProceeder;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
 

@@ -6,39 +6,39 @@
  * Date: 10/17/17
  */
 
-namespace App\Hotelbook;
+namespace Hotelbook;
 
-use App\Hotelbook\Connector\Connector;
-use App\Hotelbook\Connector\ConnectorInterface;
-use App\Hotelbook\Method\AnnulOrder;
-use App\Hotelbook\Method\AsyncSearch;
-use App\Hotelbook\Method\Book;
-use App\Hotelbook\Method\CancelOrder;
-use App\Hotelbook\Method\City;
-use App\Hotelbook\Method\ConfirmOrder;
-use App\Hotelbook\Method\Country;
-use App\Hotelbook\Method\CurrencyRate;
-use App\Hotelbook\Method\Detail;
-use App\Hotelbook\Method\DynamicResolver;
-use App\Hotelbook\Method\HotelCategory;
-use App\Hotelbook\Method\HotelFacility;
-use App\Hotelbook\Method\HotelList;
-use App\Hotelbook\Method\HotelType;
-use App\Hotelbook\Method\Location;
-use App\Hotelbook\Method\Meal;
-use App\Hotelbook\Method\MealBreakfast;
-use App\Hotelbook\Method\Resort;
-use App\Hotelbook\Method\RoomAmenity;
-use App\Hotelbook\Method\RoomSize;
-use App\Hotelbook\Method\RoomType;
-use App\Hotelbook\Method\RoomView;
-use App\Hotelbook\Method\Search;
-use App\Hotelbook\Object\Contact;
-use App\Hotelbook\Object\Hotel\BookItem;
-use App\Hotelbook\Object\Hotel\SearchParameter;
-use App\Hotelbook\Object\Hotel\Tag;
-use App\Hotelbook\Object\Method\Search\AsyncSearchParams;
 use Carbon\Carbon;
+use Hotelbook\Connector\Connector;
+use Hotelbook\Connector\ConnectorInterface;
+use Hotelbook\Method\AnnulOrder;
+use Hotelbook\Method\AsyncSearch;
+use Hotelbook\Method\Book;
+use Hotelbook\Method\CancelOrder;
+use Hotelbook\Method\City;
+use Hotelbook\Method\ConfirmOrder;
+use Hotelbook\Method\Country;
+use Hotelbook\Method\CurrencyRate;
+use Hotelbook\Method\Detail;
+use Hotelbook\Method\DynamicResolver;
+use Hotelbook\Method\HotelCategory;
+use Hotelbook\Method\HotelFacility;
+use Hotelbook\Method\HotelList;
+use Hotelbook\Method\HotelType;
+use Hotelbook\Method\Location;
+use Hotelbook\Method\Meal;
+use Hotelbook\Method\MealBreakfast;
+use Hotelbook\Method\Resort;
+use Hotelbook\Method\RoomAmenity;
+use Hotelbook\Method\RoomSize;
+use Hotelbook\Method\RoomType;
+use Hotelbook\Method\RoomView;
+use Hotelbook\Method\Search;
+use Hotelbook\Object\Contact;
+use Hotelbook\Object\Hotel\BookItem;
+use Hotelbook\Object\Hotel\SearchParameter;
+use Hotelbook\Object\Hotel\Tag;
+use Hotelbook\Object\Method\Search\AsyncSearchParams;
 use Symfony\Component\OptionsResolver\Exception\AccessException;
 use Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -127,7 +127,7 @@ class Main implements HotelInterface
 
     /**
      * A method to book a hotel (By Search)
-     * @param \App\Hotelbook\Object\Contact $contact
+     * @param \Hotelbook\Object\Contact $contact
      * @param BookItem[] $items
      * @param Tag $tag
      * @param $searchResult = null

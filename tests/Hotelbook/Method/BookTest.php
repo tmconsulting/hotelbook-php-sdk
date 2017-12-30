@@ -2,12 +2,12 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook\Method;
 
-use App\Hotelbook\Method\Book;
-use App\Hotelbook\Object\Contact;
-use App\Hotelbook\Object\Hotel\BookItem;
-use App\Hotelbook\Object\Hotel\BookPassenger;
-use App\Hotelbook\Object\Hotel\Tag;
-use App\Hotelbook\ResultProceeder;
+use Hotelbook\Method\Book;
+use Hotelbook\Object\Contact;
+use Hotelbook\Object\Hotel\BookItem;
+use Hotelbook\Object\Hotel\BookPassenger;
+use Hotelbook\Object\Hotel\Tag;
+use Hotelbook\ResultProceeder;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
 

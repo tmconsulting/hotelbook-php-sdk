@@ -2,9 +2,8 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook\Method\Dictionary;
 
-use App\Hotelbook\Method\Country;
-use App\Hotelbook\Object\Hotel\Dictionary\Country as CountryModel;
-use App\Hotelbook\ResultProceeder;
+use Hotelbook\Method\Country;
+use Hotelbook\ResultProceeder;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
 

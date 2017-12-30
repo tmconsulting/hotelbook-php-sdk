@@ -2,16 +2,16 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook;
 
-use App\Hotelbook\Object\Hotel\SearchParameter;
-use App\Hotelbook\ResultProceeder;
-use PHPUnit\Framework\TestCase;
-use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
-use App\Hotelbook\Main;
-use Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
-use App\Hotelbook\Object\Hotel\SearchPassenger;
 use Carbon\Carbon;
-use App\Hotelbook\Object\Method\Search\AsyncSearch;
-use App\Hotelbook\Object\Method\Search\AsyncSearchParams;
+use Hotelbook\Main;
+use Hotelbook\Object\Hotel\SearchParameter;
+use Hotelbook\Object\Hotel\SearchPassenger;
+use Hotelbook\Object\Method\Search\AsyncSearch;
+use Hotelbook\Object\Method\Search\AsyncSearchParams;
+use Hotelbook\ResultProceeder;
+use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
+use PHPUnit\Framework\TestCase;
+use Symfony\Component\OptionsResolver\Exception\InvalidOptionsException;
 
 class MainTest extends TestCase
 {

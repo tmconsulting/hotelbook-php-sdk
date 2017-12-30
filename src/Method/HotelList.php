@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method;
+namespace Hotelbook\Method;
 
-use App\Hotelbook\Method\Builder\HotelList as HotelListBuilder;
-use App\Hotelbook\Method\Former\HotelList as HotelListFormer;
+use Hotelbook\Method\Builder\HotelList as HotelListBuilder;
+use Hotelbook\Method\Former\HotelList as HotelListFormer;
 
 /**
  * Dictionary - Get HotelList method

@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method\Builder;
+namespace Hotelbook\Method\Builder;
 
-use App\Hotelbook\Object\Contact;
-use App\Hotelbook\Object\Hotel\BookItem;
-use App\Hotelbook\Object\Hotel\BookPassenger;
-use App\Hotelbook\Object\Hotel\Dictionary\Title;
-use App\Hotelbook\Object\Hotel\Tag;
+use Hotelbook\Object\Contact;
+use Hotelbook\Object\Hotel\BookItem;
+use Hotelbook\Object\Hotel\BookPassenger;
+use Hotelbook\Object\Hotel\Dictionary\Title;
+use Hotelbook\Object\Hotel\Tag;
 
 /**
  * Class Book (Builder
@@ -71,9 +71,9 @@ class Book implements BuilderInterface
      * Pax handling.
      * Sorts children and adults in two groups.
      * @link http://xmldoc.hotelbook.ru/ru/hotels/add-order.html#roompax
-     * @param \App\Hotelbook\Object\Hotel\BookItem $bookItem
+     * @param \Hotelbook\Object\Hotel\BookItem $bookItem
      * @param $searchResult
-     * @return \App\Hotelbook\Method\Collection
+     * @return \Hotelbook\Method\Collection
      */
     protected function paxHandling(BookItem $bookItem, $searchResult)
     {

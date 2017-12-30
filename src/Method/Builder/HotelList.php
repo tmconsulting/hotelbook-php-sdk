@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Hotelbook\Method\Builder;
+namespace Hotelbook\Method\Builder;
 
 /**
  * Class HotelList

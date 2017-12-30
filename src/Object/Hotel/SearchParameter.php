@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Hotelbook\Object\Hotel;
+namespace Hotelbook\Object\Hotel;
 
 /**
  * Class SearchParameter
