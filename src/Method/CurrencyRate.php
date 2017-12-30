@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method;
+namespace Hotelbook\Method;
 
-use App\Hotelbook\Method\Builder\BaseBuilder;
-use App\Hotelbook\Method\Former\CurrencyRate as CurrencyRateFormer;
+use Hotelbook\Method\Builder\BaseBuilder;
+use Hotelbook\Method\Former\CurrencyRate as CurrencyRateFormer;
 
 /**
  * CurrencyRate get currency rates method

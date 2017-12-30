@@ -2,9 +2,8 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook\Method\Dictionary;
 
-use App\Hotelbook\Method\Location as LocationMethod;
-use App\Hotelbook\Object\Hotel\Dictionary\Location as LocationObject;
-use App\Hotelbook\ResultProceeder;
+use Hotelbook\Method\Location as LocationMethod;
+use Hotelbook\ResultProceeder;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
 

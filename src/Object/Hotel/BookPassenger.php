@@ -6,7 +6,7 @@
  * Date: 10/18/17
  */
 
-namespace App\Hotelbook\Object\Hotel;
+namespace Hotelbook\Object\Hotel;
 
 final class BookPassenger
 {

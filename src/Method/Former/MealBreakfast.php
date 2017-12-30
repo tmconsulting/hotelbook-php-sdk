@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method\Former;
+namespace Hotelbook\Method\Former;
 
 /**
  * Class MealBreakfast

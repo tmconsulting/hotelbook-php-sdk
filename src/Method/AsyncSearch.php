@@ -9,11 +9,11 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method;
+namespace Hotelbook\Method;
 
-use App\Hotelbook\Method\Builder\Search as SearchBuilder;
-use App\Hotelbook\Method\Former\AsyncSearch as AsyncSearchFormer;
-use App\Hotelbook\Object\Method\Search\AsyncSearch as AsyncSearchObject;
+use Hotelbook\Method\Builder\Search as SearchBuilder;
+use Hotelbook\Method\Former\AsyncSearch as AsyncSearchFormer;
+use Hotelbook\Object\Method\Search\AsyncSearch as AsyncSearchObject;
 
 /**
  * A method that implements the async search functionality.

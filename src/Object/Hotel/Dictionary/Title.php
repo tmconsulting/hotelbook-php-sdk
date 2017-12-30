@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Hotelbook\Object\Hotel\Dictionary;
+namespace Hotelbook\Object\Hotel\Dictionary;
 
 /**
  * Class Title

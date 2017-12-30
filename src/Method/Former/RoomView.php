@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Hotelbook\Method\Former;
+namespace Hotelbook\Method\Former;
 
 /**
  * Class RoomView

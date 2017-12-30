@@ -8,8 +8,8 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook\Method;
 
-use App\Hotelbook\Method\Detail;
-use App\Hotelbook\ResultProceeder;
+use Hotelbook\Method\Detail;
+use Hotelbook\ResultProceeder;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
 

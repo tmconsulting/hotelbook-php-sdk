@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Hotelbook;
+namespace Hotelbook;
 
-use App\Hotelbook\Object\Contact;
-use App\Hotelbook\Object\Hotel\BookItem;
-use App\Hotelbook\Object\Hotel\SearchParameter;
-use App\Hotelbook\Object\Hotel\Tag;
 use Carbon\Carbon;
+use Hotelbook\Object\Contact;
+use Hotelbook\Object\Hotel\BookItem;
+use Hotelbook\Object\Hotel\SearchParameter;
+use Hotelbook\Object\Hotel\Tag;
 
 /**
  * Class Main
@@ -38,7 +38,7 @@ interface HotelInterface
 
     /**
      * A method to book a hotel (By Search)
-     * @param \App\Hotelbook\Object\Contact $contact
+     * @param \Hotelbook\Object\Contact $contact
      * @param BookItem[] $items
      * @param Tag $tag
      * @param $searchResult = null

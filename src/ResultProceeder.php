@@ -2,9 +2,9 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook;
+namespace Hotelbook;
 
-use App\Hotelbook\Exception\ResponseException;
+use Hotelbook\Exception\ResponseException;
 
 class ResultProceeder
 {

@@ -2,10 +2,10 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook\Method\Dictionary;
 
-use App\Hotelbook\ResultProceeder;
+use Hotelbook\Method\CurrencyRate;
+use Hotelbook\ResultProceeder;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
-use App\Hotelbook\Method\CurrencyRate;
 
 class CurrencyRateTest extends TestCase
 {

@@ -9,7 +9,7 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Object\Hotel\Search;
+namespace Hotelbook\Object\Hotel\Search;
 
 /**
  * Class Sale

@@ -2,12 +2,12 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method;
+namespace Hotelbook\Method;
 
-use App\Hotelbook\Method\BaseFormer;
-use App\Hotelbook\Method\Builder\BaseBuilder;
-use App\Hotelbook\Method\Former\FormerInterface;
-use App\Hotelbook\Method\Former\Order as OrderFormer;
+use Hotelbook\Method\BaseFormer;
+use Hotelbook\Method\Builder\BaseBuilder;
+use Hotelbook\Method\Former\FormerInterface;
+use Hotelbook\Method\Former\Order as OrderFormer;
 
 /**
  * An method implementation of Confirming order (after book)

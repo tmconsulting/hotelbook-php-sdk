@@ -9,12 +9,12 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Connector;
+namespace Hotelbook\Connector;
 
-use App\Hotelbook\Exception\ResponseException;
 use Carbon\Carbon;
 use GuzzleHttp\Client;
 use GuzzleHttp\Psr7\Response;
+use Hotelbook\Exception\ResponseException;
 use SimpleXMLElement;
 
 /**
@@ -55,7 +55,7 @@ class Connector implements ConnectorInterface
      * @param $body
      * @param array $options
      * @return SimpleXMLElement
-     * @throws \App\Hotelbook\Exception\ResponseException
+     * @throws \Hotelbook\Exception\ResponseException
      */
     public function request(string $method, string $uri = '', $body = null, array $options = [])
     {

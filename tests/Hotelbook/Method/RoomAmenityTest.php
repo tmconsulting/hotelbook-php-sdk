@@ -2,8 +2,8 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook\Method\Dictionary;
 
-use App\Hotelbook\Method\RoomAmenity as RoomAmenityMethod;
-use App\Hotelbook\ResultProceeder;
+use Hotelbook\Method\RoomAmenity as RoomAmenityMethod;
+use Hotelbook\ResultProceeder;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
 

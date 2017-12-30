@@ -2,11 +2,10 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook\Method\Dictionary;
 
-use App\Hotelbook\ResultProceeder;
+use Hotelbook\Method\Meal as MealMethod;
+use Hotelbook\ResultProceeder;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
-use App\Hotelbook\Method\Meal as MealMethod;
-use App\Hotelbook\Object\Hotel\Meal as MealObject;
 
 class MealTest extends TestCase
 {

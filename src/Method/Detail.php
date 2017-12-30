@@ -2,10 +2,10 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method;
+namespace Hotelbook\Method;
 
-use App\Hotelbook\Method\Builder\BaseBuilder;
-use App\Hotelbook\Method\Former\Detail as DetailFormer;
+use Hotelbook\Method\Builder\BaseBuilder;
+use Hotelbook\Method\Former\Detail as DetailFormer;
 use Money\Parser\StringToUnitsParser;
 
 /**

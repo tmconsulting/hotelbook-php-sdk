@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Method\Builder;
+namespace Hotelbook\Method\Builder;
 
-use App\Hotelbook\Object\Hotel\SearchParameter;
-use App\Hotelbook\Object\Hotel\SearchPassenger;
 use Carbon\Carbon;
+use Hotelbook\Object\Hotel\SearchParameter;
+use Hotelbook\Object\Hotel\SearchPassenger;
 use SimpleXMLElement;
 
 /**

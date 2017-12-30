@@ -2,11 +2,11 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Object\Method\Search;
+namespace Hotelbook\Object\Method\Search;
 
-use App\Hotelbook\Connector\ConnectorInterface;
-use App\Hotelbook\Method\Former\Search as SearchFormer;
-use App\Hotelbook\ResultProceeder;
+use Hotelbook\Connector\ConnectorInterface;
+use Hotelbook\Method\Former\Search as SearchFormer;
+use Hotelbook\ResultProceeder;
 use SimpleXMLElement;
 
 /**

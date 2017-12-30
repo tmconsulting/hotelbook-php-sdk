@@ -8,11 +8,11 @@
 
 namespace Neo\Hotelbook\Tests\Hotelbook\Method;
 
-use App\Hotelbook\Method\Search;
-use App\Hotelbook\Object\Hotel\SearchParameter;
-use App\Hotelbook\Object\Hotel\SearchPassenger;
-use App\Hotelbook\ResultProceeder;
 use Carbon\Carbon;
+use Hotelbook\Method\Search;
+use Hotelbook\Object\Hotel\SearchParameter;
+use Hotelbook\Object\Hotel\SearchPassenger;
+use Hotelbook\ResultProceeder;
 use Neo\Hotelbook\Tests\Hotelbook\Connector\ConnectorStub;
 use Neo\Hotelbook\Tests\TestCase;
 

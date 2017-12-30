@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace App\Hotelbook\Object\Hotel;
+namespace Hotelbook\Object\Hotel;
 
 /**
  * Class Type
