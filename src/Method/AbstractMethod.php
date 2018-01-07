@@ -75,7 +75,7 @@ abstract class AbstractMethod
     {
         try {
             if (!$items) {
-                $items = $this->performResult($result, $needsErrors);
+                $items = $this->performResult($result, [], $needsErrors);
             }
             return (new ReflectionClass($resultClass))->newInstanceArgs(array_merge($items, [$needsErrors]));
         } catch (ReflectionException $e) {
