@@ -93,6 +93,18 @@ class ResultProceeder
     }
 
     /**
+     *
+     */
+    public function getItem()
+    {
+        if (count($this->items) === 1) {
+            return current($this->items);
+        } else {
+            return $this->getItems();
+        }
+    }
+
+    /**
      * @param array $items
      * @return $this
      */
@@ -104,7 +116,7 @@ class ResultProceeder
 
     protected function throwExceptionIfNeeded()
     {
-        if($this->hasErrors()) {
+        if ($this->hasErrors()) {
             throw new ResponseException(1, 'Something went wrong with request. Run $result->getErrors() to get this data. ');
         }
     }
