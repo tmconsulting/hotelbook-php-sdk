@@ -13,6 +13,7 @@ namespace Hotelbook\Method;
 
 use Hotelbook\Method\Builder\Book as BookBuilder;
 use Hotelbook\Method\Former\Book as BookFormer;
+use Hotelbook\ResultProceeder;
 use Money\Parser\StringToUnitsParser;
 
 /**
@@ -30,7 +31,7 @@ class Book extends AbstractMethod
     public function handle($xml)
     {
         $response = $this->connector->request('POST', 'add_order', $xml);
-        return $this->getResultObject($response);
+        return $this->getResultObject($response, null, ResultProceeder::class, false);
     }
 
     /**

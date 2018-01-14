@@ -20,19 +20,13 @@ class ResultProceeder
 
     /**
      * ResultProceeder constructor.
-     *
      * @param array $items
      * @param array $errors
-     * @param bool $throwsException
      */
-    public function __construct(array $items, array $errors = [], $throwsException = true)
+    public function __construct(array $items, array $errors = [])
     {
         $this->setItems($items);
         $this->setErrors($errors);
-
-        if ($throwsException) {
-            $this->throwExceptionIfNeeded();
-        }
     }
 
     /**
@@ -93,6 +87,18 @@ class ResultProceeder
     }
 
     /**
+     *
+     */
+    public function getItem()
+    {
+        if (count($this->items) === 1) {
+            return current($this->items);
+        } else {
+            return $this->getItems();
+        }
+    }
+
+    /**
      * @param array $items
      * @return $this
      */
@@ -100,12 +106,5 @@ class ResultProceeder
     {
         $this->items = $items;
         return $this;
-    }
-
-    protected function throwExceptionIfNeeded()
-    {
-        if($this->hasErrors()) {
-            throw new ResponseException(1, 'Something went wrong with request. Run $result->getErrors() to get this data. ');
-        }
     }
 }
