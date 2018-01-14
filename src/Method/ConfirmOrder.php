@@ -8,6 +8,7 @@ use Hotelbook\Method\BaseFormer;
 use Hotelbook\Method\Builder\BaseBuilder;
 use Hotelbook\Method\Former\FormerInterface;
 use Hotelbook\Method\Former\Order as OrderFormer;
+use Hotelbook\ResultProceeder;
 
 /**
  * An method implementation of Confirming order (after book)
@@ -37,7 +38,7 @@ class ConfirmOrder extends AbstractMethod
             ]
         );
 
-        return $this->getResultObject($result);
+        return $this->getResultObject($result, null, ResultProceeder::class, false);
     }
 
     /**
