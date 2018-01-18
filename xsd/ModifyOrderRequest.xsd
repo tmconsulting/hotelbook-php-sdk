@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="../hotel/HotelModifyOrderRequest.xsd"/>
+	<xs:include schemaLocation="../transfer/TransferModifyOrderRequest.xsd"/>
+    <xs:include schemaLocation="../vehicle/VehicleModifyOrderRequest.xsd"/>
+	<!-- Attributes -->
+	<!-- Simple Elements -->
+	<xs:element name="PayForm" type="T_PayForm"/>
+    <xs:element name="AccountComment" type="T_AccountComment"/>
+	<xs:element name="Name" type="T_FullUserName"/>
+	<xs:element name="Email" type="T_Email"/>
+	<xs:element name="Comment" type="xs:string"/>
+	<xs:element name="PartnerId" type="T_PartnerId"/>
+	<xs:element name="PartnerBase" type="xs:nonNegativeInteger"/>
+	<xs:element name="PartnerName" type="xs:string"/>
+	<!-- Simple Types-->
+	<xs:simpleType name="T_PayForm">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="cash|cashless"/>
+		</xs:restriction>
+	</xs:simpleType>
+    <xs:simpleType name="T_AccountComment">
+        <xs:restriction base="xs:string">
+            <xs:maxLength value="255"/>
+        </xs:restriction>
+    </xs:simpleType>
+	<xs:simpleType name="T_Email">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_PartnerId">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="8"/>
+			<xs:maxLength value="8"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Complex Elements-->
+	<xs:element name="ModifyOrderRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ContactInfo" minOccurs="0"/>
+				<xs:element name="OrderId" type="xs:positiveInteger"/>
+                <xs:element ref="AccountComment" minOccurs="0"/>
+				<xs:element ref="Partner" minOccurs="0"/>
+				<xs:element ref="PayForm" minOccurs="0"/>
+				<xs:element ref="Items"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ContactInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Name"/>
+				<xs:element ref="Email"/>
+				<xs:element ref="Phone"/>
+				<xs:element ref="Comment"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Partner">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="PartnerId" minOccurs="0"/>
+				<xs:element ref="PartnerBase" minOccurs="0"/>
+				<xs:element ref="PartnerName" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Items">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="HotelItem" minOccurs="0"/>
+				<xs:element ref="TransferItem" minOccurs="0"/>
+                <xs:element ref="VehicleItem" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="../Errors.xsd"/>
+	<!-- Attributes -->
+	<xs:attributeGroup name="DocumentAttributes">
+		<xs:attribute name="type" type="xs:string" use="required"/>
+		<xs:attribute name="download" type="xs:string"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="PaxAttributes">
+		<xs:attribute name="paxId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="isLeader" type="xs:boolean"/>
+		<xs:attribute name="child" type="xs:boolean" use="required"/>
+		<xs:attribute name="childAge" type="T_ChildAge"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="ItemAttributes">
+		<xs:attribute name="itemId" type="xs:positiveInteger" use="required"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="RoomAttributes">
+		<xs:attribute name="roomSizeId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="roomSizeName" type="xs:string" use="required"/>
+		<xs:attribute name="roomTypeId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="roomTypeName" type="xs:string" use="required"/>
+		<xs:attribute name="roomViewId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="roomViewName" type="xs:string" use="required"/>
+		<xs:attribute name="roomName" type="xs:string" use="required"/>
+		<xs:attribute name="mealId" type="xs:integer" use="required"/>
+		<xs:attribute name="mealName" type="xs:string" use="required"/>
+		<xs:attribute name="mealBreakfastId" type="xs:integer"/>
+		<xs:attribute name="mealBreakfastName" type="xs:string"/>
+		<xs:attribute ref="child" use="required"/>
+		<xs:attribute ref="cots" use="required"/>
+		<xs:attribute name="sharingBedding" type="xs:boolean" use="required"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="CancellationAttributes">
+		<xs:attribute name="charge" type="xs:boolean" use="required"/>
+		<xs:attribute name="denyChanges" type="xs:boolean" use="required"/>
+		<xs:attribute name="from" type="xs:dateTime"/>
+		<xs:attribute name="to" type="xs:dateTime"/>
+		<xs:attribute name="price" type="T_Price"/>
+		<xs:attribute name="policy" type="xs:string"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="RoomPriceAttributes">
+		<xs:attribute name="roomNumber" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="roomSizeId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="roomTypeId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="roomViewId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="child" type="T_Child" use="required"/>
+		<xs:attribute name="cots" type="T_Cots"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="PriceAttributes">
+		<xs:attribute name="date" type="xs:date" use="required"/>
+		<xs:attribute name="available" type="xs:boolean" use="required"/>
+		<xs:attribute name="price" type="T_Price" use="required"/>
+		<xs:attribute name="priceCot" type="T_Price"/>
+		<xs:attribute name="priceChild" type="T_Price"/>
+	</xs:attributeGroup>
+	<xs:attribute name="child">
+		<xs:annotation>
+			<xs:documentation>0 or 1</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:pattern value="0|1"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<xs:attribute name="cots">
+		<xs:annotation>
+			<xs:documentation>0, 1, 2</xs:documentation>
+		</xs:annotation>
+		<xs:simpleType>
+			<xs:restriction base="xs:integer">
+				<xs:pattern value="0|1|2"/>
+			</xs:restriction>
+		</xs:simpleType>
+	</xs:attribute>
+	<!-- Simple Types -->
+	<xs:simpleType name="T_ChildAge">
+		<xs:annotation>
+			<xs:documentation>From 1 to 21</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="21"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Price">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Child">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="0|1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Cots">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="0|1|2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Currency">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_OrderState">
+		<xs:annotation>
+			<xs:documentation>Order states</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NEW"/>
+			<xs:enumeration value="COMMITED"/>
+			<xs:enumeration value="CANCELED"/>
+			<xs:enumeration value="PENDING"/>
+			<xs:enumeration value="UNCOMMITED"/>
+			<xs:enumeration value="CHANGED"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_ItemState">
+		<xs:annotation>
+			<xs:documentation>Item(hotel) states</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NEW"/>
+			<xs:enumeration value="IN_PROGRESS"/>
+			<xs:enumeration value="COMMITED"/>
+			<xs:enumeration value="UNCOMMITED"/>
+			<xs:enumeration value="CANCEL_NOT_SEND"/>
+			<xs:enumeration value="CANCEL_IN_PROGRESS"/>
+			<xs:enumeration value="CANCELED"/>
+			<xs:enumeration value="CANCEL_UNCOMMITED"/>
+			<xs:enumeration value="CANCEL_DENIED"/>
+			<xs:enumeration value="CHANGES_DENIED"/>
+			<xs:enumeration value="CHANGED"/>
+			<xs:enumeration value="CHANGES_NOT_SEND"/>
+			<xs:enumeration value="CHANGES_IN_PROGRESS"/>
+			<xs:enumeration value="CHANGES_UNCOMMITED"/>
+			<xs:enumeration value="ADDITION_PENDING"/>
+			<xs:enumeration value="MODIFICATION_PENDING"/>
+			<xs:enumeration value="CANCELATION_PENDING"/>
+		</xs:restriction>
+	</xs:simpleType>
+		<xs:simpleType name="T_Commission">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_FullUserName">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Tag">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Email">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Phone">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="15"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Title">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="Mr|Ms|Mrs|Chld"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_UserName">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[a-zA-Z0-9\-_]{1,50}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Simple Elements -->
+	<xs:element name="Id" type="xs:positiveInteger"/>
+	<xs:element name="Manager" type="xs:string"/>
+	<xs:element name="State" type="T_OrderState"/>
+	<xs:element name="Title" type="T_Title"/>
+	<xs:element name="FirstName" type="T_UserName"/>
+	<xs:element name="LastName" type="T_UserName"/>
+	<xs:element name="HotelId" type="xs:positiveInteger"/>
+	<xs:element name="CityId" type="xs:positiveInteger"/>
+	<xs:element name="Name" type="xs:string"/>
+	<xs:element name="CategoryId" type="xs:positiveInteger"/>
+	<xs:element name="CheckIn" type="xs:date"/>
+	<xs:element name="Duration" type="xs:positiveInteger"/>
+	<xs:element name="TotalPrice" type="T_Price"/>
+	<xs:element name="Currency" type="T_Currency"/>
+	<xs:element name="UseNds" type="xs:boolean"/>
+	<xs:element name="PaxId" type="xs:positiveInteger"/>
+	<xs:element name="Information" type="xs:string"/>
+	<xs:element name="SpecialOfferText" type="xs:string"/>
+	<xs:element name="ProviderId" type="xs:positiveInteger"/>
+    <xs:element name="ProviderReference" type="xs:string"/>
+	<xs:element name="Discount" type="T_Price"/>
+	<xs:element name="Offer" type="xs:string"/>
+	<xs:element name="Email" type="T_Email"/>
+	<xs:element name="Phone" type="T_Phone"/>
+	<xs:element name="Comment" type="xs:string"/>
+	<xs:element name="Tag" type="T_Tag"/>
+	<!-- Complex Types-->
+	<xs:complexType name="CT_RoomData">
+		<xs:sequence>
+			<xs:element name="Paxes" type="CT_PaxesId"/>
+		</xs:sequence>
+		<xs:attributeGroup ref="RoomAttributes"/>
+	</xs:complexType>
+	<xs:complexType name="CT_PaxesId">
+		<xs:sequence minOccurs="0" maxOccurs="unbounded">
+			<xs:element ref="PaxId"/>
+		</xs:sequence>
+	</xs:complexType>
+	<!-- Complex Elements-->
+    <xs:element name="Changes">
+        <xs:complexType>
+            <xs:sequence minOccurs="0" maxOccurs="unbounded">
+                <xs:element name="Change">
+                    <xs:complexType>
+                        <xs:sequence>
+                            <xs:element name="Title" type="xs:string"/>
+                            <xs:element name="NewValue" type="xs:string"/>
+                        </xs:sequence>
+                        <xs:attribute name="itemId" type="xs:positiveInteger" use="required"/>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+	<xs:element name="Order">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Id"/>
+				<xs:element ref="Manager" minOccurs="0"/>
+				<xs:element ref="Tag" minOccurs="0"/>
+				<xs:element ref="State"/>
+				<xs:element ref="Account_1C" minOccurs="0"/>
+				<xs:element ref="Paxes"/>
+				<xs:element ref="Items"/>
+				<xs:element ref="ContactInfo" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Account_1C">
+		<xs:complexType>
+			<xs:sequence minOccurs="1" maxOccurs="unbounded">
+				<xs:element ref="Document"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Document">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attributeGroup ref="DocumentAttributes"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Paxes">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Pax"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Pax">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Title"/>
+				<xs:element ref="FirstName"/>
+				<xs:element ref="LastName"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="PaxAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Items">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="HotelItem"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HotelItem">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="HotelId"/>
+				<xs:element ref="CityId"/>
+				<xs:element ref="Name"/>
+				<xs:element ref="CategoryId"/>
+				<xs:element name="State" type="T_ItemState"/>
+				<xs:element ref="CheckIn"/>
+				<xs:element ref="Duration"/>
+				<xs:element ref="TotalPrice"/>
+				<xs:element ref="ExtraPrice"/>
+				<xs:element ref="Currency"/>
+				<xs:element ref="UseNds" minOccurs="0"/>
+				<xs:element name="Commission" type="T_Commission"/>
+				<xs:element ref="Information" minOccurs="0"/>
+				<xs:element ref="SpecialOfferText" minOccurs="0"/>
+				<xs:element ref="ProviderId" minOccurs="0"/>
+				<xs:element ref="ProviderReference" minOccurs="0"/>
+				<xs:element ref="Rooms"/>
+				<xs:element ref="Remarks" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Remarks</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="ChargeConditions" minOccurs="0"/>
+				<xs:element ref="PriceDetails"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="ItemAttributes"/>
+		</xs:complexType>
+	</xs:element>
+    <xs:element name="ExtraPrice">
+        <xs:complexType>
+            <xs:simpleContent>
+                <xs:extension base="T_Price">
+                    <xs:attribute name="currency" type="T_Currency" use="optional"/>
+                </xs:extension>
+            </xs:simpleContent>
+        </xs:complexType>
+    </xs:element>
+	<xs:element name="Rooms">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element name="Room" type="CT_RoomData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Remarks">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="Remark" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Remark id</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ChargeConditions">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Currency"/>
+				<xs:element ref="Cancellations"/>
+				<xs:element ref="Amendments" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Cancellations">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="Cancellation"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Cancellation">
+		<xs:complexType>
+			<xs:attributeGroup ref="CancellationAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Amendments">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="Amendment"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Amendment">
+		<xs:complexType>
+			<xs:attributeGroup ref="CancellationAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="PriceDetails">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Currency"/>
+				<xs:element ref="Discount" minOccurs="0"/>
+				<xs:element ref="Offer" minOccurs="0"/>
+				<xs:element ref="RoomPrices"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RoomPrices">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="Room"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Room">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Price"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="RoomPriceAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Price">
+		<xs:complexType>
+			<xs:attributeGroup ref="PriceAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ContactInfo">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Name" type="T_FullUserName"/>
+				<xs:element ref="Email"/>
+				<xs:element ref="Phone"/>
+				<xs:element ref="Comment"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ConfirmOrderResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Errors" minOccurs="0"/>
+                <xs:element ref="Changes" minOccurs="0"/>
+				<xs:element ref="Order" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

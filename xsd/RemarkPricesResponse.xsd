@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="../Errors.xsd"/>
+	<!-- Attributes -->
+	<xs:attributeGroup name="EarlyLatePriceAttributes">
+		<xs:attribute name="error" type="xs:string"/>
+		<xs:attribute name="type" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="price" type="T_Price" use="required"/>
+		<xs:attribute name="currency" type="T_Currency" use="required"/>
+	</xs:attributeGroup>
+	<!-- Simple Types -->
+	<xs:simpleType name="T_ItemState">
+		<xs:annotation>
+			<xs:documentation>Item(hotel) states</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NEW"/>
+			<xs:enumeration value="IN_PROGRESS"/>
+			<xs:enumeration value="COMMITED"/>
+			<xs:enumeration value="UNCOMMITED"/>
+			<xs:enumeration value="CANCEL_NOT_SEND"/>
+			<xs:enumeration value="CANCEL_IN_PROGRESS"/>
+			<xs:enumeration value="CANCELED"/>
+			<xs:enumeration value="CANCEL_UNCOMMITED"/>
+			<xs:enumeration value="CANCEL_DENIED"/>
+			<xs:enumeration value="CHANGES_DENIED"/>
+			<xs:enumeration value="CHANGED"/>
+			<xs:enumeration value="CHANGES_NOT_SEND"/>
+			<xs:enumeration value="CHANGES_IN_PROGRESS"/>
+			<xs:enumeration value="CHANGES_UNCOMMITED"/>
+			<xs:enumeration value="ADDITION_PENDING"/>
+			<xs:enumeration value="MODIFICATION_PENDING"/>
+			<xs:enumeration value="CANCELATION_PENDING"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Price">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Currency">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Simple Elements -->
+	<xs:element name="OrderId" type="xs:positiveInteger"/>
+	<xs:element name="ItemId" type="xs:positiveInteger"/>
+	<xs:element name="State" type="T_ItemState"/>
+	<xs:element name="CityId" type="xs:positiveInteger"/>
+	<xs:element name="HotelId" type="xs:integer"/>
+	<xs:element name="Name" type="xs:string"/>
+	<xs:element name="CategoryId" type="xs:positiveInteger"/>
+	<xs:element name="CheckIn" type="xs:date"/>
+	<xs:element name="Duration" type="xs:positiveInteger"/>
+	<xs:element name="ProviderId" type="xs:positiveInteger"/>
+	<xs:element name="EarlyArrival" type="CT_EarlyLatePrice"/>
+	<xs:element name="LateDeparture" type="CT_EarlyLatePrice"/>
+	<!-- Complex Types -->
+	<xs:complexType name="CT_EarlyLatePrice">
+		<xs:attributeGroup ref="EarlyLatePriceAttributes"/>
+	</xs:complexType>
+	<!-- Complex Elements-->
+	<xs:element name="Hotel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="OrderId" minOccurs="0"/>
+				<xs:element ref="ItemId" minOccurs="0"/>
+				<xs:element ref="State" minOccurs="0"/>
+				<xs:element ref="CityId"/>
+				<xs:element ref="HotelId"/>
+				<xs:element ref="Name"/>
+				<xs:element ref="CategoryId"/>
+				<xs:element ref="CheckIn"/>
+				<xs:element ref="Duration"/>
+				<xs:element ref="ProviderId" minOccurs="0"/>
+				<xs:element ref="Prices" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Prices">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="EarlyArrival" minOccurs="0"/>
+				<xs:element ref="LateDeparture" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RemarkPricesResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Errors" minOccurs="0"/>
+				<xs:element ref="Hotel" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

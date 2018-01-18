@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!--Attributes-->
+	<xs:attributeGroup name="ErrorAttributes">
+		<xs:attribute name="type" type="T_ErrorType"/>
+		<xs:attribute name="code" type="T_ErrorCode"/>
+		<xs:attribute name="description" type="xs:string" use="required"/>
+	</xs:attributeGroup>
+	<!-- Simple Types-->
+	<xs:simpleType name="T_ErrorType">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="error"/>
+			<xs:enumeration value="notice"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_ErrorCode">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Simple Elements-->
+	<xs:element name="ErrorCategory" type="xs:string"/>
+	<xs:element name="ErrorGroups" type="xs:string"/>
+	<xs:element name="ErrorDetails" type="xs:string"/>
+	<!-- Complex Elements-->
+	<xs:element name="Errors">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="Error"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Error">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ErrorCategory" minOccurs="0"/>
+				<xs:element ref="ErrorGroups" minOccurs="0"/>
+				<xs:element ref="ErrorDetails" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="ErrorAttributes"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+    <xs:include schemaLocation="../Errors.xsd"/>
+    <xs:include schemaLocation="./CustomerBase.xsd"/>
+
+    <xs:element name="Customer">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Type" type="T_CustomerType"/>
+                <xs:element minOccurs="0" name="Name" type="T_CustomerName"/>
+                <xs:element minOccurs="0" name="Address" type="T_CustomerAddress"/>
+                <xs:element minOccurs="0" name="INN" type="T_CustomerINN"/>
+                <xs:element minOccurs="0" name="KPP" type="T_CustomerKPP"/>
+                <xs:element minOccurs="0" name="PaymentNum" type="T_CustomerPaymentNum"/>
+                <xs:element minOccurs="0" name="PaymentDate" type="T_CustomerPaymentDate"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="AddCustomerResponse">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element ref="Errors" minOccurs="0"/>
+                <xs:element ref="Customer" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+</xs:schema>

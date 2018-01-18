@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- Attributes -->
+	<xs:attributeGroup name="RoomTypeAttributes">
+		<xs:attribute name="id" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Room type id</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Room type name</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<!-- Complex Elements -->
+	<xs:element name="RoomType">
+		<xs:annotation>
+			<xs:documentation>Room type</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attributeGroup ref="RoomTypeAttributes"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RoomTypes">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="RoomType"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Response">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RoomTypes"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

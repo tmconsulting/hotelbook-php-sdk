@@ -1,0 +1,280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="../Errors.xsd"/>
+	<!-- Attributes -->
+	<xs:attributeGroup name="ItemsAttributes">
+		<xs:attribute name="orderId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="orderUserId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="orderUserName" type="T_OrderUserName" use="required"/>
+		<xs:attribute name="orderManagerId" type="xs:positiveInteger"/>
+		<xs:attribute name="orderManagerName" type="xs:string"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="ItemAttributes">
+		<xs:attribute name="type" type="T_ItemType" use="required"/>
+		<xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="useNds" type="xs:boolean"/>
+		<xs:attribute name="commission" type="T_Commission"/>
+	</xs:attributeGroup>
+	<xs:simpleType name="T_OrderUserName">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_ItemState">
+		<xs:annotation>
+			<xs:documentation>Item state</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NEW"/>
+			<xs:enumeration value="IN_PROGRESS"/>
+			<xs:enumeration value="COMMITED"/>
+			<xs:enumeration value="UNCOMMITED"/>
+			<xs:enumeration value="CANCEL_NOT_SEND"/>
+			<xs:enumeration value="CANCEL_IN_PROGRESS"/>
+			<xs:enumeration value="CANCELED"/>
+			<xs:enumeration value="CANCEL_UNCOMMITED"/>
+			<xs:enumeration value="CANCEL_DENIED"/>
+			<xs:enumeration value="CHANGES_DENIED"/>
+			<xs:enumeration value="CHANGED"/>
+			<xs:enumeration value="CHANGES_NOT_SEND"/>
+			<xs:enumeration value="CHANGES_IN_PROGRESS"/>
+			<xs:enumeration value="CHANGES_UNCOMMITED"/>
+			<xs:enumeration value="ADDITION_PENDING"/>
+			<xs:enumeration value="MODIFICATION_PENDING"/>
+			<xs:enumeration value="CANCELATION_PENDING"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_VisaCity">
+		<xs:annotation>
+			<xs:documentation>City of visa support</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="msk|spb"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_TransportType">
+		<xs:annotation>
+			<xs:documentation>Transport type of visa</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="avia"/>
+			<xs:enumeration value="sea"/>
+			<xs:enumeration value="railway"/>
+			<xs:enumeration value="avto"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:attributeGroup name="PaxAttributes">
+		<xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="pax_id" type="xs:positiveInteger"/>
+	</xs:attributeGroup>
+	<xs:simpleType name="T_Title">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="Mr|Ms|Mrs|Chld"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Boolean">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="0|1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_ChildAge">
+		<xs:annotation>
+			<xs:documentation>From 1 to 21</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:positiveInteger">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="21"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:attributeGroup name="HotelAttributes">
+		<xs:attribute name="itemId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="cityId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="countryId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="from" type="T_Date" use="required"/>
+		<xs:attribute name="to" type="T_Date" use="required"/>
+		<xs:attribute name="external_hotel" type="xs:boolean"/>
+		<xs:attribute name="status" type="T_ItemState"/>
+	</xs:attributeGroup>
+	<!-- Simple Types -->
+	<xs:simpleType name="T_Commission">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_ItemType">
+		<xs:annotation>
+			<xs:documentation>Order item type</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="hotel"/>
+			<xs:enumeration value="transfer"/>
+			<xs:enumeration value="vehicle"/>
+			<xs:enumeration value="visa"/>
+			<xs:enumeration value="invitation"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_DateTime">
+		<xs:annotation>
+			<xs:documentation>YYYY-MM-DD HH:MI:SS</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-9]{4}-[0-9]{2}-[0-9]{2} [0-9]{2}:[0-9]{2}:[0-9]{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Date">
+		<xs:annotation>
+			<xs:documentation>YYYY-MM-DD</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:date">
+			<xs:pattern value="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Currency">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Simple Elements -->
+	<!-- Complex Types-->
+	<xs:complexType name="CT_Info">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="CT_Info2">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="id" type="xs:string"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="CT_Info3">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="id" type="xs:positiveInteger"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="CT_TransportCities">
+		<xs:sequence>
+			<xs:element name="City" type="CT_Info2" minOccurs="0" maxOccurs="5" />
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CT_Price">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="currency" type="T_Currency" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="CT_Child">
+		<xs:simpleContent>
+			<xs:extension base="xs:boolean">
+				<xs:attribute name="age" type="T_ChildAge"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="CT_Hotel">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attributeGroup ref="HotelAttributes"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!-- Complex Elements-->
+	<xs:element name="Transport">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Date" type="T_DateTime"/>
+				<xs:element name="From" type="CT_TransportCities"/>
+				<xs:element name="To" type="CT_TransportCities"/>
+				<xs:element name="Number" type="xs:string"/>
+				<xs:element name="FlightTime" type="xs:string"/>
+			</xs:sequence>
+			<xs:attribute name="type" type="T_TransportType" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Passport">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Series" type="xs:string"/>
+				<xs:element name="Number" type="xs:string"/>
+				<xs:element name="Expiration" type="T_Date" minOccurs="0" />
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Insurances">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="Insurance" type="CT_Info"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Pax">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Title" type="T_Title" minOccurs="0"/>
+				<xs:element name="Name" type="xs:string" minOccurs="0"/>
+				<xs:element name="SecondName" type="xs:string" minOccurs="0"/>
+				<xs:element name="BirthDate" type="T_Date" minOccurs="0"/>
+				<xs:element name="IsChild" type="CT_Child" minOccurs="0"/>
+				<xs:element name="Citizenship" type="CT_Info" minOccurs="0"/>
+				<xs:element ref="Passport" minOccurs="0"/>
+				<xs:element ref="Insurances" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="PaxAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Paxes">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Pax"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Hotels">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element name="Hotel" type="CT_Hotel"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Item">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Status" type="T_ItemState" minOccurs="0"/>
+				<xs:element name="Country" type="CT_Info" minOccurs="0"/>
+				<xs:element name="Provider" type="CT_Info3" minOccurs="0"/>
+				<xs:element name="VisaCity" type="T_VisaCity" minOccurs="0"/>
+				<xs:element name="DepartureDate" type="T_Date" minOccurs="0"/>
+				<xs:element name="ArrivalDate" type="T_Date" minOccurs="0"/>
+				<xs:element name="ArrivalPlace" type="xs:string" minOccurs="0"/>
+				<xs:element ref="Transport" minOccurs="0"/>
+				<xs:element name="Price" type="CT_Price" minOccurs="0"/>
+				<xs:element name="PassportChild" type="xs:nonNegativeInteger" minOccurs="0"/>
+				<xs:element ref="Paxes" minOccurs="0"/>
+				<xs:element ref="Hotels" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="ItemAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Items">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Item" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="ItemsAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OrderItemInfoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Errors" minOccurs="0"/>
+				<xs:element ref="Items" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

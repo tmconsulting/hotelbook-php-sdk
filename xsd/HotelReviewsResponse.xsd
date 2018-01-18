@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- Attributes -->
+	<xs:attributeGroup name="ReviewsAttributes">
+		<xs:attribute name="encoded" type="xs:string" use="optional">
+			<xs:annotation>
+				<xs:documentation>Reviews widget [encoded] HTML code</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="HotelReviewsAttributes">
+		<xs:attribute name="id" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Country id</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="review_count" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Review amount</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="average_rating" type="xs:float" use="required">
+			<xs:annotation>
+				<xs:documentation>Average rating</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="rating_url" type="xs:anyURI" use="required">
+			<xs:annotation>
+				<xs:documentation>Rating image URL</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="hotel_url" type="xs:anyURI" use="required">
+			<xs:annotation>
+				<xs:documentation>TripAdvisor hotel page URL</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<!-- Complex Elements -->
+	<xs:element name="ReviewsWidgetBody">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attributeGroup ref="ReviewsAttributes"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Hotel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ReviewsWidgetBody"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="HotelReviewsAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RatingList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Hotel"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Response">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="RatingList"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

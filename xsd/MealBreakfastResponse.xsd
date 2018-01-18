@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- Attributes -->
+	<xs:attributeGroup name="BreakfastAttributes">
+		<xs:attribute name="id" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Breakfast id</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<!-- Complex Elements -->
+	<xs:element name="Breakfast">
+		<xs:annotation>
+			<xs:documentation>Breakfast name</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attributeGroup ref="BreakfastAttributes"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Breakfasts">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Breakfast"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Response">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Breakfasts"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

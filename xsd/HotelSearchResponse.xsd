@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="../Errors.xsd"/>
+	<xs:include schemaLocation="HotelSearchRequest.xsd"/>
+	<!-- Simple Types -->
+	<xs:simpleType name="T_Confirmation">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="onRequest|online|inaccessible"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_PriceStatus">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="onRequest|available|unavailable"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Currency">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Commission">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Attributes -->
+	<xs:attributeGroup name="HotelSearchAttributes">
+		<xs:attribute name="searchId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="countryId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="countryName" type="xs:string" use="required"/>
+		<xs:attribute name="resortId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="resortName" type="xs:string" use="required"/>
+		<xs:attribute ref="cityId" use="required"/>
+		<xs:attribute name="cityName" type="xs:string" use="required"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="HotelAttributes">
+		<xs:attribute name="resultId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute ref="hotelId" use="required"/>
+		<xs:attribute name="b2b" type="xs:boolean"/>
+		<xs:attribute ref="hotelName" use="required"/>
+		<xs:attribute name="hotelCatId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="hotelCatName" type="xs:string" use="required"/>
+        <xs:attribute name="hotelAddress" type="xs:string" use="required"/>
+		<xs:attribute name="hotelPhotoUrl" type="xs:string" use="required"/>
+		<xs:attribute name="hotelSmallPhotoUrl" type="xs:string" use="required"/>
+		<xs:attribute name="hotelLatitude" type="xs:string"/>
+		<xs:attribute name="hotelLongitude" type="xs:string"/>
+		<xs:attribute name="confirmation" type="T_Confirmation" use="required"/>
+		<xs:attribute name="dynamicInventory" type="xs:boolean" use="required"/>
+        <!--<xs:attribute name="advancePurchasedRate" type="xs:boolean" use="required"/>-->
+        <xs:attribute name="priceStatus" type="T_PriceStatus" use="required"/>
+        <xs:attribute name="priceBreakdownStatus" type="T_PriceStatus" use="required"/>
+		<xs:attribute name="price" type="xs:float" use="required"/>
+		<xs:attribute name="currency" type="T_Currency" use="required"/>
+		<xs:attribute name="comparePrice" type="xs:float"/>
+		<xs:attribute name="information" type="xs:string" use="required"/>
+		<xs:attribute name="visaMsk" type="xs:boolean" use="required"/>
+		<xs:attribute name="visaSpb" type="xs:boolean" use="required"/>
+		<xs:attribute name="specialOffer" type="xs:boolean" use="required"/>
+		<xs:attribute name="useNds" type="xs:boolean"/>
+		<xs:attribute name="commission" type="T_Commission"/>
+		<xs:attribute name="providerId" type="xs:positiveInteger"/>
+		<xs:attribute name="providerHotelCode" type="xs:string"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="HotelsAttributes">
+		<xs:attribute name="totalHotels" type="xs:integer"/>
+		<xs:attribute name="totalResults" type="xs:integer"/>
+		<xs:attribute name="finalResultId" type="xs:integer"/>
+        <xs:attribute name="searchingIsCompleted" type="xs:boolean"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="RoomAttributes">
+		<xs:attribute ref="roomSizeId" use="required"/>
+		<xs:attribute name="roomSizeName" type="xs:string" use="required"/>
+		<xs:attribute name="roomTypeId" type="xs:nonNegativeInteger" use="required"/>
+		<xs:attribute name="roomTypeName" type="xs:string" use="required"/>
+		<xs:attribute name="roomViewId" type="xs:nonNegativeInteger" use="required"/>
+		<xs:attribute name="roomViewName" type="xs:string" use="required"/>
+		<xs:attribute name="roomName" type="xs:string"/>
+		<xs:attribute ref="roomNumber" use="required"/>
+		<xs:attribute name="mealId" type="xs:integer" use="required"/>
+		<xs:attribute name="mealName" type="xs:string" use="required"/>
+		<xs:attribute name="mealBreakfastId" type="xs:integer"/>
+		<xs:attribute name="mealBreakfastName" type="xs:string"/>
+		<xs:attribute ref="children" use="required"/>
+		<xs:attribute ref="cots" use="required"/>
+		<xs:attribute name="sharingBedding" type="xs:boolean" use="required"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="LocationAttributes">
+		<xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="name" type="xs:string" use="required"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="SpecialOfferAttributes">
+		<xs:attribute name="type" type="xs:string"/>
+		<xs:attribute name="img" type="xs:string"/>
+		<xs:attribute name="key" type="xs:string"/>
+		<xs:attribute name="id" type="xs:positiveInteger"/>
+		<xs:attribute name="text" type="xs:string"/>
+		<xs:attribute name="from" type="xs:string"/>
+		<xs:attribute name="till" type="xs:string"/>
+		<xs:attribute name="stay" type="xs:string"/>
+		<xs:attribute name="pay" type="xs:string"/>
+		<xs:attribute name="nights" type="xs:string"/>
+		<xs:attribute name="percent" type="xs:string"/>
+		<xs:attribute name="discount" type="xs:string"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="ProcessedTimeAttributes">
+		<xs:attribute name="searchTime" type="xs:string"/>
+		<xs:attribute name="resultQueryTime" type="xs:string"/>
+		<xs:attribute name="resultFormatTime" type="xs:string"/>
+		<xs:attribute name="errors" type="xs:string"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="ProviderTimeAttributes">
+		<xs:attribute name="providerId" type="xs:integer"/>
+		<xs:attribute name="transferTime" type="xs:string"/>
+		<xs:attribute name="processTime" type="xs:string"/>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="DbTimeAttributes">
+		<xs:attribute name="maxTime" type="xs:string"/>
+		<xs:attribute name="details" type="xs:string"/>
+	</xs:attributeGroup>
+	<!-- Complex Elements -->
+	<xs:element name="HotelSearch">
+		<xs:complexType>
+			<xs:attributeGroup ref="HotelSearchAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Hotel">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Rooms"/>
+				<xs:element ref="Locations" minOccurs="0"/>
+				<xs:element ref="SpecialOffers" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="HotelAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Hotels">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Hotel"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="HotelsAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Location">
+		<xs:complexType>
+			<xs:attributeGroup ref="LocationAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Locations">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="Location"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Room">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ChildAge" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="RoomAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Rooms">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="Room"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SpecialOffer">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attributeGroup ref="SpecialOfferAttributes"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="SpecialOffers">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="SpecialOffer"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProviderTime">
+		<xs:complexType>
+			<xs:attributeGroup ref="ProviderTimeAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="DbTime">
+		<xs:complexType>
+			<xs:attributeGroup ref="DbTimeAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="ProcessedTime">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ProviderTime" minOccurs="0" maxOccurs="unbounded"/>
+				<xs:element ref="DbTime" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="ProcessedTimeAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HotelSearchResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="HotelSearchRequest" minOccurs="0"/>
+				<xs:element ref="Errors" minOccurs="0"/>
+				<xs:element ref="HotelSearch" minOccurs="0"/>
+				<xs:element name="HotelSearchId" type="xs:positiveInteger" minOccurs="0"/>
+				<xs:element ref="Hotels" minOccurs="0"/>
+				<xs:element ref="ProcessedTime" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

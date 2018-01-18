@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- Attributes -->
+	<xs:attributeGroup name="HotelTypeAttributes">
+		<xs:attribute name="id" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Hotel type id</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<!-- Complex Elements -->
+	<xs:element name="Type">
+		<xs:annotation>
+			<xs:documentation>Hotel type name</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attributeGroup ref="HotelTypeAttributes"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HotelTypes">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Type"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Response">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="HotelTypes"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

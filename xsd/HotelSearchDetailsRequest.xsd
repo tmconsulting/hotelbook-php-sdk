@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- Simple Elements -->
+	<xs:element name="SearchId" type="xs:positiveInteger"/>
+	<xs:element name="ResultId" type="xs:positiveInteger"/>
+	<!-- Complex Elements-->
+	<xs:element name="HotelSearches">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="HotelSearch" maxOccurs="10"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HotelSearch">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="SearchId"/>
+				<xs:element ref="ResultId"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HotelSearchDetailsRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="HotelSearches"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

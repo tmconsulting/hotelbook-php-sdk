@@ -1,0 +1,367 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="../../Errors.xsd"/>
+	<!-- Attributes -->
+	<xs:attributeGroup name="ResponseAttributes">
+		<xs:attribute name="date" type="xs:dateTime">
+			<xs:annotation>
+				<xs:documentation>current date</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<!-- Simple Types -->
+	<xs:simpleType name="T_Boolean">
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="YES"/>
+			<xs:enumeration value="NO"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Complex Types -->
+	<xs:complexType name="CT_Id">
+		<xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+	</xs:complexType>
+	<xs:complexType name="CT_Info">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="CT_Info2">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="id" type="xs:integer" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="CT_Info3">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="id" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="CT_ImageUrl">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="width" type="xs:integer" use="required"/>
+				<xs:attribute name="height" type="xs:integer" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="CT_Map">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="type" type="xs:string" use="required"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<!-- Complex Elements -->
+	<xs:element name="Response">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Errors" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Errors list</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="HotelDetail" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Hotel information</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attributeGroup ref="ResponseAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HotelDetail">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Country" type="CT_Info">
+					<xs:annotation>
+						<xs:documentation>Country</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="City" type="CT_Info">
+					<xs:annotation>
+						<xs:documentation>City</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Cat" type="CT_Info2">
+					<xs:annotation>
+						<xs:documentation>Hotel category (stars)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="Locations">
+					<xs:annotation>
+						<xs:documentation>Hotel locations</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="MetroList">
+					<xs:annotation>
+						<xs:documentation>Metro near hotel</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Address" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Address</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Phone" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Phone</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Fax" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Fax</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Email" type="xs:string"/>
+				<xs:element name="WWW" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Web-site</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Latitude" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Latitude</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Longitude" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Longitude</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="BuiltIn" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>Building year. 0 - unknown</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="BuildingType" type="CT_Info2">
+					<xs:annotation>
+						<xs:documentation>Buildint type. traditional, historic, modern</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="NumberLifts" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>Number of lifts</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="NumberFloors" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>Number of floors</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Conference" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Number of conference-rooms</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Voltage" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Voltage</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ChildAgeFrom" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Minimum age of child</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ChildAgeTo" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Maximum age of child</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Classification" type="CT_Info3">
+					<xs:annotation>
+						<xs:documentation>GTA classification. E.g.: First, Super First, Tourist, Super Tourist, Deluxe, Super Deluxe</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="EarlestCheckInTime" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Earlest check in time</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="LatestCheckOutTime" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Latest check out time</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="RoomServiceFrom" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Room service from time</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="RoomServiceTo" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Room service to time</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="RoomService24h" type="T_Boolean">
+					<xs:annotation>
+						<xs:documentation>Room service 24 hours: YES / NO</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PorterageFrom" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Porterage from time</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PorterageTo" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Porterage to time</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Porterage24h" type="T_Boolean">
+					<xs:annotation>
+						<xs:documentation>Porterage 24 hours</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="IndoorPool" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>Number of indoor pools</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="OutdoorPool" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>Number of outdoor pools</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ChildrensPool" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>Number of children's pool</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Description" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Hotel description</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Distances" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Distance to objects</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="AdditionalInfo" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Additional info about hotel</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="HotelFacility">
+					<xs:annotation>
+						<xs:documentation>Hotel facilities</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="RoomAmenity">
+					<xs:annotation>
+						<xs:documentation>Room amenities</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="HotelType">
+					<xs:annotation>
+						<xs:documentation>Hotel type</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="Images">
+					<xs:annotation>
+						<xs:documentation>Hotel photos</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="Maps">
+					<xs:annotation>
+						<xs:documentation>Hotel maps</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="GTAHotelCode" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>GTA Hotel code</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="GTACityCode" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>GTA City code</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Updated" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Last update date Y-m-d H:i:s</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+			<xs:attribute name="name" type="xs:string" use="required"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Locations">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Location" type="CT_Info" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="MetroList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Metro" type="CT_Info" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HotelFacility">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Facility" type="CT_Info" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="RoomAmenity">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Amenity" type="CT_Info" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HotelType">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Type" type="CT_Info" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Images">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Image" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Image">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Info" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Description of photo</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Small" type="CT_ImageUrl">
+					<xs:annotation>
+						<xs:documentation>Thumbnail</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Large" type="CT_ImageUrl">
+					<xs:annotation>
+						<xs:documentation>Photo</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="main" type="xs:boolean"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Maps">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Map" type="CT_Map" minOccurs="0" maxOccurs="unbounded"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

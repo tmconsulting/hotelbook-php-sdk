@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="../Errors.xsd"/>
+	<!--Attributes-->
+	<xs:attributeGroup name="ResponseAttributes">
+		<xs:attribute name="date" type="xs:dateTime">
+			<xs:annotation>
+				<xs:documentation>current date</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<xs:attributeGroup name="ItemAttributes">
+		<xs:attribute name="TotalPrice" type="xs:float" use="required">
+			<xs:annotation>
+				<xs:documentation>total price</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="Currency" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>currency</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<!-- Simple Elements-->
+	<xs:element name="OrderId" type="xs:positiveInteger"/>
+	<xs:element name="ClientID" type="T_ClientID"/>
+	<!-- Simple Types-->
+	<xs:simpleType name="T_ClientID">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Complex Elements-->
+	<xs:element name="ItemID">
+		<xs:annotation>
+			<xs:documentation>Item of the order</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:positiveInteger">
+					<xs:attributeGroup ref="ItemAttributes"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Items">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ItemID" minOccurs="1"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="AddOrderResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Errors" minOccurs="0"/>
+				<xs:element ref="OrderId" minOccurs="0"/>
+				<xs:element ref="ClientID" minOccurs="0"/>
+				<xs:element ref="Items" minOccurs="0"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="ResponseAttributes"/>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

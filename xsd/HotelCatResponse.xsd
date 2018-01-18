@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- Attributes -->
+	<xs:attributeGroup name="CatAttributes">
+		<xs:attribute name="id" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Hotel category id</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<!-- Complex Elements -->
+	<xs:simpleType name="T_Category">
+		<xs:annotation>
+			<xs:documentation>Hotel category - from 1 to 5 stars</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[1-5][*]"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Complex Elements -->
+	<xs:element name="Category">
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="T_Category">
+					<xs:attributeGroup ref="CatAttributes"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HotelCategories">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Category"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Response">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="HotelCategories"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="../order/AddOrderBase.xsd"/>
+	<!-- Attributes -->
+	<!-- Simple Elements -->
+	<xs:element name="Holder" type="T_Holder"/>
+	<xs:element name="Email" type="T_Email"/>
+	<xs:element name="Number" type="T_Number"/>
+	<xs:element name="Type" type="T_Type"/>
+	<xs:element name="CVC" type="T_CVC"/>
+	<xs:element name="Expiration" type="T_Expiration"/>
+	<!-- Simple Types-->
+	<xs:simpleType name="T_Holder">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="3"/>
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Type">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="visa|mc"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_CVC">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="\d{3}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Number">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="\d{16}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Expiration">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="[0-1]\d/20[1-3]\d"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Email">
+		<xs:restriction base="xs:string">
+			<xs:minLength value="3"/>
+			<xs:maxLength value="100"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Complex Elements-->
+	<xs:element name="ConfirmOrderRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Card" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Card">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Type"/>
+				<xs:element ref="Holder"/>
+				<xs:element ref="Number"/>
+				<xs:element ref="Expiration"/>
+				<xs:element ref="CVC"/>
+				<xs:element ref="Email"/>
+				<xs:element ref="Booker"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Booker">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="FirstName"/>
+				<xs:element ref="LastName"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

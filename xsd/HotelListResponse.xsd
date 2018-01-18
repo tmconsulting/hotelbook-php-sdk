@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="../../Errors.xsd"/>
+	<!-- Attributes -->
+	<xs:attributeGroup name="HotelAttributes">
+		<xs:attribute name="name" type="xs:string" use="required">
+			<xs:annotation>
+				<xs:documentation>Hotel name</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="id" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Hotel id</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="city" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>City id</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="cat" use="required">
+			<xs:annotation>
+				<xs:documentation>Hotel category id</xs:documentation>
+			</xs:annotation>
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:minInclusive value="1"/>
+					<xs:maxInclusive value="5"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+		<xs:attribute name="hotelLatitude" type="xs:string" use="required"/>
+		<xs:attribute name="hotelLongitude" type="xs:string" use="required"/>
+		<xs:attribute name="updated" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Last update date</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="date_create" type="xs:positiveInteger" use="required" />
+		<xs:attribute name="assoc" type="xs:integer" use="required">
+			<xs:annotation>
+				<xs:documentation>Assoc count</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="utsluxury" use="required">
+			<xs:simpleType>
+				<xs:restriction base="xs:integer">
+					<xs:pattern value="0|1"/>
+				</xs:restriction>
+			</xs:simpleType>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<!-- Complex Elements -->
+	<xs:element name="Hotel">
+		<xs:complexType>
+			<xs:attributeGroup ref="HotelAttributes"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HotelList">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Hotel"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Response">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Errors" minOccurs="0"/>
+				<xs:element ref="HotelList" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

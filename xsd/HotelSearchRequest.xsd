@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- Simple Types -->
+	<xs:simpleType name="T_Date">
+		<xs:restriction base="xs:date">
+			<xs:pattern value="[0-9]{4}-[0-9]{2}-[0-9]{2}"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Duration">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="31"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Boolean">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="0|1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_ConfirmationFilter">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="online|onRequest|all"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_RoomNumber">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="9"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Adults">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="1"/>
+			<xs:maxInclusive value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Children">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="0"/>
+			<xs:maxInclusive value="4"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Cot">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="0|1|2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Age">
+		<xs:restriction base="xs:integer">
+			<xs:minInclusive value="2"/>
+			<xs:maxInclusive value="18"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Attributes -->
+	<xs:attribute name="cityId" type="xs:positiveInteger"/>
+	<xs:attribute name="checkIn" type="T_Date"/>
+	<xs:attribute name="duration" type="T_Duration"/>
+	<xs:attribute name="hotelId" type="xs:positiveInteger"/>
+	<xs:attribute name="hotelName" type="xs:string"/>
+	<xs:attribute name="categoryId" type="xs:positiveInteger"/>
+	<xs:attribute name="locationId" type="xs:positiveInteger"/>
+	<xs:attribute name="visa" type="T_Boolean"/>
+	<xs:attribute name="confirmation" type="T_ConfirmationFilter"/>
+	<xs:attribute name="minPrice" type="T_Boolean"/>
+	<xs:attribute name="limitResults" type="xs:positiveInteger"/>
+	<xs:attribute name="roomNumber" type="T_RoomNumber"/>
+	<xs:attribute name="roomSizeId" type="xs:positiveInteger"/>
+	<xs:attribute name="adults" type="T_Adults"/>
+	<xs:attribute name="children" type="T_Children"/>
+	<xs:attribute name="child" type="T_Children"/>
+	<xs:attribute name="cots" type="T_Cot"/>
+	<!-- Simple Elements -->
+	<xs:element name="HotelItemId" type="xs:positiveInteger"/>
+	<xs:element name="ProviderId" type="xs:positiveInteger">
+		<xs:annotation>
+			<xs:documentation>Provider id. Full provider list - ProvidersRequest request</xs:documentation>
+		</xs:annotation>
+	</xs:element>
+	<xs:element name="ChildAge" type="T_Age"/>
+	<!-- Complex Elements-->
+	<xs:element name="Request">
+		<xs:complexType>
+			<xs:attribute ref="cityId" use="required"/>
+			<xs:attribute ref="checkIn" use="required"/>
+			<xs:attribute ref="duration" use="required"/>
+			<xs:attribute ref="hotelId"/>
+			<xs:attribute ref="hotelName"/>
+			<xs:attribute ref="categoryId"/>
+			<xs:attribute ref="locationId"/>
+			<xs:attribute ref="visa"/>
+			<xs:attribute ref="confirmation"/>
+			<xs:attribute ref="minPrice"/>
+			<xs:attribute ref="limitResults"/>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HotelItems">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="HotelItemId"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Providers">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="ProviderId"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:group name="RoomGroup">
+		<xs:sequence>
+			<xs:element name="Room" minOccurs="1">
+				<xs:complexType>
+					<xs:sequence>
+						<xs:element ref="ChildAge" minOccurs="0" maxOccurs="4"/>
+					</xs:sequence>
+					<xs:attribute ref="roomNumber" use="required"/>
+					<xs:attribute ref="roomSizeId"/>
+					<xs:attribute ref="adults"/>
+					<xs:attribute ref="children"/>
+					<xs:attribute ref="child"/>
+					<xs:attribute ref="cots"/>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:group name="RoomsGroup">
+		<xs:sequence>
+			<xs:element name="Rooms">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:group ref="RoomGroup"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+	</xs:group>
+	<xs:element name="HotelSearchRequest">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Request"/>
+				<xs:element ref="HotelItems" minOccurs="0"/>
+				<xs:element ref="Providers" minOccurs="0"/>
+				<xs:group ref="RoomsGroup"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

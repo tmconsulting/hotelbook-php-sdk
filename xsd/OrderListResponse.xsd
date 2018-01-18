@@ -1,0 +1,456 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="../Errors.xsd"/>
+	<xs:include schemaLocation="OrderListRequest.xsd"/>
+	<xs:include schemaLocation="./MessagesOnline.xsd"/>
+	<!-- Attributes -->
+	<xs:attributeGroup name="RoomAttributes">
+		<xs:attribute name="roomSizeId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="roomTypeId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="roomViewId" type="xs:positiveInteger" use="required"/>
+		<xs:attribute name="cots" type="xs:integer" use="required"/>
+	</xs:attributeGroup>
+	<!-- Simple Types -->
+	<xs:simpleType name="T_Tag">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="255"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_DateTime">
+		<xs:annotation>
+			<xs:documentation>DD.MM.YYYY HH:MM or YYYY-MM-DD H:MM am/pm</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string"/>
+	</xs:simpleType>
+	<xs:simpleType name="T_OrderState">
+		<xs:annotation>
+			<xs:documentation>Order states</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NEW"/>
+			<xs:enumeration value="COMMITED"/>
+			<xs:enumeration value="CANCELED"/>
+			<xs:enumeration value="PENDING"/>
+			<xs:enumeration value="UNCOMMITED"/>
+			<xs:enumeration value="CHANGED"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_ItemState">
+		<xs:annotation>
+			<xs:documentation>Item(hotel) states</xs:documentation>
+		</xs:annotation>
+		<xs:restriction base="xs:string">
+			<xs:enumeration value="NEW"/>
+			<xs:enumeration value="IN_PROGRESS"/>
+			<xs:enumeration value="COMMITED"/>
+			<xs:enumeration value="UNCOMMITED"/>
+			<xs:enumeration value="CANCEL_NOT_SEND"/>
+			<xs:enumeration value="CANCEL_IN_PROGRESS"/>
+			<xs:enumeration value="CANCELED"/>
+			<xs:enumeration value="CANCEL_UNCOMMITED"/>
+			<xs:enumeration value="CANCEL_DENIED"/>
+			<xs:enumeration value="CHANGES_DENIED"/>
+			<xs:enumeration value="CHANGED"/>
+			<xs:enumeration value="CHANGES_NOT_SEND"/>
+			<xs:enumeration value="CHANGES_IN_PROGRESS"/>
+			<xs:enumeration value="CHANGES_UNCOMMITED"/>
+			<xs:enumeration value="ADDITION_PENDING"/>
+			<xs:enumeration value="MODIFICATION_PENDING"/>
+			<xs:enumeration value="CANCELATION_PENDING"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Price">
+		<xs:restriction base="xs:decimal">
+			<xs:fractionDigits value="2"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Currency">
+		<xs:restriction base="xs:string">
+			<xs:maxLength value="5"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<xs:simpleType name="T_Title">
+		<xs:restriction base="xs:string">
+			<xs:pattern value="Mr|Ms|Mrs|Chld"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Complex Types -->
+	<xs:complexType name="T_StringWithId">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="id" type="xs:positiveInteger"/>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:element name="Logs">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Log" type="T_Log" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Record of item history</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:complexType name="T_Log">
+		<xs:simpleContent>
+			<xs:extension base="xs:string">
+				<xs:attribute name="date" type="T_DateTime" use="required">
+					<xs:annotation>
+						<xs:documentation>Date of history record</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+				<xs:attribute name="user" type="xs:string" use="required">
+					<xs:annotation>
+						<xs:documentation>User who maked action (user login or 'system')</xs:documentation>
+					</xs:annotation>
+				</xs:attribute>
+			</xs:extension>
+		</xs:simpleContent>
+	</xs:complexType>
+	<xs:complexType name="CT_Pax">
+		<xs:sequence>
+			<xs:element name="Title" type="T_Title"/>
+			<xs:element name="FirstName" type="xs:string"/>
+			<xs:element name="LastName" type="xs:string"/>
+		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="CT_RoomData">
+		<xs:sequence>
+			<xs:element name="Paxes">
+				<xs:complexType>
+					<xs:sequence maxOccurs="unbounded">
+						<xs:element name="Pax" type="CT_Pax"/>
+					</xs:sequence>
+				</xs:complexType>
+			</xs:element>
+		</xs:sequence>
+		<xs:attributeGroup ref="RoomAttributes"/>
+	</xs:complexType>
+	<!-- Complex Elements -->
+	<xs:element name="Rooms">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element name="Room" type="CT_RoomData"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OrderList">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Orders" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>User orders</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Orders">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Order" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Order information</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="agent" type="xs:string" use="required">
+				<xs:annotation>
+					<xs:documentation>Login</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Order">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="HotelItem" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Hotels in the order</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="TransferItem" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Transfers in the order</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="VehicleItem" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Vehicles in the order</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="MessagesOnline" minOccurs="0" maxOccurs="unbounded">
+					<xs:annotation>
+						<xs:documentation>Online messages in the order</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:positiveInteger" use="required">
+				<xs:annotation>
+					<xs:documentation>Order id</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="state" type="T_OrderState" use="required">
+				<xs:annotation>
+					<xs:documentation>Order state</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="via_xml_gate" type="xs:boolean" use="required">
+				<xs:annotation>
+					<xs:documentation>Order via XML gate</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="tag" type="T_Tag" use="optional">
+				<xs:annotation>
+					<xs:documentation>Order reference</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="HotelItem">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="HotelId" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>Hotel id</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="HotelName" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Hotel name</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="CheckIn" type="xs:date">
+					<xs:annotation>
+						<xs:documentation>Check in date</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Duration" type="xs:positiveInteger">
+					<xs:annotation>
+						<xs:documentation>Duration</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Created" type="xs:dateTime">
+					<xs:annotation>
+						<xs:documentation>Created date</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Price" type="T_Price" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Hotel price</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Currency" type="T_Currency" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Hotel price currency</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="Rooms" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Hotel rooms (and paxes)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="Logs" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Item history</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:positiveInteger" use="required">
+				<xs:annotation>
+					<xs:documentation>Hotel item id</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="state" type="T_ItemState" use="required">
+				<xs:annotation>
+					<xs:documentation>State</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="stateId" type="xs:positiveInteger" use="optional">
+				<xs:annotation>
+					<xs:documentation>State id</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="TransferItem">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Date" type="xs:date">
+					<xs:annotation>
+						<xs:documentation>Check in date</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Created" type="xs:dateTime">
+					<xs:annotation>
+						<xs:documentation>Created date</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Vehicle" type="xs:integer" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Vehicle id</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Passengers" type="xs:integer" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Number of passengers</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="FromCity" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>City id</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ToCity" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>City id</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="FromLocation" type="T_StringWithId">
+					<xs:annotation>
+						<xs:documentation>Location type</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ToLocation" type="T_StringWithId">
+					<xs:annotation>
+						<xs:documentation>Location type</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Description" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Transfer description</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Price" type="T_Price" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Transfer price</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="Currency" type="T_Currency" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Transfer price currency</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="Logs" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Item history</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:positiveInteger" use="required">
+				<xs:annotation>
+					<xs:documentation>Hotel item id</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="state" type="T_ItemState" use="required">
+				<xs:annotation>
+					<xs:documentation>State</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="stateId" type="xs:positiveInteger" use="optional">
+				<xs:annotation>
+					<xs:documentation>State id</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="VehicleItem">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element name="Created" type="xs:dateTime">
+					<xs:annotation>
+						<xs:documentation>Created date</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PickUpDate" type="xs:date">
+					<xs:annotation>
+						<xs:documentation>Pick up date</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="DropOffDate" type="xs:date">
+					<xs:annotation>
+						<xs:documentation>Drop off date</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PointType" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Point type (city or airport)</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PickUpPoint" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>City or airport id</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="DropOffPoint" type="xs:integer">
+					<xs:annotation>
+						<xs:documentation>City or airport id</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="PickUpStation" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Pick up station's name and address</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="DropOffStation" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Drop off station's name and address</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="ACRISS" type="xs:string">
+					<xs:annotation>
+						<xs:documentation>Car's class, type, transmission, fuel and a/c</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element name="CompanyName" type="xs:string" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Car company name, which serve stations</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="Logs" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Item history</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+			<xs:attribute name="id" type="xs:positiveInteger" use="required">
+				<xs:annotation>
+					<xs:documentation>Hotel item id</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="state" type="T_ItemState" use="required">
+				<xs:annotation>
+					<xs:documentation>State</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+			<xs:attribute name="stateId" type="xs:positiveInteger" use="optional">
+				<xs:annotation>
+					<xs:documentation>State id</xs:documentation>
+				</xs:annotation>
+			</xs:attribute>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="OrderListResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="OrderListRequest" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Request for this response</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="Errors" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Errors list</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+				<xs:element ref="OrderList" minOccurs="0">
+					<xs:annotation>
+						<xs:documentation>Order list</xs:documentation>
+					</xs:annotation>
+				</xs:element>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

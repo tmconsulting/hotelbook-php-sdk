@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<xs:include schemaLocation="../Errors.xsd"/>
+	<xs:include schemaLocation="../hotel/HotelVoucherInfoResponse.xsd"/>
+	<xs:include schemaLocation="../transfer/TransferVoucherInfoResponse.xsd"/>
+    <xs:include schemaLocation="../vehicle/VehicleVoucherInfoResponse.xsd"/>
+	<!-- Attributes -->
+	<!-- Simple Types -->
+	<xs:simpleType name="T_Available">
+		<xs:restriction base="xs:integer">
+			<xs:pattern value="0|1"/>
+		</xs:restriction>
+	</xs:simpleType>
+	<!-- Simple Elements -->
+	<xs:element name="VoucherAvailable" type="T_Available"/>
+	<xs:element name="VoucherPDF" type="xs:string"/>
+	<!-- Complex Elements-->
+	<xs:element name="VoucherInfoResponse">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Errors" minOccurs="0"/>
+				<xs:element ref="Order" minOccurs="0"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>	
+	<xs:element name="Order">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="ItemList"/>
+			</xs:sequence>
+			<xs:attributeGroup ref="ItemAttributes"/>
+		</xs:complexType>	
+	</xs:element>	
+	<xs:element name="ItemList">
+		<xs:complexType>
+			<xs:sequence maxOccurs="unbounded">
+				<xs:element ref="Item"/>
+			</xs:sequence>
+		</xs:complexType>		
+	</xs:element>		
+	<xs:element name="Item">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="VoucherAvailable"/>
+				<xs:element ref="VoucherPDF" minOccurs="0"/>
+				<xs:element ref="Voucher" minOccurs="0"/>			
+			</xs:sequence>
+			<xs:attributeGroup ref="ItemAttributes"/>
+		</xs:complexType>	
+	</xs:element>	
+</xs:schema>

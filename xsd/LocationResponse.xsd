@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+	<!-- Attributes -->
+	<xs:attributeGroup name="LocationAttributes">
+		<xs:attribute name="id" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Location id</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="city" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>City id</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="is_global" type="xs:positiveInteger" use="required">
+			<xs:annotation>
+				<xs:documentation>Global location - in all cities</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+	</xs:attributeGroup>
+	<!-- Complex Elements -->
+	<xs:element name="Location">
+		<xs:annotation>
+			<xs:documentation>Location name</xs:documentation>
+		</xs:annotation>
+		<xs:complexType>
+			<xs:simpleContent>
+				<xs:extension base="xs:string">
+					<xs:attributeGroup ref="LocationAttributes"/>
+				</xs:extension>
+			</xs:simpleContent>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Locations">
+		<xs:complexType>
+			<xs:sequence minOccurs="0" maxOccurs="unbounded">
+				<xs:element ref="Location"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+	<xs:element name="Response">
+		<xs:complexType>
+			<xs:sequence>
+				<xs:element ref="Locations"/>
+			</xs:sequence>
+		</xs:complexType>
+	</xs:element>
+</xs:schema>

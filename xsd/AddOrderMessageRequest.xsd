@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+    <xs:element name="Message">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="Message" type="xs:string" />
+                <xs:element name="HiddenMessage" type="xs:boolean" minOccurs="0"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:element name="AddOrderMessageRequest">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="OrderId" type="xs:positiveInteger" />
+                <xs:element ref="Message" />
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+</xs:schema>
