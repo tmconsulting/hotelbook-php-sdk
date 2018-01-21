@@ -21,7 +21,7 @@ class RoomType extends BaseFormer
         foreach ($response->RoomTypes->RoomType as $roomType) {
             $items[] = [
                 'id' => (int)$roomType->attributes()['id'],
-                'name' => (string)$roomType
+                'title' => (string)$roomType
             ];
         }
 
