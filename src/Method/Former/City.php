@@ -18,9 +18,11 @@ class City extends BaseFormer
                 'countryId' => (int)$attributes['country'],
                 'hotelCount' => (int)$attributes['hotel_count'],
                 'vehicleRent' => (int)$attributes['has_vehicle_rent'],
+                'has_airport' => (int)$attributes['has_airport'],
                 'lat' => (float)$attributes['latitude'],
                 'lgn' => (float)$attributes['longitude'],
                 'name' => (string)$city,
+                'resort' => (string)$attributes['resort'],
             ];
         }
 
