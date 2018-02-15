@@ -10,7 +10,7 @@ use Hotelbook\Method\Former\HotelCategory as HotelCategoryFormer;
 /**
  * Dictionary - Get HotelList method
  * Class HotelCategory
- * @package App\Hotelbook\Method\Dictionary
+ * @package App\Hotelbook\Me9thod\Dictionary
  */
 class HotelCategory extends AbstractMethod
 {

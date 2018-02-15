@@ -52,6 +52,8 @@ class Detail extends BaseFormer
             'latestCheckOutTime' => isset($detail->LatestCheckOutTime) ? (string)$detail->LatestCheckOutTime : null,
             'description' => (string)$detail->Description,
             'distances' => (string)$detail->Distances,
+            'porterage24' => (string)$detail->Porterage24h === 'YES',
+            'service24' => (string)$detail->RoomService24h === 'YES',
             'gta' => [
                 'code' => (string)$detail->GTAHotelCode,
                 'city' => (string)$detail->GTACityCode,
