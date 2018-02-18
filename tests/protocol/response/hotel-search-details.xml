@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HotelSearchDetailsResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" date="2018-02-18T17:50:37+03:00">
+    <HotelSearchDetailsRequest>
+        <HotelSearches>
+            <HotelSearch>
+                <SearchId>3035405</SearchId>
+                <ResultId>1374784</ResultId>
+            </HotelSearch>
+        </HotelSearches>
+    </HotelSearchDetailsRequest>
+    <HotelSearchDetails>
+        <Hotel searchId="3035405" resultId="1374784" hotelId="209" providerId="16" confirmation="online">
+            <EarlestCheckInTime>14:00:00</EarlestCheckInTime>
+            <AllowCheckInTime>false</AllowCheckInTime>
+            <AllowCheckOutTime>false</AllowCheckOutTime>
+            <CheckIn>2018-03-24</CheckIn>
+            <Duration>1</Duration>
+            <TotalPrice>61.88</TotalPrice>
+            <Currency>EUR</Currency>
+            <Information>Дополнительные сборы (Включены в стоимость) : 5.25 EUR
+                Доп. сборы отеля (Оплачиваются в отеле) : 1.5 EUR
+                По умолчанию предоставляется номер для некурящих. Номер для курящих можно забронировать под запрос, в
+                зависимости от наличия номера в отеле
+            </Information>
+            <NoOpenSale>false</NoOpenSale>
+            <VisaMsk>true</VisaMsk>
+            <VisaSpb>true</VisaSpb>
+            <UseNds>false</UseNds>
+            <Rooms>
+                <Room roomSizeId="1" roomSizeName="SGL" roomTypeId="1" roomTypeName="STD" roomViewId="1"
+                      roomViewName="ROH" roomName="Standard Double Room Single Use, Sea View" roomNumber="1" mealId="2"
+                      mealName="Завтрак" child="0" cots="0" sharingBedding="false"/>
+            </Rooms>
+            <ChargeConditions>
+                <Currency>EUR</Currency>
+                <DenyNameChanges deny="true"/>
+                <Cancellations>
+                    <Cancellation charge="true" denyChanges="false" from="2018-02-18T17:50:37" price="58.49"/>
+                </Cancellations>
+                <Amendments>
+                    <Amendment charge="true" denyChanges="true" from="2018-02-18T17:50:37" price="61.88"/>
+                </Amendments>
+            </ChargeConditions>
+            <Remarks/>
+            <EditableOptions>
+                <Option name="check_in" editable="true"/>
+                <Option name="duration" editable="true"/>
+                <Option name="pax_names" editable="true"/>
+                <Option name="alternatives" editable="false"/>
+                <Option name="remarks" editable="false"/>
+                <Option name="comment" editable="true"/>
+                <Option name="room_sizes" editable="false"/>
+                <Option name="room_types" editable="false"/>
+                <Option name="room_views" editable="false"/>
+                <Option name="new_rooms" editable="false"/>
+                <Option name="delete_rooms" editable="false"/>
+                <Option name="voucher_info" editable="true"/>
+                <Option name="sharing_bedding" editable="false"/>
+                <Option name="cots" editable="false"/>
+                <Option name="citizenship" editable="false"/>
+            </EditableOptions>
+            <CommentLanguage>en</CommentLanguage>
+        </Hotel>
+    </HotelSearchDetails>
+</HotelSearchDetailsResponse>

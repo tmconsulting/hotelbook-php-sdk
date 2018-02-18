@@ -21,7 +21,6 @@ class Resort extends AbstractMethod
     public function handle($params)
     {
         $result = $this->connector->request('GET', 'resorts', null, $params);
-        //file_put_contents('resort.xml', $result->asXML());
         return $this->getResultObject($result);
     }
 

@@ -28,6 +28,7 @@ use Hotelbook\Method\HotelType;
 use Hotelbook\Method\Location;
 use Hotelbook\Method\Meal;
 use Hotelbook\Method\MealBreakfast;
+use Hotelbook\Method\MoreDetails;
 use Hotelbook\Method\Resort;
 use Hotelbook\Method\RoomAmenity;
 use Hotelbook\Method\RoomSize;
@@ -123,6 +124,16 @@ class Main implements HotelInterface
     public function detail($value, bool $byName = false)
     {
         return $this->callMethod('detail', [$value, $byName]);
+    }
+
+    /**
+     * @param $searchId
+     * @param $resultId
+     * @return mixed
+     */
+    public function moreDetails($searchId, $resultId)
+    {
+        return $this->callMethod('moreDetails', [ $searchId,  $resultId ]);
     }
 
     /**
@@ -362,6 +373,7 @@ class Main implements HotelInterface
         $this->setMethod('search', Search::class);
         $this->setMethod('asyncSearch', AsyncSearch::class);
         $this->setMethod('detail', Detail::class);
+        $this->setMethod('moreDetails', MoreDetails::class);
         $this->setMethod('book', Book::class);
         $this->setMethod('annulOrder', AnnulOrder::class);
         $this->setMethod('cancelOrder', CancelOrder::class);
