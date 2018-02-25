@@ -11,9 +11,11 @@ namespace Hotelbook;
 use Carbon\Carbon;
 use Hotelbook\Connector\Connector;
 use Hotelbook\Connector\ConnectorInterface;
+use Hotelbook\Method\AddOrderMessage;
 use Hotelbook\Method\AnnulOrder;
 use Hotelbook\Method\AsyncSearch;
 use Hotelbook\Method\Book;
+use Hotelbook\Method\BookDetails;
 use Hotelbook\Method\CancelOrder;
 use Hotelbook\Method\City;
 use Hotelbook\Method\ConfirmOrder;
@@ -40,6 +42,7 @@ use Hotelbook\Object\Hotel\BookItem;
 use Hotelbook\Object\Hotel\SearchParameter;
 use Hotelbook\Object\Hotel\Tag;
 use Hotelbook\Object\Method\Search\AsyncSearchParams;
+use phpDocumentor\Reflection\Types\Integer;
 use Symfony\Component\OptionsResolver\Exception\AccessException;
 use Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -147,6 +150,26 @@ class Main implements HotelInterface
     public function book(Contact $contact, array $items, Tag $tag, $searchResult = null)
     {
         return $this->callMethod('book', [$contact, $items, $tag, $searchResult]);
+    }
+
+    /**
+     * A method to get booking details by order id
+     * @param int $orderId
+     * @return mixed
+     */
+    public function bookDetails($orderId)
+    {
+        return $this->callMethod('bookDetails', [$orderId]);
+    }
+
+    /**
+     * @param $orderId
+     * @param $message
+     * @return mixed
+     */
+    public function addOrderMessage($orderId, $message)
+    {
+        return $this->callMethod('addOrderMessage', [$orderId, $message]);
     }
 
     /**
@@ -375,6 +398,8 @@ class Main implements HotelInterface
         $this->setMethod('detail', Detail::class);
         $this->setMethod('moreDetails', MoreDetails::class);
         $this->setMethod('book', Book::class);
+        $this->setMethod('bookDetails', BookDetails::class);
+        $this->setMethod('addOrderMessage', AddOrderMessage::class);
         $this->setMethod('annulOrder', AnnulOrder::class);
         $this->setMethod('cancelOrder', CancelOrder::class);
         $this->setMethod('confirmOrder', ConfirmOrder::class);

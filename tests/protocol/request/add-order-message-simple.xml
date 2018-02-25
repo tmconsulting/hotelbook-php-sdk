@@ -1,0 +1,2 @@
+<?xml version="1.0"?>
+<AddOrderMessageRequest><OrderId>1</OrderId><Message><Message>xxx</Message></Message></AddOrderMessageRequest>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AddOrderMessageResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" date="2018-02-25T11:08:41+03:00">
+    <Message>
+        <Id>958</Id>
+        <Type>online_common</Type>
+        <Message>test</Message>
+        <Direction>sender</Direction>
+        <IsRead>false</IsRead>
+        <Date>25.02.2018 11:08</Date>
+        <User>
+            <Name>Travel Management Consulting XML</Name>
+        </User>
+    </Message>
+</AddOrderMessageResponse>
