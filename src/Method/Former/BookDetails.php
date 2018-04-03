@@ -3,7 +3,6 @@
 declare(strict_types=1);
 
 namespace Hotelbook\Method\Former;
-use function GuzzleHttp\Psr7\str;
 
 /**
  * Class BookDetails
@@ -71,8 +70,8 @@ class BookDetails extends BaseFormer
         foreach ($order->Items->HotelItem as $hotelItem) {
             $attributes = current($hotelItem);
 
-            $checkInObject = current(object_get($hotelItem, 'CheckInTime'));
-            $checkOutObject = current(object_get($hotelItem, 'CheckOutTime'));
+            $checkInObject = current(object_get($hotelItem, 'CheckInTime', []));
+            $checkOutObject = current(object_get($hotelItem, 'CheckOutTime', []));
 
             $result[] = [
                 'itemId' => array_get($attributes, 'itemId'),
@@ -125,7 +124,7 @@ class BookDetails extends BaseFormer
         $condition = $order->ChargeConditions;
 
         return [
-            'currency' => (string) object_get($condition, 'Currency'),
+            'currency' => (string)object_get($condition, 'Currency'),
             'cancellations' => $this->prepareCancellations($condition),
             'amendments' => $this->prepareAmendments($condition)
         ];
@@ -139,14 +138,14 @@ class BookDetails extends BaseFormer
     {
         $result = [];
 
-        foreach ($condition->Cancellations->Cancellation as $cancellation) {
+        foreach (object_get($condition, 'Cancellations.Cancellation', []) as $cancellation) {
             $attributes = current($cancellation);
 
             $result[] = [
-                'charge' => (bool) array_get($attributes, 'charge'),
-                'denyChanges' => (bool) array_get($attributes, 'denyChanges'),
-                'from' => (string) array_get($attributes, 'from'),
-                'price' => (string) array_get($attributes, 'price'),
+                'charge' => (bool)array_get($attributes, 'charge'),
+                'denyChanges' => (bool)array_get($attributes, 'denyChanges'),
+                'from' => (string)array_get($attributes, 'from'),
+                'price' => (string)array_get($attributes, 'price'),
             ];
         }
 
@@ -161,14 +160,14 @@ class BookDetails extends BaseFormer
     {
         $result = [];
 
-        foreach ($condition->Amendments->Amendment as $amendment) {
+        foreach (object_get($condition, 'Amendments.Amendment', []) as $amendment) {
             $attributes = current($amendment);
 
             $result[] = [
-                'charge' => (bool) array_get($attributes, 'charge'),
-                'denyChanges' => (bool) array_get($attributes, 'denyChanges'),
-                'from' => (string) array_get($attributes, 'from'),
-                'price' => (string) array_get($attributes, 'price'),
+                'charge' => (bool)array_get($attributes, 'charge'),
+                'denyChanges' => (bool)array_get($attributes, 'denyChanges'),
+                'from' => (string)array_get($attributes, 'from'),
+                'price' => (string)array_get($attributes, 'price'),
             ];
         }
 
@@ -184,8 +183,8 @@ class BookDetails extends BaseFormer
         $priceDetails = object_get($order, 'PriceDetails');
 
         return [
-            'currency' => (string) object_get($priceDetails, 'Currency'),
-            'roomPrices' => $this->preparePriceDetailsRooms( object_get($priceDetails, 'RoomPrices') )
+            'currency' => (string)object_get($priceDetails, 'Currency'),
+            'roomPrices' => $this->preparePriceDetailsRooms(object_get($priceDetails, 'RoomPrices'))
         ];
     }
 
@@ -197,15 +196,15 @@ class BookDetails extends BaseFormer
     {
         $result = [];
 
-        foreach ($roomPrices->Room as $room) {
+        foreach (object_get($roomPrices, 'Room', []) as $room) {
             $attributes = current($room);
 
             $result[] = [
-              'roomNumber' => (int) array_get($attributes, 'roomNumber'),
-              'roomTypeId' => (int) array_get($attributes, 'roomTypeId'),
-              'roomViewId' => (int) array_get($attributes, 'roomViewId'),
-              'child' => (int) array_get($attributes, 'child'),
-              'prices' => $this->preparePriceDetailsRoomPrices($room)
+                'roomNumber' => (int)array_get($attributes, 'roomNumber'),
+                'roomTypeId' => (int)array_get($attributes, 'roomTypeId'),
+                'roomViewId' => (int)array_get($attributes, 'roomViewId'),
+                'child' => (int)array_get($attributes, 'child'),
+                'prices' => $this->preparePriceDetailsRoomPrices($room)
             ];
         }
 
@@ -224,9 +223,9 @@ class BookDetails extends BaseFormer
             $attributes = current($price);
 
             $result[] = [
-                'date' => (string) array_get($attributes, 'date'),
-                'available' => (string) array_get($attributes, 'available'),
-                'price' => (string) array_get($attributes, 'price'),
+                'date' => (string)array_get($attributes, 'date'),
+                'available' => (string)array_get($attributes, 'available'),
+                'price' => (string)array_get($attributes, 'price'),
             ];
         }
 
@@ -339,17 +338,16 @@ class BookDetails extends BaseFormer
 
         foreach ($messages as $message) {
             $result[] = [
-                'id' => (int)  object_get($message, 'Id'),
-                'type' => (string)  object_get($message, 'Type'),
-                'message' => (string)  object_get($message, 'Message'),
-                'direction' => (string)  object_get($message, 'Direction'),
-                'isRead' => (string)  object_get($message, 'isRead'),
-                'date' => (string)  object_get($message, 'Date'),
-                'userName' => (string) object_get($message, 'User.Name'),
+                'id' => (int)object_get($message, 'Id'),
+                'type' => (string)object_get($message, 'Type'),
+                'message' => (string)object_get($message, 'Message'),
+                'direction' => (string)object_get($message, 'Direction'),
+                'isRead' => (string)object_get($message, 'isRead'),
+                'date' => (string)object_get($message, 'Date'),
+                'userName' => (string)object_get($message, 'User.Name'),
             ];
         }
 
         return $result;
     }
 }
-
