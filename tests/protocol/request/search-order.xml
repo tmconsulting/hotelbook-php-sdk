@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+<OrderListRequest>
+  <CheckInFrom>2018-02-01</CheckInFrom>
+  <CheckInTo>2018-02-01</CheckInTo>
+  <CreatedFrom>2018-01-01</CreatedFrom>
+  <CreatedTo>2018-01-03</CreatedTo>
+</OrderListRequest>

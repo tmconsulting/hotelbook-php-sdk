@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<OrderListResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" date="2018-04-03T10:00:56+03:00">
+    <OrderListRequest>
+        <CreatedFrom>2018-01-01</CreatedFrom>
+    </OrderListRequest>
+    <OrderList>
+        <Orders agent="tmcXML">
+            <Order id="1000227496" state="NEW" via_xml_gate="true" tag="8852">
+                <HotelItem id="1000227497" state="NEW" stateId="1">
+                    <HotelId>39503</HotelId>
+                    <CheckIn>2018-04-06</CheckIn>
+                    <Duration>2</Duration>
+                    <Created>2018-01-07T19:53:57+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000227501" state="NEW" via_xml_gate="true" tag="496">
+                <HotelItem id="1000227502" state="NEW" stateId="1">
+                    <HotelId>39533</HotelId>
+                    <CheckIn>2018-04-09</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-01-07T20:07:45+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000227506" state="NEW" via_xml_gate="true" tag="911">
+                <HotelItem id="1000227507" state="NEW" stateId="1">
+                    <HotelId>168947</HotelId>
+                    <CheckIn>2018-04-11</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-01-07T20:39:16+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000228336" state="NEW" via_xml_gate="true" tag="5129">
+                <HotelItem id="1000228337" state="NEW" stateId="1">
+                    <HotelId>39503</HotelId>
+                    <CheckIn>2018-05-02</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-01-14T14:31:39+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000228341" state="NEW" via_xml_gate="true" tag="9384">
+                <HotelItem id="1000228342" state="NEW" stateId="1">
+                    <HotelId>39503</HotelId>
+                    <CheckIn>2018-05-03</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-01-14T14:36:04+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000228346" state="NEW" via_xml_gate="true" tag="7864">
+                <HotelItem id="1000228347" state="NEW" stateId="1">
+                    <HotelId>39503</HotelId>
+                    <CheckIn>2018-05-04</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-01-14T15:21:13+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000228351" state="NEW" via_xml_gate="true" tag="8255">
+                <HotelItem id="1000228352" state="NEW" stateId="1">
+                    <HotelId>39503</HotelId>
+                    <CheckIn>2018-05-05</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-01-14T15:26:22+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000228356" state="NEW" via_xml_gate="true" tag="2153">
+                <HotelItem id="1000228357" state="NEW" stateId="1">
+                    <HotelId>35421</HotelId>
+                    <CheckIn>2018-05-06</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-01-14T15:30:40+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000228361" state="NEW" via_xml_gate="true" tag="9351">
+                <HotelItem id="1000228362" state="NEW" stateId="1">
+                    <HotelId>340756</HotelId>
+                    <CheckIn>2018-05-07</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-01-14T18:29:35+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000228366" state="COMMITED" via_xml_gate="true" tag="4971">
+                <HotelItem id="1000228367" state="COMMITED" stateId="4">
+                    <HotelId>455952</HotelId>
+                    <CheckIn>2018-05-08</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-01-14T18:37:48+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000228372" state="COMMITED" via_xml_gate="true" tag="78">
+                <HotelItem id="1000228373" state="COMMITED" stateId="4">
+                    <HotelId>39503</HotelId>
+                    <CheckIn>2018-05-09</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-01-14T18:45:00+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000228378" state="COMMITED" via_xml_gate="true" tag="7411">
+                <HotelItem id="1000228379" state="COMMITED" stateId="4">
+                    <HotelId>26462</HotelId>
+                    <CheckIn>2018-05-11</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-01-14T18:46:54+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000228504" state="COMMITED" via_xml_gate="true" tag="7772">
+                <HotelItem id="1000228505" state="COMMITED" stateId="4">
+                    <HotelId>91374</HotelId>
+                    <CheckIn>2018-05-12</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-01-15T12:52:50+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000236311" state="NEW" via_xml_gate="true" tag="2927">
+                <HotelItem id="1000236312" state="NEW" stateId="1">
+                    <HotelId>40219</HotelId>
+                    <CheckIn>2018-03-10</CheckIn>
+                    <Duration>7</Duration>
+                    <Created>2018-02-18T15:40:52+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000236316" state="NEW" via_xml_gate="true" tag="4590">
+                <HotelItem id="1000236317" state="NEW" stateId="1">
+                    <HotelId>65553</HotelId>
+                    <CheckIn>2018-03-17</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-02-18T15:47:49+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000236321" state="NEW" via_xml_gate="true" tag="1612">
+                <HotelItem id="1000236322" state="NEW" stateId="1">
+                    <HotelId>39887</HotelId>
+                    <CheckIn>2018-03-18</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-02-18T15:49:12+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000236326" state="NEW" via_xml_gate="true" tag="2306">
+                <HotelItem id="1000236327" state="NEW" stateId="1">
+                    <HotelId>39887</HotelId>
+                    <CheckIn>2018-03-19</CheckIn>
+                    <Duration>2</Duration>
+                    <Created>2018-02-18T15:50:27+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000236332" state="COMMITED" via_xml_gate="true" tag="6615">
+                <HotelItem id="1000236333" state="COMMITED" stateId="4">
+                    <HotelId>40219</HotelId>
+                    <CheckIn>2018-03-21</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-02-18T16:22:51+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000236338" state="COMMITED" via_xml_gate="true" tag="2344">
+                <HotelItem id="1000236339" state="COMMITED" stateId="4">
+                    <HotelId>28544</HotelId>
+                    <CheckIn>2018-03-22</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-02-18T16:24:53+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000236344" state="COMMITED" via_xml_gate="true" tag="6651">
+                <HotelItem id="1000236345" state="COMMITED" stateId="4">
+                    <HotelId>212</HotelId>
+                    <CheckIn>2018-03-24</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-02-18T16:27:08+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000238272" state="COMMITED" via_xml_gate="true" tag="2480">
+                <HotelItem id="1000238273" state="COMMITED" stateId="4">
+                    <HotelId>212</HotelId>
+                    <CheckIn>2018-03-24</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-02-24T12:30:09+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000238388" state="COMMITED" via_xml_gate="true" tag="2346">
+                <HotelItem id="1000238389" state="COMMITED" stateId="4">
+                    <HotelId>65553</HotelId>
+                    <CheckIn>2018-03-25</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-02-24T22:51:16+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000245745" state="NEW" via_xml_gate="true" tag="9488">
+                <HotelItem id="1000245746" state="NEW" stateId="1">
+                    <HotelId>39534</HotelId>
+                    <CheckIn>2018-04-20</CheckIn>
+                    <Duration>3</Duration>
+                    <Created>2018-03-26T01:19:02+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000245752" state="COMMITED" via_xml_gate="true" tag="661">
+                <HotelItem id="1000245753" state="COMMITED" stateId="4">
+                    <HotelId>39534</HotelId>
+                    <CheckIn>2018-04-20</CheckIn>
+                    <Duration>3</Duration>
+                    <Created>2018-03-26T01:19:45+03:00</Created>
+                </HotelItem>
+            </Order>
+            <Order id="1000245760" state="CHANGED" via_xml_gate="true" tag="1672">
+                <HotelItem id="1000245761" state="CANCEL_NOT_SEND" stateId="6">
+                    <HotelId>40219</HotelId>
+                    <CheckIn>2018-04-22</CheckIn>
+                    <Duration>1</Duration>
+                    <Created>2018-03-26T01:44:41+03:00</Created>
+                </HotelItem>
+            </Order>
+        </Orders>
+    </OrderList>
+</OrderListResponse>

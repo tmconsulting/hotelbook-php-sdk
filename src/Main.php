@@ -37,11 +37,13 @@ use Hotelbook\Method\RoomSize;
 use Hotelbook\Method\RoomType;
 use Hotelbook\Method\RoomView;
 use Hotelbook\Method\Search;
+use Hotelbook\Method\SearchOrder;
 use Hotelbook\Object\Contact;
 use Hotelbook\Object\Hotel\BookItem;
 use Hotelbook\Object\Hotel\SearchParameter;
 use Hotelbook\Object\Hotel\Tag;
 use Hotelbook\Object\Method\Search\AsyncSearchParams;
+use Hotelbook\Object\Method\SearchOrder\SearchOrderParams;
 use phpDocumentor\Reflection\Types\Integer;
 use Symfony\Component\OptionsResolver\Exception\AccessException;
 use Symfony\Component\OptionsResolver\Exception\UndefinedOptionsException;
@@ -150,6 +152,16 @@ class Main implements HotelInterface
     public function book(Contact $contact, array $items, Tag $tag, $searchResult = null)
     {
         return $this->callMethod('book', [$contact, $items, $tag, $searchResult]);
+    }
+
+    /**
+     * A method to search the hotel's bookings
+     * @param SearchOrderParams $searchOrderParams
+     * @return mixed
+     */
+    public function searchOrder(SearchOrderParams $searchOrderParams)
+    {
+        return $this->callMethod('searchOrder', [$searchOrderParams]);
     }
 
     /**
@@ -403,6 +415,7 @@ class Main implements HotelInterface
         $this->setMethod('annulOrder', AnnulOrder::class);
         $this->setMethod('cancelOrder', CancelOrder::class);
         $this->setMethod('confirmOrder', ConfirmOrder::class);
+        $this->setMethod('searchOrder', SearchOrder::class);
     }
 
     /**
