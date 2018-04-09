@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HotelSearchResponse date="2018-04-09T17:45:01+03:00">
+    <HotelSearch searchId="3087279" countryId="118" countryName="Russia" resortId="118" resortName="Россия" cityId="2"
+                 cityName="Санкт-Петербург"/>
+    <Hotels totalHotels="0" totalResults="0" moreResults="false" searchingIsCompleted="false"/>
+</HotelSearchResponse>
+

@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HotelSearchResponse date="2018-04-09T17:45:05+03:00">
+    <HotelSearch searchId="3087279" countryId="118" countryName="Russia" resortId="118" resortName="Россия" cityId="2"
+                 cityName="Санкт-Петербург"/>
+    <Hotels totalHotels="5" totalResults="10" moreResults="true" finalResultId="1816100" searchingIsCompleted="true">
+        <Hotel resultId="1815442" commission="0" hotelId="39858" hotelName="Москва" hotelCatId="2" hotelCatName="3*"
+               hotelAddress="Санкт-Петербург, Площадь Александра Невского, д. 2"
+               hotelPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29299418.jpg"
+               hotelSmallPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29299418.jpg"
+               hotelLatitude="59.924518585205080" hotelLongitude="30.386604309082030" confirmation="online"
+               noOpenSale="true" dynamicInventory="false" packageRates="false" priceStatus="available"
+               priceBreakdownStatus="available" price="7599.9" currency="RUB" priceRackRate="7500" quotaAmount="1"
+               information="Тариф FIT2" visaMsk="false" visaSpb="false" specialOffer="false" useNds="true" nds="1159.31"
+               providerId="6">
+            <Rooms>
+                <Room roomNumber="1" roomSizeId="1" roomSizeName="SGL" roomTypeId="1" roomTypeName="STD" roomViewId="1"
+                      roomViewName="ROH" roomName="Комфорт бизнес" mealId="2" mealName="Завтрак" mealBreakfastId="5"
+                      mealBreakfastName="Шведский стол (холодные закуски)" children="0" cots="0"
+                      sharingBedding="false"/>
+            </Rooms>
+        </Hotel>
+        <Hotel resultId="1815443" commission="0" hotelId="39858" hotelName="Москва" hotelCatId="2" hotelCatName="3*"
+               hotelAddress="Санкт-Петербург, Площадь Александра Невского, д. 2"
+               hotelPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29299418.jpg"
+               hotelSmallPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29299418.jpg"
+               hotelLatitude="59.924518585205080" hotelLongitude="30.386604309082030" confirmation="online"
+               noOpenSale="true" dynamicInventory="false" packageRates="false" priceStatus="available"
+               priceBreakdownStatus="available" price="9120.9" currency="RUB" priceRackRate="9000" quotaAmount="2"
+               information="Тариф FIT2" visaMsk="false" visaSpb="false" specialOffer="false" useNds="true" nds="1391.32"
+               providerId="6">
+            <Rooms>
+                <Room roomNumber="1" roomSizeId="1" roomSizeName="SGL" roomTypeId="1" roomTypeName="STD" roomViewId="1"
+                      roomViewName="ROH" roomName="Люкс" mealId="2" mealName="Завтрак" mealBreakfastId="5"
+                      mealBreakfastName="Шведский стол (холодные закуски)" children="0" cots="0"
+                      sharingBedding="false"/>
+            </Rooms>
+        </Hotel>
+        <Hotel resultId="1815444" commission="0" hotelId="39858" hotelName="Москва" hotelCatId="2" hotelCatName="3*"
+               hotelAddress="Санкт-Петербург, Площадь Александра Невского, д. 2"
+               hotelPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29299418.jpg"
+               hotelSmallPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29299418.jpg"
+               hotelLatitude="59.924518585205080" hotelLongitude="30.386604309082030" confirmation="online"
+               noOpenSale="true" dynamicInventory="false" packageRates="false" priceStatus="available"
+               priceBreakdownStatus="available" price="11332.2" currency="RUB" priceRackRate="11200" quotaAmount="1"
+               information="Тариф FIT2" visaMsk="false" visaSpb="false" specialOffer="false" useNds="true" nds="1728.64"
+               providerId="6">
+            <Rooms>
+                <Room roomNumber="1" roomSizeId="1" roomSizeName="SGL" roomTypeId="1" roomTypeName="STD" roomViewId="1"
+                      roomViewName="ROH" roomName="Апартаменты (люкс трехкомнатный)" mealId="2" mealName="Завтрак"
+                      mealBreakfastId="5" mealBreakfastName="Шведский стол (холодные закуски)" children="0" cots="0"
+                      sharingBedding="false"/>
+            </Rooms>
+        </Hotel>
+        <Hotel resultId="1815446" commission="0" hotelId="35421" hotelName="Сокос Отель Олимпия Гарден" hotelCatId="3"
+               hotelCatName="4*" hotelAddress="190013, Россия, Санкт-Петербург, Батайский переулок, 3А"
+               hotelPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29296031.jpg"
+               hotelSmallPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29296031.jpg"
+               hotelLatitude="59.913509368896484" hotelLongitude="30.320613861083984" confirmation="online"
+               noOpenSale="true" dynamicInventory="false" packageRates="false" priceStatus="available"
+               priceBreakdownStatus="available" price="5061" currency="RUB" priceRackRate="7900" quotaAmount="7"
+               information="" visaMsk="false" visaSpb="false" specialOffer="false" useNds="true" nds="772.02"
+               providerId="6">
+            <Rooms>
+                <Room roomNumber="1" roomSizeId="1" roomSizeName="SGL" roomTypeId="1" roomTypeName="STD" roomViewId="1"
+                      roomViewName="ROH" roomName="Стандартный номер" mealId="2" mealName="Завтрак" mealBreakfastId="5"
+                      mealBreakfastName="Шведский стол (холодные закуски)" children="0" cots="0"
+                      sharingBedding="false"/>
+            </Rooms>
+        </Hotel>
+        <Hotel resultId="1815449" commission="0" hotelId="35155" hotelName="Сокос Отель Палас Бридж" hotelCatId="1"
+               hotelCatName="5*" hotelAddress="199004, Россия, Санкт - Петербург, Биржевой пер., д. 4"
+               hotelPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29289231.jpg"
+               hotelSmallPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29289231.jpg"
+               hotelLatitude="59.944652557373050" hotelLongitude="30.294178009033203" confirmation="online"
+               noOpenSale="true" dynamicInventory="false" packageRates="false" priceStatus="available"
+               priceBreakdownStatus="available" price="6780.9" currency="RUB" priceRackRate="9700" quotaAmount="6"
+               information="" visaMsk="false" visaSpb="false" specialOffer="false" useNds="true" nds="1034.37"
+               providerId="6">
+            <Rooms>
+                <Room roomNumber="1" roomSizeId="1" roomSizeName="SGL" roomTypeId="1" roomTypeName="STD" roomViewId="1"
+                      roomViewName="ROH" roomName="Стандартный номер" mealId="2" mealName="Завтрак" mealBreakfastId="5"
+                      mealBreakfastName="Шведский стол (холодные закуски)" children="0" cots="0"
+                      sharingBedding="false"/>
+            </Rooms>
+        </Hotel>
+        <Hotel resultId="1815451" commission="0" hotelId="26423" hotelName="Кемпински Мойка 22 Санкт-Петербург"
+               hotelCatId="1" hotelCatName="5*" hotelAddress="191186, Санкт-Петербург, Набережная реки Мойки 22"
+               hotelPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29295943.jpg"
+               hotelSmallPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29295943.jpg"
+               hotelLatitude="59.939544677734375" hotelLongitude="30.320657730102540" confirmation="online"
+               noOpenSale="true" dynamicInventory="false" packageRates="false" priceStatus="available"
+               priceBreakdownStatus="available" price="17217.3" currency="RUB" priceRackRate="39000" quotaAmount="10"
+               information="Тариф FIT ПАКЕТ" visaMsk="false" visaSpb="false" specialOffer="false" useNds="true"
+               nds="2626.37" providerId="6">
+            <Rooms>
+                <Room roomNumber="1" roomSizeId="1" roomSizeName="SGL" roomTypeId="1" roomTypeName="STD" roomViewId="1"
+                      roomViewName="ROH" roomName="Супериор /Дабл" mealId="2" mealName="Завтрак" mealBreakfastId="5"
+                      mealBreakfastName="Шведский стол (холодные закуски)" children="0" cots="0"
+                      sharingBedding="false"/>
+            </Rooms>
+            <Locations>
+                <Location id="1" name="Central"/>
+            </Locations>
+        </Hotel>
+        <Hotel resultId="1815452" commission="0" hotelId="26423" hotelName="Кемпински Мойка 22 Санкт-Петербург"
+               hotelCatId="1" hotelCatName="5*" hotelAddress="191186, Санкт-Петербург, Набережная реки Мойки 22"
+               hotelPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29295943.jpg"
+               hotelSmallPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29295943.jpg"
+               hotelLatitude="59.939544677734375" hotelLongitude="30.320657730102540" confirmation="online"
+               noOpenSale="true" dynamicInventory="false" packageRates="false" priceStatus="available"
+               priceBreakdownStatus="available" price="17217.3" currency="RUB" priceRackRate="39000" quotaAmount="10"
+               information="Тариф FIT ПАКЕТ" visaMsk="false" visaSpb="false" specialOffer="false" useNds="true"
+               nds="2626.37" providerId="6">
+            <Rooms>
+                <Room roomNumber="1" roomSizeId="1" roomSizeName="SGL" roomTypeId="1" roomTypeName="STD" roomViewId="1"
+                      roomViewName="ROH" roomName="Супериор /Твин" mealId="2" mealName="Завтрак" mealBreakfastId="5"
+                      mealBreakfastName="Шведский стол (холодные закуски)" children="0" cots="0"
+                      sharingBedding="false"/>
+            </Rooms>
+            <Locations>
+                <Location id="1" name="Central"/>
+            </Locations>
+        </Hotel>
+        <Hotel resultId="1815458" commission="0" hotelId="26462" hotelName="Голден Гарден Бутик-Отель" hotelCatId="1"
+               hotelCatName="5*" hotelAddress="Россия, 191025, Санкт-Петербург, Владимирский проспект 9"
+               hotelPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29295831.jpg"
+               hotelSmallPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29295831.jpg"
+               hotelLatitude="59.930671691894530" hotelLongitude="30.346883773803710" confirmation="online"
+               noOpenSale="true" dynamicInventory="false" packageRates="false" priceStatus="available"
+               priceBreakdownStatus="available" price="7962.6" currency="RUB" priceRackRate="11000" quotaAmount="2"
+               information="" visaMsk="false" visaSpb="false" specialOffer="false" useNds="true" nds="1214.63"
+               providerId="6">
+            <Rooms>
+                <Room roomNumber="1" roomSizeId="1" roomSizeName="SGL" roomTypeId="1" roomTypeName="STD" roomViewId="1"
+                      roomViewName="ROH" roomName="Стандартный двухместный" mealId="2" mealName="Завтрак"
+                      mealBreakfastId="5" mealBreakfastName="Шведский стол (холодные закуски)" children="0" cots="0"
+                      sharingBedding="false"/>
+            </Rooms>
+        </Hotel>
+        <Hotel resultId="1815459" commission="0" hotelId="26462" hotelName="Голден Гарден Бутик-Отель" hotelCatId="1"
+               hotelCatName="5*" hotelAddress="Россия, 191025, Санкт-Петербург, Владимирский проспект 9"
+               hotelPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29295831.jpg"
+               hotelSmallPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29295831.jpg"
+               hotelLatitude="59.930671691894530" hotelLongitude="30.346883773803710" confirmation="online"
+               noOpenSale="true" dynamicInventory="false" packageRates="false" priceStatus="available"
+               priceBreakdownStatus="available" price="9284.7" currency="RUB" priceRackRate="13000" quotaAmount="1"
+               information="" visaMsk="false" visaSpb="false" specialOffer="false" useNds="true" nds="1416.31"
+               providerId="6">
+            <Rooms>
+                <Room roomNumber="1" roomSizeId="1" roomSizeName="SGL" roomTypeId="1" roomTypeName="STD" roomViewId="1"
+                      roomViewName="ROH" roomName="Джуниор Сюит" mealId="2" mealName="Завтрак" mealBreakfastId="5"
+                      mealBreakfastName="Шведский стол (холодные закуски)" children="0" cots="0"
+                      sharingBedding="false"/>
+            </Rooms>
+        </Hotel>
+        <Hotel resultId="1815460" commission="0" hotelId="26462" hotelName="Голден Гарден Бутик-Отель" hotelCatId="1"
+               hotelCatName="5*" hotelAddress="Россия, 191025, Санкт-Петербург, Владимирский проспект 9"
+               hotelPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/photo/118/2/29295831.jpg"
+               hotelSmallPhotoUrl="http://dict-rc-test.travelnow.ru/resource/hotel/thumbnail/118/2/29295831.jpg"
+               hotelLatitude="59.930671691894530" hotelLongitude="30.346883773803710" confirmation="online"
+               noOpenSale="true" dynamicInventory="false" packageRates="false" priceStatus="available"
+               priceBreakdownStatus="available" price="11928.9" currency="RUB" priceRackRate="17600" quotaAmount="1"
+               information="" visaMsk="false" visaSpb="false" specialOffer="false" useNds="true" nds="1819.66"
+               providerId="6">
+            <Rooms>
+                <Room roomNumber="1" roomSizeId="1" roomSizeName="SGL" roomTypeId="1" roomTypeName="STD" roomViewId="1"
+                      roomViewName="ROH" roomName="Люкс" mealId="2" mealName="Завтрак" mealBreakfastId="5"
+                      mealBreakfastName="Шведский стол (холодные закуски)" children="0" cots="0"
+                      sharingBedding="false"/>
+            </Rooms>
+        </Hotel>
+    </Hotels>
+</HotelSearchResponse>

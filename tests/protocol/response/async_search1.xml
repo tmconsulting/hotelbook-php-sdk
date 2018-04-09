@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<HotelSearchResponse date="2018-04-09T17:45:00+03:00">
+    <HotelSearchRequest>
+        <Request cityId="2" checkIn="2018-04-25" duration="1" confirmation="online" limitResults="100"/>
+        <Rooms>
+            <Room roomNumber="1" adults="1"/>
+        </Rooms>
+    </HotelSearchRequest>
+    <HotelSearchId>3087279</HotelSearchId>
+</HotelSearchResponse>
