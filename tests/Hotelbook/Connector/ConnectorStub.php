@@ -16,7 +16,7 @@ class ConnectorStub implements ConnectorInterface
     /**
      * @var
      */
-    private $responseName;
+    protected $responseName;
 
     /**
      * ConnectorStub constructor.
