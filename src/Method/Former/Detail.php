@@ -54,6 +54,9 @@ class Detail extends BaseFormer
             'distances' => (string)$detail->Distances,
             'porterage24' => (string)$detail->Porterage24h === 'YES',
             'service24' => (string)$detail->RoomService24h === 'YES',
+            'indoorPool' => (int)$detail->IndoorPool,
+            'outdoorPool' => (int)$detail->OutdoorPool,
+            'childrensPool' => (int)$detail->ChildrensPool,
             'gta' => [
                 'code' => (string)$detail->GTAHotelCode,
                 'city' => (string)$detail->GTACityCode,

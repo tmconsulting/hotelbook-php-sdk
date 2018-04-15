@@ -46,11 +46,13 @@ class MoreDetails extends BaseFormer
             'duration' => (int) object_get($hotel, 'Duration'),
             'totalPrice' => (string) object_get($hotel, 'TotalPrice'),
             'currency' => (string) object_get($hotel, 'Currency'),
+            'commission' => (string) object_get($hotel, 'Commission'),
+            'rackRate' => (string) object_get($hotel, 'PriceRackRate'),
             'information' => (string) object_get($hotel, 'Information'),
             'noOpenSale' => (bool) object_get($hotel, 'NoOpenSale'),
             'visaMsk' => (bool) object_get($hotel, 'VisaMsk'),
             'visaSpb' => (bool) object_get($hotel, 'VisaSpb'),
-            'useNds' => (bool) object_get($hotel, 'UseNds'),
+            'useNds' => (bool) object_get($hotel, 'UseNds', false),
             'commentLanguage' => (string) object_get($hotel, 'CommentLanguage'),
 
             'rooms' => $this->prepareRooms($hotel),
@@ -99,7 +101,7 @@ class MoreDetails extends BaseFormer
 
         return [
             'currency' => (string) object_get($condition, 'Currency'),
-            'denyNameChanges' => (bool)array_get(current(object_get($condition, 'DenyNameChanges')), 'deny'),
+            'denyNameChanges' => (bool)array_get(current(object_get($condition, 'DenyNameChanges', [])), 'deny'),
             'cancellations' => $this->prepareCancellations($condition),
             'amendments' => $this->prepareAmendments($condition)
         ];
@@ -113,7 +115,7 @@ class MoreDetails extends BaseFormer
     {
         $result = [];
 
-        foreach ($condition->Cancellations->Cancellation as $cancellation) {
+        foreach (object_get($condition, 'Cancellations.Cancellation', []) as $cancellation) {
             $attributes = current($cancellation);
 
             $result[] = [
@@ -135,7 +137,7 @@ class MoreDetails extends BaseFormer
     {
         $result = [];
 
-        foreach ($condition->Amendments->Amendment as $amendment) {
+        foreach (object_get($condition, 'Amendments.Amendment', []) as $amendment) {
             $attributes = current($amendment);
 
             $result[] = [
