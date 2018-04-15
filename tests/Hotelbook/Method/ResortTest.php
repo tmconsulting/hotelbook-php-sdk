@@ -13,7 +13,7 @@ class ResortTest extends TestCase
     {
         $mock = new Resort(new ConnectorStub());
         $params = [1];
-        $this->assertNotEmpty($mock->build($params), $params);
+        $this->assertNotEmpty($mock->build($params));
     }
 
     public function testHowResortMethodHandlesRequest()

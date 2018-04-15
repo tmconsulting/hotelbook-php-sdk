@@ -29,6 +29,6 @@ class ConfirmOrderTest extends TestCase
 
         $result = $mock->handle([1, 2, 3, 'USD']);
         $this->assertInstanceOf(ResultProceeder::class, $result);
-        $this->assertNotEmpty($result->getItems(), $result);
+        $this->assertNotEmpty($result->getItems());
     }
 }
