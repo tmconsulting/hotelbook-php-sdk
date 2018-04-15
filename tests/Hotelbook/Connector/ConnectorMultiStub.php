@@ -40,7 +40,12 @@ class ConnectorMultiStub extends ConnectorStub
         if (!empty($this->responseName)) {
             $result = parent::request($method, $uri, $body, $options);
 
-            $this->responseName = $this->responseNames[$this->iterator];
+            if(isset($this->responseNames[$this->iterator])) {
+                $this->responseName = $this->responseNames[$this->iterator];
+            } else {
+                $this->responseName = null;
+            }
+
             $this->iterator++;
 
             return $result;
