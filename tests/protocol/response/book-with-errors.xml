@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<AddOrderResponse xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" date="2017-12-10T17:03:53+03:00">
+    <OrderId>1000224984</OrderId>
+    <Items>
+        <ItemId TotalPrice="5189.7" Currency="RUB">1000224985</ItemId>
+    </Items>
+    <Errors>
+        <Error type="common" code="E1" description="Test Error"/>
+    </Errors>
+</AddOrderResponse>
